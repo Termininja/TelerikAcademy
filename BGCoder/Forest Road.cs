@@ -1,0 +1,20 @@
+using System;
+ 
+class ForestRoad
+{
+    static void Main()
+    {
+        int N = int.Parse(Console.ReadLine());
+        int h = 2 * N - 1;
+        for (int i = 0; i < N; i++)
+        {
+            Console.WriteLine(new string('.', i) + "*" + new string('.', N - i - 1));
+ 
+        }
+        for (int i = 1; i < N; i++)
+        {
+            Console.WriteLine(new string('.', N - i - 1) + "*" + new string('.', i));
+ 
+        }
+    }
+}
