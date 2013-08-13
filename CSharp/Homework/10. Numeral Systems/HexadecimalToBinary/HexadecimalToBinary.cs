@@ -8,7 +8,7 @@ class HexadecimalToBinary
     {
         Console.Write("Please, enter some hexadecimal number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string hex = Console.ReadLine();                // reads the hexadecimal number
+        string hex = Console.ReadLine().ToLower();      // reads the hexadecimal number
         Console.ResetColor();
 
         Console.Write("Binary representation of this number is: ");
@@ -16,7 +16,7 @@ class HexadecimalToBinary
 
         for (int i = 0; i < hex.Length; i++)            // checks the symbol is it capital or not
         {
-            temp = hex[i] >= 'a' ? temp = hex[i] - 87 : (hex[i] >= 'A' ? temp = hex[i] - 55 : temp = hex[i] - 48);
+            temp = hex[i] >= 'a' ? temp = hex[i] - 87 : temp = hex[i] - 48;
 
             int?[] N = new int?[4];
             for (int j = 0; j < 4; j++)                 // fills the array with 0s
