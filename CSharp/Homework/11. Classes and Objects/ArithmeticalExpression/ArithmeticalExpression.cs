@@ -57,7 +57,7 @@ class ArithmeticalExpression
                                 E = Functions(E, i, 'y');       // calculates the Tangens function
                                 E = Functions(E, i, 'z');       // calculates the Cotangens function
                             }
-                            if (!isFunction)                    // if Ln or Sqrt are used
+                            if (!isFunction)                    // if some function is used
                             {
                                 E = BracketsPriority(E, i);
                             }

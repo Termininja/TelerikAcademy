@@ -280,7 +280,7 @@ class AllTasks
                                 E = TaskMethods.Functions(E, i, 'y');       // calculates the Tangens function
                                 E = TaskMethods.Functions(E, i, 'z');       // calculates the Cotangens function
                             }
-                            if (!TaskMethods.isFunction)                    // if Ln or Sqrt are used
+                            if (!TaskMethods.isFunction)                    // if some function is used
                             {
                                 E = TaskMethods.BracketsPriority(E, i);
                             }
