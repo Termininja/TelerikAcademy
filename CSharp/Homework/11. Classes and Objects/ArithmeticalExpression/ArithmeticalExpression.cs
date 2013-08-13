@@ -30,7 +30,7 @@ class ArithmeticalExpression
         string E = Console.ReadLine();                      // reads some arithmetical expression
         Console.ResetColor();
 
-        E = E.Replace(" ", "").Replace(',', '_');         //  removes the all empty intervals and replace ',' with '_'
+        E = E.Replace(" ", "").Replace(',', '_');           //  removes the all empty intervals and replace ',' with '_'
         E = E.Replace("sin", "w").Replace("cos", "x").Replace("tan", "y").Replace("cot", "z");
 
         string check = "";
@@ -135,9 +135,9 @@ class ArithmeticalExpression
     {
         if (!isFunction)
         {
-            if (E[i - 1] == f)                                  // what is this function
+            if (E[i - 1] == f)                              // what is this function
             {
-                byte word_len = 0;                              // the length of the function word
+                byte word_len = 0;                          // the length of the function word
                 double num = 0;
                 string temp = "";
                 for (int j = i + 1; j < E.Length; j++)
