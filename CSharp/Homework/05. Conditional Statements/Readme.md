@@ -16,9 +16,7 @@
 
 **Task 8.** Write a program that, depending on the user's choice inputs int, double or string variable. If the variable is integer or double, increases it with 1. If the variable is string, appends * at its end. The program must show the value of that variable as a console output. Use switch statement.
 
-**Task 9.** We are given 5 integers. Write a program that checks if the sum of some subset of them is 0. Example:
-
-    3, -2, 1, 1, 8 → 1+1-2=0.
+**Task 9.** We are given 5 integers. Write a program that checks if the sum of some subset of them is 0. Example: 3, -2, 1, 1, 8 → 1+1-2=0.
 
 **Task 10.** Write a program that applies bonus scores to given scores in the range [1, 9]. The program reads a digit as an input.
    * If the digit is between 1 and 3, the program multiplies it by 10
