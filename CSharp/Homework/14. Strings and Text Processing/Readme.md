@@ -2,8 +2,7 @@
 
 **Task 1.** Describe the strings in C#. What is typical for the string data type? Describe the most important methods of the String class.
 
-**Task 2.** Write a program that reads a string, reverses it and prints the result at the console.
-   * Example: "sample" → "elpmas".
+**Task 2.** Write a program that reads a string, reverses it and prints the result at the console. Example: "sample" → "elpmas".
 
 **Task 3.** Write a program to check if in a given expression the brackets are put correctly.
    * Example of correct expression: ((a+b)/5-d).
@@ -55,11 +54,16 @@
 
 **Task 15.** Write a program that replaces in a HTML document given as string all the tags <a href="...">...</a> with corresponding tags [URL=...]...[/URL].
    * Sample HTML fragment:
-```
-<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
+
+```html
+  <p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
 ```
 
-   * Sample ouput: <p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p>
+   * Sample ouput:
+
+```html
+  <p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p>
+```
 
 **Task 16.** Write a program that reads two dates in the format: day.month.year and calculates the number of days between them. Example:
    * Enter the first date: 27.02.2006
@@ -83,8 +87,8 @@
 **Task 24.** Write a program that reads a list of words, separated by spaces and prints the list in an alphabetical order.
 
 **Task 25.** Write a program that extracts from given HTML file its title (if available), and its body text without the HTML tags. Example:
-```
-   html
+
+```html
    <html>
      <head><title>News</title></head>
      <body>
