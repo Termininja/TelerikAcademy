@@ -25,4 +25,4 @@
 
 **Task 11.** Describe the difference between C# and .NET Framework.
 
-**Task 12.** Write a program to read your age from the console and print how old you will be after 10 years.
+**Task 12\*.** Write a program to read your age from the console and print how old you will be after 10 years.
