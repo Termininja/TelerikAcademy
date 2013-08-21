@@ -8,7 +8,7 @@
 
 **Task 4.** Sort 3 real values in descending order using nested if statements.
 
-**Task 5.** Write a program that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
+**Task 5.** Write a program that asks for a digit and depending on the input shows the name of that digit using a switch statement.
 
 **Task 6.** Write a program that enters the coefficients a, b and c of a quadratic equation ax<sup>2</sup>+bx+c=0 and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
 
