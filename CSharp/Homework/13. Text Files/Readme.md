@@ -67,7 +67,7 @@
 
 **Task 10.** Write a program that extracts from given XML file all the text without the tags. Example:
     
-    xml
+```xml
     <?xml version="1.0"?>
     <student>
         <name>Pesho</name>
@@ -78,7 +78,8 @@
             <interest>Java</interest>
         </interests>
     </student>
-   
+```
+
 **Task 11.** Write a program that deletes from a text file all words that start with the prefix "test". Words contain only the symbols 0...9, a...z, A...Z, _.
 
 **Task 12.** Write a program that removes from a text file all words listed in given another text file. Handle all possible exceptions in your methods.
