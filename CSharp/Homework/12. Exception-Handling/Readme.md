@@ -6,4 +6,4 @@
 
 **Task 3.** Write a program that enters file name along with its full file path (e.g. `C:\WINDOWS\win.ini`), reads its contents and prints it on the console. Find in MSDN how to use `System.IO.File.ReadAllText()`. Be sure to catch all possible exceptions and print user-friendly error messages.
 
-**Task 4.** Write a program that downloads a file from Internet (e.g. `http://www.devbg.org/img/Logo-BASD.jpg`) and stores it the current directory. Be sure to catch all exceptions and to free any used resources in the finally block.
+**Task 4.** Write a program that downloads a file from Internet (e.g. http://www.devbg.org/img/Logo-BASD.jpg) and stores it the current directory. Be sure to catch all exceptions and to free any used resources in the finally block.
