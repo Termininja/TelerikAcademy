@@ -3,9 +3,9 @@
 **Task 1.** Familiarize yourself with:
  * Microsoft Visual Studio
  * Microsoft Developer Network (MSDN) Library Documentation
- * Find information about Console.WriteLine() method.
+ * Find information about `Console.WriteLine()` method.
 
-**Task 2.** Create, compile and run a "Hello C#" console application.
+**Task 2.** Create, compile and run a `"Hello C#"` console application.
 
 **Task 3.** Modify the application to print your name.
 
