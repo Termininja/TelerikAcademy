@@ -10,7 +10,7 @@
 
 **Task 5.** Write a program that gets two numbers from the console and prints the greater of them. Don’t use if statements.
 
-**Task 6.** Write a program that reads the coefficients a, b and c of a quadratic equation ax<sup>2</sup>+bx+c=0 and solves it (prints its real roots).
+**Task 6.** Write a program that reads the coefficients a, b and c of a quadratic equation ax²+bx+c=0 and solves it (prints its real roots).
 
 **Task 7.** Write a program that gets a number n and after that gets more n numbers and calculates and prints their sum.
 
@@ -20,4 +20,4 @@
 
 **Task 10.** Write a program to calculate the sum (with accuracy of 0.001): 1 + 1/2 - 1/3 + 1/4 - 1/5 + ...
 
-**Task 11\*.** Implement the "Falling Rocks" game in the text console. A small dwarf stays at the bottom of the screen and can move left and right (by the arrows keys). A number of rocks of different sizes and forms constantly fall down and you need to avoid a crash. Rocks are the symbols '^', '@', '*', '&', '+', '%', '$', '#', '!', '.', ';', '-' distributed with appropriate density. The dwarf is (O). Ensure a constant game speed by Thread.Sleep(150). Implement collision detection and scoring system.
+**Task 11\*.** Implement the "Falling Rocks" game in the text console. A small dwarf stays at the bottom of the screen and can move left and right (by the arrows keys). A number of rocks of different sizes and forms constantly fall down and you need to avoid a crash. Rocks are the symbols '^', '@', '*', '&', '+', '%', '$', '#', '!', '.', ';', '-' distributed with appropriate density. The dwarf is (O). Ensure a constant game speed by `Thread.Sleep(150)`. Implement collision detection and scoring system.
