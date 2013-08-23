@@ -1,27 +1,27 @@
 ## Arrays
 
-**Task 1.** Write a program that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.
+**Task 01.** Write a program that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.
 
-**Task 2.** Write a program that reads two arrays from the console and compares them element by element.
+**Task 02.** Write a program that reads two arrays from the console and compares them element by element.
 
-**Task 3.** Write a program that compares two char arrays lexicographically (letter by letter).
+**Task 03.** Write a program that compares two char arrays lexicographically (letter by letter).
 
-**Task 4.** Write a program that finds the maximal sequence of equal elements in an array.
+**Task 04.** Write a program that finds the maximal sequence of equal elements in an array.
 >Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1} → **{2, 2, 2}**
 
-**Task 5.** Write a program that finds the maximal increasing sequence in an array.
+**Task 05.** Write a program that finds the maximal increasing sequence in an array.
 >Example: {3, 2, 3, 4, 2, 2, 4} → **{2, 3, 4}**
 
-**Task 6.** Write a program that reads two integer numbers N and K and an array of N elements from the console. Find in the array those K elements that have maximal sum.
+**Task 06.** Write a program that reads two integer numbers N and K and an array of N elements from the console. Find in the array those K elements that have maximal sum.
 
-**Task 7.** Sorting an array means to arrange its elements in increasing order. Write a program to sort an array. Use the Selection sort algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.
+**Task 07.** Sorting an array means to arrange its elements in increasing order. Write a program to sort an array. Use the Selection sort algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.
 
-**Task 8.** Write a program that finds the sequence of maximal sum in given array.
+**Task 08.** Write a program that finds the sequence of maximal sum in given array.
 >Example: {2, 3, -6, -1, 2, -1, 6, 4, -8, 8} → **{2, -1, 6, 4}**
 
 Can you do it with only one loop (with single scan through the elements of the array)?
 
-**Task 9.** Write a program that finds the most frequent number in an array.
+**Task 09.** Write a program that finds the most frequent number in an array.
 >Example: {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3} → **4 (5 times)**
 
 **Task 10.** Write a program that finds in given array of integers a sequence of given sum S (if present).

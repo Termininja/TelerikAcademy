@@ -1,16 +1,16 @@
 ## Strings and Text Processing
 
-**Task 1.** Describe the strings in C#. What is typical for the string data type? Describe the most important methods of the String class.
+**Task 01.** Describe the strings in C#. What is typical for the string data type? Describe the most important methods of the String class.
 
-**Task 2.** Write a program that reads a string, reverses it and prints the result at the console.
+**Task 02.** Write a program that reads a string, reverses it and prints the result at the console.
 >Example: sample → **elpmas**
 
-**Task 3.** Write a program to check if in a given expression the brackets are put correctly.
+**Task 03.** Write a program to check if in a given expression the brackets are put correctly.
 >Examples:
 * Correct expression: **((a+b)/5-d)**
 * Incorrect expression: **)(a+b))**
 
-**Task 4.** Write a program that finds how many times a substring is contained in a given text (perform case insensitive search).
+**Task 04.** Write a program that finds how many times a substring is contained in a given text (perform case insensitive search).
 >Example:
 The target substring is `in`. The text is as follows:
 ```
@@ -18,7 +18,7 @@ We are living in an yellow submarine. We don't have anything else. Inside the su
 ```
 The result is: **9**
 
-**Task 5.** You are given a text. Write a program that changes the text in all regions surrounded by the tags `<upcase>` and `</upcase>` to uppercase. The tags cannot be nested.
+**Task 05.** You are given a text. Write a program that changes the text in all regions surrounded by the tags `<upcase>` and `</upcase>` to uppercase. The tags cannot be nested.
 >Example:
 ```html
 We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
@@ -28,11 +28,11 @@ The expected result:
 We are living in a YELLOW SUBMARINE. We don't have ANYTHING else.
 ```
 
-**Task 6.** Write a program that reads from the console a string of maximum 20 characters. If the length of the string is less than 20, the rest of the characters should be filled with `*`. Print the result string into the console.
+**Task 06.** Write a program that reads from the console a string of maximum 20 characters. If the length of the string is less than 20, the rest of the characters should be filled with `*`. Print the result string into the console.
 
-**Task 7.** Write a program that encodes and decodes a string using given encryption key (cipher). The key consists of a sequence of characters. The encoding/decoding is done by performing XOR (exclusive or) operation over the first letter of the string with the first of the key, the second – with the second, etc. When the last key character is reached, the next is the first.
+**Task 07.** Write a program that encodes and decodes a string using given encryption key (cipher). The key consists of a sequence of characters. The encoding/decoding is done by performing XOR (exclusive or) operation over the first letter of the string with the first of the key, the second – with the second, etc. When the last key character is reached, the next is the first.
 
-**Task 8.** Write a program that extracts from a given text all sentences containing given word. Consider that the sentences are separated by `.` and the words – by non-letter symbols.
+**Task 08.** Write a program that extracts from a given text all sentences containing given word. Consider that the sentences are separated by `.` and the words – by non-letter symbols.
 >Example: The word is `in`. The text is:
 ```
 We are living in a yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
@@ -42,7 +42,7 @@ The expected result is:
 We are living in a yellow submarine. We will move out of it in 5 days.
 ```
 
-**Task 9.** We are given a string containing a list of forbidden words and a text containing some of these words. Write a program that replaces the forbidden words with asterisks.
+**Task 09.** We are given a string containing a list of forbidden words and a text containing some of these words. Write a program that replaces the forbidden words with asterisks.
 >Example:
 ```
 Microsoft announced its next generation PHP compiler today. It is based on .NET Framework 4 and is implemented as a dynamic language in CLR.

@@ -1,22 +1,22 @@
 ## Conditional Statements
 
-**Task 1.** Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+**Task 01.** Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
 
-**Task 2.** Write a program that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
+**Task 02.** Write a program that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
 
-**Task 3.** Write a program that finds the biggest of three integers using nested if statements.
+**Task 03.** Write a program that finds the biggest of three integers using nested if statements.
 
-**Task 4.** Sort 3 real values in descending order using nested if statements.
+**Task 04.** Sort 3 real values in descending order using nested if statements.
 
-**Task 5.** Write a program that asks for a digit and depending on the input shows the name of that digit using a switch statement.
+**Task 05.** Write a program that asks for a digit and depending on the input shows the name of that digit using a switch statement.
 
-**Task 6.** Write a program that enters the coefficients a, b and c of a quadratic equation ax²+bx+c=0 and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+**Task 06.** Write a program that enters the coefficients a, b and c of a quadratic equation ax²+bx+c=0 and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
 
-**Task 7.** Write a program that finds the greatest of given 5 variables.
+**Task 07.** Write a program that finds the greatest of given 5 variables.
 
-**Task 8.** Write a program that, depending on the user's choice inputs int, double or string variable. If the variable is integer or double, increases it with 1. If the variable is string, appends * at its end. The program must show the value of that variable as a console output. Use switch statement.
+**Task 08.** Write a program that, depending on the user's choice inputs int, double or string variable. If the variable is integer or double, increases it with 1. If the variable is string, appends * at its end. The program must show the value of that variable as a console output. Use switch statement.
 
-**Task 9.** We are given 5 integers. Write a program that checks if the sum of some subset of them is 0.
+**Task 09.** We are given 5 integers. Write a program that checks if the sum of some subset of them is 0.
 >Example: 3, -2, 1, 1, 8 → **1+1-2=0**.
 
 **Task 10.** Write a program that applies bonus scores to given scores in the range [1, 9]. The program reads a digit as an input.

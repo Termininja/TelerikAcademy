@@ -1,14 +1,14 @@
 ## Text Files
 
-**Task 1.** Write a program that reads a text file and prints on the console its odd lines.
+**Task 01.** Write a program that reads a text file and prints on the console its odd lines.
 
-**Task 2.** Write a program that concatenates two text files into another text file.
+**Task 02.** Write a program that concatenates two text files into another text file.
 
-**Task 3.** Write a program that reads a text file and inserts line numbers in front of each of its lines. The result should be written to another text file.
+**Task 03.** Write a program that reads a text file and inserts line numbers in front of each of its lines. The result should be written to another text file.
 
-**Task 4.** Write a program that compares two text files line by line and prints the number of lines that are the same and the number of lines that are different. Assume the files have equal number of lines.
+**Task 04.** Write a program that compares two text files line by line and prints the number of lines that are the same and the number of lines that are different. Assume the files have equal number of lines.
 
-**Task 5.** Write a program that reads a text file containing a square matrix of numbers and finds in the matrix an area of size 2×2 with a maximal sum of its elements. The first line in the input file contains the size of matrix N. Each of the next N lines contain N numbers separated by space. The output should be a single number in a separate text file.
+**Task 05.** Write a program that reads a text file containing a square matrix of numbers and finds in the matrix an area of size 2×2 with a maximal sum of its elements. The first line in the input file contains the size of matrix N. Each of the next N lines contain N numbers separated by space. The output should be a single number in a separate text file.
 >Example: **N=4**
 <table>
     <tr><td>2</td><td>3</td><td>3</td><td>4</td></tr>
@@ -17,7 +17,7 @@
     <tr><td><b>4</b></td><td><b>3</b></td><td>3</td><td>2</td></tr>
 </table>
 
-**Task 6.** Write a program that reads a text file containing a list of strings, sorts them and saves them to another text file.
+**Task 06.** Write a program that reads a text file containing a list of strings, sorts them and saves them to another text file.
 >Example:
 <table>
     <tr><td>Ivan</td><td>George</td></tr>
@@ -26,11 +26,11 @@
     <tr><td>George</td><td>Peter</td></tr>
 </table>
 
-**Task 7.** Write a program that replaces all occurrences of the substring "start" with the substring "finish" in a text file. Ensure it will work with large files (e.g. 100 MB).
+**Task 07.** Write a program that replaces all occurrences of the substring "start" with the substring "finish" in a text file. Ensure it will work with large files (e.g. 100 MB).
 
-**Task 8.** Modify the solution of the previous problem to replace only whole words (not substrings).
+**Task 08.** Modify the solution of the previous problem to replace only whole words (not substrings).
 
-**Task 9.** Write a program that deletes from given text file all odd lines. The result should be in the same file.
+**Task 09.** Write a program that deletes from given text file all odd lines. The result should be in the same file.
 
 **Task 10.** Write a program that extracts from given XML file all the text without the tags.
 >Example:

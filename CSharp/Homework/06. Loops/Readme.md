@@ -1,22 +1,22 @@
 ## Loops
 
-**Task 1.** Write a program that prints all the numbers from 1 to N.
+**Task 01.** Write a program that prints all the numbers from 1 to N.
 
-**Task 2.** Write a program that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time.
+**Task 02.** Write a program that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time.
 
-**Task 3.** Write a program that reads from the console a sequence of N integers and returns the minimal and maximal of them.
+**Task 03.** Write a program that reads from the console a sequence of N integers and returns the minimal and maximal of them.
 
-**Task 4.** Write a program that calculates N!/K! for given N and K (1 < K < N).
+**Task 04.** Write a program that calculates N!/K! for given N and K (1 < K < N).
 
-**Task 5.** Write a program that calculates N!K!/(N-K)! for given N and K (1 < K < N).
+**Task 05.** Write a program that calculates N!K!/(N-K)! for given N and K (1 < K < N).
 
-**Task 6.** Write a program that, for a given two integers N and X, calculates the sum S = 0!/X<sup>0</sup> + 1!/X<sup>1</sup> + 2!/X<sup>2</sup> + ... + N!/X<sup>N</sup>
+**Task 06.** Write a program that, for a given two integers N and X, calculates the sum S = 0!/X<sup>0</sup> + 1!/X<sup>1</sup> + 2!/X<sup>2</sup> + ... + N!/X<sup>N</sup>
 
-**Task 7.** Write a program that reads a number N and calculates the sum of the first N members of the sequence of Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, ... Each member of the Fibonacci sequence (except the first two) is a sum of the previous two members.
+**Task 07.** Write a program that reads a number N and calculates the sum of the first N members of the sequence of Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, ... Each member of the Fibonacci sequence (except the first two) is a sum of the previous two members.
 
-**Task 8.** Write a program that calculates the greatest common divisor (GCD) of given two numbers. Use the Euclidean algorithm (find it in Internet).
+**Task 08.** Write a program that calculates the greatest common divisor (GCD) of given two numbers. Use the Euclidean algorithm (find it in Internet).
 
-**Task 9.** In the combinatorial mathematics, the Catalan numbers are calculated by the following formula: C<sub>n</sub>=(2n)!/(n+1)!n!, for n≥0.
+**Task 09.** In the combinatorial mathematics, the Catalan numbers are calculated by the following formula: C<sub>n</sub>=(2n)!/(n+1)!n!, for n≥0.
 
 **Task 10.** Write a program to calculate the N<sup>th</sup> Catalan number by given N.
 
