@@ -2,16 +2,23 @@
 
 **Task 1.** Describe the strings in C#. What is typical for the string data type? Describe the most important methods of the String class.
 
-**Task 2.** Write a program that reads a string, reverses it and prints the result at the console. Example: "sample" → "elpmas".
+**Task 2.** Write a program that reads a string, reverses it and prints the result at the console.
+>Example: sample → **elpmas**
 
 **Task 3.** Write a program to check if in a given expression the brackets are put correctly.
-   * Example of correct expression: ((a+b)/5-d).
-   * Example of incorrect expression: )(a+b)).
+>Examples:
+* Correct expression: **((a+b)/5-d)**
+* Incorrect expression: **)(a+b))**
 
-**Task 4.** Write a program that finds how many times a substring is contained in a given text (perform case insensitive search). Example:
-   * The target substring is "in".
-   * The text is as follows: We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
-   * The result is: 9.
+**Task 4.** Write a program that finds how many times a substring is contained in a given text (perform case insensitive search).
+>Example:
+The target substring is `in`. The text is as follows:
+
+>
+```
+We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
+```
+>The result is: **9**
 
 **Task 5.** You are given a text. Write a program that changes the text in all regions surrounded by the tags <upcase> and </upcase> to uppercase. The tags cannot be nested.
    * Example: We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
