@@ -1,9 +1,6 @@
 ## Methods
 
-**Task 1.** Write a method that asks the user for his name and prints "Hello, \<name\>".
->Example: **"Hello, Peter!"**
-
-Write a program to test this method.
+**Task 1.** Write a method that asks the user for his name and prints "Hello, \<name\>" (e.g. `"Hello, Peter!"`). Write a program to test this method.
 
 **Task 2.** Write a method `GetMax()` with two parameters that returns the bigger of two integers. Write a program that reads 3 integers from the console and prints the biggest of them using the method `GetMax()`.
 
