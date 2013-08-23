@@ -5,7 +5,7 @@
 **Task 2.** Which of the following values can be assigned to a variable of type float and which to a variable of type double: 34.567839023, 12.345, 8923.1234857, 3456.091?
 
 **Task 3.** Write a program that safely compares floating-point numbers with precision of 0.000001.
->Example:
+>Examples:
 * (5.3 ; 6.01) → **false**
 * (5.00000001 ; 5.00000003) → **true**
 
