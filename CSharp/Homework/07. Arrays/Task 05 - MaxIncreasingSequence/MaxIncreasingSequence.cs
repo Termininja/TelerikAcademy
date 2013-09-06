@@ -8,7 +8,7 @@ class MaxIncreasingSequence
     static void Main()
     {
         Console.Write("Enter the number of elements in array: ");
-        int[] array = new int[int.Parse(Console.ReadLine())];
+        int[] array = new int[int.Parse(Console.ReadLine())];       // reads the number of elements in array
 
         int count = 1;
         int max = 1;
@@ -16,7 +16,7 @@ class MaxIncreasingSequence
         for (int i = 0; i < array.Length; i++)
         {
             Console.Write("[{0}] = ", i);
-            array[i] = int.Parse(Console.ReadLine());
+            array[i] = int.Parse(Console.ReadLine());               // reads each one element in array
 
             if (i > 0 && array[i] == array[i - 1] + 1)
             {
@@ -32,6 +32,8 @@ class MaxIncreasingSequence
                 num = array[i];
             }
         }
+		
+        /* Prints the result */
         num = num - (max - 1);
         Console.Write("{");
         for (int i = 1; i <= max; i++)

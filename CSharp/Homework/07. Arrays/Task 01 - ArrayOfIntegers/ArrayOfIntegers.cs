@@ -8,12 +8,11 @@ class ArrayOfIntegers
     static void Main()
     {
         int[] array = new int[20];
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < array.Length; i++)          // allocates the array
         {
             array[i] = 5 * i;
-            Console.Write(array[i] + " ");
+            Console.Write(array[i] + " ");              // prints each one element
         }
         Console.WriteLine();
     }
 }
-

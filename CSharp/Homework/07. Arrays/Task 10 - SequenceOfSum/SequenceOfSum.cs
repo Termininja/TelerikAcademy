@@ -7,8 +7,8 @@ class SequenceOfSum
 {
     static void Main()
     {
-        int[] array = { 4, 3, 1, 4, 2, 5, 8 };
-        int S = 11;
+        int[] array = { 4, 3, 1, 4, 2, 5, 8 };              // the given array
+        int S = 11;                                         // the given sum
 
         for (int i = 0; i < array.Length; i++)
         {
@@ -16,11 +16,11 @@ class SequenceOfSum
             for (int j = i; j < array.Length; j++)
             {
                 S_check += array[j];
-                if (S_check == S)
+                if (S_check == S)                           // if the current sum is equal to S
                 {
-                    for (int k = i; k <= j; k++)
+                    for (int k = i; k <= j; k++)            // prints the result
                     {
-                        Console.WriteLine(array[k]);
+                        Console.WriteLine(array[k]);    
                     }
                 }
             }

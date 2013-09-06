@@ -7,8 +7,8 @@ class Binary_Search
 {
     static void Main()
     {
-        int[] array = { 0, 1, 2, 3, 3, 5, 9, 12, 27, 28, 45, 93, 98 };
-        int N = 12;
+        int[] array = { 0, 1, 2, 3, 3, 5, 9, 12, 27, 28, 45, 93, 98 };  // the given sorted array
+        int N = 12;                                                     // the given element
 
         int min = 0;
         int max = array.Length - 1;
@@ -21,9 +21,9 @@ class Binary_Search
             }
             else
             {
-                min = mid + 1;
+                min = mid + 1;                                          // the index of the given element N
             }
-            if (min == max && array[min] == N)
+            if (min == max && array[min] == N)                          // prints the result
             {
                 Console.WriteLine("The number {0} is on position {1}", N, min);
             }

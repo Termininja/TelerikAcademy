@@ -14,9 +14,9 @@ class CompareCharArrays
 
         for (int i = 0; i < arr1.Length; i++)
         {
-            arr1[i] = char.Parse(Console.ReadLine());
-            arr2[i] = char.Parse(Console.ReadLine());
-            Console.WriteLine(arr1[i].CompareTo(arr2[i]));
+            arr1[i] = char.Parse(Console.ReadLine());           // reads element from the 1st char array
+            arr2[i] = char.Parse(Console.ReadLine());           // reads element from the 2nd char array
+            Console.WriteLine(arr1[i].CompareTo(arr2[i]));      // compares the elements from both arrays
         }
     }
 }

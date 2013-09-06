@@ -8,13 +8,13 @@ class SumOfElements
     static void Main()
     {
         Console.Write("N = ");
-        int[] array = new int[int.Parse(Console.ReadLine())];
+        int[] array = new int[int.Parse(Console.ReadLine())];       // reads the N
 
         Console.Write("K = ");
-        int K = int.Parse(Console.ReadLine());
+        int K = int.Parse(Console.ReadLine());                      // reads the K
 
         int max = int.MinValue;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < array.Length; i++)                      // reads each one element in array
         {
             Console.Write("[{0}] = ", i);
             array[i] = int.Parse(Console.ReadLine());
@@ -34,7 +34,9 @@ class SumOfElements
                 best_i = i;
             }
         }
-        Console.WriteLine("Max sum is {0} for elements: ", max);
+
+        /* Prints the result */
+        Console.WriteLine("Max sum is {0} for elements: ", max);    
         for (int i = best_i; i < best_i + K; i++)
         {
             Console.WriteLine("[{0}] = {1}", i, array[i]);
