@@ -3,28 +3,28 @@
 **Task 01.** Write a program that fills and prints a matrix of size N×N as shown below:
 >**N=4**
 <table>
-    <tr><td>&nbsp;1</td><td>&nbsp;5</td><td>&nbsp;9</td><td>13</td></tr>
-    <tr><td>&nbsp;2</td><td>&nbsp;6</td><td>10</td><td>14</td></tr>
-    <tr><td>&nbsp;3</td><td>&nbsp;7</td><td>11</td><td>15</td></tr>
-    <tr><td>&nbsp;4</td><td>&nbsp;8</td><td>12</td><td>16</td></tr>
+    <tr><td>&nbsp;&nbsp;1</td><td>&nbsp;&nbsp;5</td><td>&nbsp;&nbsp;9</td><td>13</td></tr>
+    <tr><td>&nbsp;&nbsp;2</td><td>&nbsp;&nbsp;6</td><td>10</td><td>14</td></tr>
+    <tr><td>&nbsp;&nbsp;3</td><td>&nbsp;&nbsp;7</td><td>11</td><td>15</td></tr>
+    <tr><td>&nbsp;&nbsp;4</td><td>&nbsp;&nbsp;8</td><td>12</td><td>16</td></tr>
 </table>
 <table>
-    <tr><td>&nbsp;1</td><td>&nbsp;8</td><td>&nbsp;9</td><td>16</td></tr>
-    <tr><td>&nbsp;2</td><td>&nbsp;7</td><td>10</td><td>15</td></tr>
-    <tr><td>&nbsp;3</td><td>&nbsp;6</td><td>11</td><td>14</td></tr>
-    <tr><td>&nbsp;4</td><td>&nbsp;5</td><td>12</td><td>13</td></tr>
+    <tr><td>&nbsp;&nbsp;1</td><td>&nbsp;&nbsp;8</td><td>&nbsp;&nbsp;9</td><td>16</td></tr>
+    <tr><td>&nbsp;&nbsp;2</td><td>&nbsp;&nbsp;7</td><td>10</td><td>15</td></tr>
+    <tr><td>&nbsp;&nbsp;3</td><td>&nbsp;&nbsp;6</td><td>11</td><td>14</td></tr>
+    <tr><td>&nbsp;&nbsp;4</td><td>&nbsp;&nbsp;5</td><td>12</td><td>13</td></tr>
 </table>
 <table>
-    <tr><td>&nbsp;7</td><td>11</td><td>14</td><td>16</td></tr>
-    <tr><td>&nbsp;4</td><td>&nbsp;8</td><td>12</td><td>15</td></tr>
-    <tr><td>&nbsp;2</td><td>&nbsp;5</td><td>&nbsp;9</td><td>13</td></tr>
-    <tr><td>&nbsp;1</td><td>&nbsp;3</td><td>&nbsp;6</td><td>10</td></tr>
+    <tr><td>&nbsp;&nbsp;7</td><td>11</td><td>14</td><td>16</td></tr>
+    <tr><td>&nbsp;&nbsp;4</td><td>&nbsp;&nbsp;8</td><td>12</td><td>15</td></tr>
+    <tr><td>&nbsp;&nbsp;2</td><td>&nbsp;&nbsp;5</td><td>&nbsp;&nbsp;9</td><td>13</td></tr>
+    <tr><td>&nbsp;&nbsp;1</td><td>&nbsp;&nbsp;3</td><td>&nbsp;&nbsp;6</td><td>10</td></tr>
 </table>
 <table>
-    <tr><td>&nbsp;1</td><td>12</td><td>11</td><td>10</td></tr>
-    <tr><td>&nbsp;2</td><td>13</td><td>16</td><td>&nbsp;9</td></tr>
-    <tr><td>&nbsp;3</td><td>14</td><td>15</td><td>&nbsp;8</td></tr>
-    <tr><td>&nbsp;4</td><td>&nbsp;5</td><td>&nbsp;6</td><td>&nbsp;7</td></tr>
+    <tr><td>&nbsp;&nbsp;1</td><td>12</td><td>11</td><td>10</td></tr>
+    <tr><td>&nbsp;&nbsp;2</td><td>13</td><td>16</td><td>&nbsp;&nbsp;9</td></tr>
+    <tr><td>&nbsp;&nbsp;3</td><td>14</td><td>15</td><td>&nbsp;&nbsp;8</td></tr>
+    <tr><td>&nbsp;&nbsp;4</td><td>&nbsp;&nbsp;5</td><td>&nbsp;&nbsp;6</td><td>&nbsp;&nbsp;7</td></tr>
 </table>
 
 **Task 02.** Write a program that reads a rectangular matrix of size N×M and finds in it the square 3×3 that has maximal sum of its elements.
