@@ -6,14 +6,13 @@ using System.Threading;
 using System.Media;
 using System.IO;
 
-
 namespace SnakeTheGame
 {
-    /* Cordinates of any object */
+    /* Coordinates of any object */
     struct ObjectCordinates
     {
-        public int col;
-        public int row;
+        public int col;                                             // x coordinate
+        public int row;                                             // y coordinate
         public ObjectCordinates(int col, int row)
         {
             this.col = col;
@@ -23,14 +22,13 @@ namespace SnakeTheGame
 
     class SnakeTheGame
     {
-        /* Generator of random values */
-        static Random Generator = new Random();
-        static int maxLifes = 2;                                            // ... bonus Life appears max times for level
+        static Random Generator = new Random();                 // generator of random values
+        static int maxLifes = 2;                                // bonus Life appears maximum 2 times for level
         static string snakeName = "";
-        static double sleepTime = 0;                                        // Speed of the Snake!
-        static int levelTime = 100000;                                      // duration of the level (in ms)
+        static double sleepTime = 0;                            // speed of the Snake!
+        static int levelTime = 100000;                          // duration of the level (in ms)
         static string difficulty = "";
-        static int lifeTime = 0;                                            // timeout (in ms) for bonus Life
+        static int lifeTime = 0;                                // timeout (in ms) for bonus Life
         static int bonusFoodTime = 0;
         static int pauseTime = 0;
         static int countLifes = 0;
@@ -38,10 +36,10 @@ namespace SnakeTheGame
 
         /* Moving Directions */
         static int[,] Directions = {
-                                        { 1, 0 },       //Go in Right ">" Position
-                                        { -1, 0 },      //Go in Left  "<" Position
-                                        { 0, 1 },       //Go in Down  "v" Position
-                                        { 0, -1 }       //Go in Top   "^" Position
+                                        { 1, 0 },               //Go in Right ">" Position
+                                        { -1, 0 },              //Go in Left  "<" Position
+                                        { 0, 1 },               //Go in Down  "v" Position
+                                        { 0, -1 }               //Go in Top   "^" Position
                                     };
 
         static void Main()
@@ -60,12 +58,13 @@ namespace SnakeTheGame
             bool bonusLife = true;                                          // Bonus Life For The Level
             bool nextLevel = true;                                          // to go to the next level
             bool isBonusFood = false;
+            bool isBonusLifePrinted = false;
 
             List<int[]> Snake = new List<int[]>();                          // Our snake
             List<int[]> Boss1 = new List<int[]>();                          // Boss snake 1
             List<int[]> Boss2 = new List<int[]>();                          // Boss snake 2
 
-            int direction = 0;     //0 for Top-"^", 1 for Right-">", 2 for Down-"v", 3 for Left-"<"
+            int direction = 0;     //0 for Right-"^", 1 for Left-">", 2 for Down-"v", 3 for Up-"<"
             int bossDirection1 = 0;
             int bossDirection2 = 0;
 
@@ -78,8 +77,8 @@ namespace SnakeTheGame
                 }
                 else
                 {
-                    StartCountDown(nextLevel, level);                                   // CountDown;
-                    switch (level)                                                      // Schedule for each one level
+                    StartCountDown(nextLevel, level);                       // CountDown;
+                    switch (level)                                          // Schedule for each one level
                     {
                         case 1: Snake = StartSnake(4, 0, 2); direction = 0; break;
                         case 2: Snake = StartSnake(4, 92, 2); direction = 2; break;
@@ -105,13 +104,13 @@ namespace SnakeTheGame
                     }
                 }
 
-                int mapStart = Environment.TickCount;            // the time when we start the Map
+                int mapStart = Environment.TickCount;                                   // the time when we start the Map
                 int lastLifeTime = 0;
 
-                Console.BackgroundColor = ConsoleColor.Black;    // background color
+                Console.BackgroundColor = ConsoleColor.Black;                           // background color
 
                 /* Generate some level map */
-                string map = "maps/map " + level.ToString().PadLeft(2, '0') + ".txt";       //the path to map file
+                string map = "maps/map " + level.ToString().PadLeft(2, '0') + ".txt";   //the path to map file
                 MapVisualiser(map);
 
                 /* Generate random food position */
@@ -131,9 +130,12 @@ namespace SnakeTheGame
                 int[] BossHead1 = new int[] { };
                 int[] BossHead2 = new int[] { };
 
-                while (Environment.TickCount - mapStart - pauseTime < levelTime)            // each one level
+                bool bossSound1 = true;
+                bool bossSound2 = true;
+
+                while (Environment.TickCount - mapStart - pauseTime < levelTime)        // each one level
                 {
-                    BarStatistics(snakeName, scores, mapStart, level, levelTime, lifes);
+                    Bar(snakeName, scores, mapStart, level, levelTime, lifes);
 
                     /* Our Snake */
                     {
@@ -149,7 +151,7 @@ namespace SnakeTheGame
                             Snake.Any(x => x.SequenceEqual(BossHead2)))
                         {
                             lifes--;
-                            if (lifes == 0)                                         // if no more lifes
+                            if (lifes == 0)                                             // if no more lifes
                             {
                                 GameOverScreen(gameStart, scores, snakeName);
                                 return;
@@ -163,6 +165,9 @@ namespace SnakeTheGame
                                 }
                                 Thread.Sleep(1000);
                             }
+                            bossSound1 = true;
+                            bossSound2 = true;
+                            isBonusFood = false;
                             nextLevel = false;
                             bonusLife = true;
                             break;
@@ -176,13 +181,27 @@ namespace SnakeTheGame
                     /* Two BOSS Snakes with the same logic of movement */
                     {
                         /* The 1st BOSS */
-                        if (Environment.TickCount - mapStart - pauseTime > 2000 && level > 5)        // appears after 30sec after level 5
+                        if (Environment.TickCount - mapStart - pauseTime > 20000 && level > 5)        // appears in 20sec after level 5
                         {
+                            if (bossSound1)
+                            {
+                                MemoryStream file1 = new MemoryStream(File.ReadAllBytes("sound/snake.wav"));
+                                SoundPlayer boss1 = new SoundPlayer(file1);
+                                boss1.Play();
+                                bossSound1 = false;
+                            }
                             BossHead1 = BOSS(Boss1, ref bossDirection1, map, SnakeHead, ConsoleColor.DarkRed);
                         }
                         /* The 2nd BOSS */
-                        if (Environment.TickCount - mapStart - pauseTime > 4000 && level > 10)       // apprears after 30sec after level 10
+                        if (Environment.TickCount - mapStart - pauseTime > 40000 && level > 10)       // apprears in 40sec after level 10
                         {
+                            if (bossSound2)
+                            {
+                                MemoryStream file2 = new MemoryStream(File.ReadAllBytes("sound/snake.wav"));
+                                SoundPlayer boss2 = new SoundPlayer(file2);
+                                boss2.Play();
+                                bossSound2 = false;
+                            }
                             BossHead2 = BOSS(Boss2, ref bossDirection2, map, SnakeHead, ConsoleColor.DarkCyan);
                         }
                     }
@@ -194,7 +213,7 @@ namespace SnakeTheGame
                         {
                             try
                             {
-                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/beep-6.wav")))
+                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/food.wav")))
                                 {
                                     SoundPlayer effect = new SoundPlayer(pickup);
                                     effect.Play();
@@ -213,8 +232,7 @@ namespace SnakeTheGame
                         {
                             int[] last = Snake.ElementAt(0);
 
-                            Snake.RemoveAt(0);     //That removes the the end of the tail (1st element of the List)
-                            //...if the Snake not eat something.
+                            Snake.RemoveAt(0);     //That removes the end of the tail (1st element of the List)
 
                             Console.SetCursorPosition(last[0], last[1]);
                             Console.BackgroundColor = ConsoleColor.Black;
@@ -256,7 +274,7 @@ namespace SnakeTheGame
                         {
                             try
                             {
-                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/beep-7.wav")))
+                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/food-bonus.wav")))
                                 {
                                     SoundPlayer effect = new SoundPlayer(pickup);
                                     effect.Play();
@@ -267,14 +285,14 @@ namespace SnakeTheGame
                             {
                                 Console.Beep(100, 50);
                             }
-                            scores += 200;
+                            scores += 500;
                             sleepTime -= 0.2;
+                            Snake.Add(SnakeHead);
                             Snake.Add(SnakeHead);
                             Snake.Add(SnakeHead);
                             bonusFood.col = 0;
                             bonusFood.row = 1;
                             isBonusFood = false;
-
                         }
                     }
 
@@ -292,26 +310,27 @@ namespace SnakeTheGame
                                 Console.ResetColor();
                                 life.col = 0;
                                 life.row = 1;
+                                isBonusLifePrinted = false;
                             }
                             else
                             {
                                 life = GenerateObject(map, Snake);
+                                isBonusLifePrinted = false;
                             }
                             lastLifeTime = Environment.TickCount;
                             countLifes++;
                         }
 
                         /* Snake - Behaviour With Life */
-                        if (SnakeHead[0] == life.col && SnakeHead[1] == life.row)
+                        if (SnakeHead[0] == life.col && SnakeHead[1] == life.row && isBonusLifePrinted == true)
                         {
                             try
                             {
-                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/tone2.wav")))
+                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/life.wav")))
                                 {
                                     SoundPlayer effect = new SoundPlayer(pickup);
                                     effect.Play();
                                 }
-
                             }
                             catch
                             {
@@ -322,12 +341,14 @@ namespace SnakeTheGame
                                 lifes++;
                                 bonusLife = false;
                             }
+                            isBonusLifePrinted = false;
                         }
 
                         /* Life Print */
                         if (lifes != 5 && bonusLife == true && countLifes % 5 == 1 && countLifes < 5 * maxLifes - 1)
                         {
                             PrintObject(life, '♥', ConsoleColor.Red);
+                            isBonusLifePrinted = true;
                         }
                     }
 
@@ -350,14 +371,18 @@ namespace SnakeTheGame
             Console.BufferHeight = Console.WindowHeight = 34;
         }
 
+        /* The 1st welcome page in the game */
         static void WelcomeScreen()
         {
-            Console.BackgroundColor = ConsoleColor.Black;     // background color
-            Console.ForegroundColor = ConsoleColor.Green;     // foreground color
+            MemoryStream background = new MemoryStream(File.ReadAllBytes("sound/intro.wav"));
+            SoundPlayer music = new SoundPlayer(background);
+            music.Play();
+            Console.BackgroundColor = ConsoleColor.Black;                   // background color
+            Console.ForegroundColor = ConsoleColor.Green;                   // foreground color
             Console.Clear();
 
-            Console.SetCursorPosition(21, 6);                                                  // cursor position
-            Console.WriteLine(@"             _________              __                    ");  // text
+            Console.SetCursorPosition(21, 6);
+            Console.WriteLine(@"             _________              __                    ");
             Console.SetCursorPosition(21, 7);
             Console.WriteLine(@"            /   _____/ ____ _____  |  | __ ____           ");
             Console.SetCursorPosition(21, 8);
@@ -424,9 +449,9 @@ namespace SnakeTheGame
                         Console.SetCursorPosition(45, 24);
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.WriteLine(new string(' ', 150));
-                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.SetCursorPosition(45, 24);
-                        difficultInput = Console.ReadLine();
+                        difficultInput = ReadString(1);
                         Console.ResetColor();
                     }
                     catch (Exception) { }
@@ -459,8 +484,11 @@ namespace SnakeTheGame
                     }
                 }
             }
+            music.Stop();
+            background.Close();
         }
 
+        /* Reads string to given length */
         static string ReadString(byte limit)
         {
             string str = string.Empty;
@@ -486,6 +514,7 @@ namespace SnakeTheGame
             return str;
         }
 
+        /* Countdown timer screen used between levels */
         static void StartCountDown(bool nextLevel, int level)
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -816,7 +845,16 @@ namespace SnakeTheGame
                 if (!nextLevel) Thread.Sleep(800);
                 if (i == 3)
                 {
-                    Console.Beep(100, 250);
+                    try
+                    {
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        {
+                            SoundPlayer ticks = new SoundPlayer(tick);
+                            ticks.Play();
+                        }
+                    }
+                    catch { Console.Beep(100, 250); }
+
                     Console.SetCursorPosition(45, 10 + height);
                     Console.WriteLine(@"________  ");
                     Console.SetCursorPosition(45, 11 + height);
@@ -832,7 +870,16 @@ namespace SnakeTheGame
                 }
                 if (i == 2)
                 {
-                    Console.Beep(200, 250);
+                    try
+                    {
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        {
+                            SoundPlayer ticks = new SoundPlayer(tick);
+                            ticks.Play();
+                        }
+                    }
+                    catch { Console.Beep(200, 250); }
+
                     Console.SetCursorPosition(45, 10 + height);
                     Console.WriteLine(@"________  ");
                     Console.SetCursorPosition(45, 11 + height);
@@ -848,7 +895,16 @@ namespace SnakeTheGame
                 }
                 if (i == 1)
                 {
-                    Console.Beep(300, 250);
+                    try
+                    {
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        {
+                            SoundPlayer ticks = new SoundPlayer(tick);
+                            ticks.Play();
+                        }
+                    }
+                    catch { Console.Beep(300, 250); }
+
                     Console.SetCursorPosition(45, 10 + height);
                     Console.WriteLine(@" ____ ");
                     Console.SetCursorPosition(45, 11 + height);
@@ -862,7 +918,16 @@ namespace SnakeTheGame
                 }
                 if (i == 0)
                 {
-                    Console.Beep(400, 250);
+                    try
+                    {
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        {
+                            SoundPlayer ticks = new SoundPlayer(tick);
+                            ticks.Play();
+                        }
+                    }
+                    catch { Console.Beep(400, 250); }
+
                     Console.SetCursorPosition(30, 10 + height);
                     Console.WriteLine(@"           __                        __   ");
                     Console.SetCursorPosition(30, 11 + height);
@@ -876,17 +941,14 @@ namespace SnakeTheGame
                     Console.SetCursorPosition(30, 15 + height);
                     Console.WriteLine(@"     \/               \/                  ");
                 }
-                //SystemSounds.Beep.Play();
                 Thread.Sleep(500);
             }
             Thread.Sleep(600);
-
             Console.Clear();
-            //Console.BackgroundColor = ConsoleColor.Gray;
-            //Console.ForegroundColor = ConsoleColor.Black;
             Console.ResetColor();
         }
 
+        /* Prints different map for each one level */
         static void MapVisualiser(string map)
         {
             StreamReader reader = new StreamReader(map);
@@ -903,7 +965,7 @@ namespace SnakeTheGame
         }
 
         /* Start position of the snake */
-        static List<int[]> StartSnake(int snakeLenght, int x, int y)          // snakeLenght has to be even number!
+        static List<int[]> StartSnake(int snakeLenght, int x, int y)        // snakeLenght has to be even number!
         {
             List<int[]> Snake = new List<int[]>();
             for (int i = 0; i <= snakeLenght - 1; i++)
@@ -923,7 +985,7 @@ namespace SnakeTheGame
                 /* User input moving Key */
                 ConsoleKeyInfo UserInput = Console.ReadKey();
 
-                while (Console.KeyAvailable) Console.ReadKey();                     // for fluent moving
+                while (Console.KeyAvailable) Console.ReadKey();             // for fluent moving
 
                 /* Change moving direction */
                 switch (UserInput.Key)
@@ -998,6 +1060,7 @@ namespace SnakeTheGame
             Console.ResetColor();
         }
 
+        /* Moves the snake to opposite side of the screen */
         static void BorderCheck(int[] head)
         {
             if (head[0] < 0) head[0] = Console.WindowWidth - 3;
@@ -1028,17 +1091,19 @@ namespace SnakeTheGame
             return false;
         }
 
-        static void BarStatistics(string name, int scores, int mapStart, byte level, int levelTime, int lifes)
+        /* Bar on 1st line in the game with some values about the current level */
+        static void Bar(string name, int scores, int mapStart, byte level, int levelTime, int lifes)
         {
             Console.SetCursorPosition(0, 0);
-            BarStatisticsField(name, "Name: ", ConsoleColor.Green, 7);
-            BarStatisticsField(scores, "Score: ", ConsoleColor.Green, 6);
-            BarStatisticsField((levelTime - (Environment.TickCount - mapStart - pauseTime)) / 1000, "Next map in: ", ConsoleColor.Green, 4);
-            BarStatisticsField(level, " Level: ", ConsoleColor.Green, 5);
-            BarStatisticsField(new string('♥', lifes), " Lives: ", ConsoleColor.Red, 5);
+            BarField(name, "Name: ", ConsoleColor.Green, 7);
+            BarField(scores, "Score: ", ConsoleColor.Green, 6);
+            BarField((levelTime - (Environment.TickCount - mapStart - pauseTime)) / 1000, "Next map in: ", ConsoleColor.Green, 4);
+            BarField(level, " Level: ", ConsoleColor.Green, 5);
+            BarField(new string('♥', lifes), " Lives: ", ConsoleColor.Red, 5);
         }
 
-        static void BarStatisticsField(dynamic variable, string text, ConsoleColor color, byte n)
+        /* Used in the bar for each one value */
+        static void BarField(dynamic variable, string text, ConsoleColor color, byte n)
         {
             int space = n - variable.ToString().Length / 2;
             int equalizer = 0;
@@ -1060,10 +1125,217 @@ namespace SnakeTheGame
             Console.ResetColor();
         }
 
+        /* Creates another bad snake (The boss)*/
+        static int[] BOSS(List<int[]> Boss, ref int bossDirection, string map, int[] SnakeHead, ConsoleColor color)
+        {
+            int[] BossHead;
+
+            /* Boss Snake */
+            {
+                BossHead = new int[] { Boss.Last()[0] + 2 * Directions[bossDirection, 0], Boss.Last()[1] + Directions[bossDirection, 1] };
+
+                bossDirection = BossMove(Boss, bossDirection, map, SnakeHead, BossHead);
+
+                BorderCheck(BossHead);
+                Boss.Add(BossHead);
+                PrintSnake(Boss, color);
+                Console.SetCursorPosition(Boss.ElementAt(0)[0], Boss.ElementAt(0)[1]);
+                Boss.RemoveAt(0);
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Write("  ");
+                Console.ResetColor();
+            }
+            return BossHead;
+        }
+
+        /* Logic for movement of some Boss snake */
+        static int BossMove(List<int[]> Boss, int direction, string map, int[] SnakeHead, int[] BossHead)
+        {
+            if (OverWallCheck(map, BossHead))
+            {
+                switch (direction)
+                {
+                    case 0:
+                        BossHead[0] -= 2; BossHead[1] -= 1; direction = 3;
+                        if (OverWallCheck(map, BossHead))
+                        {
+                            BossHead[1] += 2; direction = 2;
+                        }
+                        break;
+                    case 1:
+                        BossHead[0] += 2; BossHead[1] -= 1; direction = 3;
+                        if (OverWallCheck(map, BossHead))
+                        {
+                            BossHead[1] += 2; direction = 2;
+                        }
+                        break;
+                    case 2:
+                        BossHead[1] -= 1; BossHead[0] -= 2; direction = 1;
+                        if (OverWallCheck(map, BossHead))
+                        {
+                            BossHead[0] += 4; direction = 0;
+                        }
+                        break;
+                    case 3:
+                        BossHead[1] += 1; BossHead[0] -= 2; direction = 1;
+                        if (OverWallCheck(map, BossHead))
+                        {
+                            BossHead[0] += 4; direction = 0;
+                        }
+                        break;
+                    default: break;
+                }
+            }
+            else
+            {
+                BossTurning(Boss, direction, BossHead);             // is the Boos behind our Snake 
+
+                int tempDir = direction;
+
+                /*  Generates directoin for BossSnake
+                 *    
+                 *        0     - position of our Snake
+                 *        1-8   - position of BossSnake
+                 * 
+                 *       ┌─────────┬─────┬─────────┐
+                 *       │         │     │         │
+                 *       │    1 >  │  5  │    2    │
+                 *       │         │  v  │    v    │
+                 *       ├─────────┼─────┼─────────┤
+                 *       │    6  > │  0  │  < 7    │
+                 *       ├─────────┼─────┼─────────┤
+                 *       │    ^    │  ^  │         │
+                 *       │    3    │  8  │  < 4    │
+                 *       │         │     │         │
+                 *       └─────────┴─────┴─────────┘
+                 */
+
+                if (BossHead[0] > SnakeHead[0])
+                {
+                    if (BossHead[1] < SnakeHead[1])
+                    {
+                        if (direction != 3)
+                        {
+                            direction = 2;                      // Quadrant 2: take direction 2 (down)
+                        }
+                    }
+                    else                                        // Quadrant 4 & 7: take direction 1 (left)
+                    {
+                        if (direction != 0)
+                        {
+                            direction = 1;
+                        }
+                        else
+                        {
+                            direction = 3;
+                        }
+                    }
+                }
+                else if (BossHead[0] < SnakeHead[0])
+                {
+                    if (BossHead[1] > SnakeHead[1])
+                    {
+                        if (direction != 2)
+                        {
+                            direction = 3;                      // Quadrant 3: take direction 3 (up)
+                        }
+                    }
+                    else                                        // Quadrant 1 & 6: take direction 0 (right)
+                    {
+                        if (direction != 1)
+                        {
+                            direction = 0;
+                        }
+                        else
+                        {
+                            direction = 2;
+                        }
+                    }
+                }
+                else
+                {
+                    if (BossHead[1] < SnakeHead[1])             // Quadrant 5: take direction 2 (down)
+                    {
+                        if (direction != 3)
+                        {
+                            direction = 2;
+                        }
+                        else
+                        {
+                            direction = 1;
+                        }
+                    }
+                    else if (BossHead[1] > SnakeHead[1])        // Quadrant 8: take direction 3 (up)
+                    {
+                        if (direction != 2)
+                        {
+                            direction = 3;
+                        }
+                        else
+                        {
+                            direction = 0;
+                        }
+                    }
+                }
+
+                if (OverWallCheck(map, new int[] { Boss.Last()[0] + 2 * Directions[direction, 0],
+                                                   Boss.Last()[1] + Directions[direction, 1] }))
+                {
+                    return tempDir;
+                }
+                else
+                {
+                    return direction;
+                }
+            }
+            return direction;
+        }
+
+        /* How Boss snake to turn back */
+        static void BossTurning(List<int[]> snake, int direction, int[] head)
+        {
+            if (snake.Any(x => x.SequenceEqual(head)))
+            {
+                switch (direction)
+                {
+                    case 0:
+                        head[0] -= 2; head[1] -= 1; direction = 3;
+                        if (snake.Any(x => x.SequenceEqual(head)))
+                        {
+                            head[1] += 2; direction = 2;
+                        }
+                        break;
+                    case 1:
+                        head[0] += 2; head[1] -= 1; direction = 3;
+                        if (snake.Any(x => x.SequenceEqual(head)))
+                        {
+                            head[1] += 2; direction = 2;
+                        }
+                        break;
+                    case 2:
+                        head[1] -= 1; head[0] -= 2; direction = 1;
+                        if (snake.Any(x => x.SequenceEqual(head)))
+                        {
+                            head[0] += 4; direction = 0;
+                        }
+                        break;
+                    case 3:
+                        head[1] += 1; head[0] -= 2; direction = 1;
+                        if (snake.Any(x => x.SequenceEqual(head)))
+                        {
+                            head[0] += 4; direction = 0;
+                        }
+                        break;
+                    default: break;
+                }
+            }
+        }
+
+        /* Final screen if we loose the game */
         static void GameOverScreen(DateTime gameStart, int totalScores, string snakeName)
         {
             DateTime gameEnd = DateTime.Now;
-            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("sound/pacman2.wav")))
+            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("sound/gameover.wav")))
             {
                 snd = new SoundPlayer(music);
                 snd.Play();
@@ -1109,13 +1381,14 @@ namespace SnakeTheGame
             }
         }
 
+        /* Final screen if we win the game */
         static void YouWinScreen(string snakeName, DateTime gameStart, int totalScores)
         {
             DateTime gameEnd = DateTime.Now;
-            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("sound/frogger.wav")))
+            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("sound/intro.wav")))
             {
                 snd = new SoundPlayer(music);
-                snd.PlayLooping();
+                snd.Play();
             }
             ScoresRecord(gameStart, totalScores, snakeName, gameEnd);
 
@@ -1156,6 +1429,7 @@ namespace SnakeTheGame
             }
         }
 
+        /* Save the result from the game in statistics file */
         static void ScoresRecord(DateTime gameStart, int totalScores, string snakeName, DateTime gameEnd)
         {
             string rankListName = "";
@@ -1172,178 +1446,6 @@ namespace SnakeTheGame
             using (curentGameResultWriter)
             {
                 curentGameResultWriter.WriteLine("{0} - {1} - {2}", totalScores, gameEnd - gameStart, snakeName);
-            }
-        }
-
-        static int[] BOSS(List<int[]> Boss, ref int bossDirection, string map, int[] SnakeHead, ConsoleColor color)
-        {
-            int[] BossHead;
-
-            /* Boss Snake */
-            {
-                BossHead = new int[] { Boss.Last()[0] + 2 * Directions[bossDirection, 0], Boss.Last()[1] + Directions[bossDirection, 1] };
-
-                bossDirection = BossMove(Boss, bossDirection, map, SnakeHead, BossHead);
-
-                BorderCheck(BossHead);
-                Boss.Add(BossHead);
-                PrintSnake(Boss, color);
-                Console.SetCursorPosition(Boss.ElementAt(0)[0], Boss.ElementAt(0)[1]);
-                Boss.RemoveAt(0);
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.Write("  ");
-                Console.ResetColor();
-            }
-            return BossHead;
-        }
-
-        static int BossMove(List<int[]> Boss, int direction, string map, int[] SnakeHead, int[] BossHead)
-        {
-            if (OverWallCheck(map, BossHead))
-            {
-                switch (direction)
-                {
-                    case 0:
-                        BossHead[0] -= 2; BossHead[1] -= 1; direction = 3;
-                        if (OverWallCheck(map, BossHead))
-                        {
-                            BossHead[1] += 2; direction = 2;
-                        }
-                        break;
-                    case 1:
-                        BossHead[0] += 2; BossHead[1] -= 1; direction = 3;
-                        if (OverWallCheck(map, BossHead))
-                        {
-                            BossHead[1] += 2; direction = 2;
-                        }
-                        break;
-                    case 2:
-                        BossHead[1] -= 1; BossHead[0] -= 2; direction = 1;
-                        if (OverWallCheck(map, BossHead))
-                        {
-                            BossHead[0] += 4; direction = 0;
-                        }
-                        break;
-                    case 3:
-                        BossHead[1] += 1; BossHead[0] -= 2; direction = 1;
-                        if (OverWallCheck(map, BossHead))
-                        {
-                            BossHead[0] += 4; direction = 0;
-                        }
-                        break;
-                    default: break;
-                }
-            }
-            else
-            {
-                BossTurning(Boss, direction, BossHead);                      // is the Boos behind our Snake 
-
-                int tempDir = direction;
-
-                /*  Generates directoin for BossSnake
-                 *    
-                 *        0     - position of our Snake
-                 *        1-8   - position of BossSnake
-                 * 
-                 *       ┌─────────┬─────┬─────────┐
-                 *       │         │     │         │
-                 *       │    1 >  │  5  │    2    │
-                 *       │         │  v  │    v    │
-                 *       ├─────────┼─────┼─────────┤
-                 *       │    6  > │  0  │  < 7    │
-                 *       ├─────────┼─────┼─────────┤
-                 *       │    ^    │  ^  │         │
-                 *       │    3    │  8  │  < 4    │
-                 *       │         │     │         │
-                 *       └─────────┴─────┴─────────┘
-                 */
-
-                if (BossHead[0] > SnakeHead[0])
-                {
-                    if (BossHead[1] < SnakeHead[1])
-                    {
-                        if (direction != 3) direction = 2;      // Quadrant 2: take direction 2 (down)
-                    }
-                    else                                                // Quadrant 4 & 7: take direction 1 (left)
-                    {
-                        if (direction != 0) direction = 1;
-                        else direction = 3;
-                    }
-                }
-                else if (BossHead[0] < SnakeHead[0])
-                {
-                    if (BossHead[1] > SnakeHead[1])
-                    {
-                        if (direction != 2) direction = 3;     // Quadrant 3: take direction 3 (up)
-                    }
-                    else                                                // Quadrant 1 & 6: take direction 0 (right)
-                    {
-                        if (direction != 1) direction = 0;
-                        else direction = 2;
-                    }
-                }
-                else
-                {
-                    if (BossHead[1] < SnakeHead[1])                     // Quadrant 5: take direction 2 (down)
-                    {
-                        if (direction != 3) direction = 2;
-                        else direction = 1;
-                    }
-                    else if (BossHead[1] > SnakeHead[1])                // Quadrant 8: take direction 3 (up)
-                    {
-                        if (direction != 2) direction = 3;
-                        else direction = 0;
-                    }
-                }
-
-                if (OverWallCheck(map, new int[] { Boss.Last()[0] + 2 * Directions[direction, 0], Boss.Last()[1] + Directions[direction, 1] }))
-                {
-                    return tempDir;
-                }
-                else
-                {
-                    return direction;
-                }
-            }
-            return direction;
-        }
-
-        static void BossTurning(List<int[]> snake, int direction, int[] head)
-        {
-            if (snake.Any(x => x.SequenceEqual(head)))
-            {
-                switch (direction)
-                {
-                    case 0:
-                        head[0] -= 2; head[1] -= 1; direction = 3;
-                        if (snake.Any(x => x.SequenceEqual(head)))
-                        {
-                            head[1] += 2; direction = 2;
-                        }
-                        break;
-                    case 1:
-                        head[0] += 2; head[1] -= 1; direction = 3;
-                        if (snake.Any(x => x.SequenceEqual(head)))
-                        {
-                            head[1] += 2; direction = 2;
-                        }
-                        break;
-                    case 2:
-                        head[1] -= 1; head[0] -= 2; direction = 1;
-                        if (snake.Any(x => x.SequenceEqual(head)))
-                        {
-                            head[0] += 4; direction = 0;
-                        }
-                        break;
-                    case 3:
-                        head[1] += 1; head[0] -= 2; direction = 1;
-                        if (snake.Any(x => x.SequenceEqual(head)))
-                        {
-                            head[0] += 4; direction = 0;
-                        }
-                        break;
-                    default: break;
-                }
             }
         }
     }
