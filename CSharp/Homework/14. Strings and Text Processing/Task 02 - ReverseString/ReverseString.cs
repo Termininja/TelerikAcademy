@@ -14,7 +14,7 @@ class ReverseString
 
         Array.Reverse(text);                                // reverses the array
 
-        Console.Write("\nThe reverses text is: ");
+        Console.Write("\nThe reversed text is: ");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(text);                            // prints the result
         Console.ResetColor();
