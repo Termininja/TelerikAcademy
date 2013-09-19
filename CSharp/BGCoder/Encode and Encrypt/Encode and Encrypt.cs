@@ -1,22 +1,22 @@
 using System;
 using System.Text;
-
+ 
 class EncodeAndEncrypt
 {
     static void Main()
     {
         string message = Console.ReadLine();
         string cypher = Console.ReadLine();
-
-        Console.WriteLine(RunLength(cypher, Encode(message, cypher)) + cypher.Length);
+ 
+        Console.WriteLine(Encode(cypher, Encrypt(message, cypher)) + cypher.Length);
     }
-
-    private static string RunLength(string cypher, StringBuilder encoded)
+ 
+    private static string Encode(string cypher, StringBuilder encrypted)
     {
-        string runLength = encoded.ToString() + cypher;
+        string runLength = encrypted.ToString() + cypher;
         int count = 1;
         string result = String.Empty;
-
+ 
         for (int i = 1; i < runLength.Length; i++)
         {
             if (runLength[i] == runLength[i - 1])
@@ -49,21 +49,21 @@ class EncodeAndEncrypt
         }
         return result;
     }
-
-    private static StringBuilder Encode(string m, string c)
+ 
+    private static StringBuilder Encrypt(string m, string c)
     {
         StringBuilder result = new StringBuilder();
         for (int l = 0; l < m.Length; l++)
         {
-            int encode = (m[l] - 65);
+            int encrypt = (m[l] - 65);
             int curr = l;
             curr = curr % c.Length;
             while (curr < c.Length)
             {
-                encode ^= (c[curr] - 65);
+                encrypt ^= (c[curr] - 65);
                 curr += m.Length;
             }
-            result.Append((char)(encode + 65));
+            result.Append((char)(encrypt + 65));
         }
         return result;
     }
