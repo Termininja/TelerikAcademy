@@ -25,7 +25,7 @@ class BinSearch
     static void Main()
     {
         Console.Write("Please, enter the number of elements in array: ");
-        int[] array = new int[int.Parse(Console.ReadLine())];       // creates some array of N elements
+        int[] array = new int[int.Parse(Console.ReadLine())];       // creates some array
         for (int i = 0; i < array.Length; i++)
         {
             Console.Write(" arr[{0}] = ", i);
