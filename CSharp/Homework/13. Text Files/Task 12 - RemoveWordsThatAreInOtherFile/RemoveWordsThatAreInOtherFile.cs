@@ -24,7 +24,7 @@ class RemoveWordsThatAreInOtherFile
             {
                 // Removes the current word
                 StringBuilder temp = new StringBuilder();
-                temp.Append(Regex.Replace(result.ToString(), @"\w+", m => m.Value.Replace(word == m.Value ? word : " ", "")));
+                temp.Append(Regex.Replace(result.ToString(), String.Format(@"\b{0}\b", word), String.Empty));
                 result = temp;
                 word = readWords.ReadLine();                                // reads the next word
             }
