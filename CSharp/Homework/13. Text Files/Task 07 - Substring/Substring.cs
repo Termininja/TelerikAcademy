@@ -19,11 +19,11 @@ class Substring
             text.Append(read.ReadToEnd());                     
         }
 
-        // Write the replaced subsctrings in the same file
+        // Write the replaced substrings in the same file
         StreamWriter write = new StreamWriter("file.txt");
         using (write)
         {
-            // Replace the subsctrings
+            // Replace the substrings
             write.WriteLine(Regex.Replace(text.ToString(), @"start", "finish"));
         }
     }
