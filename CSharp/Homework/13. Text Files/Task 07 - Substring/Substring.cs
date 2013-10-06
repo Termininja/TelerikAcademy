@@ -15,7 +15,7 @@ class Substring
         StreamReader read = new StreamReader("file.txt");       // reads some text file
         using (read)
         {
-            // Imports the whole text file in variable 'text'
+            // Imports the whole text file in one variable 'text'
             text.Append(read.ReadToEnd());                     
         }
 
