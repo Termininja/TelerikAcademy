@@ -192,7 +192,7 @@ namespace MobilePhone
             return totalPrice;
         }
 
-        // The string output for this class
+        // String output for this class
         public override string ToString()
         {
             string result =
