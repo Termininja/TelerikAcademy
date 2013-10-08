@@ -29,7 +29,7 @@ namespace Point
         // Methods
         public override string ToString()       // to enable printing a 3D point
         {
-            return String.Format("{0} {1} {2}", this.X, this.Y, this.Z);
+            return String.Format("{0},{1},{2}", this.X, this.Y, this.Z);
         }
     }
 }

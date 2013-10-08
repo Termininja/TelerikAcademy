@@ -35,7 +35,7 @@ namespace Point
         public static void SavePath(Path path)
         {
             // The location of output file
-            StreamWriter write = new StreamWriter("output.txt");
+            StreamWriter write = new StreamWriter(@"..\..\output.txt");
             using (write)
             {
                 // Exports all points in the path in different lines
