@@ -1,36 +1,33 @@
 ﻿using System;
 
-[System.AttributeUsage(
-   System.AttributeTargets.Struct |
-   System.AttributeTargets.Class |
-   System.AttributeTargets.Interface |
-   System.AttributeTargets.Enum |
-   System.AttributeTargets.Method
-)]
-
-class Version : System.Attribute
+namespace Attribute
 {
-    // Keep the version in format: major.minor
-    public double version;
+    [AttributeUsage(
+       AttributeTargets.Struct |
+       AttributeTargets.Class |
+       AttributeTargets.Interface |
+       AttributeTargets.Enum |
+       AttributeTargets.Method,
+       AllowMultiple = false)]
 
-    // Constructor
-    public Version(double version)
+    class VersionAttribute : System.Attribute
     {
-        this.version = version;
-    }
+        // Keep the version in format: major.minor
+        public double version;
 
-    // Property
-    public double Ver
-    {
-        get
+        // Constructor
+        public VersionAttribute(double version)
         {
-            return this.version;
+            this.version = version;
         }
-    }
 
-    // String output for this class
-    public override string ToString()
-    {
-        return this.version.ToString();
+        // Property
+        public double Ver { get; private set; }
+
+        // String output for this class
+        public override string ToString()
+        {
+            return this.version.ToString();
+        }
     }
 }
