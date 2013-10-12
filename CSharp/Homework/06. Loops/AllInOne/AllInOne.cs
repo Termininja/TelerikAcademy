@@ -290,10 +290,7 @@ class AllTasks
             Console.WriteLine("   K!       K.(K-1)...2.1");
             Console.ResetColor();
         }
-        else
-        {
-            throw new Exception();                                  // generates an exception
-        }
+        else throw new Exception();                                	// generates an exception
     }
     static void Task5()
     {
