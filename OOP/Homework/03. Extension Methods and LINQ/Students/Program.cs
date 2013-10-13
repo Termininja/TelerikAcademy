@@ -42,13 +42,14 @@ namespace Students
             Print(Students.FilterByAge(students), "\nStudents with age between 18 and 24: ");
 
             // Sorting the students by first name and last name
-            LambdaAndLINQ(students, "lambda");                                  // by Lambda
-            LambdaAndLINQ(students, "linq");                                    // by LINQ
+            LambdaAndLINQ(students, "Lambda");                                  // by Lambda
+            LambdaAndLINQ(students, "LINQ");                                    // by LINQ
         }
 
         private static void LambdaAndLINQ(Students[] students, string method)
         {
-            Console.Write("\nPress any key to sort all lists in descending order by {0}...", method);
+            string order = (method == "lambda") ? "descending" : "ascending";
+            Console.Write("\nPress any key to sort all lists in {0} order by {1}...", order, method);
             Console.ReadKey();
             Console.Clear();
             PrintSorted(method, Students.AllStudents(students), "All students:");
@@ -74,10 +75,10 @@ namespace Students
             switch (method)
             {
                 // Sorting by using lambda expressions and extension methods OrderBy() and ThenBy()
-                case "lambda": result = list.OrderByDescending(m => m.First).ThenByDescending(m => m.Last); break;
+                case "Lambda": result = list.OrderByDescending(m => m.First).ThenByDescending(m => m.Last); break;
 
                 // Sorting by using LINQ
-                case "linq": result = from m in list orderby m.First ascending, m.Last ascending select m; break;
+                case "LINQ": result = from m in list orderby m.First ascending, m.Last ascending select m; break;
                 default: break;
             }
             foreach (var item in result) Console.WriteLine(item);
