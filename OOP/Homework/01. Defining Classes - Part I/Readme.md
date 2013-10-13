@@ -13,9 +13,9 @@
 **Task 06.** Add a static field and a property `IPhone4S` in the `GSM` class to hold the information about iPhone 4S.
 
 **Task 07.** Write a class GSMTest to test the `GSM` class:
-   * Create an array of few instances of the GSM class.
-   * Display the information about the GSMs in the array.
-   * Display the information about the static property `IPhone4S`.
+  * Create an array of few instances of the GSM class.
+  * Display the information about the GSMs in the array.
+  * Display the information about the static property `IPhone4S`.
 
 **Task 08.** Create a class `Call` to hold a call performed through a GSM. It should contain date, time, dialed phone number and duration (in seconds).
 
@@ -26,9 +26,9 @@
 **Task 11.** Add a method that calculates the total price of the calls in the call history. Assume the price per minute is fixed and is provided as a parameter.
 
 **Task 12.** Write a class `GSMCallHistoryTest` to test the call history functionality of the `GSM` class.
-   * Create an instance of the `GSM` class.
-   * Add few calls.
-   * Display the information about the calls.
-   * Assuming that the price per minute is 0.37 calculate and print the total price of the calls in the history.
-   * Remove the longest call from the history and calculate the total price again.
-   * Finally clear the call history and print it.
+  * Create an instance of the `GSM` class.
+  * Add few calls.
+  * Display the information about the calls.
+  * Assuming that the price per minute is 0.37 calculate and print the total price of the calls in the history.
+  * Remove the longest call from the history and calculate the total price again.
+  * Finally clear the call history and print it.
