@@ -16,7 +16,7 @@ using System;
 
 namespace List
 {
-    class TestProgram
+    class Program
     {
         static void Main()
         {

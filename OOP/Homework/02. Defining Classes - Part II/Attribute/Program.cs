@@ -7,11 +7,11 @@ using System;
 namespace Attribute
 {
     [Version(2.11)]                                                 // applying the attribute 'Version'
-    class TestProgram
+    class Program
     {
         static void Main()
         {
-            Type t = typeof(TestProgram);                           // takes the type of class 'TestProgram'
+            Type t = typeof(Program);                           // takes the type of class 'TestProgram'
             object[] attributes = t.GetCustomAttributes(false);
 
             Console.WriteLine("Version: {0}", attributes[0]);

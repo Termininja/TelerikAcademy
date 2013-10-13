@@ -45,7 +45,7 @@
     <Compile Include="Point\Path.cs" />
     <Compile Include="Point\PathStorage.cs" />
     <Compile Include="Point\Point3D.cs" />
-    <Compile Include="TestProgram.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

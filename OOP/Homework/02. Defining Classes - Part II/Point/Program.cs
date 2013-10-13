@@ -16,7 +16,7 @@ using System;
 
 namespace Point
 {
-    class TestProgram
+    class Program
     {
         static void Main()
         {

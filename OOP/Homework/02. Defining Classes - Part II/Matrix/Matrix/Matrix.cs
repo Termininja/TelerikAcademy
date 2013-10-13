@@ -45,12 +45,26 @@ namespace Matrix
 
         public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)  // multiplication of matrices of the same size
         {
-            return Operation(m1, m2, 3);
-        }
-
-        public static Matrix<T> operator /(Matrix<T> m1, Matrix<T> m2)  // division of matrices of the same size
-        {
-            return Operation(m1, m2, 4);
+            // Throw an exception when the operation cannot be performed
+            if (m1.rows != m2.rows || m1.columns != m2.columns)
+            {
+                throw new ArgumentException("The size of the matrices is not the same!");
+            }
+            else
+            {
+                Matrix<T> m = new Matrix<T>(m1.rows, m1.columns);
+                for (int r = 0; r < m.rows; r++)
+                {
+                    for (int c = 0; c < m.columns; c++)
+                    {
+                        for (int k = 0; k < m.columns; k++)
+                        {
+                            m[r, c] += (dynamic)m1[r, k] * m2[k, c];
+                        }
+                    }
+                }
+                return m;
+            }
         }
 
         public static bool operator true(Matrix<T> m)                   // implement the 'true' operator
@@ -98,21 +112,11 @@ namespace Matrix
                 {
                     for (int c = 0; c < m.columns; c++)
                     {
-                        // Throw an exception in division by zero
-                        if (Operator == 4 && (dynamic)m2[r, c] == 0 && typeof(T) != typeof(double) && typeof(T) != typeof(float))
+                        switch (Operator)
                         {
-                            throw new DivideByZeroException(String.Format("Division by zero in cell ({0},{1})!", r, c));
-                        }
-                        else
-                        {
-                            switch (Operator)
-                            {
-                                case 1: m[r, c] = (dynamic)m1[r, c] + m2[r, c]; break;      // addition
-                                case 2: m[r, c] = (dynamic)m1[r, c] - m2[r, c]; break;      // subtraction
-                                case 3: m[r, c] = (dynamic)m1[r, c] * m2[r, c]; break;      // multiplication
-                                case 4: m[r, c] = (dynamic)m1[r, c] / m2[r, c]; break;      // division
-                                default: break;
-                            }
+                            case 1: m[r, c] = (dynamic)m1[r, c] + m2[r, c]; break;      // addition
+                            case 2: m[r, c] = (dynamic)m1[r, c] - m2[r, c]; break;      // subtraction
+                            default: break;
                         }
                     }
                 }
