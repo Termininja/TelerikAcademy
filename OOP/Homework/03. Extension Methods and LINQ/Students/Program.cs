@@ -48,7 +48,7 @@ namespace Students
 
         private static void LambdaAndLINQ(Students[] students, string method)
         {
-            string order = (method == "lambda") ? "descending" : "ascending";
+            string order = (method == "Lambda") ? "descending" : "ascending";
             Console.Write("\nPress any key to sort all lists in {0} order by {1}...", order, method);
             Console.ReadKey();
             Console.Clear();
