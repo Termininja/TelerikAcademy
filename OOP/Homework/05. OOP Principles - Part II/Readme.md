@@ -1,8 +1,8 @@
 ## OOP Principles - Part II
 
 **Task 01.** Define abstract class `Shape` with only one abstract method `CalculateSurface()` and fields `width` and `height`. Define two new classes `Triangle` and `Rectangle` that implement the `virtual` method and return the surface of the figure:
-  * **height\*width** → for rectangle
-  * **height\*width/2** → for triangle
+  * `height * width` → for rectangle
+  * `height * width / 2` → for triangle
 
 Define class `Circle` and suitable constructor so that at initialization `height` must be kept equal to `width` and implement the `CalculateSurface()` method. Write a program that tests the behaviour of  the `CalculateSurface()` method for different shapes (`Circle`, `Rectangle`, `Triangle`) stored in an array.
 
@@ -24,5 +24,5 @@ Your task is to write a program to model the bank system by classes and interfac
 **Task 03.** Define a class `InvalidRangeException<T>` that holds information about an error condition related to invalid range. It should hold error message and a range definition [start … end].
 
 Write a sample application that demonstrates the `InvalidRangeException<int>` and `InvalidRangeException<DateTime>` by entering:
-  * numbers in the range → **[1..100]**
-  * dates in the range → **[1.1.1980 … 31.12.2013]**
+  * numbers in the range → [1..100]
+  * dates in the range → [1.1.1980 … 31.12.2013]
