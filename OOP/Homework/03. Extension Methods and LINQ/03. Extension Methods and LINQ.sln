@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. StringBuilderExtension", "StringBuilderExtension\01. StringBuilderExtension.csproj", "{BDCBA7B0-1086-4F4B-8ED8-1621E2581993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. IEnumerableExtension", "IEnumerableExtension\02. IEnumerableExtension.csproj", "{CE5D0B59-54D6-4E17-961A-71F3AE6EC5D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-05. Students", "Students\03-05. Students.csproj", "{E997FF35-3AC8-4136-93CB-4D32620A5D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Timer", "Timer\07. Timer.csproj", "{DCFC69CD-CCEC-4191-9947-5E08E6A34D3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Events", "Events\08. Events.csproj", "{A2AD2857-B22D-4A1F-A4B6-9A0DDCA7260F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. IntegerNumbers", "IntegerNumbers\06. IntegerNumbers.csproj", "{7FA50CC7-9E89-423A-B37C-FAACF147A7AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllInOne", "AllInOne\AllInOne.csproj", "{AD333FBB-FB30-4F36-920B-1303FCB092C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDCBA7B0-1086-4F4B-8ED8-1621E2581993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCBA7B0-1086-4F4B-8ED8-1621E2581993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCBA7B0-1086-4F4B-8ED8-1621E2581993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCBA7B0-1086-4F4B-8ED8-1621E2581993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5D0B59-54D6-4E17-961A-71F3AE6EC5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5D0B59-54D6-4E17-961A-71F3AE6EC5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5D0B59-54D6-4E17-961A-71F3AE6EC5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5D0B59-54D6-4E17-961A-71F3AE6EC5D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E997FF35-3AC8-4136-93CB-4D32620A5D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E997FF35-3AC8-4136-93CB-4D32620A5D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E997FF35-3AC8-4136-93CB-4D32620A5D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E997FF35-3AC8-4136-93CB-4D32620A5D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFC69CD-CCEC-4191-9947-5E08E6A34D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFC69CD-CCEC-4191-9947-5E08E6A34D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFC69CD-CCEC-4191-9947-5E08E6A34D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFC69CD-CCEC-4191-9947-5E08E6A34D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2AD2857-B22D-4A1F-A4B6-9A0DDCA7260F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2AD2857-B22D-4A1F-A4B6-9A0DDCA7260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2AD2857-B22D-4A1F-A4B6-9A0DDCA7260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2AD2857-B22D-4A1F-A4B6-9A0DDCA7260F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA50CC7-9E89-423A-B37C-FAACF147A7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA50CC7-9E89-423A-B37C-FAACF147A7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA50CC7-9E89-423A-B37C-FAACF147A7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA50CC7-9E89-423A-B37C-FAACF147A7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD333FBB-FB30-4F36-920B-1303FCB092C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD333FBB-FB30-4F36-920B-1303FCB092C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD333FBB-FB30-4F36-920B-1303FCB092C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD333FBB-FB30-4F36-920B-1303FCB092C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

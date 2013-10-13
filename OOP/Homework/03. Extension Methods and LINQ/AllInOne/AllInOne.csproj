@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD333FBB-FB30-4F36-920B-1303FCB092C2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AllInOne</RootNamespace>
+    <AssemblyName>AllInOne</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllInOne.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Events\08. Events.csproj">
+      <Project>{a2ad2857-b22d-4a1f-a4b6-9a0ddca7260f}</Project>
+      <Name>08. Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IEnumerableExtension\02. IEnumerableExtension.csproj">
+      <Project>{ce5d0b59-54d6-4e17-961a-71f3ae6ec5d8}</Project>
+      <Name>02. IEnumerableExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntegerNumbers\06. IntegerNumbers.csproj">
+      <Project>{7fa50cc7-9e89-423a-b37c-faacf147a7ae}</Project>
+      <Name>06. IntegerNumbers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StringBuilderExtension\01. StringBuilderExtension.csproj">
+      <Project>{bdcba7b0-1086-4f4b-8ed8-1621e2581993}</Project>
+      <Name>01. StringBuilderExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Students\03-05. Students.csproj">
+      <Project>{e997ff35-3ac8-4136-93cb-4d32620a5d78}</Project>
+      <Name>03-05. Students</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timer\07. Timer.csproj">
+      <Project>{dcfc69cd-ccec-4191-9947-5e08e6a34d3e}</Project>
+      <Name>07. Timer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
