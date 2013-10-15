@@ -13,7 +13,7 @@ namespace IntegerNumbers
             while (true)
             {
                 // Create and print some array of integers
-                Console.WriteLine("Array of integers:");
+                Console.WriteLine("Array of random integers:");
                 IntegerNumbers[] numbers = new IntegerNumbers[25];
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Random generator = new Random();
@@ -30,7 +30,12 @@ namespace IntegerNumbers
 
                 Console.WriteLine("\n\n\nPress any key to stop the test...");
                 Thread.Sleep(500);
-                if (Console.KeyAvailable) break;
+                if (Console.KeyAvailable)                          					    // stop the loop
+                {
+                    Console.ReadKey(false);
+                    Console.Write("\b \b");
+                    break;
+                }
                 Console.Clear();
             }
         }

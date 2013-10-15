@@ -49,6 +49,8 @@ namespace Timer
                 if (Console.KeyAvailable)                           // stop the loop
                 {
                     Console.SetCursorPosition(0, 8);
+                    Console.ReadKey(false);
+                    Console.Write("\b \b");
                     break;
                 }
                 count++;
