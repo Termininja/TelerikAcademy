@@ -30,7 +30,7 @@ namespace IntegerNumbers
 
                 Console.WriteLine("\n\n\nPress any key to stop the test...");
                 Thread.Sleep(500);
-                if (Console.KeyAvailable)                          					    // stop the loop
+                if (Console.KeyAvailable)                                               // stop the loop
                 {
                     Console.ReadKey(false);
                     Console.Write("\b \b");
