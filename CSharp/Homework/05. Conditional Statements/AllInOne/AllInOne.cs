@@ -15,7 +15,7 @@ class AllTasks
         Console.Clear();
         while (true)
         {
-            Content();
+            Contents();
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("   To start some program, please enter a task number from 1 to 11 or type \"exit\" to exit: ");
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -39,7 +39,7 @@ class AllTasks
         }
     }
 
-    static void Content()
+    static void Contents()
     {
         Console.ForegroundColor = ConsoleColor.DarkGray;
         Console.WriteLine("\n   Homework 5. Conditional Statements");

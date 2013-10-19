@@ -29,7 +29,7 @@ class AllTasks
         while (true)
         {
             Console.Clear();
-            Content();
+            Contents();
             Color("   Please, select a task number from ", "darkgray");
             Color("<", "green");
             Color("1", "darkgray");
@@ -60,7 +60,7 @@ class AllTasks
         }
     }
 
-    static void Content()
+    static void Contents()
     {
         Console.ForegroundColor = ConsoleColor.DarkGray;
         Console.WriteLine("\n\t\t\t\t\t     C# - Part 2");
