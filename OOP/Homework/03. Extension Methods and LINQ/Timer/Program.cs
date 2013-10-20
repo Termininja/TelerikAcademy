@@ -28,12 +28,11 @@ namespace Timer
             Console.WriteLine("\n\n\nPress any key to stop the test...");
             Console.SetCursorPosition(0, 4);
 
-            BigInteger count = 0;                                   // counting each one second
             BigInteger left = t;
-            while (true)
+            for (int second = 0; ; second++)
             {
                 Console.Write("\r" + DateTime.Now + "\t");
-                if (count % t == 0)                                 // the method will be executed at each 't' seconds
+                if (second % t == 0)                                // the method will be executed at each 't' seconds
                 {
                     timer();                                        // call the delegate
                     left = t;
@@ -53,7 +52,6 @@ namespace Timer
                     Console.Write("\b \b");
                     break;
                 }
-                count++;
                 left--;
             }
         }
