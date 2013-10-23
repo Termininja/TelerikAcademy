@@ -9,11 +9,20 @@
  */
 
 using System;
-
-class Shapes
+namespace Shapes
 {
-    static void Main()
+    class Program
     {
+        static void Main()
+        {
+            Shape[] shapes = new Shape[3];
+            shapes[0] = new Rectangle(34.3, 12.8);
+            shapes[1] = new Triangle(7.1, 9.5);
+            shapes[2] = new Circle(16.2);
 
+            Console.WriteLine(shapes[0].CalculateSurface());
+            Console.WriteLine(shapes[1].CalculateSurface());
+            Console.WriteLine(shapes[2].CalculateSurface());
+        }
     }
 }

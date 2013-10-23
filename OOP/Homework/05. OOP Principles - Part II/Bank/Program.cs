@@ -23,11 +23,25 @@
  */
 
 using System;
+using System.Collections.Generic;
 
-class Bank
+namespace Bank
 {
-    static void Main()
+    class Program
     {
+        static void Main()
+        {
+            // Create a list of accounts
+            List<Account> accounts = new List<Account>();
+            accounts.Add(new Deposit("Customer 1", 400, 5));
+            accounts.Add(new Loan("Customer 2", 200, 2));
+            accounts.Add(new Mortgage("Customer 3", 500, 7));
 
+
+            // Interest amount
+            Console.WriteLine(accounts[0].InterestAmount(10));
+            Console.WriteLine(accounts[1].InterestAmount(6));
+            Console.WriteLine(accounts[2].InterestAmount(20));
+        }
     }
 }
