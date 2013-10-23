@@ -1,5 +1,0 @@
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Exceptions\bin\Debug\Exceptions.exe
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Exceptions\bin\Debug\Exceptions.pdb
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Exceptions\obj\Debug\Exceptions.exe
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Exceptions\obj\Debug\Exceptions.pdb
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Exceptions\obj\Debug\03. Exceptions.csprojResolveAssemblyReference.cache

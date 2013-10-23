@@ -1,5 +1,0 @@
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Bank\bin\Debug\Bank.exe
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Bank\bin\Debug\Bank.pdb
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Bank\obj\Debug\02. Bank.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Bank\obj\Debug\Bank.exe
-C:\Users\Administrator\Desktop\05. OOP Principles - Part II\Bank\obj\Debug\Bank.pdb
