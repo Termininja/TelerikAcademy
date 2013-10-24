@@ -26,16 +26,17 @@ class SortByLength
         foreach (var item in strings.OrderBy(m => m.Length)) Console.WriteLine(item);
     }
 
+    // Sort some array of strings
     private static void Sort(string[] arr)
     {
         for (int i = 1; i < arr.Length; i++)
         {
-            if (arr[i].Length < arr[i - 1].Length)
+            if (arr[i].Length < arr[i - 1].Length)  // compare each two elements in the array
             {
-                string temp = arr[i - 1];
-                arr[i - 1] = arr[i];
+                string temp = arr[i - 1];           // keep the value of the first element
+                arr[i - 1] = arr[i];                // swap the elements
                 arr[i] = temp;
-                i = 0;
+                i = 0;                              // reset the loop
             }
         }
     }
