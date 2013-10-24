@@ -7,7 +7,7 @@ namespace Matrix
     {
         // Fields
         int rows, columns;
-        int[,] matrix;
+        T[,] matrix;
 
         // Constructor
         public Matrix(int rows, int columns)
