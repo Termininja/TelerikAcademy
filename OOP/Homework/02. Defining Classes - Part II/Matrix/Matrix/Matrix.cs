@@ -5,9 +5,9 @@ namespace Matrix
 {
     class Matrix<T>
     {
-        T[,] matrix;
-        int rows;
-        int columns;
+        // Fields
+        int rows, columns;
+        int[,] matrix;
 
         // Constructor
         public Matrix(int rows, int columns)
