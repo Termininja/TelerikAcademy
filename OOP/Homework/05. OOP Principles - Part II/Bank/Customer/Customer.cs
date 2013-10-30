@@ -1,6 +1,6 @@
 ﻿namespace Bank
 {
-    class Customer
+    abstract class Customer
     {
         // Property
         public string Name { get; set; }
