@@ -1,21 +1,43 @@
-﻿namespace Bank
-{
-    class Account
-    {
-        public string Customer { get; set; }
-        public decimal Balance { get; set; }
-        public int InterestRate { get; set; }
+﻿using System;
+using System.Drawing;
 
-        public Account(string customer, decimal balance, int interestRate)
+namespace Bank
+{
+    abstract class Account
+    {
+        // Properties
+        public Customer Customer { get; protected set; }
+        public decimal Balance { get; protected set; }
+        public decimal InterestRate { get; protected set; }
+
+        // Constructor
+        public Account(Customer customer, decimal balance, decimal interestRate)
         {
             this.Customer = customer;
             this.Balance = balance;
             this.InterestRate = interestRate;
         }
 
-        public decimal InterestAmount(int months)
+        // All accounts are allowed to deposit money
+        public void Deposit(decimal amount)
         {
-            return months * InterestRate;
+            this.Balance += amount;
+        }
+
+        // Interest amount for a given period
+        public virtual decimal InterestAmount(int months)
+        {
+            return this.Balance * months * this.InterestRate;
+        }
+
+        // Override to string method
+        public override string ToString()
+        {
+            return
+                "Type: " + this.Customer.GetType().Name +
+                "\nCustomer: " + this.Customer.ToString() +
+                "\nBalance: " + this.Balance +
+                "\nInterest rate: " + this.InterestRate;
         }
     }
 }

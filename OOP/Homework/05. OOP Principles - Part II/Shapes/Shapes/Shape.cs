@@ -14,9 +14,6 @@
         }
 
         // Method
-        public double CalculateSurface()
-        {
-            return this.Width * this.Height;
-        }
+        abstract public double CalculateSurface();
     }
 }

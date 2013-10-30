@@ -1,7 +1,8 @@
 ﻿namespace Bank
 {
-    class Company : ICustomer
+    class Company : Customer
     {
-
+        // Constructor
+        public Company(string name) : base(name) { }
     }
 }

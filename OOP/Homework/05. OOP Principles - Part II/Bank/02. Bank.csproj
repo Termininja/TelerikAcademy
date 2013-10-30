@@ -46,7 +46,7 @@
     <Compile Include="Bank\Accounts\Mortgage.cs" />
     <Compile Include="Bank\Accounts\Account.cs" />
     <Compile Include="Customer\Company.cs" />
-    <Compile Include="Customer\ICustomer.cs" />
+    <Compile Include="Customer\Customer.cs" />
     <Compile Include="Customer\Personal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

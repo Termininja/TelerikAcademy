@@ -9,20 +9,53 @@
  */
 
 using System;
+using System.Threading;
+
 namespace Shapes
 {
     class Program
     {
         static void Main()
         {
-            Shape[] shapes = new Shape[3];
-            shapes[0] = new Rectangle(34.3, 12.8);
-            shapes[1] = new Triangle(7.1, 9.5);
-            shapes[2] = new Circle(16.2);
+            // Testing
+            while (true)
+            {
+                // Create an array from shapes
+                Shape[] shapes = new Shape[3];
 
-            Console.WriteLine(shapes[0].CalculateSurface());
-            Console.WriteLine(shapes[1].CalculateSurface());
-            Console.WriteLine(shapes[2].CalculateSurface());
+                // Fill the array with different shapes by random generator
+                Random generator = new Random();
+                shapes[0] = new Rectangle(generator.NextDouble() * 10, generator.NextDouble() * 10);
+                shapes[1] = new Triangle(generator.NextDouble() * 10, generator.NextDouble() * 10);
+                shapes[2] = new Circle(generator.NextDouble() * 10);
+
+                // Print the result
+                foreach (Shape shape in shapes)
+                {
+                    // Print the input data for every shape
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("{0}", shape.GetType().Name);
+                    Console.ResetColor();
+                    Console.WriteLine(shape);
+
+                    // Print the calculated surface
+                    Console.Write("  surface: ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("{0:F}\n", shape.CalculateSurface());
+                    Console.ResetColor();
+                }
+
+                // Print the menu
+                Console.Write("\nPress "); Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("<"); Console.ResetColor();
+                Console.Write("ESC"); Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(">"); Console.ResetColor();
+                Console.Write(" to exit or any other key to continue the test . . .");
+
+                // Read some input key
+                if (Console.ReadKey().Key != ConsoleKey.Escape) Console.Clear();
+                else break;
+            }
         }
     }
 }
