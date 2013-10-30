@@ -6,8 +6,17 @@ class ReadPrintMyAge
 {
     static void Main()
     {
+        // Read some age from the console
         Console.Write("How old are you? ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
         int age = int.Parse(Console.ReadLine());
-        Console.WriteLine("After 10 years you'll be " + (age + 10) + " years old");
+        Console.ResetColor();
+
+        // Print the age after 10 years
+        Console.Write("After 10 years you'll be ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(age + 10);
+        Console.ResetColor();
+        Console.WriteLine(" years old\n");
     }
 }

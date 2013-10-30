@@ -6,6 +6,16 @@ class PrintNumbers
 {
     static void Main()
     {
-        Console.WriteLine(1 + "\n" + 101 + "\n" + 1001);
+        // First variant
+        Console.WriteLine("1\n101\n1001\n");
+
+        // Second variant
+        Console.WriteLine(1 + "\n" + 101 + "\n" + 1001 + "\n");
+
+        // Third variant
+        for (int i = 1; i < 101; i *= 10)
+        {
+            Console.WriteLine(i + ((i != 1) ? "1" : null));
+        }
     }
 }

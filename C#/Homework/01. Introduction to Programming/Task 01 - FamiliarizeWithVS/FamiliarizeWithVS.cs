@@ -2,7 +2,7 @@
 // 			* Microsoft Visual Studio
 // 			* Microsoft Developer Network (MSDN) Library Documentation
 // 			* Find information about Console.WriteLine() method.
- 
+
 using System;
 
 class FamiliarizeWithVS
@@ -13,7 +13,7 @@ class FamiliarizeWithVS
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Familiarize yourself with Microsoft Visual Studio and MSDN Library Documentation");
         Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("Decision: ");
+        Console.WriteLine("Solution: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Done!\n");
         Console.ResetColor();

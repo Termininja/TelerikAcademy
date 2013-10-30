@@ -6,17 +6,18 @@ class PrintFirst10
 {
     static void Main()
     {
-        for (int i = 2; i <= 11; i++)
+        // Set the number of members in the sequence
+        int lenght = 10;
+
+        // Generate a sequence
+        for (int i = 2; i < lenght + 2; i++)
         {
-            if (i % 2 == 0)                        //these are all "i" devided on 2 plus 0
-            {
-                Console.Write(i + ", ");
-            }
-            else
-            {
-                Console.Write(-i + ", ");
-            }
+            // Print the members of the sequence
+            Console.Write(i * ((i % 2 == 0) ? 1 : -1));
+
+            // Print the comma
+            if (i != lenght + 1) Console.Write(", ");
+            else Console.Write("\n");
         }
-        Console.WriteLine();
     }
 }

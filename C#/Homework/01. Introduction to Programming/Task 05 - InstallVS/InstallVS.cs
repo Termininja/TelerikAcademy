@@ -10,7 +10,7 @@ class InstallVS
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Install at home Microsoft Visual Studio");
         Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("\nDecision: ");
+        Console.WriteLine("\nSolution: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Done!\n");
         Console.ResetColor();

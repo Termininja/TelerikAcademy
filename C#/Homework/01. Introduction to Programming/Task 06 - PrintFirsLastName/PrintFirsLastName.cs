@@ -6,10 +6,22 @@ class PrintFirsLastName
 {
     static void Main()
     {
-        Console.WriteLine("What is your first name?");
+        // Read the first name
+        Console.Write("Please, enter your first name: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
         string first = Console.ReadLine();
-        Console.WriteLine("What is your last name?");
+        Console.ResetColor();
+
+        // Read the second name
+        Console.Write("And now enter your last name: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
         string last = Console.ReadLine();
-        Console.WriteLine("Your full name is: " + first + " " + last);
+        Console.ResetColor();
+
+        // Print the full name
+        Console.Write("Your full name is: ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(first + " " + last + "\n");
+        Console.ResetColor();
     }
 }

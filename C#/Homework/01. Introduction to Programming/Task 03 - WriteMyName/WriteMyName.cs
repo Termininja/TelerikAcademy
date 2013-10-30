@@ -6,8 +6,16 @@ class WriteMyName
 {
     static void Main()
     {
-        Console.WriteLine("Write your name and press Enter");
+        // Read some string
+        Console.Write("Please, enter your name and press Enter: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
         string name = Console.ReadLine();
-        Console.WriteLine("\nYour name is: " + name);
+        Console.ResetColor();
+
+        // Print the result
+        Console.Write("\nYour name is: ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine(name);
+        Console.ResetColor();
     }
 }
