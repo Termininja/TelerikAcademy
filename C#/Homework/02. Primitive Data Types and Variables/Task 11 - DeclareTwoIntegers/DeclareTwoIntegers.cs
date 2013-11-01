@@ -1,4 +1,5 @@
-﻿//Task 11: Declare two integer variables and assign them with 5 and 10 and after that exchange their values.
+﻿//Task 11: Declare two integer variables and assign them with
+//         5 and 10 and after that exchange their values.
 
 using System;
 
@@ -8,9 +9,13 @@ class DeclareTwoIntegers
     {
         int a = 5;
         int b = 10;
-        int c = a;  //we create additional variable "c" which will hold the value of "a"
-        a = b;      //moving the "b" value (10) to "a"
-        b = c;      //moving the "c" value (5) to "b"
+
+        // Exchange both values
+        int temp = a;
+        a = b;
+        b = temp;
+
+        // Print the result
         Console.WriteLine("a = {0}, b = {1}", a, b);
     }
 }
