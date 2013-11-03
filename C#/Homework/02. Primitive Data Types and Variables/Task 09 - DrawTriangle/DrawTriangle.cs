@@ -9,14 +9,16 @@ class DrawTriangle
 {
     static void Main()
     {
-        // Declaring a char variable with value ©
-        Console.OutputEncoding = Encoding.UTF8;
-        char copyright = '\u00A9';
-
         // First variant
-        // Console.WriteLine("   {0}\n  {0} {0}\n {0}   {0}\n{0} {0} {0} {0}", copyright);
+        Console.WriteLine("  ©\n ©©©\n©©©©©");
 
         // Second variant
+        Console.WriteLine("   ©\n  © ©\n ©   ©\n© © © ©");
+
+        // Third variant
+        Console.OutputEncoding = Encoding.UTF8;
+        char copyright = '\u00A9';                              // declaring a char variable with value ©
+
         Console.Write("Please, enter the number of the rows: ");
         int N = int.Parse(Console.ReadLine());
         Console.ForegroundColor = ConsoleColor.Green;
