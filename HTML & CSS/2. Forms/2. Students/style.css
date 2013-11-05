@@ -1,0 +1,48 @@
+body {
+    background-color: ThreeDDarkShadow;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: khaki;
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+thead {
+    font-weight: bold;
+    background-color: darkkhaki;
+}
+
+colgroup.total {
+    background-color: red;
+}
+
+.foot {
+    text-align: left;
+    padding: 10px;
+    background-color: darkkhaki;
+}
+
+.table2 {
+    width: 260px;
+    border: none;
+    background-color: transparent;
+}
+
+.buttons {
+    border: none;
+}
+
+.previous {
+    width: 80px;
+}
+
+.next {
+    width: 50px;
+}

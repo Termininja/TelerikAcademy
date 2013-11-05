@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+a:link {
+    color: deepskyblue;
+    font-size: 2em;
+    padding: 2px;
+}
+
+.sliders div {
+    margin-bottom: 1em;
+}
+
+.notebooks {
+    border: 1px solid black;
+}

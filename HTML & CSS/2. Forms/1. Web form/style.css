@@ -1,0 +1,20 @@
+table, tr, td {
+    border-collapse: collapse;
+    border: 1px solid grey;
+    width: 420px;
+    padding:2px;
+}
+
+select.dropdown {
+    width: 100px;
+}
+
+.submit {
+    text-align: center;
+    background-color: rgb(51, 181, 202);
+    padding:7px;
+}
+
+td.align {
+    text-align: right;
+}

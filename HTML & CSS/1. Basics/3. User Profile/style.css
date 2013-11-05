@@ -1,0 +1,21 @@
+﻿html {
+    background-color: rgb(204,236,255);
+    color: rgb(33, 53, 130);
+}
+
+h1, p {
+    margin: 0;
+}
+
+td {
+    width: 180px;
+}
+
+li > p, #info {
+    font-style: normal;
+    margin-left: 1em;
+}
+
+li {
+    font-style: italic;
+}
