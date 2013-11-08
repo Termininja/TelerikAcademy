@@ -6,22 +6,22 @@ class TrapezoidArea
 {
     static void Main()
     {
-        /*Short variant*/
+        /* Short variant */
         //decimal a = 10.3m;
         //decimal b = 14m;
         //decimal h = 2.8m;
         //decimal Area = (a + b) * h / 2;
 
-        /*Long variant*/
+        /* Long variant */
         Console.WriteLine("This calulates trapezoid’s area by given sides a and b and height h.");
         Console.WriteLine("You can exit at any time by typing \"end\".");
         Console.Write("\nPress some key to continue . . .");
         Console.ReadKey();
         Console.Clear();
-        for (int i = 0; ; i++)
+        while (true)
         {
             dynamic str = null;
-            try                                                             // this checks for some errors (for example if we write some string)
+            try                                                             // checks for some errors (for example if we write some string)
             {
                 Console.Write("Please, enter the 1st side: ");
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -44,7 +44,7 @@ class TrapezoidArea
                 decimal h = decimal.Parse(str);                             // take the decimal value of the 'str' for 'h'
                 Console.ResetColor();
 
-                decimal Area = Math.Round((a + b) * h / 2, 2);              // it calculates trapezoid’s area
+                decimal Area = Math.Round((a + b) * h / 2, 2);              // calculates trapezoid’s area
 
                 Console.WriteLine("\nThe trapezoid's area is:\n");
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -57,10 +57,7 @@ class TrapezoidArea
             }
             catch (Exception)                                               // if there is an error the "Error message" is shown 
             {
-                if (str == "end")                                           // we will exit if the 'side_a' is "end"
-                {
-                    break;
-                }
+                if (str == "end") break;                                    // exit if the 'side_a' is "end"
                 if (str == "")                                              // if we press "Enter"
                 {
                     Console.ResetColor();

@@ -15,16 +15,14 @@ class RectangleArea
         Console.Clear();
         for (int i = 0; ; i++)
         {
-            try                                                             // this checks for some errors (for example if we write some string)
+            try                                                             // checks for some errors
             {
                 Console.Write("Please, enter the width: ");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("\tw = ");
                 dynamic width = Console.ReadLine();                         // here we can type the 'width value' or "end"
-                if (width == "end")                                         // we will exit if the 'width' is "end"
-                {
-                    break;
-                }
+                if (width == "end") break;                                  // exit if the 'width' is "end"
+
                 decimal w = decimal.Parse(width);                           // take the decimal value of the 'width'
                 Console.ResetColor();
 
@@ -32,10 +30,8 @@ class RectangleArea
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("\th = ");
                 dynamic height = Console.ReadLine();                        // here we can type the 'height value' or "end"
-                if (height == "end")                                        // we will exit if the 'height' is "end"
-                {
-                    break;
-                }
+                if (height == "end") break;                                 // exit if the 'height' is "end"
+
                 decimal h = decimal.Parse(height);                          // take the decimal value of the 'height'
                 Console.ResetColor();
 

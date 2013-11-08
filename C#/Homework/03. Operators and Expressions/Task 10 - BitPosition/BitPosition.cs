@@ -7,24 +7,21 @@ class BitPosition
 {
     static void Main()
     {
-        /*Short variant*/
+        /* Short variant */
         //int n = 124552;
         //int p = 3;
         //bool result = ((n & (1 << p)) >> p) == 1;
 
-        /*Long variant*/
-        for (int i = 0; ; i++)                                      // this will check continuously for some number
+        /* Long variant */
+        while (true)
         {
-            try                                                     // this checks for some errors (for example if we write some string)
+            try
             {
             number:
                 Console.Write("Enter some integer number, or type \"end\" to exit: ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                dynamic str = Console.ReadLine();                   // here we can type the value of the number or "end"
-                if (str == "end")                                   // we will exit if the 'str' is "end"
-                {
-                    break;
-                }
+                dynamic str = Console.ReadLine();                   // type the value of the number or "end"
+                if (str == "end") break;                            // exit if the 'str' is "end"
                 if (str == "")                                      // if you press only "Enter"
                 {
                     Console.ResetColor();
@@ -33,30 +30,24 @@ class BitPosition
                 Console.ResetColor();
                 int v = int.Parse(str);                             // take the number from the 'str' string
 
-                /*This calculates the number of the bits from which is created the number*/
+                // Calculates the number of the bits from which is created the number
                 double bits = Math.Log(v + 1, 2);
-                if ((int)bits != bits)
-                {
-                    bits++;
-                }
-                int length = (int)bits;                             //this is the bit length of the number
+                if ((int)bits != bits) bits++;
+                int length = (int)bits;                             // the bit length of the number
 
             position:
                 Console.Write("Enter the position (0 - {0}), or type \"end\" to exit: ", length - 1);
                 Console.ForegroundColor = ConsoleColor.Green;
-                str = Console.ReadLine();                           // here we can type the value of the number or "end"
+                str = Console.ReadLine();                           // type the value of the number or "end"
                 Console.ResetColor();
-                if (str == "end")                                   // we will exit if the 'str' is "end"
-                {
-                    break;
-                }
+                if (str == "end") break;                            // exit if the 'str' is "end"
                 if (str == "")                                      // if you press only "Enter"
                 {
                     Console.ResetColor();
                     goto position;
                 }
                 int p = int.Parse(str);                             // take the position value from the 'str' string
-                if (p > length - 1)                                 // it checks if the position 'p' is too big for the number 'v'
+                if (p > length - 1)                                 // checks if the position 'p' is too big for the number 'v'
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("The position is too big!");
@@ -68,9 +59,9 @@ class BitPosition
                 int NumAndMask = (v & mask);                        // logical "AND" operation between the number and the mask
                 int result = NumAndMask >> p;                       // the result is moved back to right by 'p' bits
 
-                bool compare = result == 1;                         // this checks if the bit at position 'p' is 1
+                bool compare = result == 1;                         // checks if the bit at position 'p' is 1
 
-                /*Draw a table with results and decimal and binary*/
+                // Draw a table with results and decimal and binary
                 Console.WriteLine();
                 Console.CursorLeft = 12;
                 Console.WriteLine("│  In decimal        │  In binary");
@@ -81,7 +72,7 @@ class BitPosition
                 Console.CursorLeft = 15;
                 Console.Write(v);
                 Console.CursorLeft = 36;
-                Console.WriteLine(Convert.ToString(v, 2).PadLeft(length, '0'));         // this convert the number from decimal to binary; adds 0s to left
+                Console.WriteLine(Convert.ToString(v, 2).PadLeft(length, '0'));         // convert the number from decimal to binary; adds 0s to left
                 Console.CursorLeft = 3;
                 Console.WriteLine(new string('─', 9) + "┼" + new string('─', 20) + "┼" + new string('─', length + 4));
                 Console.CursorLeft = 3;
@@ -112,14 +103,8 @@ class BitPosition
                 Console.WriteLine(Convert.ToString(result, 2).PadLeft(length, '0'));
                 Console.ResetColor();
                 Console.Write("\nThe bit at position {0} is 1: ", p);
-                if (compare == true)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
+                if (compare == true) Console.ForegroundColor = ConsoleColor.Green;
+                else Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(compare);                                                 // the result from the comparison
                 Console.ResetColor();
                 Console.ReadKey();

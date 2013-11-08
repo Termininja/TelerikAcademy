@@ -6,11 +6,11 @@ class DevidedBy7And5
 {
     static void Main()
     {
-        /*Short variant*/
+        /* Short variant */
         //int n = int.Parse(Console.ReadLine());
         //bool result = n % 35 == 0;
 
-        /*Long variant*/
+        /* Long variant */
         for (int i = 0; ; i++)                                          // this will check continuously for some number
         {
             Console.Write("Please, write some integer number or type \"end\" to exit: ");
@@ -34,10 +34,7 @@ class DevidedBy7And5
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("This is not an integer number!");
                 Console.ResetColor();
-                if (str == "end")                                       // if you want to exit you have to write "end"
-                {
-                    break;
-                }
+                if (str == "end") break;                                // if you want to exit you have to write "end"
             }
             Console.ResetColor();
         }

@@ -7,12 +7,12 @@ class CircleAndRectangle
 {
     static void Main()
     {
-        /*Short variant*/
+        /* Short variant */
         //double x = 2.45;
         //double y = -16;
         //bool result = (Math.Sqrt(Math.Pow(1 - x, 2) + Math.Pow(1 - y, 2)) < 3) && !((x > -1) && (x < 5) && (y > -1) && (y < 1));
 
-        /*Long variant*/
+        /* Long variant */
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("This program compares the position of some point A(x,y) according the position of arbitrary circle K(Ox,Oy,r) and rectangle R(Rx,Ry,w,h).");
         Console.WriteLine("You can exit at any time by typing \"end\".");
@@ -20,103 +20,48 @@ class CircleAndRectangle
         Console.Write("\nPress some key to continue . . .");
         Console.ReadKey();
         Console.Clear();
-        for (int i = 0; ; i++)
+        while (true)
         {
             dynamic str = null;
-            try                                                                 // this checks for some errors (for example if we write some string)
+            try
             {
+                // Read the information about the circle
                 Console.WriteLine("Information about the Circle K(Ox,Oy,r):");
+                double Ox = ReadValue("  x coordinate: ", "\tOx = ", ref str);
+                double Oy = ReadValue("  y coordinate: ", "\tOy = ", ref str);
+                double r = ReadValue("  radius: ", "\t\tr = ", ref str);
 
-                Console.Write("\tx coordinate: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\tOx = ");
-                str = Console.ReadLine();
-                double Ox = double.Parse(str);                                  // take the decimal value of the 'str' for 'Ox'
-                Console.ResetColor();
-
-                Console.Write("\ty coordinate: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\tOy = ");
-                str = Console.ReadLine();
-                double Oy = double.Parse(str);                                  // take the decimal value of the 'str' for 'Oy'
-                Console.ResetColor();
-
-                Console.Write("\tradius: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\tr = ");
-                str = Console.ReadLine();
-                double r = double.Parse(str);                                   // take the decimal value of the 'str' for 'r'
-                Console.ResetColor();
-
+                // Read the information about the rectangle
                 Console.WriteLine("\nInformation about the rectangle R(Rx,Ry,w,h):");
+                double Rx = ReadValue("  x coordinate (left): ", "\tRx = ", ref str);
+                double Ry = ReadValue("  y coordinate (top): ", "\tRy = ", ref str);
+                double w = ReadValue("  width: ", "\t\tw = ", ref str);
+                double h = ReadValue("  height: ", "\t\th = ", ref str);
 
-                Console.Write("\tx coordinate (left): ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\tRx = ");
-                str = Console.ReadLine();
-                double Rx = double.Parse(str);                                  // take the decimal value of the 'str' for 'Rx'
-                Console.ResetColor();
-
-                Console.Write("\ty coordinate (top): ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\tRy = ");
-                str = Console.ReadLine();
-                double Ry = double.Parse(str);                                  // take the decimal value of the 'str' for 'Ry'
-                Console.ResetColor();
-
-                Console.Write("\twidth: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\t\tw = ");
-                str = Console.ReadLine();
-                double w = double.Parse(str);                                   // take the decimal value of the 'str' for 'w'
-                Console.ResetColor();
-
-                Console.Write("\theight: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\th = ");
-                str = Console.ReadLine();
-                double h = double.Parse(str);                                   // take the decimal value of the 'str' for 'h'
-                Console.ResetColor();
-
+                // Read the information about the Point A
                 Console.WriteLine("\nInformation about the Point A(x,y):");
+                double x = ReadValue("  x coordinate: ", "\tx = ", ref str);
+                double y = ReadValue("  y coordinate: ", "\ty = ", ref str);
 
-                Console.Write("\tx coordinate: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\tx = ");
-                str = Console.ReadLine();
-                double x = double.Parse(str);                                   // take the decimal value of the 'str' for 'x'
-                Console.ResetColor();
+                bool result =
+                    (Math.Sqrt(Math.Pow(Ox - x, 2) + Math.Pow(Oy - y, 2)) < r) &&
+                    !((x > Rx) && (x < Rx + w) && (y > Ry - h) && (y < Ry));
 
-                Console.Write("\ty coordinate: ");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\t\ty = ");
-                str = Console.ReadLine();
-                double y = double.Parse(str);                                   // take the decimal value of the 'str' for 'y'
-                Console.ResetColor();
+                Console.Write(
+                    "\nThe point A({0},{1}) is within the circle K({2},{3},{4}) and out of the rectangle R({5},{6},{7},{8}): ",
+                    x, y, Ox, Oy, r, Rx, Ry, w, h);
 
-                bool result = (Math.Sqrt(Math.Pow(Ox - x, 2) + Math.Pow(Oy - y, 2)) < r) && !((x > Rx) && (x < Rx + w) && (y > Ry - h) && (y < Ry));
-
-                Console.Write("\nThe point A({0},{1}) is within the circle K({2},{3},{4}) and out of the rectangle R({5},{6},{7},{8}): ", x, y, Ox, Oy, r, Rx, Ry, w, h);
-                if (result == true)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
+                if (result == true) Console.ForegroundColor = ConsoleColor.Green;
+                else Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(result + "!");
                 Console.ResetColor();
                 Console.ReadKey();
                 Console.Clear();
             }
-            catch (Exception)                                                   // if there is an error the "Error message" is shown 
+            catch (Exception)                   // if there is an error the "Error message" is shown 
             {
-                if (str == "end")                                               // we will exit if the 'side_a' is "end"
-                {
-                    break;
-                }
-                if (str == "")                                                  // if we press "Enter"
+                if (str == "end") break;        // we will exit if the 'side_a' is "end"
+                if (str == "")                  // if we press "Enter"
                 {
                     Console.ResetColor();
                     Console.Clear();
@@ -129,5 +74,17 @@ class CircleAndRectangle
                 }
             }
         }
+    }
+
+    // Method which reads some input value
+    private static double ReadValue(string text1, string text2, ref dynamic str)
+    {
+        Console.Write(text1);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(text2);
+        str = Console.ReadLine();
+        double value = double.Parse(str);       // take decimal value of the 'str' for this value
+        Console.ResetColor();
+        return value;
     }
 }

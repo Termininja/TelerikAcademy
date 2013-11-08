@@ -6,23 +6,20 @@ class Exchange3Bits
 {
     static void Main()
     {
-        /*Short variant*/
+        /* Short variant */
         //uint number = 1241232733;
         //long result = (((number & (7 << 3)) >> 3) << 24) | (((number & (7 << 24)) >> 24) << 3) | (number & (~((7 << 3) | (7 << 24))));
 
-        /*Long variant*/
-        for (int t = 0; ; t++)                                              // this will check continuously for some number
+        /* Long variant */
+        while (true)
         {
-            try                                                             // this checks for some errors (for example if we write some string)
+            try
             {
             number:
                 Console.Write("Enter some integer number, or type \"end\" to exit: ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                dynamic str = Console.ReadLine();                           // here we can type the value of the number or "end"
-                if (str == "end")                                           // we will exit if the 'str' is "end"
-                {
-                    break;
-                }
+                dynamic str = Console.ReadLine();                           // type the value of the number or "end"
+                if (str == "end") break;                                    // exit if the 'str' is "end"
                 if (str == "")                                              // if you press only "Enter"
                 {
                     Console.ResetColor();
@@ -31,38 +28,35 @@ class Exchange3Bits
                 Console.ResetColor();
                 uint number = uint.Parse(str);                              // take the number from the 'str' string
 
-                /*This calculates the number of the bits from which is created the number*/
+                // Calculates the number of the bits from which is created the number
                 double bits = Math.Log(number + 1, 2);
-                if ((int)bits != bits)
-                {
-                    bits++;
-                }
-                int length = (int)bits;                                     //this is the bit length of the number
+                if ((int)bits != bits) bits++;
+                int length = (int)bits;                                     // the bit length of the number
 
-                uint mask1 = 7 << 3;                                        // we use mask1 to backup the 1st group of bits (3, 4 and 5) 
-                uint bits_group1 = (number & mask1) >> 3;                   // these are the 1st 3 bits (3, 4 and 5) from group1
+                uint mask1 = 7 << 3;                                        // use mask1 to backup the 1st group of bits (3, 4 and 5) 
+                uint bits_group1 = (number & mask1) >> 3;                   // the 1st 3 bits (3, 4 and 5) from group1
 
-                uint mask2 = 7 << 24;                                       // we use mask2 to backup the 2nd group of bits (24, 25 and 26) 
-                uint bits_group2 = (number & mask2) >> 24;                  // these are the 2nd 3 bits (24, 25 and 26) from group2
+                uint mask2 = 7 << 24;                                       // use mask2 to backup the 2nd group of bits (24, 25 and 26) 
+                uint bits_group2 = (number & mask2) >> 24;                  // the 2nd 3 bits (24, 25 and 26) from group2
 
-                uint mask = ~(mask1 | mask2);                               // we use 'mask' to zeros all bit's groups from the number
-                uint NumAndMask = number & mask;                            // this is the number without the bit's groups
+                uint mask = ~(mask1 | mask2);                               // use 'mask' to zeros all bit's groups from the number
+                uint NumAndMask = number & mask;                            // the number without the bit's groups
 
                 uint bits_group = (bits_group1 << 24) | (bits_group2 << 3);
                 uint result = bits_group | NumAndMask;
 
-                /*Draw a table with results and decimal and binary*/
+                // Draw a table with results and decimal and binary
                 Console.WriteLine();
                 Console.CursorLeft = 12;
                 Console.WriteLine("│  In decimal        │  In binary");
                 Console.CursorLeft = 3;
-                Console.WriteLine(new string('─', 9) + "┼" + new string('─', 20) + "┼" + new string('─', 36));                
+                Console.WriteLine(new string('─', 9) + "┼" + new string('─', 20) + "┼" + new string('─', 36));
                 Console.CursorLeft = 3;
                 Console.Write("Number   │" + new string(' ', 20) + "│");
                 Console.CursorLeft = 15;
                 Console.Write(number);
                 Console.CursorLeft = 36;
-                Console.WriteLine(Convert.ToString(number, 2).PadLeft(32, '0'));         // this convert the number from decimal to binary; adds 0s to left
+                Console.WriteLine(Convert.ToString(number, 2).PadLeft(32, '0'));         // convert the number from decimal to binary; adds 0s to left
                 Console.CursorLeft = 3;
                 Console.WriteLine(new string('─', 9) + "┼" + new string('─', 20) + "┼" + new string('─', 36));
                 Console.CursorLeft = 3;
@@ -133,7 +127,7 @@ class Exchange3Bits
                 Console.ReadKey();
                 Console.Clear();
             }
-            catch (Exception)                                                           // if there is an error the "Error message" is shown 
+            catch (Exception)                           // if there is an error the "Error message" is shown 
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Something's wrong!");
