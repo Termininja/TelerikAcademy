@@ -10,7 +10,7 @@ class CompanyInfo
     {
         while (true)
         {
-            /* Table */
+            // Table
             Console.WriteLine(@"
    Information     │ Read                  │ Print
   ─────────────────┼───────────────────────┼───────────────────────
@@ -30,20 +30,20 @@ class CompanyInfo
             try
             {
                 string str;
-                Console.CursorTop = 4;                                
+                Console.CursorTop = 4;
                 Console.ForegroundColor = ConsoleColor.Yellow;
 
-                Console.CursorLeft = 21;                              
-                string CompanyName = Console.ReadLine();                                // read a company name
+                Console.CursorLeft = 21;
+                string CompanyName = Console.ReadLine();        // read a company name
 
                 Console.CursorLeft = 21;
-                string CompanyAdress = Console.ReadLine();                               // read a company address
+                string CompanyAdress = Console.ReadLine();      // read a company address
 
                 Console.CursorLeft = 21;
-                str = Console.ReadLine();                                               // read a company phone number
-                ulong CompanyPhone = ulong.Parse(str);                                  // extract the number from the string
+                str = Console.ReadLine();                       // read a company phone number
+                ulong CompanyPhone = ulong.Parse(str);          // extract the number from the string
                 byte count1 = 0;
-                foreach (char a in str)                                                 // count a digits in the phone number
+                foreach (char a in str)                         // count a digits in the phone number
                 {
                     if (char.IsDigit(a))
                     {
@@ -52,10 +52,10 @@ class CompanyInfo
                 }
 
                 Console.CursorLeft = 21;
-                str = Console.ReadLine();                                               // read a company fax number
-                ulong CompanyFax = ulong.Parse(str);                                    // extract the number from the string
+                str = Console.ReadLine();                       // read a company fax number
+                ulong CompanyFax = ulong.Parse(str);            // extract the number from the string
                 byte count2 = 0;
-                foreach (char a in str)                                                 // count a digits in the fax number
+                foreach (char a in str)                         // count a digits in the fax number
                 {
                     if (char.IsDigit(a))
                     {
@@ -64,37 +64,31 @@ class CompanyInfo
                 }
 
                 Console.CursorLeft = 21;
-                string WebSite = Console.ReadLine();                                    // read the name of web site
+                string WebSite = Console.ReadLine();            // read the name of web site
 
                 Console.WriteLine("\n");
 
                 Console.CursorLeft = 21;
-                string FirstName = Console.ReadLine();                                  // read the manager's first name
+                string FirstName = Console.ReadLine();          // read the manager's first name
 
                 Console.CursorLeft = 21;
-                string LastName = Console.ReadLine();                                   // read the manager's last name
+                string LastName = Console.ReadLine();           // read the manager's last name
 
                 Console.CursorLeft = 21;
-                str = Console.ReadLine();                                               // read the manager's age
-                byte Age = byte.Parse(str);                                             // extract the age from the string
+                str = Console.ReadLine();                       // read the manager's age
+                byte Age = byte.Parse(str);                     // extract the age from the string
 
                 Console.CursorLeft = 21;
-                str = Console.ReadLine();                                               // read a manager's phone number
-                ulong ManagerPhone = ulong.Parse(str);                                  // extract the manager's phone number from the string
+                str = Console.ReadLine();                       // read a manager's phone number
+                ulong ManagerPhone = ulong.Parse(str);          // extract the manager's phone number from the string
                 byte count3 = 0;
-                foreach (char a in str)                                                 // count a digits in the manager's phone number
+                foreach (char a in str)                         // count a digits in the manager's phone number
                 {
-                    if (char.IsDigit(a))
-                    {
-                        count3++;
-                    }
+                    if (char.IsDigit(a)) count3++;
                 }
-
                 Console.ResetColor();
-                Console.Write("\nPress any key to print the result. . .");
-                Console.ReadKey();                                                      // we have to press any key to continue
 
-                /* Print the results */
+                // Print the results
                 Console.CursorTop = 4;
                 Console.CursorLeft = 57;
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -123,24 +117,21 @@ class CompanyInfo
                 Console.Write("\n\nPress Enter to continue, or X to exit . . .");
             key:
                 ConsoleKeyInfo key = Console.ReadKey();
-                if (key.Key == ConsoleKey.X)                                            // you will exit if you press "X"
+                if (key.Key == ConsoleKey.X) break;             // exit if you press "X"
+                else if (key.Key != ConsoleKey.Enter)           // continue only when you press "Enter"
                 {
-                    break;
-                }
-                else if (key.Key != ConsoleKey.Enter)                                   // you will continue only when you press "Enter"
-                {
-                    Console.Write("\b \b");                                             // clear the wrong keys from the console
+                    Console.Write("\b \b");                     // clear the wrong keys from the console
                     goto key;
                 }
                 Console.ResetColor();
                 Console.Clear();
             }
-            catch (Exception)                                                           // this rows below will be executed if there are some errors
+            catch (Exception)
             {
                 Console.CursorTop = 17;
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Something's wrong!");                                    // this message will be shown when there is some error
-                Console.ReadKey();                                                      // you will continue if you press any Key
+                Console.Write("Something's wrong!");            // the message will be shown when there is some error
+                Console.ReadKey();                              // continue if any Key is pressed
                 Console.Clear();
                 Console.ResetColor();
             }

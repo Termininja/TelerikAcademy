@@ -29,7 +29,7 @@ class ReadRadiusOfCircle
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Something's wrong!");                        // this message will be shown when there is some error
+                Console.WriteLine("Something's wrong!");            // the message will be shown when there is some error
                 Console.ResetColor();
             }
 
@@ -37,13 +37,10 @@ class ReadRadiusOfCircle
             Console.Write("\n\nPress Enter to continue, or X to exit . . .");
         key:
             ConsoleKeyInfo key = Console.ReadKey();
-            if (key.Key == ConsoleKey.X)                                        // you will exit if you press "X"
+            if (key.Key == ConsoleKey.X) break;                     // exit if you press "X"
+            else if (key.Key != ConsoleKey.Enter)                   // continue only when you press "Enter"
             {
-                break;
-            }
-            else if (key.Key != ConsoleKey.Enter)                               // you will continue only when you press "Enter"
-            {
-                Console.Write("\b \b");                                         // clear the wrong keys from the console
+                Console.Write("\b \b");                             // clear the wrong keys from the console
                 goto key;
             }
             Console.ResetColor();

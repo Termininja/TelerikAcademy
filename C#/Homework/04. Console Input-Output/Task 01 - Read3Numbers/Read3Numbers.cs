@@ -8,7 +8,7 @@ class Read3Numbers
     {
         while (true)
         {
-            /* Table */
+            // Table
             Console.WriteLine(@"Please, write 3 integer numbers:
 
    Number 1    │
@@ -20,43 +20,40 @@ class Read3Numbers
             int num1, num2, num3 = 0;
             try
             {
-                Console.CursorTop = 2;                                              // move the cursor to position 2 from the top
+                Console.CursorTop = 2;                              // move the cursor to position 2 from the top
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.CursorLeft = 17;                                            // move the cursor to position 17 from the left
-                num1 = int.Parse(Console.ReadLine());                               // read the 1st number
+                Console.CursorLeft = 17;                            // move the cursor to position 17 from the left
+                num1 = int.Parse(Console.ReadLine());               // read the 1st number
                 Console.CursorLeft = 17;
-                num2 = int.Parse(Console.ReadLine());                               // read the 2nd number
+                num2 = int.Parse(Console.ReadLine());               // read the 2nd number
                 Console.CursorLeft = 17;
-                num3 = int.Parse(Console.ReadLine());                               // read the 3rd number
+                num3 = int.Parse(Console.ReadLine());               // read the 3rd number
 
                 Console.CursorTop = 6;
                 Console.CursorLeft = 17;
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(num1 + num2 + num3);                              // the result from the sum
+                Console.WriteLine(num1 + num2 + num3);              // the result from the sum
 
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.Write("\n\nPress Enter to continue, or X to exit . . .");
             key:
                 ConsoleKeyInfo key = Console.ReadKey();
-                if (key.Key == ConsoleKey.X)                                        // you will exit if you press "X"
+                if (key.Key == ConsoleKey.X) break;                 // exit if you press "X"
+                else if (key.Key != ConsoleKey.Enter)               // continue only when you press "Enter"
                 {
-                    break;
-                }
-                else if (key.Key != ConsoleKey.Enter)                               // you will continue only when you press "Enter"
-                {
-                    Console.Write("\b \b");                                         // clear the wrong keys from the console
+                    Console.Write("\b \b");                         // clear the wrong keys from the console
                     goto key;
                 }
                 Console.ResetColor();
                 Console.Clear();
             }
-            catch (Exception)                                                       // this rows below will be executed if there are some errors
+            catch (Exception)
             {
                 Console.CursorTop = 6;
                 Console.CursorLeft = 17;
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error!");                                        // this message will be shown when there is some error
-                Console.ReadKey();                                                  // you will continue if you press any Key
+                Console.WriteLine("Error!");                        // the message will be shown when there is some error
+                Console.ReadKey();                                  // continue if any Key is pressed
                 Console.Clear();
                 Console.ResetColor();
             }
