@@ -7,30 +7,48 @@ class PrintsANumbers
 {
     static void Main()
     {
-        Console.Write("Please, enter some number: ");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("N = ");
-        int N = int.Parse(Console.ReadLine());                      // reads the limit number
-        Console.ResetColor();
-        if (N > 0)                                                  // if the number is positive
+        while (true)
         {
-            Console.Write("\nAll numbers from 1 to N are: ");
-            for (int n = 1; n <= N; n++)                            // all numbers from 1 to N
+            try
             {
-                Thread.Sleep(50);                                   // the program will sleep for 50ms
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write(n);                                   // prints the number
+                // Read some integer number
+                Console.Write("Please, enter some positive integer number: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("N = ");
+                int N = int.Parse(Console.ReadLine());
                 Console.ResetColor();
-                if (n < N)                                          // without comma after the last number 
+
+                // If the number is positive
+                if (N > 0)
                 {
-                    Console.Write(", ");
+                    // Print all number in the range: [1 - N]
+                    Console.Write("\nAll numbers from 1 to {0} are: ", N);
+                    for (int n = 1; n <= N; n++)
+                    {
+                        Thread.Sleep(50);
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.Write(n);
+                        Console.ResetColor();
+                        if (n < N) Console.Write(", ");
+                    }
+                    Console.WriteLine();
+                    break;
+                }
+                else
+                {
+                    // If the value is negative number
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("The number is not positive!");
+                    Console.ResetColor();
                 }
             }
-            Console.WriteLine();
-        }
-        else                                                        // if the number is not positive
-        {
-            throw new Exception();                                  // generates a new exception
+            catch (Exception)
+            {
+                // If the value is not integer number
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("This is not integer number!");
+                Console.ResetColor();
+            }
         }
     }
 }

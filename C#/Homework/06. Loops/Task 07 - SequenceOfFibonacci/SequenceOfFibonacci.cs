@@ -1,50 +1,49 @@
-﻿//Task 7: Write a program that reads a number N and calculates the sum of the first N members of the sequence of Fibonacci:
+﻿//Task 7: Write a program that reads a number N and calculates the sum
+//        of the first N members of the sequence of Fibonacci:
 //        0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, …
-//        Each member of the Fibonacci sequence (except the first two) is a sum of the previous two members.
+//        Each member of the Fibonacci sequence (except the first two)
+//        is a sum of the previous two members.
 
 using System;
 using System.Numerics;
-using System.Threading;                                         // it is used for type BigInteger
+using System.Threading;
 
 class SequenceOfFibonacci
 {
     static void Main()
     {
+        // Read some integer number
         Console.Write("Please, enter some positive integer number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
         ulong N = ulong.Parse(Console.ReadLine());
         Console.ResetColor();
-        BigInteger value = 0;                                   // value of the current member
-        BigInteger prev = 0;                                    // the prvious member of the sequence
-        BigInteger next = 1;                                    // the next member of the sequence
-        BigInteger Sum = 0;                                     // the sum
+
+        BigInteger value = 0;           // value of the current member
+        BigInteger prev = 0;            // the prvious member of the sequence
+        BigInteger next = 1;            // the next member of the sequence
+        BigInteger sum = 0;             // the sum
+
         for (uint member = 1; member <= N; member++)
         {
-            Thread.Sleep(40);                                   // the program will sleep for 40ms
+            Thread.Sleep(40);
             value = prev;
             prev = next;
             next = value + prev;
-            Sum += value;                                       // the current sum of the sequence
+            sum += value;               // the current sum of the sequence
 
-            if (Sum.ToString().Length > 20)                     // for too long numbers
-            {
-                Stat(member, (double)value, (double)Sum);
-            }
-            else
-            {
-                Stat(member, value, Sum);
-            }
-            if ((double)Sum == 1 / (double)0)                   // if the current sum is Infinity
-            {
-                break;                                          // break the loop
-            }
+            if (sum.ToString().Length > 20) Stat(member, (double)value, (double)sum);
+            else Stat(member, value, sum);
+            if ((double)sum == 1 / (double)0) break;
         }
+
+        // Print the final result
         Console.Write("\nThe final sum is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine((double)Sum);                         // the final sum result
+        Console.WriteLine((double)sum);
         Console.ResetColor();
     }
 
+    // Print the result in time of calculation
     static void Stat(uint m, dynamic v, dynamic s)
     {
         Console.SetCursorPosition(3, 2);

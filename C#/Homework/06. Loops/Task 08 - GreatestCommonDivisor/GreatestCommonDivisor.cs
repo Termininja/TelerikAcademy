@@ -1,5 +1,5 @@
-﻿//Task 8: Write a program that calculates the greatest common divisor (GCD) of given two numbers.
-//        Use the Euclidean algorithm (find it in Internet).
+﻿//Task 8: Write a program that calculates the greatest common divisor (GCD)
+//        of given two numbers. Use the Euclidean algorithm (find it in Internet).
 
 using System;
 
@@ -11,16 +11,7 @@ class GreatestCommonDivisor
         int x = 84;
         int y = 18;
         int res = 1;
-        for (int i = 2; i <= Math.Max(x, y); i++)
-        {
-            if (x % i == 0 && y % i == 0)
-            {
-                if (i > res)
-                {
-                    res = i;
-                }
-            }
-        }
+        for (int i = 2; i <= Math.Max(x, y); i++) if (x % i == 0 && y % i == 0) if (i > res) res = i;
 
         /* Second variant (Euclidean algorithm) */
         Console.WriteLine("Please, enter two numbers X and Y:");
@@ -30,10 +21,10 @@ class GreatestCommonDivisor
         Console.Write("   Y = ");
         int Y = int.Parse(Console.ReadLine());
         Console.ResetColor();
-        int remainder = 1;                                      // start with some remainder different from 0
-        int numerator = Math.Max(X, Y);                         // the numerator is max of the two numbers
-        int denominator = Math.Min(X, Y);                       // the denominator is min of the two numbers
-        while (remainder != 0)                                  // the loop will stop when remainder = 0
+        int remainder = 1;
+        int numerator = Math.Max(X, Y);                         // the numerator is max of the both numbers
+        int denominator = Math.Min(X, Y);                       // the denominator is min of the both numbers
+        while (remainder != 0)                                  // the loop will stop when remainder is 0
         {
             remainder = numerator % denominator;
             numerator = denominator;

@@ -6,68 +6,77 @@ class MinAndMaxOfSequence
 {
     static void Main()
     {
+        // Read the limit of compared numbers
         Console.Write("How many numbers you want to compare?");
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("\n\n   N = ");
-        int N = int.Parse(Console.ReadLine());                              // the limit of compared numbers
+        int N = int.Parse(Console.ReadLine());
         Console.ResetColor();
-        byte len = (byte)(N.ToString().Length);                             // the maximal length of each number
-        if (N > 0)                                                         
+
+        // The maximal length of each number
+        byte len = (byte)(N.ToString().Length);
+
+        // If the number is positive
+        if (N > 0)
         {
             Console.WriteLine("\nPlease, enter {0} integer numbers:", N);
-            int min = 0;                                                  
-            int max = 0;                                                  
-            byte w = 0;                                                     // the width where will be placed the number
-            byte h = 0;                                                     // the height where will be placed the number
-            for (int i = 1; i <= N; i++)                                    // reads N numbers
+            int min = 0;
+            int max = 0;
+            byte w = 0;
+            byte h = 0;
+
+            // Read N numbers
+            for (int i = 1; i <= N; i++)
             {
                 w++;
                 switch (w)
                 {
-                    case 1:                                                 // here is the 1st column
-                        Console.SetCursorPosition(3, 6 + h);                                
-                        Console.Write("number {0} = ", Convert.ToString(i).PadLeft(len, '0')); break;
-                    case 2:                                                 // here is the 2nd column
-                        Console.SetCursorPosition(30, 6 + h);                        
-                        Console.Write("number {0} = ", Convert.ToString(i).PadLeft(len, '0')); break;
-                    case 3:                                                 // here is the 3rd column
-                        Console.SetCursorPosition(57, 6 + h);                       
+                    // The 1st column
+                    case 1:
+                        Console.SetCursorPosition(3, 6 + h);
+                        Console.Write("number {0} = ", Convert.ToString(i).PadLeft(len, '0'));
+                        break;
+
+                    // The 2nd column
+                    case 2:
+                        Console.SetCursorPosition(30, 6 + h);
+                        Console.Write("number {0} = ", Convert.ToString(i).PadLeft(len, '0'));
+                        break;
+
+                    // The 3rd column
+                    case 3:
+                        Console.SetCursorPosition(57, 6 + h);
                         Console.Write("number {0} = ", Convert.ToString(i).PadLeft(len, '0'));
                         w = 0;
                         h++;
                         break;
+
                     default:
                         break;
                 }
+
+                // Read the current number
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                int number = int.Parse(Console.ReadLine());                 // reads the current number
+                int number = int.Parse(Console.ReadLine());
                 Console.ResetColor();
                 if (i == 1)
                 {
                     min = number;
                     max = number;
                 }
-                if (number > max)                                           // if the number is maximal
-                {
-                    max = number;
-                }
-                if (number < min)                                           // if the number is minimal
-                {
-                    min = number;
-                }
+                if (number > max) max = number;
+                if (number < min) min = number;
             }
+
+            // Print the result
             Console.Write("\nThe maximal number is: ");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(max);                                         // this is the sum at the end
+            Console.WriteLine(max);
             Console.ResetColor();
             Console.Write("The minumal number is: ");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(min);                                         // this is the sum at the end
+            Console.WriteLine(min);
             Console.ResetColor();
-        }
-        else                                                                // if the number is not positive
-        {
-            throw new Exception();                                          // generates an exception
         }
     }
 }
