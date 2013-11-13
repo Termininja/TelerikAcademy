@@ -1,6 +1,7 @@
-﻿//Task 8: Write a program that, depending on the user's choice inputs int, double or string variable.
-//        If the variable is integer or double, increases it with 1. If the variable is string, appends "*" at its end.
-//        The program must show the value of that variable as a console output. Use switch statement.
+﻿//Task 8: Write a program that, depending on the user's choice inputs int, double or
+//        string variable. If the variable is integer or double, increases it with 1.
+//        If the variable is string, appends "*" at its end. The program must show
+//        the value of that variable as a console output. Use switch statement.
 
 using System;
 
@@ -8,32 +9,42 @@ class DifferentInputs
 {
     static void Main()
     {
-    start:
-        Console.WriteLine("Please, choose:\n\n   I for int\n   D for double\n   S for string");
-        ConsoleKeyInfo key = Console.ReadKey();                                     // reads the user's choice
-        switch (key.Key)
+        while (true)
         {
-            case ConsoleKey.I:                                                      // if the choice is "Integer"
-                Console.Clear();
-                Console.Write("Please, enter some integer number: ");
-                int Integer = int.Parse(Console.ReadLine());
-                Console.WriteLine("The result is {0}", Integer + 1);
-                break;
-            case ConsoleKey.D:                                                      // if the choice is "Double"
-                Console.Clear();
-                Console.Write("Please, enter some number: ");
-                double Double = double.Parse(Console.ReadLine());
-                Console.WriteLine("The result is {0}", Double + 1);
-                break;
-            case ConsoleKey.S:                                                      // if the choice is "String"
-                Console.Clear();
-                Console.Write("Please, enter some string: ");
-                string String = Console.ReadLine();
-                Console.WriteLine("The result is {0}", String + "*");
-                break;
-            default:                                                                // if the choice is wrong
-                Console.Clear();                                                    // clear the screen
-                goto start;                                                         // go to top and ask the user again for some input
+            // Read some key from the user
+            Console.Write("Press: [I] for int, [D] for double, [S] for string or [Q] to exit. . .");
+            ConsoleKeyInfo key = Console.ReadKey();
+            switch (key.Key)
+            {
+                // If the choice is "Integer"
+                case ConsoleKey.I:
+                    Console.Write("\b \nPlease, enter some integer number: ");
+                    PrintResult(int.Parse(Console.ReadLine()) + 1);
+                    break;
+
+                // If the choice is "Double"
+                case ConsoleKey.D:
+                    Console.Write("\b \nPlease, enter some number: ");
+                    PrintResult(double.Parse(Console.ReadLine()) + 1);
+                    break;
+
+                // If the choice is "String"
+                case ConsoleKey.S:
+                    Console.Write("\b \nPlease, enter some string: ");
+                    PrintResult(Console.ReadLine() + "*");
+                    break;
+
+                case ConsoleKey.Q: Environment.Exit(0); break;
+                default: Console.Write("\b \n"); break;
+            }
         }
+    }
+
+    // Print the result from some statement
+    private static void PrintResult(dynamic value)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("The result is: {0}", value);
+        Console.ResetColor();
     }
 }

@@ -6,48 +6,42 @@ class Sorting3Values
 {
     static void Main()
     {
-        int first = 0;
-        int second = 0;
-        int third = 0;
+        int value1 = 0;
+        int value2 = 0;
+        int value3 = 0;
         for (int i = 1; i <= 3; i++)
         {
-            Console.Write("Please, enter the some real number: ");
-            int number = int.Parse(Console.ReadLine());                         // for each 'i' we read one number
-            if (i == 1)                                                         // if the number is only one
+            // Read some number for each 'i'
+            Console.Write("Please, enter some real number: ");
+            int number = int.Parse(Console.ReadLine());
+            if (i == 1) value1 = number;
+            else if (i == 2)
             {
-                first = number;
+                if (number >= value1)       // if the second number is bigger
+                {
+                    value2 = value1;
+                    value1 = number;
+                }
+                else value2 = number;       // if the second number is smaller
             }
-            else if (i == 2)                                                    // if we have two numbers
+            else
             {
-                if (number >= first)                                            // if the second number is bigger
+                if (number >= value1)       // if the third number is biggest
                 {
-                    second = first;
-                    first = number;
+                    value3 = value2;
+                    value2 = value1;
+                    value1 = number;
                 }
-                else                                                            // if the second number is smaller
+                else if (number <= value2) value3 = number;     // if the third number is smallest 
+                else                                            // if the third number is between the others
                 {
-                    second = number;
-                }
-            }
-            else                                                                // if the numbers are three
-            {
-                if (number >= first)                                            // if the third number is biggest
-                {
-                    third = second;
-                    second = first;
-                    first = number;
-                }
-                else if (number <= second)                                      // if the third number is smallest 
-                {
-                    third = number;
-                }
-                else                                                            // if the third number is between the others
-                {
-                    third = second;
-                    second = number;
+                    value3 = value2;
+                    value2 = number;
                 }
             }
         }
-        Console.WriteLine("\nSorting: {0}, {1}, {2}", first, second, third);    // sorting
+
+        // Print the numbers sorted in descending order
+        Console.WriteLine("\nSorting: {0}, {1}, {2}", value1, value2, value3);
     }
 }
