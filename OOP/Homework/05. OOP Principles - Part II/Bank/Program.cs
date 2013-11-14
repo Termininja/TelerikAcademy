@@ -45,27 +45,10 @@ namespace Bank
             // Testing withdraw
             ((Deposit)accounts[0]).Withdraw(50);
 
-            // Print account information
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Account 1");
-            Console.ResetColor();
-            Console.WriteLine(accounts[0]);
-            Console.WriteLine("Interest amount: " + accounts[0].InterestAmount(10));
-            Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Account 2");
-            Console.ResetColor();
-            Console.WriteLine(accounts[1]);
-            Console.WriteLine("Interest amount: " + accounts[1].InterestAmount(6));
-            Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Account 3");
-            Console.ResetColor();
-            Console.WriteLine(accounts[2]);
-            Console.WriteLine("Interest amount: " + accounts[2].InterestAmount(20));
-            Console.WriteLine();
+            // Print the result
+            PrintAccount("Account 1", accounts[0], 10);
+            PrintAccount("Account 2", accounts[1], 6);
+            PrintAccount("Account 3", accounts[2], 20);
 
             // Create some account
             Console.ForegroundColor = ConsoleColor.White;
@@ -75,6 +58,17 @@ namespace Bank
             Console.Clear();
             CreateAccount(accounts);
             TestAccount(accounts);
+        }
+
+        // Print account information
+        private static void PrintAccount(string text, Account account, int months)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(text);
+            Console.ResetColor();
+            Console.WriteLine(account);
+            Console.WriteLine("Interest amount: " + account.InterestAmount(months));
+            Console.WriteLine();
         }
 
         private static void TestAccount(List<Account> accounts)
