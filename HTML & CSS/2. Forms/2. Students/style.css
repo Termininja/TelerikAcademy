@@ -46,3 +46,7 @@ colgroup.total {
 .next {
     width: 50px;
 }
+
+.total {
+    font-weight: bold;
+}
