@@ -36,7 +36,9 @@ You must NOT edit any existing .cs file. Test the `Gift` and `GiftBlock` classes
 
 Hint: you should have a `ShootingRacket` class and override its `ProduceObjects` method.
 
-**Task 14\*.** Download JustBelot game source from https://github.com/NikolayIT/JustBelot (code commits are made often so be sure to always work on the latest game source). Write your own C# library called `JustBelot.AI.YourBotName` and write a class in it that implements `JustBelot.Common.IPlayer` interface.
+**Task 14\*.** Download JustBelot game source from https://github.com/NikolayIT/JustBelot (code commits are made often so be sure to always work on the latest game source).
+
+Write your own C# library called `JustBelot.AI.YourBotName` and write a class in it that implements `JustBelot.Common.IPlayer` interface.
 
 Implement your own AI belot player that will fight with other AI players. The winner will be awarded. Please send your players to academy@telerik.com and add them in the homework archive when you upload it. You are allowed to work in teams.
 
