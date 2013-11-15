@@ -2,7 +2,7 @@
 
 **Task 01.** `AcademyPopcorn` class contains an `IndestructibleBlock` class. Use it to create side and ceiling walls to the game. You can ONLY edit the `AcademyPopcornMain.cs` file.
 
-**Task 02.** The `Engine` class has a hardcoded sleep time (search for "System.Threading.Sleep(500)". Make the sleep time a field in the `Engine` and implement a constructor, which takes it as an additional parameter.
+**Task 02.** The `Engine` class has a hardcoded sleep time (search for *"System.Threading.Sleep(500)"*. Make the sleep time a field in the `Engine` and implement a constructor, which takes it as an additional parameter.
 
 **Task 03.** Search for a "TODO" in the `Engine` class, regarding the `AddRacket` method. Solve the problem mentioned there. There should always be only one `Racket`.
 
@@ -38,4 +38,6 @@ Hint: you should have a `ShootingRacket` class and override its `ProduceObjects`
 
 **Task 14\*.** Download JustBelot game source from https://github.com/NikolayIT/JustBelot (code commits are made often so be sure to always work on the latest game source). Write your own C# library called `JustBelot.AI.YourBotName` and write a class in it that implements `JustBelot.Common.IPlayer` interface.
 
-Implement your own AI belot player that will fight with other AI players. The winner will be awarded. Please send your players to academy@telerik.com and add them in the homework archive when you upload it. You are allowed to work in teams. Discussions: http://forums.academy.telerik.com/67583/oop-justbelot.
+Implement your own AI belot player that will fight with other AI players. The winner will be awarded. Please send your players to academy@telerik.com and add them in the homework archive when you upload it. You are allowed to work in teams.
+
+Discussions: http://forums.academy.telerik.com/67583/oop-justbelot.
