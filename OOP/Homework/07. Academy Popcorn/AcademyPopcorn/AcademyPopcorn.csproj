@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D50F4786-9751-4526-8D31-BB09B73CCC59}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AcademyPopcorn</RootNamespace>
+    <AssemblyName>AcademyPopcorn</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="The Game\Infofield\Infofield.cs" />
+    <Compile Include="The Game\Objects\Blocks\Explodable\ExplodingBlock.cs" />
+    <Compile Include="The Game\Objects\Blocks\Explodable\Fragment.cs" />
+    <Compile Include="The Game\Objects\Blocks\Indestructible\UnpassableBlock.cs" />
+    <Compile Include="The Game\Objects\Balls\MeteoriteBall.cs" />
+    <Compile Include="The Game\Objects\Balls\UnstoppableBall.cs" />
+    <Compile Include="The Game\Objects\Blocks\Gifts\Gift.cs" />
+    <Compile Include="The Game\Objects\Blocks\Gifts\GiftBlock.cs" />
+    <Compile Include="The Game\Objects\Racket\Bullet.cs" />
+    <Compile Include="The Game\Objects\Racket\ShootingRacket.cs" />
+    <Compile Include="The Game\ShootingEngine.cs" />
+    <Compile Include="The Game\Objects\Balls\Ball.cs" />
+    <Compile Include="The Game\Objects\Blocks\Block.cs" />
+    <Compile Include="The Game\Collisions\CollisionData.cs" />
+    <Compile Include="The Game\Collisions\CollisionDispatcher.cs" />
+    <Compile Include="The Game\Objects\TrailObject.cs" />
+    <Compile Include="The Game\User Input\ConsoleInterface.cs" />
+    <Compile Include="The Game\Rendering\ConsoleRenderer.cs" />
+    <Compile Include="The Game\Engine.cs" />
+    <Compile Include="The Game\Collisions\ICollidable.cs" />
+    <Compile Include="The Game\Objects\Blocks\Indestructible\IndestructibleBlock.cs" />
+    <Compile Include="The Game\Objects\IObjectProducer.cs" />
+    <Compile Include="The Game\Rendering\IRenderable.cs" />
+    <Compile Include="The Game\User Input\IUserInterface.cs" />
+    <Compile Include="The Game\User Input\KeyboardInterface.cs" />
+    <Compile Include="The Game\Objects\MatrixCoords.cs" />
+    <Compile Include="The Game\Objects\GameObject.cs" />
+    <Compile Include="The Game\Rendering\IRenderer.cs" />
+    <Compile Include="The Game\Objects\MovingObject.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="The Game\Objects\Racket\Racket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Diagram.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
