@@ -47,6 +47,13 @@ namespace BitArray
             }
         }
 
+        // Method Equals
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            return this.Number.Equals((obj as BitArray64).Number);
+        }
+
         // Boolean operator ==
         public static bool operator ==(BitArray64 first, BitArray64 second)
         {
@@ -57,17 +64,6 @@ namespace BitArray
         public static bool operator !=(BitArray64 first, BitArray64 second)
         {
             return !first.Equals(second);
-        }
-
-        // Method Equals
-        public override bool Equals(object obj)
-        {
-            if (obj == null) return false;
-
-            BitArray64 array = obj as BitArray64;
-            if ((object)array == null) return false;
-
-            return this.Number == array.Number;
         }
 
         // Method GetHashCode
