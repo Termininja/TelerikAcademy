@@ -22,15 +22,14 @@ namespace BitArray
             get
             {
                 if (index < 0 || index > 63) throw new IndexOutOfRangeException();
-                return (Number & ((ulong)1 << index)) != 0 ? 1 : 0;
+                return (this.Number & ((ulong)1 << index)) == 0 ? 0 : 1;
             }
             set
             {
                 if (index < 0 || index > 63) throw new IndexOutOfRangeException();
                 if (value != 0 && value != 1) throw new ArgumentOutOfRangeException();
 
-                if (value == 1) this.Number = this.Number | ((ulong)1 << index);
-                else this.Number = this.Number & (~((ulong)1 << index));
+                this.Number = (this.Number & ~((ulong)1 << index) | ((ulong)value << index));
             }
         }
 
