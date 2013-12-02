@@ -5,9 +5,9 @@
 using System;
 using System.Collections.Generic;
 
-class CatalanNumbers
+public class CatalanNumbers
 {
-    static void Main()
+    public static void Main()
     {
         // Lists of numerator and denominator numbers
         List<decimal> Numerator = new List<decimal>();

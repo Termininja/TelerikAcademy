@@ -8,9 +8,9 @@
 using System;
 using System.Numerics;
 
-class CountsAZeros
+public class CountsAZeros
 {
-    static void Main()
+    public static void Main()
     {
         // Read some integer number
         Console.Write("Please, enter some positive integer number:");

@@ -4,7 +4,7 @@
 using System;
 using System.Threading;
 
-class CardNames
+public class CardNames
 {
     static void Suits(string name, byte s, string i)
     {
@@ -20,7 +20,7 @@ class CardNames
         Console.ForegroundColor = ConsoleColor.Black;
     }
 
-    static void Main()
+    public static void Main()
     {
         Console.WindowWidth = 95;
         Console.ForegroundColor = ConsoleColor.Black;

@@ -8,9 +8,9 @@ using System;
 using System.Numerics;
 using System.Threading;
 
-class SequenceOfFibonacci
+public class SequenceOfFibonacci
 {
-    static void Main()
+    public static void Main()
     {
         // Read some integer number
         Console.Write("Please, enter some positive integer number: ");

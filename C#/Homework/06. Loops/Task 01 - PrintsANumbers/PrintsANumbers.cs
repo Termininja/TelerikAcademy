@@ -3,9 +3,9 @@
 using System;
 using System.Threading;
 
-class PrintsANumbers
+public class PrintsANumbers
 {
-    static void Main()
+    public static void Main()
     {
         while (true)
         {

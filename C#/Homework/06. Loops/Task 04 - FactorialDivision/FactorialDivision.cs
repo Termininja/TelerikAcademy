@@ -2,9 +2,9 @@
 
 using System;
 
-class FactorialDivision
+public class FactorialDivision
 {
-    static void Main()
+    public static void Main()
     {
         // Read the numbers N and K
         Console.WriteLine("Please, enter two positive integer numbers N and K < N:");

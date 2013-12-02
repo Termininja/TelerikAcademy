@@ -4,9 +4,9 @@
 using System;
 using System.Threading;
 
-class PrintsSpecialNumbers
+public class PrintsSpecialNumbers
 {
-    static void Main()
+    public static void Main()
     {
         // Read some integer number
         Console.Write("Please, enter some number: ");

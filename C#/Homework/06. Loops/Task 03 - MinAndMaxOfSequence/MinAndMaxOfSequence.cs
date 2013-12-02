@@ -2,9 +2,9 @@
 
 using System;
 
-class MinAndMaxOfSequence
+public class MinAndMaxOfSequence
 {
-    static void Main()
+    public static void Main()
     {
         // Read the limit of compared numbers
         Console.Write("How many numbers you want to compare?");

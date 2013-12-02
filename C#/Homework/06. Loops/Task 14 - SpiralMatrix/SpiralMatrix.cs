@@ -4,7 +4,7 @@
 using System;
 using System.Threading;
 
-class SpiralMatrix
+public class SpiralMatrix
 {
     static int i = 0;                                   // count each one ring of numbers 
     static int x = 0;                                   // 'x' position
@@ -49,7 +49,7 @@ class SpiralMatrix
         }
     }
 
-    static void Main()
+    public static void Main()
     {
         int n = 0;
         while (n < 1 || n > 19)                         // the number has to be from 1 to 19

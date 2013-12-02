@@ -8,7 +8,7 @@
 using System;
 using System.Threading;
 
-class MatrixOfNumbers
+public class MatrixOfNumbers
 {
     // Start from number 1
     static int number = 1;
@@ -37,7 +37,7 @@ class MatrixOfNumbers
         }
     }
 
-    static void Main()
+    public static void Main()
     {
         int n = 0;
         while (n < 1 || n > 19)                                 // the number has to be from 1 to 19

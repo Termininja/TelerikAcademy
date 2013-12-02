@@ -3,9 +3,9 @@
 
 using System;
 
-class GreatestCommonDivisor
+public class GreatestCommonDivisor
 {
-    static void Main()
+    public static void Main()
     {
         /* First variant */
         int x = 84;

@@ -2,9 +2,9 @@
 
 using System;
 
-class SumOfSequence
+public class SumOfSequence
 {
-    static void Main()
+    public static void Main()
     {
         // Read the number N
         Console.WriteLine("Please, enter two integer numbers N and X:");
