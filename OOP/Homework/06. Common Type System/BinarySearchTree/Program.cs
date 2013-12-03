@@ -14,11 +14,10 @@ using System;
 
 namespace BinarySearchTree
 {
-    class Program
+    class Progmram
     {
         static void Main()
         {
-
 
         }
     }
