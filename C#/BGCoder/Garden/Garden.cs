@@ -4,27 +4,21 @@ class Garden
 {
     static void Main()
     {
-        decimal seed = 0;
-        int area = 0;
-        for (int v = 1; v <= 6; v++)
-        {
-            switch (v)
-            {
-                case 1: seed += int.Parse(Console.ReadLine()) * 0.5M; break;
-                case 2: seed += int.Parse(Console.ReadLine()) * 0.4M; break;
-                case 3: seed += int.Parse(Console.ReadLine()) * 0.25M; break;
-                case 4: seed += int.Parse(Console.ReadLine()) * 0.6M; break;
-                case 5: seed += int.Parse(Console.ReadLine()) * 0.3M; break;
-                case 6: seed += int.Parse(Console.ReadLine()) * 0.4M; break;
-                default: break;
-            }
-            if (v != 6) area += int.Parse(Console.ReadLine());
-        }
-        int areaB = 250 - area;
+        decimal[] prices = { 0.5m, 0.4m, 0.25m, 0.6m, 0.3m, 0.4m };
 
-        Console.WriteLine("Total costs: {0:F2}", seed);
-        if (areaB == 0) Console.WriteLine("No area for beans");
-        else if (areaB < 0) Console.WriteLine("Insufficient area");
-        else if (true) Console.WriteLine("Beans area: {0}", areaB);
+        decimal totalCost = 0;
+        int beansArea = 250;
+
+        for (int v = 0; v < 6; v++)
+        {
+            totalCost += prices[v] * int.Parse(Console.ReadLine());
+            if (v < 5) beansArea -= int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Total costs: {0:F2}", totalCost);
+
+        if (beansArea < 0) Console.WriteLine("Insufficient area");
+        else if (beansArea == 0) Console.WriteLine("No area for beans");
+        else Console.WriteLine("Beans area: {0}", beansArea);
     }
 }
