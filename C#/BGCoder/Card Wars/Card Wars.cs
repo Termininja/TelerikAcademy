@@ -81,24 +81,7 @@ class CardWars
 
     private static int CardStrength(string card)
     {
-        int strength = 0;
-        switch (card)
-        {
-            case "2": strength = 10; break;
-            case "3": strength = 9; break;
-            case "4": strength = 8; break;
-            case "5": strength = 7; break;
-            case "6": strength = 6; break;
-            case "7": strength = 5; break;
-            case "8": strength = 4; break;
-            case "9": strength = 3; break;
-            case "10": strength = 2; break;
-            case "A": strength = 1; break;
-            case "J": strength = 11; break;
-            case "Q": strength = 12; break;
-            case "K": strength = 13; break;
-            default: break;
-        }
-        return strength;
+        string[] cards = { "A", "10", "9", "8", "7", "6", "5", "4", "3", "2", "J", "Q", "K" };
+        return Array.IndexOf(cards, card) + 1;
     }
 }
