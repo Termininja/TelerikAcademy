@@ -1,5 +1,5 @@
 using System;
- 
+
 class BinaryDigitsCount
 {
     static void Main()
@@ -12,10 +12,7 @@ class BinaryDigitsCount
             int count = 0;
             while (number != 0)
             {
-                if ((byte)(number & 1) == B)
-                {
-                    count++;
-                }
+                if ((byte)(number & 1) == B) count++;
                 number >>= 1;
             }
             Console.WriteLine(count);

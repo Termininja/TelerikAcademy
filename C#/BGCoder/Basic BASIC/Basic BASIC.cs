@@ -24,18 +24,12 @@ class BasicBASIC
                 index = int.Parse(line.Substring(0, space));
                 Lists[index] = line.Substring(space + 1).Replace(" ", "").Trim();
             }
-            else
-            {
-                Lists[index + 1] = "RUN";
-            }
+            else Lists[index + 1] = "RUN";
         }
 
         for (int l = 0; l <= index + 1; l++)
         {
-            if (Lists[l] == "RUN")
-            {
-                break;
-            }
+            if (Lists[l] == "RUN") break;
             if (Lists[l] != null)
             {
                 switch (Lists[l][0])
@@ -55,18 +49,9 @@ class BasicBASIC
                         if (moreThan > then) moreThan = -1;
                         if (lessThan > then) lessThan = -1;
 
-                        if (equalTo > 0)
-                        {
-                            IF(Lists, ref V, ref W, ref X, ref Y, ref Z, Results, ref l, then, equalTo, '=');
-                        }
-                        else if (moreThan > 0)
-                        {
-                            IF(Lists, ref V, ref W, ref X, ref Y, ref Z, Results, ref l, then, moreThan, '>');
-                        }
-                        else if (lessThan > 0)
-                        {
-                            IF(Lists, ref V, ref W, ref X, ref Y, ref Z, Results, ref l, then, lessThan, '<');
-                        }
+                        if (equalTo > 0) IF(Lists, ref V, ref W, ref X, ref Y, ref Z, Results, ref l, then, equalTo, '=');
+                        else if (moreThan > 0) IF(Lists, ref V, ref W, ref X, ref Y, ref Z, Results, ref l, then, moreThan, '>');
+                        else if (lessThan > 0) IF(Lists, ref V, ref W, ref X, ref Y, ref Z, Results, ref l, then, lessThan, '<');
 
                         break;
                     case 'G': l = int.Parse(Lists[l].Substring(4)) - 1; break;
@@ -87,10 +72,7 @@ class BasicBASIC
                 }
             }
         }
-        foreach (var item in Results)
-        {
-            Console.WriteLine(item);
-        }
+        foreach (var item in Results) Console.WriteLine(item);
     }
 
     static void IF(string[] Lists, ref int V, ref int W, ref int X, ref int Y, ref int Z, List<int> Results, ref int l, int then, int what, char sym)
@@ -98,10 +80,7 @@ class BasicBASIC
         int left = 0;
         int right = 0;
         int n;
-        if (int.TryParse(Lists[l].Substring(2, what - 2), out n))
-        {
-            left = n;
-        }
+        if (int.TryParse(Lists[l].Substring(2, what - 2), out n)) left = n;
         else
         {
             switch (Lists[l][2])
@@ -114,10 +93,7 @@ class BasicBASIC
                 default: break;
             }
         }
-        if (int.TryParse(Lists[l].Substring(what + 1, then - what - 1), out n))
-        {
-            right = n;
-        }
+        if (int.TryParse(Lists[l].Substring(what + 1, then - what - 1), out n)) right = n;
         else
         {
             switch (Lists[l][what + 1])
@@ -180,10 +156,7 @@ class BasicBASIC
         else
         {
             int j;
-            if (int.TryParse(Lists[l].Substring(2), out j))
-            {
-                X = j;
-            }
+            if (int.TryParse(Lists[l].Substring(2), out j)) X = j;
             else
             {
                 switch (Lists[l][2])
@@ -203,12 +176,8 @@ class BasicBASIC
     {
         int first = 0;
         int second = 0;
-
         int number;
-        if (int.TryParse(Lists[l].Substring(2, minus - 2), out number))
-        {
-            first = number;
-        }
+        if (int.TryParse(Lists[l].Substring(2, minus - 2), out number)) first = number;
         else
         {
             switch (Lists[l][2])
@@ -221,10 +190,7 @@ class BasicBASIC
                 default: break;
             }
         }
-        if (int.TryParse(Lists[l].Substring(minus + 1), out number))
-        {
-            second = number;
-        }
+        if (int.TryParse(Lists[l].Substring(minus + 1), out number)) second = number;
         else
         {
             switch (Lists[l][Lists[l].Length - 1])
@@ -237,14 +203,8 @@ class BasicBASIC
                 default: break;
             }
         }
-        if (ch == '-')
-        {
-            X = first - second;
-        }
-        if (ch == '+')
-        {
-            X = first + second;
-        }
+        if (ch == '-') X = first - second;
+        if (ch == '+') X = first + second;
         return X;
     }
 }

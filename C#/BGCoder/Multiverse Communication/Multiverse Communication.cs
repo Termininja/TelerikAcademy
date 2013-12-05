@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class MultiverseCommunication
+class Task
 {
     static void Main()
     {
@@ -32,10 +32,7 @@ class MultiverseCommunication
                     case "PLA": num = 12; break;
                     default: go = true; break;
                 }
-                if (!go)
-                {
-                    break;
-                }
+                if (!go) break;
             }
             Result.Insert(0, num);
             input = input.Remove(0, code.Length);
@@ -44,10 +41,7 @@ class MultiverseCommunication
         for (int i = 0; i < Result.Count; i++)
         {
             ulong result = 1;
-            for (int j = 0; j < i; j++)
-            {
-                result *= 13;
-            }
+            for (int j = 0; j < i; j++) result *= 13;
             Sum += (Result[i] * result);
         }
         Console.WriteLine(Sum);
