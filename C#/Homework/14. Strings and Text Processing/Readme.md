@@ -87,7 +87,7 @@ Delphi not and PHP, not C++ not is C#!
 >* HTML fragment:
 >
 ```html
-<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
+<p>Please visit <a href="http://academy.telerik.com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
 ```
 >* Output:
 >
