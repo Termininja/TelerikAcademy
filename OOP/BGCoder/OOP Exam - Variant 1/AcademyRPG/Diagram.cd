@@ -1,159 +1,195 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AcademyRPG.Engine" Collapsed="true">
-    <Position X="8" Y="0.5" Width="1.5" />
+  <Class Name="AcademyRPG.Engine">
+    <Position X="0.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAIARAAAAACAAgCFAAgAABIgAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Engine\Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademyRPG.ExtendedEngine" Collapsed="true">
-    <Position X="8" Y="1.75" Width="1.5" />
+  <Class Name="AcademyRPG.ExtendedEngine">
+    <Position X="0.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Engine\ExtendedEngine.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademyRPG.Character" Collapsed="true">
-    <Position X="13.25" Y="3.25" Width="1.5" />
+  <Class Name="AcademyRPG.Character">
+    <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Character.cs</FileName>
+      <FileName>Objects\Moving objects\Characters\Character.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AcademyRPG.Lumberjack" Collapsed="true">
-    <Position X="8.75" Y="4.75" Width="1.5" />
+  <Class Name="AcademyRPG.Guard">
+    <Position X="6.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAQAAAAA=</HashCode>
+      <FileName>Objects\Moving objects\Characters\Fighters\Guard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyRPG.Knight">
+    <Position X="2.75" Y="9.5" Width="1.5" />
+    <InheritanceLine Type="AcademyRPG.Character" ManuallyRouted="true">
+      <Path>
+        <Point X="5.5" Y="5.877" />
+        <Point X="5.5" Y="9.125" />
+        <Point X="3.5" Y="9.125" />
+        <Point X="3.5" Y="9.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAQAAAAA=</HashCode>
+      <FileName>Objects\Moving objects\Characters\Fighters\Knight.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyRPG.Lumberjack">
+    <Position X="4.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Gatherers\Lumberjack.cs</FileName>
+      <FileName>Objects\Moving objects\Characters\Gatherers\Lumberjack.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AcademyRPG.Giant" Collapsed="true">
-    <Position X="13.25" Y="4.75" Width="1.5" />
+  <Class Name="AcademyRPG.Giant">
+    <Position X="0.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAQAIAAAIAAAAAACAAQAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Giants\Giant.cs</FileName>
+      <FileName>Objects\Moving objects\Characters\Giant.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AcademyRPG.Guard" Collapsed="true">
-    <Position X="17.75" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAQAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Guards\Guard.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="AcademyRPG.Knight" Collapsed="true">
-    <Position X="11" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAQAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Knights\Knight.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="AcademyRPG.Ninja" Collapsed="true">
-    <Position X="15.5" Y="4.75" Width="1.5" />
+  <Class Name="AcademyRPG.Ninja">
+    <Position X="8.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAIAAAIAAAAAACAAQAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Ninjas\Ninja.cs</FileName>
+      <FileName>Objects\Moving objects\Characters\Ninja.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AcademyRPG.MovingObject" Collapsed="true">
-    <Position X="13.25" Y="1.75" Width="1.5" />
+  <Class Name="AcademyRPG.MovingObject">
+    <Position X="6.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
-      <FileName>Objects\Moving\MovingObject.cs</FileName>
+      <FileName>Objects\Moving objects\MovingObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademyRPG.House" Collapsed="true">
-    <Position X="24.5" Y="3.25" Width="1.5" />
+  <Class Name="AcademyRPG.House">
+    <Position X="16.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Static\House.cs</FileName>
+      <FileName>Objects\Static objects\Houses\House.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademyRPG.Rock" Collapsed="true">
-    <Position X="20" Y="3.25" Width="1.5" />
+  <Class Name="AcademyRPG.Rock">
+    <Position X="12.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
-      <FileName>Objects\Static\Resources\Rock.cs</FileName>
+      <FileName>Objects\Static objects\Resources\Rock.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AcademyRPG.Tree" Collapsed="true">
-    <Position X="22.25" Y="3.25" Width="1.5" />
+  <Class Name="AcademyRPG.Tree">
+    <Position X="14.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
-      <FileName>Objects\Static\Resources\Tree.cs</FileName>
+      <FileName>Objects\Static objects\Resources\Tree.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AcademyRPG.StaticObject" Collapsed="true">
-    <Position X="22.25" Y="1.75" Width="1.5" />
+  <Class Name="AcademyRPG.StaticObject">
+    <Position X="14.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Static\StaticObject.cs</FileName>
+      <FileName>Objects\Static objects\StaticObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademyRPG.WorldObject" Collapsed="true">
-    <Position X="16.5" Y="0.5" Width="1.5" />
+  <Class Name="AcademyRPG.WorldObject">
+    <Position X="10.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAA0AAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\WorldObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Struct Name="AcademyRPG.Point" Collapsed="true">
-    <Position X="27" Y="0.5" Width="1.5" />
+  <Class Name="AcademyRPG.Program">
+    <Position X="18.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="AcademyRPG.Point">
+    <Position X="18.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAEAAAAAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
       <FileName>Objects\Point.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="AcademyRPG.IWorldObject" Collapsed="true">
-    <Position X="10.5" Y="6.5" Width="1.5" />
+  <Interface Name="AcademyRPG.IWorldObject">
+    <Position X="10.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAwAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\IWorldObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AcademyRPG.IGatherer" Collapsed="true">
-    <Position X="12.75" Y="9.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Gatherers\IGatherer.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="AcademyRPG.IFighter" Collapsed="true">
-    <Position X="10.5" Y="9.25" Width="1.5" />
+  <Interface Name="AcademyRPG.IFighter">
+    <Position X="8.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAAQAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\Guards\IFighter.cs</FileName>
+      <FileName>Objects\Moving objects\Characters\Fighters\IFighter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AcademyRPG.IControllable" Collapsed="true">
-    <Position X="11.5" Y="7.75" Width="1.5" />
+  <Interface Name="AcademyRPG.IGatherer">
+    <Position X="6.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Moving objects\Characters\Gatherers\IGatherer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AcademyRPG.IControllable">
+    <Position X="8.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Moving\Characters\IControllable.cs</FileName>
+      <FileName>Objects\Moving objects\IControllable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AcademyRPG.IResource" Collapsed="true">
-    <Position X="8.25" Y="7.75" Width="1.5" />
+  <Interface Name="AcademyRPG.IResource">
+    <Position X="12.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
-      <FileName>Objects\Static\Resources\IResource.cs</FileName>
+      <FileName>Objects\Static objects\Resources\IResource.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="AcademyRPG.ResourceType" Collapsed="true">
-    <Position X="27" Y="1.75" Width="1.5" />
+  <Interface Name="AcademyRPG.ICollectable">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Others\ICollectable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AcademyRPG.ICollector">
+    <Position X="20.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Others\ICollector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AcademyRPG.INameable">
+    <Position X="20.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Others\INameable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="AcademyRPG.ResourceType">
+    <Position X="2.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAE=</HashCode>
-      <FileName>Objects\Static\Resources\ResourceType.cs</FileName>
+      <FileName>Objects\Static objects\Resources\ResourceType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

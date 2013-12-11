@@ -4,10 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{353445C0-D206-4C03-AC09-86D82EFF9C3C}</ProjectGuid>
+    <ProjectGuid>{ED7D4B46-5C65-45BD-B325-6F2727B17705}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SoftwareAcademy</RootNamespace>
-    <AssemblyName>SoftwareAcademy</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AcademyEcosystem</RootNamespace>
+    <AssemblyName>AcademyEcosystem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,23 +34,15 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Courses\Course.cs" />
-    <Compile Include="Factory\CourseFactory.cs" />
-    <Compile Include="Courses\ICourse.cs" />
-    <Compile Include="Factory\ICourseFactory.cs" />
-    <Compile Include="Courses\LocalCourse\ILocalCourse.cs" />
-    <Compile Include="Courses\OffsiteCourse\IOffsiteCourse.cs" />
-    <Compile Include="Teachers\ITeacher.cs" />
-    <Compile Include="Courses\LocalCourse\LocalCourse.cs" />
-    <Compile Include="Courses\OffsiteCourse\OffsiteCourse.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Teachers\Teacher.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Diagram.cd" />
+    <Compile Include="AcademyEcosystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
