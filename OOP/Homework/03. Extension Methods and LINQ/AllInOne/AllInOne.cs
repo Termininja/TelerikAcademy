@@ -18,7 +18,7 @@ class AllTasks
                 Console.Clear();
                 try
                 {
-                    if (key.Key == ConsoleKey.D1) StringBuilderExtension.Main();
+                    if (key.Key == ConsoleKey.D1) Program.Main();
                     else if (key.Key == ConsoleKey.D2) IEnumerableExtension.Main();
                     else if (key.Key == ConsoleKey.D3) Students.Program.Main();
                     else if (key.Key == ConsoleKey.D4) Students.Program.Main();
