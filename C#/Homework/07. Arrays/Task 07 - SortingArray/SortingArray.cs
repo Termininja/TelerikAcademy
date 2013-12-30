@@ -1,7 +1,7 @@
-﻿//7. Sorting an array means to arrange its elements in increasing order.
-//   Write a program to sort an array. Use the "selection sort" algorithm:
-//   Find the smallest element, move it at the first position,
-//   find the smallest from the rest, move it at the second position, etc.
+﻿// Task 7. Sorting an array means to arrange its elements in increasing order.
+//         Write a program to sort an array. Use the "selection sort" algorithm:
+//         Find the smallest element, move it at the first position,
+//         find the smallest from the rest, move it at the second position, etc.
 
 using System;
 
@@ -21,22 +21,20 @@ class SortingArray
         {
             int min = int.MaxValue;
             int num = 0;
-            for (int i = I; i < array.Length; i++)  //looks for min value in array
+            for (int i = I; i < array.Length; i++)  // looks for min value in array
             {
                 if (array[i] <= min)
                 {
-                    min = array[i];                 //this is the min element
-                    num = i;                        //we keep the number of min element
+                    min = array[i];                 // this is the min element
+                    num = i;                        // we keep the number of min element
                 }
             }
-            int temp = array[I];                    //moves the value of current element in temp
-            array[I] = array[num];                  //moves the value of min in current element
-            array[num] = temp;                      //moves the current element on the free place from min element
+            int temp = array[I];                    // moves the value of current element in temp
+            array[I] = array[num];                  // moves the value of min in current element
+            array[num] = temp;                      // moves the current element on the free place from min element
         }
 
-        foreach (var item in array)                 //prints the sorted array
-        {
-            Console.Write(item + " ");
-        }
+        // Prints the sorted array
+        foreach (var item in array) Console.Write(item + " ");
     }
 }

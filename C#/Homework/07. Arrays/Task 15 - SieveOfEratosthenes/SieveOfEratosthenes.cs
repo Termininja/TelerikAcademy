@@ -1,5 +1,5 @@
-﻿//15. Write a program that finds all prime numbers in the range [1...10 000 000].
-//    Use the sieve of Eratosthenes algorithm (find it in Wikipedia).
+﻿// Task 15. Write a program that finds all prime numbers in the range [1...10 000 000].
+//          Use the sieve of Eratosthenes algorithm (find it in Wikipedia).
 
 using System;
 
@@ -25,12 +25,10 @@ class SieveOfEratosthenes
             }
         }
 
-        for (int j = 0; j < prime.Length; j++)      // prints the prime numbers
+        // Prints the prime numbers
+        for (int j = 0; j < prime.Length; j++)
         {
-            if (prime[j])
-            {
-                Console.WriteLine(j);
-            }
+            if (prime[j]) Console.WriteLine(j);
         }
     }
 }

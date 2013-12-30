@@ -1,5 +1,6 @@
-﻿//6. Write a program that reads two integer numbers N and K and an array of N elements from the console.
-//   Find in the array those K elements that have maximal sum.
+﻿// Task 6. Write a program that reads two integer numbers N and K and
+//         an array of N elements from the console. Find in the array
+//         those K elements that have maximal sum.
 
 using System;
 
@@ -7,14 +8,17 @@ class SumOfElements
 {
     static void Main()
     {
+        // Reads the N
         Console.Write("N = ");
-        int[] array = new int[int.Parse(Console.ReadLine())];       // reads the N
+        int[] array = new int[int.Parse(Console.ReadLine())];
 
+        // Reads the K
         Console.Write("K = ");
-        int K = int.Parse(Console.ReadLine());                      // reads the K
+        int K = int.Parse(Console.ReadLine());
 
+        // Reads each one element in array
         int max = int.MinValue;
-        for (int i = 0; i < array.Length; i++)                      // reads each one element in array
+        for (int i = 0; i < array.Length; i++)
         {
             Console.Write("[{0}] = ", i);
             array[i] = int.Parse(Console.ReadLine());
@@ -24,10 +28,7 @@ class SumOfElements
         for (int i = 0; i < array.Length - (K - 1); i++)
         {
             int sum = 0;
-            for (int k = i; k < i + K; k++)
-            {
-                sum += array[k];
-            }
+            for (int k = i; k < i + K; k++) sum += array[k];
             if (sum > max)
             {
                 max = sum;
@@ -35,8 +36,8 @@ class SumOfElements
             }
         }
 
-        /* Prints the result */
-        Console.WriteLine("Max sum is {0} for elements: ", max);    
+        // Prints the result
+        Console.WriteLine("\nMax sum is {0} for elements: ", max);
         for (int i = best_i; i < best_i + K; i++)
         {
             Console.WriteLine("[{0}] = {1}", i, array[i]);

@@ -1,8 +1,8 @@
-﻿//13. * Write a program that sorts an array of integers using the merge sort algorithm (find it in Wikipedia).
+﻿// Task 13. * Write a program that sorts an array of integers using the merge sort algorithm (find it in Wikipedia).
 
 using System;
 
-class Merge_Sort
+class MergeSort
 {
     static void Main()
     {

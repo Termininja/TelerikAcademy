@@ -1,5 +1,5 @@
-﻿//17. * Write a program that reads three integer numbers N, K and S and an array of N elements from the console.
-//      Find in the array a subset of K elements that have sum S or indicate about its absence.
+﻿// Task 17. * Write a program that reads three integer numbers N, K and S and an array of N elements from the console.
+//            Find in the array a subset of K elements that have sum S or indicate about its absence.
 
 using System;
 
@@ -37,17 +37,15 @@ class SubsetSum
             }
             if (S == currentSum && Kmax == K)           // is the current sum equal to S
             {
+                // Prints the result
                 int cSum = 0;
-                for (int k = 0; k < array.Length; k++)  // prints the result
+                for (int k = 0; k < array.Length; k++)
                 {
                     if (str[k] == '1')
                     {
                         cSum += array[k];
                         Console.Write(array[k]);        // all numbers in the sum
-                        if (S != cSum)
-                        {
-                            Console.Write("+");
-                        }
+                        if (S != cSum) Console.Write("+");
                     }
                 }
                 Console.WriteLine(" = " + S);

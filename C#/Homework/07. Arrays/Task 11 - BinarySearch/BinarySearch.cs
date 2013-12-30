@@ -1,9 +1,9 @@
-﻿//11. Write a program that finds the index of given element in a sorted array
-//    of integers by using the binary search algorithm (find it in Wikipedia).
+﻿// Task 11. Write a program that finds the index of given element in a sorted array
+//          of integers by using the binary search algorithm (find it in Wikipedia).
 
 using System;
 
-class Binary_Search
+class BinarySearch
 {
     static void Main()
     {
@@ -12,25 +12,17 @@ class Binary_Search
 
         int min = 0;
         int max = array.Length - 1;
+
+        Console.Write("The number {0} is ", N);
         while (max > min)
         {
             int mid = (min + max) / 2;
-            if (N <= array[mid])
-            {
-                max = mid;
-            }
-            else
-            {
-                min = mid + 1;                                          // the index of the given element N
-            }
-            if (min == max && array[min] == N)                          // prints the result
-            {
-                Console.WriteLine("The number {0} is on position {1}", N, min);
-            }
-            else if (min == max)
-            {
-                Console.WriteLine("The number {0} is missing in this array", N);
-            }
+            if (N <= array[mid]) max = mid;
+            else min = mid + 1;                                          // the index of the given element N
+
+            // Print the result
+            if (min == max && array[min] == N) Console.WriteLine("on position {0}", min);
+            else if (min == max) Console.WriteLine("missing in this array");
         }
     }
 }
