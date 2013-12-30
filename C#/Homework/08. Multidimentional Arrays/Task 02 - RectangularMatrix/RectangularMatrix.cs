@@ -1,5 +1,5 @@
-﻿//Task 2: Write a program that reads a rectangular matrix of size N x M
-//        and finds in it the square 3 x 3 that has maximal sum of its elements.
+﻿// Task 2: Write a program that reads a rectangular matrix of size N x M
+//         and finds in it the square 3 x 3 that has maximal sum of its elements.
 
 using System;
 
@@ -7,61 +7,89 @@ class RectangularMatrix
 {
     static void Main()
     {
-        Random Generator = new Random();
-
-        Console.Write("Please, enter some number: N = ");   // reads the number N
+        // Reads the matrix's size
+        Console.Write("Please, enter the matrix's size: N = ");
         int N = int.Parse(Console.ReadLine());
-        Console.Write("Please, enter some number: M = ");   // reads the number M
+        Console.Write("Please, enter the matrix's size: M = ");
         int M = int.Parse(Console.ReadLine());
 
+        // Fills the matrix by random generator
+        Random Generator = new Random();
         int[,] matrix = new int[N, M];
         for (int i = 0; i < N; i++)
         {
             for (int j = 0; j < M; j++)
             {
-                matrix[i, j] = Generator.Next(0, 10);       // fills the matrix by random generator
+                matrix[i, j] = Generator.Next(0, 10);
             }
         }
-        PrintMatrix(matrix);                                // prints the matrix
 
-        int Smax = 0;                                       // the maximal sum in matrix
-        int[,] SMmax = new int[3, 3];                       // the matrix 3x3 with Smax 
+        // Prints the matrix
+        Console.WriteLine("\nA matrix with size {0}x{1} is created by Random Generator:", N, M);
+        PrintMatrix(matrix, int.MaxValue, int.MaxValue);
+
+        int Smax = 0;
+        int[,] SmaxMatrix = new int[3, 3];
+        int maxI = 0;
+        int maxJ = 0;
 
         for (int i = 0; i < N - 2; i++)
         {
             for (int j = 0; j < M - 2; j++)
             {
-                int S = 0;                                  // temporary sum
-                int[,] SM = new int[3, 3];                  // temporary matrix
+                int tempSum = 0;
+                int[,] tempMatrix = new int[3, 3];
 
                 for (int x = 0; x < 3; x++)
                 {
                     for (int y = 0; y < 3; y++)
                     {
-                        S += matrix[i + x, j + y];          // calculates the current sum in this sub-matrix
-                        SM[x, y] = matrix[i + x, j + y];    // takes all elements from the current sub-matrix
+                        // Calculates the current Sum in this sub-matrix
+                        tempSum += matrix[i + x, j + y];
+
+                        // Takes all elements from the current sub-matrix
+                        tempMatrix[x, y] = matrix[i + x, j + y];
                     }
                 }
-                if (S >= Smax)                              // compares with previous sum
+
+                // Compare the current with previous Sum
+                if (tempSum >= Smax)
                 {
-                    Smax = S;
-                    SMmax = SM;
+                    Smax = tempSum;
+                    SmaxMatrix = tempMatrix;
+                    maxI = i;
+                    maxJ = j;
                 }
             }
         }
+
+        // Prints the sub-matrix with the maximal Sum
+        Console.Write("Press any key to find the maximal Sum in this matrix . . .");
+        Console.ReadKey();
         Console.WriteLine();
-        PrintMatrix(SMmax);                                 // prints the sub-matrix with the maximal sum
+        PrintMatrix(matrix, maxI, maxJ);
+
+        Console.WriteLine("The sub-matrix with maximum Sum of its elements is:");
+        PrintMatrix(SmaxMatrix, 0, 0);
     }
 
-    static void PrintMatrix(int[,] M)
+    // Print some matrix
+    static void PrintMatrix(int[,] M, int mi, int mj)
     {
+        Console.WriteLine();
         for (int i = 0; i < M.GetLength(0); i++)
         {
             for (int j = 0; j < M.GetLength(1); j++)
             {
+                if (i >= mi && i < mi + 3 && j >= mj && j < mj + 3)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                }
                 Console.Write(M[i, j].ToString().PadLeft(2, ' ') + " ");
+                Console.ResetColor();
             }
             Console.WriteLine();
         }
+        Console.WriteLine();
     }
 }

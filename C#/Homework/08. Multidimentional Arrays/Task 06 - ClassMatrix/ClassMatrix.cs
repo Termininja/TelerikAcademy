@@ -1,6 +1,6 @@
-﻿//Task 6*: Write a class Matrix, to holds a matrix of integers.
-//         Overload the operators for adding, subtracting and multiplying of matrices,
-//         indexer for accessing the matrix content and ToString().
+﻿// Task 6*: Write a class Matrix, to holds a matrix of integers.
+//          Overload the operators for adding, subtracting and multiplying of matrices,
+//          indexer for accessing the matrix content and ToString().
 
 using System;
 
@@ -47,7 +47,7 @@ class Matrix
         matrix = new int[rows, columns];
     }
 
-    // Indexer: for accessing the inner matrix cells
+    // Indexer
     public int this[int r, int c]
     {
         get { return matrix[r, c]; }
@@ -55,18 +55,21 @@ class Matrix
     }
 
     // Operators
-    public static Matrix operator +(Matrix m1, Matrix m2) // adding of matrices of the same size
+    public static Matrix operator +(Matrix m1, Matrix m2)
     {
+        // Adding of matrices of the same size
         return Operation(m1, m2, true);
     }
 
-    public static Matrix operator -(Matrix m1, Matrix m2) // subtracting of matrices of the same size
+    public static Matrix operator -(Matrix m1, Matrix m2)
     {
+        // Subtracting of matrices of the same size
         return Operation(m1, m2, false);
     }
 
-    public static Matrix operator *(Matrix m1, Matrix m2) // multiplying of matrices of the same size
+    public static Matrix operator *(Matrix m1, Matrix m2)
     {
+        // Multiplying of matrices of the same size
         Matrix m = new Matrix(m1.rows, m1.columns);
         for (int r = 0; r < m.rows; r++)
         {
@@ -89,8 +92,11 @@ class Matrix
         {
             for (int c = 0; c < m.columns; c++)
             {
-                if (isAdd) m[r, c] = (dynamic)m1[r, c] + m2[r, c];      // adding
-                else m[r, c] = (dynamic)m1[r, c] - m2[r, c];            // subtracting
+                // For adding
+                if (isAdd) m[r, c] = (dynamic)m1[r, c] + m2[r, c];
+
+                // For subtracting
+                else m[r, c] = (dynamic)m1[r, c] - m2[r, c];
             }
         }
         return m;
