@@ -1,15 +1,17 @@
-﻿//Task 6: Write a method that returns the index of the first element in array that is bigger than its neighbors,
-//        or -1, if there’s no such element. Use the method from the previous exercise.
+﻿// Task 6: Write a method that returns the index of the first element in array that is bigger than its neighbors,
+//         or -1, if there’s no such element. Use the method from the previous exercise.
 
 using System;
 
 class FirstBigger
 {
-    static int[] array = new int[] { };
     static void Main()
     {
-        ReadArray();                                                // calls the "ReadArray" method
-        if (array.Length == 1)                                      // is the array from only one element
+        // Read some array
+        int[] array = ReadArray();
+
+        // If the array is from only one element
+        if (array.Length == 1)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nThe array is from only one element!");
@@ -17,76 +19,76 @@ class FirstBigger
         }
         else
         {
-            if (CheckTheFirst() == -1)                              // calls the "CheckTheFirst" method
+            // Print the result
+            if (CheckTheFirst(array) == -1)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nThere’s no element that is bigger than its neighbors!");
-                Console.ResetColor();
             }
-            else                                                    // prints the result
+            else
             {
                 Console.Write("\nThe first element that is bigger than its neighbors is:\nelement ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write(array[CheckTheFirst()]);
+                Console.Write(array[CheckTheFirst(array)]);
                 Console.ResetColor();
-                Console.Write(" on position ");
+                Console.Write(" at position ");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(CheckTheFirst());
-                Console.ResetColor();
+                Console.WriteLine(CheckTheFirst(array));
             }
+            Console.ResetColor();
         }
     }
 
-    static int CheckTheFirst()                                      // finds the 1st bigger element in array
+    // Finds the 1st bigger element in array
+    static int CheckTheFirst(int[] arr)
     {
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < arr.Length; i++)
         {
-            if (IsBigger(i))                                        // calls the "IsBigger" method
-            {
-                return i;
-            }
+            if (IsBigger(arr, i)) return i;
         }
         return -1;
     }
 
-    static bool IsBigger(int p)                                     // is the element bigger than its neighbors
+    // If the element is bigger than its neighbors
+    static bool IsBigger(int[] arr, int p)
     {
-        if (p == 0)                                                 // if the element is on 0 position
-        {
-            return array[0] > array[1];
-        }
-        else if (p == array.Length - 1)                             // if the element is in the end of the array
-        {
-            return array[p] > array[p - 1];
-        }
-        else
-        {
-            return array[p] > array[p - 1] && array[p] > array[p + 1];
-        }
+        if (p == 0) return arr[0] > arr[1];
+        else if (p == arr.Length - 1) return arr[p] > arr[p - 1];
+        else return arr[p] > arr[p - 1] && arr[p] > arr[p + 1];
     }
 
-    static void ReadArray()                                         // method which reads one array
+    // Reads some array
+    private static int[] ReadArray()
     {
+        // Read the number of elements in array
         Console.Write("Please, enter the number of elements in array: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        array = new int[int.Parse(Console.ReadLine())];             // what is the limit of array
+        int[] array = new int[int.Parse(Console.ReadLine())];
         Console.ResetColor();
+
+        // Read each one element from array
         Console.Write("Please, fill the array: {");
-        int len = 0;                                                // length of each one elemtent in array
+        int len = 0;
         for (int i = 0; i < array.Length; i++)
         {
+            // Reads the current element
             Console.SetCursorPosition(25 + len + i, 1);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            array[i] = int.Parse(Console.ReadLine());               // reads the current element
+            array[i] = int.Parse(Console.ReadLine());
             Console.ResetColor();
-            len += array[i].ToString().Length;                      // checks the current length of the element
-            if (i < array.Length - 1)                               // is this the last element in array
+
+            // Checks the current length of the element
+            len += array[i].ToString().Length;
+
+            // Is this the last element in array
+            if (i < array.Length - 1)
             {
                 Console.SetCursorPosition(25 + len + i, 1);
                 Console.Write(",");
             }
         }
         Console.SetCursorPosition(24 + len + array.Length, 1);
-        Console.Write("}\n");
+        Console.WriteLine("}\n");
+        return array;
     }
 }

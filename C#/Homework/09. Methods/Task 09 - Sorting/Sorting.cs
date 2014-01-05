@@ -1,6 +1,6 @@
-﻿//Task9: Write a method that return the maximal element in a portion of array
-//       of integers starting at given index. Using it write another method
-//       that sorts an array in ascending / descending order.
+﻿// Task 9: Write a method that return the maximal element in a portion of array
+//         of integers starting at given index. Using it write another method
+//         that sorts an array in ascending / descending order.
 
 using System;
 
@@ -8,58 +8,59 @@ class Sorting
 {
     static void Main()
     {
-        Console.Write("Please, enter the number of elements in array: ");
-        int?[] numbers = new int?[int.Parse(Console.ReadLine())];
-        for (int i = 0; i < numbers.Length; i++)            // reads the array
-        {
-            Console.Write("Array[{0}] = ", i);
-            numbers[i] = int.Parse(Console.ReadLine());
-        }
+        // Read some array
+        int[] array = ReadArray();
 
-        int?[] sorted_descending = new int?[numbers.Length];
-        int?[] sorted_ascending = new int?[numbers.Length];
-
-        int index = 2;                                      //from where start the portion
-        int portion = 3;                                    //how many numbers will be checked
-
-        int max = Maximal(numbers, index, portion);         //takes the max number from the portion
+        // Sort the array in descending order and print it
         Console.Write("Descending: ");
-        Descending(numbers, sorted_descending, max);        //sorting in descending order
+        array = Sort(array, false);
+        PrintArray(array);
+
+        // Sort the array in ascending order and print it
         Console.Write("Ascending: ");
-        Ascending(sorted_descending, sorted_ascending);     //sorting in ascending order
+        array = Sort(array, true);
+        PrintArray(array);
     }
 
-    static void Descending(int?[] numbers, int?[] sorted, int max)
+    // Reads some array
+    private static int[] ReadArray()
     {
-        for (int i = 0; i < numbers.Length; i++)
+        // Read the number of elements in array
+        Console.Write("Please, enter the number of elements in array: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        int[] array = new int[int.Parse(Console.ReadLine())];
+        Console.ResetColor();
+
+        // Read each one element from array
+        Console.Write("Please, fill the array: {");
+        int len = 0;
+        for (int i = 0; i < array.Length; i++)
         {
-            max = Maximal(numbers, 0, numbers.Length);
-            sorted[i] = numbers[max];
-            numbers[max] = null;
+            // Reads the current element
+            Console.SetCursorPosition(25 + len + i, 1);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            array[i] = int.Parse(Console.ReadLine());
+            Console.ResetColor();
+
+            // Checks the current length of the element
+            len += array[i].ToString().Length;
+
+            // Is this the last element in array
+            if (i < array.Length - 1)
+            {
+                Console.SetCursorPosition(25 + len + i, 1);
+                Console.Write(",");
+            }
         }
-        foreach (var item in sorted)                        // prints array in descending order
-        {
-            Console.Write(item + " ");
-        }
-        Console.WriteLine();
+        Console.SetCursorPosition(24 + len + array.Length, 1);
+        Console.WriteLine("}\n");
+        return array;
     }
 
-    static void Ascending(int?[] numbers, int?[] sorted)
+    // Takes the max number from some portion
+    static int Maximal(int[] numbers, int index, int p)
     {
-        for (int i = numbers.Length - 1; i >= 0; i--)
-        {
-            sorted[numbers.Length - i - 1] = numbers[i];
-        }
-        foreach (var item in sorted)                        // prints array in ascending order
-        {
-            Console.Write(item + " ");
-        }
-        Console.WriteLine();
-    }
-
-    static int Maximal(int?[] numbers, int index, int p)
-    {
-        int? max = int.MinValue;
+        int max = int.MinValue;
         int pos = 0;
         for (int j = index; j < index + p; j++)
         {
@@ -70,5 +71,38 @@ class Sorting
             }
         }
         return pos;
+    }
+
+    // Sort some array
+    static int[] Sort(int[] arr, bool ascending)
+    {
+        int max = Maximal(arr, 0, arr.Length);
+        int[] sorted = new int[arr.Length];
+
+        // Sort the array in descending order
+        for (int i = 0; i < arr.Length; i++)
+        {
+            max = Maximal(arr, 0, arr.Length);
+            sorted[i] = arr[max];
+            arr[max] = int.MinValue;
+        }
+
+        // Sort the array in ascending order
+        if (ascending) Array.Reverse(sorted);
+
+        return sorted;
+    }
+
+    // Print some array
+    static void PrintArray(int[] arr)
+    {
+        Console.Write("{");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(arr[i]);
+            Console.ResetColor();
+            Console.Write(i == arr.Length - 1 ? "}\n" : ",");
+        }
     }
 }

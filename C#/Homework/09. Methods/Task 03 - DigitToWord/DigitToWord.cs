@@ -1,5 +1,5 @@
-﻿//Task 3: Write a method that returns the last digit of given integer as an English word.
-//        Examples: 512 → "two", 1024 → "four", 12309 → "nine".
+﻿// Task 3: Write a method that returns the last digit of given integer as an English word.
+//         Examples: 512 → "two", 1024 → "four", 12309 → "nine".
 
 using System;
 
@@ -7,19 +7,24 @@ class DigitToWord
 {
     static void Main()
     {
+        // Reads some integer number
         Console.Write("Please, enter some integer number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        int number = int.Parse(Console.ReadLine());             // reads some integer number
+        int number = int.Parse(Console.ReadLine());
         Console.ResetColor();
+
+        // Print the result
         Console.Write("The last digit is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(ReturnsToWord(number));               // calls the "ReturnsToWord" method
+        Console.WriteLine(ReturnsToWord(number));
         Console.ResetColor();
     }
 
-    static string ReturnsToWord(int n)                          // method which returns a digit to word
+    // Returns a digit to word
+    static string ReturnsToWord(int n)
     {
-        switch (n % 10)                                         // checks what is the last digit of the number
+        // Checks what is the last digit of the number
+        switch (n % 10)
         {
             case 0: return "zero";
             case 1: return "one";
@@ -31,7 +36,7 @@ class DigitToWord
             case 7: return "seven";
             case 8: return "eight";
             case 9: return "nine";
+            default: return String.Empty;
         }
-        return "";
     }
 }

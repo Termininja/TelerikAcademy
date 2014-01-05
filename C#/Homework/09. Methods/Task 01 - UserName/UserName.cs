@@ -1,5 +1,5 @@
-﻿//Task 1: Write a method that asks the user for his name and prints “Hello, <name>”.
-//        Example: “Hello, Peter!”. Write a program to test this method.
+﻿// Task 1: Write a method that asks the user for his name and prints “Hello, <name>”.
+//         Example: “Hello, Peter!”. Write a program to test this method.
 
 using System;
 
@@ -7,14 +7,16 @@ class UserName
 {
     static void Main()
     {
-        WhatIsYourName();                       // calls the "WhatIsYourName" method
+        // Call the method
+        WhatIsYourName();
     }
 
-    static void WhatIsYourName()                // method which reads and prints the user name
+    // Reads and prints some user name
+    static void WhatIsYourName()
     {
         Console.Write("What is your name: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string name = Console.ReadLine();       // reads the user name
+        string name = Console.ReadLine();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Hello, {0}!", name);
         Console.ResetColor();
