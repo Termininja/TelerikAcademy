@@ -26,20 +26,11 @@ class ThreeInOne
                     Winers.Clear();
                     Winers.Add(i);
                 }
-                else if (points == max)
-                {
-                    Winers.Add(i);
-                }
+                else if (points == max) Winers.Add(i);
             }
         }
-        if (Winers.Count == 1)
-        {
-            Console.WriteLine(Winers[0]);
-        }
-        else
-        {
-            Console.WriteLine("-1");
-        }
+        if (Winers.Count == 1) Console.WriteLine(Winers[0]);
+        else Console.WriteLine("-1");
     }
 
     private static void Task2()
@@ -107,20 +98,11 @@ class ThreeInOne
                 S1 += 1;
                 Diff(G1, S1, B1, G2, S2, B2, ref diffG, ref diffS, ref diffB);
             }
-            if (temp == operations)
-            {
-                break;
-            }
+            if (temp == operations) break;
         }
 
-        if (G1 >= G2 && S1 >= S2 && B1 >= B2)
-        {
-            Console.WriteLine(operations);
-        }
-        else
-        {
-            Console.WriteLine("-1");
-        }
+        if (G1 >= G2 && S1 >= S2 && B1 >= B2) Console.WriteLine(operations);
+        else Console.WriteLine("-1");
     }
 
     private static void Diff(int G1, int S1, int B1, int G2, int S2, int B2, ref int diffG, ref int diffS, ref int diffB)
