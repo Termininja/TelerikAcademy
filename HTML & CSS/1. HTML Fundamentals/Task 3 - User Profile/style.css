@@ -19,3 +19,7 @@ li > p, #info {
 li {
     font-style: italic;
 }
+
+img {
+    width: 80px;
+}
