@@ -2,35 +2,40 @@
 
 using System;
 
-class HexadecimalToBinary
+public class HexadecimalToBinary
 {
-    static void Main()
+    public static void Main()
     {
+        // Reads some hexadecimal number
         Console.Write("Please, enter some hexadecimal number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string hex = Console.ReadLine().ToLower();      // reads the hexadecimal number
+        string hex = Console.ReadLine().ToLower();
         Console.ResetColor();
 
+        // convert hex to bin number
         Console.Write("Binary representation of this number is: ");
         int temp;
-
-        for (int i = 0; i < hex.Length; i++)            // checks the symbol is it capital or not
+        for (int i = 0; i < hex.Length; i++)
         {
             temp = hex[i] >= 'a' ? temp = hex[i] - 87 : temp = hex[i] - 48;
-
             int?[] N = new int?[4];
-            for (int j = 0; j < 4; j++)                 // fills the array with 0s
+
+            // Fills the array with 0s
+            for (int j = 0; j < 4; j++)
             {
                 N[j] = 0;
             }
-            while (temp > 0)                            // checks where are the 1s
+
+            // Checks where are the 1s
+            while (temp > 0)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (Math.Pow(2, j + 1) > temp)      // this finds where has to be 1
+                    // Where has to be 1
+                    if (Math.Pow(2, j + 1) > temp)
                     {
-                        N[j] = 1;                       // sets 1 for this bit
-                        temp -= (int)Math.Pow(2, j);    // decrease the number by this bit
+                        N[j] = 1;
+                        temp -= (int)Math.Pow(2, j);
                         break;
                     }
                 }
@@ -38,27 +43,25 @@ class HexadecimalToBinary
             Array.Reverse(N);
             if (i == 0)
             {
-                for (int j = 0; j < 4; j++)             // removes the first 0s from the number
+                // Removes the first 0s from the number
+                for (int j = 0; j < 4; j++)
                 {
-                    if (N[j] == 0)
-                    {
-                        N[j] = null;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    if (N[j] == 0) N[j] = null;
+                    else break;
                 }
             }
+
+            // Prints the result
             Console.ForegroundColor = ConsoleColor.Green;
             foreach (var item in N)
             {
-                Console.Write(item);                    // prints the result
+                Console.Write(item);
             }
             Console.ResetColor();
         }
 
-        if (hex == "0")                                 // checks is the number equal to 0
+        // Checks is the number equal to 0
+        if (hex == "0")
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(0);

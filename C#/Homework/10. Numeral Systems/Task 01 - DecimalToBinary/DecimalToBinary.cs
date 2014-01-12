@@ -2,10 +2,14 @@
 
 using System;
 
-class DecimalToBinary
+public class DecimalToBinary
 {
-    static void Main()
+    public static void Main()
     {
+        // First variant
+        // Console.WriteLine(Convert.ToString(number, 2));
+
+        // Second variant
         byte?[] N = new byte?[32];                  // the number is type int, so the length is 32bits
         for (byte i = 0; i < N.Length; i++)         // fills the array with 0s
         {
@@ -36,20 +40,16 @@ class DecimalToBinary
         Array.Reverse(N);                           // reverses the array
         for (int i = 0; i < N.Length; i++)          // removes the first 0s from positive numbers
         {
-            if (N[i] == 0)
-            {
-                N[i] = null;
-            }
-            else
-            {
-                break;
-            }
+            if (N[i] == 0) N[i] = null;
+            else break;
         }
+
+        // Prints the result
         Console.Write("Binary representation of this number is: ");
-        if (temp != 0)                              // checks is the number equal to 0
+        if (temp != 0)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            foreach (var item in N)                 // prints the result
+            foreach (var item in N)
             {
                 Console.Write(item);
             }

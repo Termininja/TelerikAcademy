@@ -4,22 +4,26 @@
 
 using System;
 
-class FloatToBinary
+public class FloatToBinary
 {
-    static void Main()
+    public static void Main()
     {
+        // Reads some floating-point number
         Console.Write("Please, enter some floating-point number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        double number = double.Parse(Console.ReadLine());       // reads the floating-point number
+        double number = double.Parse(Console.ReadLine());
         Console.ResetColor();
+
+        // Check if the number is negative
         int sign = 0;
-        if (number < 0)                                         // is the number negative
+        if (number < 0)
         {
             sign = 1;
-            number *= -1;                                       // makes the number positive
+            number *= -1;
         }
 
-        int exp = (int)(Math.Floor(Math.Log(number, 2)));       // calculates the exponent
+        // Calculates the exponent
+        int exp = (int)(Math.Floor(Math.Log(number, 2)));
 
         Console.WriteLine();
         Console.WriteLine("\t┌───────┬────────────────┬───────────────────────────────────┐");
@@ -27,7 +31,7 @@ class FloatToBinary
         Console.WriteLine("\t├───────┼────────────────┼───────────────────────────────────┤");
         Console.Write("\t│   ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write(sign);                                    // prints the sign
+        Console.Write(sign);                                                // prints the sign
         Console.ResetColor();
         Console.Write("   │    ");
         Console.ForegroundColor = ConsoleColor.Green;

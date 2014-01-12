@@ -3,17 +3,19 @@
 using System;
 using System.Collections.Generic;
 
-class BinaryToHexadecimal
+public class BinaryToHexadecimal
 {
-    static void Main()
+    public static void Main()
     {
-        List<char> R = new List<char>();                            // List for result in hex representation
+        // Reads some binary number
         Console.Write("Please, enter some binary number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string binary = Console.ReadLine();                         // reads the binary number
+        string binary = Console.ReadLine();
         Console.ResetColor();
+
+        // Calculates the max lenght of the number
         int max = 0;
-        for (int i = 4; i <= 32; i += 4)                            // calculates the max lenght of the number
+        for (int i = 4; i <= 32; i += 4)
         {
             if (binary.Length <= i)
             {
@@ -21,12 +23,19 @@ class BinaryToHexadecimal
                 break;
             }
         }
-        string Bin = new string('0', max - binary.Length) + binary; // puts 0s before the number to max length
 
-        char[] B = Bin.ToCharArray();                               // imports the binary number in array B
-        Array.Reverse(B);                                           // reverses the array
+        // Puts 0s before the number to max length
+        string Bin = new string('0', max - binary.Length) + binary;
 
-        for (int i = 0; i < B.Length; i += 4)                       // calculates the current hex number
+        // Imports the binary number in array B
+        char[] B = Bin.ToCharArray();
+
+        // Reverses the array
+        Array.Reverse(B);
+
+        // Calculates the current hex number
+        List<char> R = new List<char>();
+        for (int i = 0; i < B.Length; i += 4)
         {
             int sum = 0;
             for (int k = 0; k < 4; k++)
@@ -35,12 +44,16 @@ class BinaryToHexadecimal
             }
             char hex = ' ';
             hex = sum >= 10 ? (char)(sum + 55) : (char)(sum + 48);
-            R.Add(hex);                                             // adds the current hex number in list R
+            R.Add(hex);
         }
-        R.Reverse();                                                // reverses the list
+
+        // Reverses the list
+        R.Reverse();
+
+        // Prints the result
         Console.Write("Hexadecimal representation of this number is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        foreach (var item in R)                                     // prints the result
+        foreach (var item in R)
         {
             Console.Write(item);
         }

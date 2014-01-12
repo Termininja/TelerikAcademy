@@ -2,23 +2,27 @@
 
 using System;
 
-class HexadecimalToDecimal
+public class HexadecimalToDecimal
 {
-    static void Main()
+    public static void Main()
     {
+        // Reads some hexadecimal number
         Console.Write("Please, enter some hexadecimal number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string hex = Console.ReadLine().ToLower();                  // reads the hexadecimal number
+        string hex = Console.ReadLine().ToLower();
         Console.ResetColor();
 
+        // Convert hex to decimal representation
         int temp, result = 0;
-        for (int i = 0; i < hex.Length; i++)                        // checks the symbol is it capital or not
+        for (int i = 0; i < hex.Length; i++)
         {
-            temp = hex[i] >= 'a' ? temp = hex[i] - 87 :  temp = hex[i] - 48;
-            result += temp * (int)Math.Pow(16, hex.Length - i - 1); // calculates the result
+            temp = hex[i] >= 'a' ? temp = hex[i] - 87 : temp = hex[i] - 48;
+            result += temp * (int)Math.Pow(16, hex.Length - i - 1);
         }
+
+        // Prints the result
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(result);                                  // prints the result
+        Console.WriteLine(result);
         Console.ResetColor();
     }
 }

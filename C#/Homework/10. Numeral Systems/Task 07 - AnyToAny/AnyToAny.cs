@@ -4,65 +4,65 @@
 using System;
 using System.Collections.Generic;
 
-class AnyToAny
+public class AnyToAny
 {
-    static void Main()
+    public static void Main()
     {
+        // Reads the base of given numeral system
         byte from_base = 0;
-        while (from_base < 2 || 16 < from_base)                     // is the base from 2 to 16
+        while (from_base < 2 || 16 < from_base)
         {
             Console.Clear();
             Console.Write("Please, choose some numeral system (2-16): ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            from_base = byte.Parse(Console.ReadLine());             // reads the base of given numeral system
+            from_base = byte.Parse(Console.ReadLine());
             Console.ResetColor();
         }
+
+        // Read some number in the given numeral system
         Console.Write("Please, enter some number from base-{0} numeral system: ", from_base);
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string X = Console.ReadLine();                              // the number in the given numeral system
+        string X = Console.ReadLine();
         Console.ResetColor();
 
-        // prints the table with all base-x numeral systems
+        // Prints the table with all base-x numeral systems
         Console.WriteLine();
         Console.WriteLine("\t┌────────────────┬" + new string('─', 40) + "┐");
         Console.WriteLine("\t│ Numeral system │\t\tRepresentation\t\t  │");
         Console.WriteLine("\t├────────────────┼" + new string('─', 40) + "┤");
 
-        for (byte to_base = 2; to_base <= 16; to_base++)            // for each one base will be used 'NumSystem' method
+        for (byte to_base = 2; to_base <= 16; to_base++)
         {
             NumSystem(from_base, to_base, X);
         }
         Console.WriteLine("\t└────────────────┴" + new string('─', 40) + "┘");
     }
 
+    // Convert some system to decimal and print the result
     static void NumSystem(byte a, byte b, string X)
     {
         int temp, Decimal = 0;
         bool bigNumber = false;
-        for (int i = X.Length - 1; i >= 0; i--)                     // converting the 'x' system to decimal numeral system
+        for (int i = X.Length - 1; i >= 0; i--)
         {
             temp = X[i] >= 'a' ? temp = X[i] - 87 : (X[i] >= 'A' ? temp = X[i] - 55 : temp = X[i] - 48);
-            Decimal += temp * (int)Math.Pow(a, X.Length - i - 1);   // the result from decimal number
-            if (Decimal < 0)                                        // if the number is too big
-            {
-                bigNumber = true;
-            }
+            Decimal += temp * (int)Math.Pow(a, X.Length - i - 1);
+            if (Decimal < 0) bigNumber = true;
         }
+
+        // Convert from decimal to desired numeral system
         List<char> R = new List<char>();
         char sym = ' ';
-        while (Decimal > 0)                                         // converting from decimal to desired numeral system
+        while (Decimal > 0)
         {
             sym = (Decimal % b) >= 10 ? (char)(Decimal % b + 55) : (char)(Decimal % b + 48);
-            R.Add(sym);                                             // adding each one symbol in R list
+            R.Add(sym);
             Decimal /= b;
         }
-        R.Reverse();                                                // reverses the list
+        R.Reverse();
         string c = "";
-        if (b.ToString().Length == 1)                               // fills the empty symbols to arrange the table
-        {
-            c = " ";
-        }
-        Console.SetCursorPosition(8, 4 + b);                        // sets the right position to print the result
+        if (b.ToString().Length == 1) c = " ";
+        Console.SetCursorPosition(8, 4 + b);
         Console.Write("│");
         Console.ForegroundColor = a == b ? ConsoleColor.Yellow : ConsoleColor.Green;
         Console.Write("    Base-{0}{1}     ", b, c);
@@ -85,20 +85,15 @@ class AnyToAny
             }
             else
             {
-                foreach (var item in R)                             // prints the result for each one numeral system
+                // Prints the result for each one numeral system
+                foreach (var item in R)
                 {
                     Console.Write(item);
                 }
             }
             Console.ResetColor();
-            if (bigNumber)
-            {
-                Console.Write(new string(' ', 22) + "│");
-            }
-            else
-            {
-                Console.Write(new string(' ', 37 - R.Count) + "│");
-            }
+            if (bigNumber) Console.Write(new string(' ', 22) + "│");
+            else Console.Write(new string(' ', 37 - R.Count) + "│");
         }
         Console.WriteLine();
     }

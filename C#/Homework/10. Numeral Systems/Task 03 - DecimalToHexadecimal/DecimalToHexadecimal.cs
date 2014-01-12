@@ -3,38 +3,35 @@
 using System;
 using System.Collections.Generic;
 
-class DecimalToHexadecimal
+public class DecimalToHexadecimal
 {
-    static void Main()
+    public static void Main()
     {
-        List<int> Hex = new List<int>();
+        // Reads some decimal number
         Console.Write("Please, enter some positive integer number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        int num = int.Parse(Console.ReadLine());            // reads the number
+        int num = int.Parse(Console.ReadLine());
         Console.ResetColor();
 
-        if (num < 0)                                        // if the number is negative
-        {
-            throw new Exception();
-        }
+        // If the number is negative
+        if (num < 0) throw new Exception();
 
+        // Convert decimal to hex representation
+        List<int> Hex = new List<int>();
         Console.Write("Hexadecimal representation of this number is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        if (num == 0)                                       // if the number is equal to 0
+        if (num == 0) Console.WriteLine(0);
+        while (num > 0)
         {
-            Console.WriteLine(0);
-        }
-        while (num > 0)                                     // calculates the result
-        {
-            Hex.Add(num % 16);                              // adds each one value in array
+            Hex.Add(num % 16);
             num /= 16;
         }
-        Hex.Reverse();                                      // reverses the array
-
+        Hex.Reverse();
         string temp = "";
         foreach (var item in Hex)
         {
-            switch (item)                                   // converts the big numbers to letter
+            // Converts the big numbers to letter
+            switch (item)
             {
                 case 10: temp = "A"; break;
                 case 11: temp = "B"; break;
@@ -44,7 +41,9 @@ class DecimalToHexadecimal
                 case 15: temp = "F"; break;
                 default: temp = item.ToString(); break;
             }
-            Console.Write(temp);                            // prints the result
+
+            // Prints the result
+            Console.Write(temp);
         }
         Console.WriteLine();
         Console.ResetColor();
