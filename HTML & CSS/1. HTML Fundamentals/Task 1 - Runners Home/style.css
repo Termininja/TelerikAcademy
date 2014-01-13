@@ -6,3 +6,7 @@ p, ul {
 li:before {
     content: "- ";
 }
+
+sup {
+    font-size: 50%;
+}
