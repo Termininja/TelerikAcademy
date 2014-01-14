@@ -1,23 +1,28 @@
-﻿//Task2: Write a program that generates and prints to the console 10 random values in the range [100, 200].
+﻿//Task2: Write a program that generates and prints to the console
+//       10 random values in the range [100, 200].
 
 using System;
 using System.Threading;
 
-class RandomValues
+public class RandomValues
 {
-    static void Main()
+    public static void Main()
     {
-        Random RandomGenerator = new Random();                      // sets a random generator
-        for (int i = 0; i < 10; i++)                                // for each 10 values
+        // Create a random generator
+        Random RandomGenerator = new Random();
+
+        for (int i = 0; i < 10; i++)
         {
-            for (int j = 0; j < 100; j++)                           // takes the last from 99 times
+            for (int j = 0; j < 100; j++)
             {
                 Console.SetCursorPosition(0, i + 1);
                 Console.Write("  Random value {0:00}: ", i + 1);
+
+                // Prints the result
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(RandomGenerator.Next(100, 201));  // prints the result
+                Console.WriteLine(RandomGenerator.Next(100, 201));
                 Console.ResetColor();
-                Thread.Sleep(20);                                   // sleep the program for 20ms
+                Thread.Sleep(10);
             }
         }
     }

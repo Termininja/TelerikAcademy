@@ -13,15 +13,16 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-class ArithmeticalExpression
+public class ArithmeticalExpression
 {
     static bool isFunction = false;
     static char[] Operators = { '*', '/', '+', '-' };
 
-    static void Main()
+    public static void Main()
     {
         try
         {
+            // Reads some arithmetical expression
             Console.WriteLine("Please, write some arithmetical expression: ");
             Examples(1, "3/(1.2*5) - pow(3/8.9E-3 +ln(7/sqrt(12-2.3/4)), sqrt(25/4))*2 - 12");
             Examples(2, "1/cos(45*4) -tan(7-(3.1*7/sin(12-2.3/4)))/ sqrt(3/4.5-1.2)");
@@ -29,13 +30,14 @@ class ArithmeticalExpression
             Examples(4, "cot(sin(tan(ln(cos(sqrt(pow(sin(tan(ln(1))),1)))))))");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\n x = ");
-            string E = Console.ReadLine();                      // reads some arithmetical expression
+            string E = Console.ReadLine();
             Console.ResetColor();
 
-            E = E.Replace(" ", "").Replace(',', '_');           //  removes the all empty intervals and replace ',' with '_'
+            //  Removes all empty intervals and replace ',' with '_'
+            E = E.Replace(" ", "").Replace(',', '_');
             E = E.Replace("sin", "v").Replace("cos", "x").Replace("tan", "y").Replace("cot", "z");
 
-            string check = "";
+            string check = String.Empty;
             while (E != check)                                  // it will finish when the result is a number
             {
                 check = E;
@@ -57,32 +59,36 @@ class ArithmeticalExpression
                                 E = Functions(E, i, 'y');       // calculates the Tangens function
                                 E = Functions(E, i, 'z');       // calculates the Cotangens function
                             }
-                            if (!isFunction)                    // if some function is used
-                            {
-                                E = BracketsPriority(E, i);
-                            }
+
+                            // if Ln or Sqrt are used
+                            if (!isFunction) E = BracketsPriority(E, i);
                         }
                     }
                 }
             }
 
+            // Checks for NaN
             Console.Write("\n x = ");
-            E = E.Contains("NaN") ? "NaN" : E;                  // checks for NaN
+            E = E.Contains("NaN") ? "NaN" : E;
+
+            // Prints the result
             double R = 0;
             if (double.TryParse(E, out R))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(R.ToString("E2"));            // prints the result
+                Console.WriteLine(R.ToString("E2"));
             }
             else
             {
+                // If there is some error in the expression
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Wrong expression!");         // if there is some error in expression
+                Console.WriteLine("Wrong expression!");
             }
             Console.ResetColor();
         }
-        catch (Exception)                                       // if catch some exception in the program
+        catch (Exception)
         {
+            // If there is some exception in the program
             Console.Write("\n x = ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Wrong expression!");
@@ -106,7 +112,7 @@ class ArithmeticalExpression
         {
             temp += E[j];
 
-            /* calculates the expression in the brackets */
+            // Calculates the expression in the brackets
             if (double.TryParse(temp, out num) && E[j + 1] == ')')
             {
                 E = (E.Remove(i, 1)).Remove(j, 1);
@@ -154,7 +160,7 @@ class ArithmeticalExpression
                     temp += E[j];
                     if (double.TryParse(temp, out num) && E[j + 1] == ')')
                     {
-                        /* calculates the expression in the brackets for the respective function*/
+                        // Calculates the expression in the brackets for the respective function
                         double result = 0;
                         switch (f)
                         {
@@ -168,13 +174,13 @@ class ArithmeticalExpression
                         }
                         E = (E.Remove(i - word_len, j - i + word_len + 2)).Insert(i - word_len, result.ToString());
                         E = TempResult(E);
-                        isFunction = true;                      // some function is used
+                        isFunction = true;                      // if some function is used
                         break;
                     }
                 }
             }
         }
-        return E;                                               // returns the result from this function
+        return E;
     }
 
     static string BasicArithmeticOperations(string E, char symbol)
@@ -198,7 +204,7 @@ class ArithmeticalExpression
                     default: break;
                 }
 
-                /* calculates the expression from *, /, + or - operators */
+                // Calculates the expression from *, /, + or - operators
                 if (available1 && available2)
                 {
                     string sign = "";
@@ -209,7 +215,7 @@ class ArithmeticalExpression
                 }
             }
         }
-        return E;                                               // returns the result from calculations
+        return E;
     }
 
     static double SearchNumber(string E, int i, out bool available, out int limit, int start, int end)
@@ -226,31 +232,24 @@ class ArithmeticalExpression
                 available = true;                               // if the number is found
                 if (E[i] == '+' || E[i] == '-')                 // checks the priority of '*' and '/'
                 {
-                    if (i - (end - limit + 1) >= 0 && start < i)
+                    // This number will not be used
+                    int temp = end - limit + 1;
+                    if (((i - temp >= 0 && start < i) && (E[i - temp] == '*' || E[i - temp] == '/')) ||
+                        ((i + temp < E.Length && start > i) && (E[i + temp] == '*' || E[i + temp] == '/')))
                     {
-                        if (E[i - (end - limit + 1)] == '*' || E[i - (end - limit + 1)] == '/')
-                        {
-                            available = false;                  // this number will not be used
-                        }
-                    }
-                    if (i + (end - limit) + 1 < E.Length && start > i)
-                    {
-                        if (E[i + (end - limit) + 1] == '*' || E[i + (end - limit) + 1] == '/')
-                        {
-                            available = false;                  // this number will not be used
-                        }
+                        available = false;
                     }
                 }
                 break;
             }
         }
-        return num;                                             // returns the value of the number
+        return num;
     }
 
     static string TempResult(string E)
     {
         E = E.Replace("-+", "-");
-        Thread.Sleep(500);                                      // sleep for a half second
+        Thread.Sleep(500);
         Console.WriteLine(" x = {0}", E.Replace('_', ',').Replace("v", "sin").Replace("x", "cos").Replace("y", "tan").Replace("z", "cot"));
         return E;
     }
