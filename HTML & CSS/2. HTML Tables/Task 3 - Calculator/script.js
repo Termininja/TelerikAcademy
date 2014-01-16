@@ -2,6 +2,8 @@
 var Key = document.Calculator;
 var Keep = 0;
 var Power = false;
+var LastResult = null;
+var NotUsed = 0;
 var Factor = Math.PI / 180;
 var Flag = false;
 var Operation = "";
@@ -166,7 +168,7 @@ function Switch() {
         }, 3500);
     }
     setTimeout(function () {
-        CheckState();
+        State();
     }, 10000);
 }
 function Opacity(value) {
@@ -209,9 +211,28 @@ function Clock(value) {
 }
 Clock('on');
 
-function CheckState() {
+function State() {
     if ((document.cestatus == 0 && Power) ||
         (document.cestatus == 1 && !Power)) {
         Keypad();
     }
 }
+
+function CheckState() {
+    if (Power) {
+        if (Key.Display.value == LastResult) {
+            NotUsed++;
+        }
+        else {
+            LastResult = Key.Display.value;
+            NotUsed = 0;
+        }
+
+        if (NotUsed > 6) Switch();
+    }
+
+    setTimeout(function () {
+        CheckState();
+    }, 10000);
+}
+CheckState();
