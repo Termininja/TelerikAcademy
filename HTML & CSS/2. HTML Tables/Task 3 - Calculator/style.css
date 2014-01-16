@@ -1,0 +1,155 @@
+body {
+    background-image: url("images/glass.jpg");
+}
+
+#base {
+    border: 3px outset gray;
+    font-size: 80%;
+    border-collapse: separate;
+    border-spacing: 3px;
+    padding: 0;
+    border-radius: 10px;
+    margin-top: 20%;
+    background-image: url("images/background.jpg");
+}
+
+#box {
+    display: none;
+    height: 165px;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 5.5px;
+    padding: 0;
+}
+
+.frame {
+    height: 10px;
+    background-image: url("images/glass.jpg");
+    opacity: 0.8;
+    border: 2px ridge #ddd;
+}
+
+    .frame.top {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+    .frame.bottom {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+#power {
+    width: 45px;
+}
+
+    #power input {
+        width: 22px;
+        cursor: pointer;
+        border-radius: 10px;
+        background-image: url("images/button.png");
+        background-size: 21px 21px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+#screen {
+    padding: 0.1em;
+    width: 380px;
+    height: 30px;
+    text-align: right;
+    background-color: #222;
+}
+
+    #screen #clock {
+        width: 380px;
+        height: 30px;
+        font-size: 16px;
+        text-align: center;
+        font-family: Algerian;
+        letter-spacing: 1px;
+        vertical-align: 30px;
+        border: none;
+        background: transparent;
+    }
+
+    #screen #display {
+        width: 380px;
+        height: 30px;
+        padding-right: 0.3em;
+        color: black;
+        background-color: rgba(188, 205, 149, 0.10);
+        font-size: 21px;
+        font-family: DigifaceWide;
+        letter-spacing: 1px;
+        text-align: right;
+    }
+
+#glass {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    top: auto;
+    left: auto;
+    height: 36px;
+    width: 390px;
+}
+
+#hat {
+    padding-top: 1px;
+    position: absolute;
+    z-index: 5;
+    top: auto;
+    left: auto;
+    width: 390px;
+    text-align: center;
+}
+
+input[type=radio] {
+    width: 10px;
+}
+
+label {
+    color: #cafaff;
+    font-size: 85%;
+    font-weight: 700;
+}
+
+.button {
+    width: 40px;
+    height: 24px;
+    font-size: 80%;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #cafaff;
+    background-color: rgba(0, 11, 12, 0.90);
+    font-weight: 700;
+}
+
+    .button:hover {
+        background-color: rgba(0, 11, 12, 0.40);
+    }
+
+#zero {
+    width: 92px;
+}
+
+#equal {
+    height: 59px;
+}
+
+.math {
+    position: absolute;
+    font-size: 50%;
+    margin-top: -0.6em;
+    margin-left: 0.8em;
+}
+
+#pi {
+    font-style: italic;
+    font-family: Aharoni;
+}
+
+.hide {
+    opacity: 0;
+}

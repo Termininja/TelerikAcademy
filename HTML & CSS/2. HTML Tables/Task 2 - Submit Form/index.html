@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+    <form name="submit" method="get" action="form.php">
+        <table>
+            <tr>
+                <td>
+                    <label for="name">Member name:</label>
+                    <input required id="name" name="name" type="text" />
+                    <strong>*req</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                    <input required id="email" title="xxxx@xxx.xx" pattern="(\w+?@\w+?\x2E.+)" name="email" type="text" />
+                    <strong>*req</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="school">School:</label>
+                    <input required id="school" name="school" type="text" />
+                    <strong>*req</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="button" type="submit" value="" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

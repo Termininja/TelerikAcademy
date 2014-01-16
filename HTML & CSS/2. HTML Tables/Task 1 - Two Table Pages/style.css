@@ -1,0 +1,26 @@
+#title {
+    text-align: center;
+    font-size: 150%;
+    padding: 0;
+}
+
+.text {
+    width: 270px;
+}
+
+img {
+    width: 170px;
+}
+
+td {
+    padding: 0.5em;
+}
+
+.width {
+    width: 28px;
+}
+
+#center {
+    text-align: center;
+    font-weight: bolder;
+}
