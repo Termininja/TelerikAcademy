@@ -68,7 +68,6 @@ body {
         text-align: center;
         font-family: Algerian;
         letter-spacing: 1px;
-        vertical-align: 30px;
         border: none;
         background: transparent;
     }
@@ -116,7 +115,7 @@ label {
 }
 
 .button {
-    width: 40px;
+    width: 41.5px;
     height: 24px;
     font-size: 80%;
     border-radius: 8px;
