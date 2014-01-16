@@ -9,7 +9,7 @@ table {
     background-color: khaki;
 }
 
-td {
+td, th {
     text-align: center;
     border: 1px solid black;
 }
