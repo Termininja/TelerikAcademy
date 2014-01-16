@@ -1,4 +1,5 @@
-﻿//Task12: Write a program that removes from a text file all words listed in given another text file.
+﻿//Task12: Write a program that removes from a text file
+//        all words listed in given another text file.
 //        Handle all possible exceptions in your methods.
 
 using System;
@@ -15,21 +16,28 @@ class RemoveWordsThatAreInOtherFile
         {
             StringBuilder result = new StringBuilder();
 
-            StreamReader readText = new StreamReader("file.txt");           // reads some text file
+            // Reads some text file
+            StreamReader readText = new StreamReader("file.txt");
             using (readText) result.Append(readText.ReadToEnd());
 
-            StreamReader readWords = new StreamReader("words.txt");         // reads some file with words
+            // Reads some file with words
+            StreamReader readWords = new StreamReader("words.txt");
             string word = readWords.ReadLine();
-            for (int line = 1; word != null; line++)                        // for each one word in the file with words
+
+            // For each one word in the file with words
+            for (int line = 1; word != null; line++)
             {
                 // Removes the current word
                 StringBuilder temp = new StringBuilder();
                 temp.Append(Regex.Replace(result.ToString(), String.Format(@"\b{0}\b", word), String.Empty));
                 result = temp;
-                word = readWords.ReadLine();                                // reads the next word
+
+                // Reads the next word
+                word = readWords.ReadLine();
             }
 
-            Console.WriteLine(result);                                      // prints the result
+            // Prints the result
+            Console.WriteLine(result);
         }
 
         // Handle all possible exceptions

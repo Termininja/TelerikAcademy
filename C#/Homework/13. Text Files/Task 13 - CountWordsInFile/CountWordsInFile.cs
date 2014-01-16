@@ -24,24 +24,31 @@ class CountWordsInFile
         // Reads some file with words
         StreamReader readWords = new StreamReader("words.txt");
         string word = readWords.ReadLine();
-        for (int line = 1; word != null; line++)                // for each one word in the file with words
+
+        // For each one word in the file with words
+        for (int line = 1; word != null; line++)
         {
-            // counting the current word
+            // Counting the current word
             int count = 0;
             foreach (Match item in Regex.Matches(contents.ToString(), String.Format(@"\b{0}\b", word)))
             {
                 count++;
             }
-            resultValue.Add(word);              // put the current word in list1
-            resultKey.Add(count);               // put the current count in list2
-            word = readWords.ReadLine();        // reads the next word            
+
+            // Put the current word and count in lists
+            resultValue.Add(word);
+            resultKey.Add(count);
+
+            // Reads the next word
+            word = readWords.ReadLine();
         }
 
         // Converts the lists to arrays
         int[] c = resultKey.ToArray();
         string[] w = resultValue.ToArray();
 
-        Array.Sort(c, w);                       // sorting both arrays by 'count'
+        // Sorting both arrays by 'count'
+        Array.Sort(c, w);
 
         // Write the result in some text file
         StreamWriter write = new StreamWriter("result.txt");

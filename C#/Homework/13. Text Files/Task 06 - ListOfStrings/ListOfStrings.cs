@@ -13,23 +13,30 @@ class ListOfStrings
 {
     static void Main()
     {
-        StreamReader read = new StreamReader("file.txt");           // reads some text file
+        // Reads some text file
+        StreamReader read = new StreamReader("file.txt");
         using (read)
         {
+            // Creates an empty list and fill it
             string line = read.ReadLine();
-            List<string> list = new List<string>();                 // creates empty list
+            List<string> list = new List<string>();
             for (int l = 0; line != null; l++)
             {
                 // Adds each one word from the file in the list
                 list.Add(line);
-                line = read.ReadLine();                             // reads the next line
+
+                // Reads the next line
+                line = read.ReadLine();
             }
-            list.Sort();                                            // sorting the list
+
+            // Sorting the list
+            list.Sort();
+
+            // Write the sorted list in some output file
             StreamWriter write = new StreamWriter("output.txt");
             using (write)
             {
-                // Write the sorted list in some output file
-                foreach (var word in list)      
+                foreach (var word in list)
                 {
                     write.WriteLine(word);
                 }

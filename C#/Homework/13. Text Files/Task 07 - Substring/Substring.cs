@@ -10,13 +10,14 @@ class Substring
 {
     static void Main()
     {
-        StringBuilder text = new StringBuilder();          
+        StringBuilder text = new StringBuilder();
 
-        StreamReader read = new StreamReader("file.txt");       // reads some text file
+        // Reads some text file
+        StreamReader read = new StreamReader("file.txt");
         using (read)
         {
             // Imports the whole text file in one variable 'text'
-            text.Append(read.ReadToEnd());                     
+            text.Append(read.ReadToEnd());
         }
 
         // Write the replaced substrings in the same file

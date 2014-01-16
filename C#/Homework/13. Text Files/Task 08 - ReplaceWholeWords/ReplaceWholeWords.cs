@@ -11,7 +11,8 @@ class ReplaceWholeWords
     {
         StringBuilder text = new StringBuilder();
 
-        StreamReader read = new StreamReader("file.txt");       // reads some text file
+        // Reads some text file
+        StreamReader read = new StreamReader("file.txt");
         using (read)
         {
             // Imports the whole text file in one variable 'text'

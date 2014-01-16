@@ -7,14 +7,18 @@ class PrintOddLines
 {
     static void Main()
     {
-        StreamReader read = new StreamReader("file.txt");       // reads some text file
+        // Reads some text file
+        StreamReader read = new StreamReader("file.txt");
         using (read)
         {
             string text = read.ReadLine();
             for (int line = 1; text != null; line++)
             {
-                if (line % 2 != 0) Console.WriteLine(text);     // prints only odd lines
-                text = read.ReadLine();                         // reads the current line
+                // Prints only odd lines
+                if (line % 2 != 0) Console.WriteLine(text);
+
+                // Reads the current line
+                text = read.ReadLine();
             }
         }
     }

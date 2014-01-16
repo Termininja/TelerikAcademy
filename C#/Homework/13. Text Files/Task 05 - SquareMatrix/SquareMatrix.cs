@@ -16,19 +16,22 @@ class SquareMatrix
 {
     static void Main()
     {
-        StreamReader file = new StreamReader("file.txt");           // reads some text file
+        // Reads some text file
+        StreamReader file = new StreamReader("file.txt");
         using (file)
         {
-            int size = int.Parse(file.ReadLine());                  // reads the first line
-            int[,] matrix = new int[size, size];                    // creates some empty matrix
+            // Reads the first line
+            int size = int.Parse(file.ReadLine());
 
-            for (int line = 0; line < size; line++)                 // fills the matrix
+            // Creates some empty matrix and fill it
+            int[,] matrix = new int[size, size];
+            for (int line = 0; line < size; line++)
             {
                 // Reads each one line from matrix in the file
-                string[] currentLine = file.ReadLine().Split(' ');  
+                string[] currentLine = file.ReadLine().Split(' ');
 
                 // Reads each line element from the matrix in the file
-                for (int col = 0; col < size; col++)                
+                for (int col = 0; col < size; col++)
                 {
                     matrix[line, col] = int.Parse(currentLine[col]);
                 }
@@ -40,17 +43,17 @@ class SquareMatrix
             {
                 for (int j = 1; j < size; j++)
                 {
-                    int currentSum = 
+                    int currentSum =
                         matrix[i - 1, j - 1] +
-                        matrix[i, j - 1] + 
-                        matrix[i - 1, j] + 
+                        matrix[i, j - 1] +
+                        matrix[i - 1, j] +
                         matrix[i, j];
                     if (currentSum >= sumMax) sumMax = currentSum;
                 }
             }
 
             // Write the result in some output file
-            StreamWriter write = new StreamWriter("output.txt");   
+            StreamWriter write = new StreamWriter("output.txt");
             using (write) write.WriteLine(sumMax);
         }
     }
