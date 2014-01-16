@@ -1,6 +1,9 @@
-﻿//Task3: Write a program that enters file name along with its full file path (e.g. C:\WINDOWS\win.ini),
-//       reads its contents and prints it on the console. Find in MSDN how to use System.IO.File.ReadAllText(…).
-//       Be sure to catch all possible exceptions and print user-friendly error messages.
+﻿//Task3: Write a program that enters file name along with its
+//       full file path (e.g. C:\WINDOWS\win.ini), reads its
+//       contents and prints it on the console. Find in MSDN
+//       how to use System.IO.File.ReadAllText(…). Be sure to
+//       catch all possible exceptions and print user-friendly
+//       error messages.
 
 using System;
 using System.IO;
@@ -12,11 +15,14 @@ class ReadAllText
     {
         try
         {
+            // Reads some file path
             Console.Write("Please, enter the full file path: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            string path = Console.ReadLine();                       // reads some file path
+            string path = Console.ReadLine();
+
+            // Prints the contents of the file
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(File.ReadAllText(path));              // prints the contents of the file
+            Console.WriteLine(File.ReadAllText(path));
             Console.ResetColor();
         }
 

@@ -10,32 +10,40 @@ class SquareRoot
     {
         try
         {
+            // Reads some integer number
             Console.Write("Please, enter some integer number: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            int number = int.Parse(Console.ReadLine());     // reads some integer number
+            int number = int.Parse(Console.ReadLine());
             Console.ResetColor();
-            if (number < 0)                                 // throw exception if the number is negative
+
+            // Throw exception if the number is negative
+            if (number < 0)
             {
                 throw new FormatException();
             }
+
+            // Prints the result from Sqrt()
             Console.Write("The square root of {0} is: ", number);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(Math.Sqrt(number));           // prints the result from Sqrt()
+            Console.WriteLine(Math.Sqrt(number));
             Console.ResetColor();
         }
-        catch (FormatException)                             // when there is "FormatException"
+        catch (FormatException)
         {
+            // If there is some format exception
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Invalid number");
 
         }
-        catch (OverflowException)                           // when the number is too big
+        catch (OverflowException)
         {
+            // If the number is too big
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Too big number!");
         }
-        finally                                             // finally is printed "Good bye"
+        finally
         {
+            // Finally is printed "Good bye"
             Console.ResetColor();
             Console.WriteLine("\nGood bye");
         }

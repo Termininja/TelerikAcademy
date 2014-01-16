@@ -15,20 +15,23 @@ class DownloadFromInternet
         {
             try
             {
+                // Reads some file address in Internet
                 Console.WriteLine("Please, enter some file address in Internet: ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                string uri = Console.ReadLine();                        // reads some file address in Internet
+                string uri = Console.ReadLine();
                 Console.ResetColor();
 
-                Match filename = Regex.Match(uri, @"[^\/]+\.\w+$");     // takes the name of the file
+                // Takes the name of the file
+                Match filename = Regex.Match(uri, @"[^\/]+\.\w+$");
 
-                // checks the size of the file before to be downloaded
+                // Checks the size of the file before to be downloaded
                 client.OpenRead(uri);
                 Int64 bytes = Convert.ToInt64(client.ResponseHeaders["Content-Length"]);
                 Console.Write("\nThe size of the file is " + bytes.ToString() + " Bytes. Press <Enter> to start downloading");
                 Console.ReadLine();
 
-                client.DownloadFile(uri, filename.ToString());          // downloads the file
+                // Downloads the file
+                client.DownloadFile(uri, filename.ToString());
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("The file is successfully downloaded!");
                 Console.ResetColor();
