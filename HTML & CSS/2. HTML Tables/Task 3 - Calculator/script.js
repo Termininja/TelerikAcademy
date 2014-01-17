@@ -7,8 +7,10 @@ var NotUsed = 0;
 var Factor = Math.PI / 180;
 var Flag = false;
 var Operation = "";
+var ClickSound = "click.mp3";
 function Num(number) {
     if (Power) {
+        PlaySound(ClickSound);
         if (Flag) {
             Key.Display.value = number;
             Flag = false;
@@ -182,7 +184,7 @@ function BackColor(color) {
     element.style.backgroundColor = color;
 }
 function Keypad() {
-    if (document.cestatus == 0) {
+    if (document.cestatus === 0) {
         document.getElementById('box').style.display = "block";
         document.cestatus = 1;
     } else {
@@ -201,7 +203,9 @@ function Clock(value) {
 
         var d = (new Date() + '').split(' ');
         Key.DateTime.value = [d[2], d[1], d[3] + " (" + d[0] + ")", d[4]].join(' ') + " " + dn;
-        if (!Power) setTimeout("Clock('on')", 10)
+        if (!Power) setTimeout(function () {
+            Clock('on');
+        }, 10);
     }
     else {
         el.style.fontSize = "21px";
@@ -209,10 +213,18 @@ function Clock(value) {
         Key.DateTime.value = null;
     }
 }
-Clock('on');
+
+function PlaySound(file) {
+    var source = document.createElement('source');
+    source.setAttribute('src', file);
+
+    var sound = document.createElement('audio');
+    sound.appendChild(source);
+    sound.play();
+}
 
 function State() {
-    if ((document.cestatus == 0 && Power) ||
+    if ((document.cestatus === 0 && Power) ||
         (document.cestatus == 1 && !Power)) {
         Keypad();
     }
@@ -235,4 +247,8 @@ function CheckState() {
         CheckState();
     }, 10000);
 }
-CheckState();
+
+window.onload = function () {
+    Clock('on');
+    CheckState();
+};
