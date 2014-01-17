@@ -1,181 +1,190 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Sample</title>
+    <title>Filtering table</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <form>
-        <table border="1" cellpadding="2" cellspacing="0">
-
+    <form method="get" action="form.php">
+        <table id="table">
             <thead>
-                <tr style="background-color: #3496d7">
-                    <th style="text-align: left" colspan="6">Drag a colummn header and drop it here to group by that column
-                    </th>
+                <tr>
+                    <th colspan="6">Drag a column header and drop it here to group by tdat column</th>
                 </tr>
-                <tr style="background-color: #3496d7">
-                    <th>Product ID</th>
-                    <th>Product Name</th>
-                    <th>Unit Price</th>
-                    <th>Quantity per Unit</th>
-                    <th>Units in Stock</th>
+                <tr>
+                    <th>ProductID</th>
+                    <th>Product name</th>
+                    <th>Unit price</th>
+                    <th>Quantity per unit</th>
+                    <th>Units in stock</th>
                     <th>Discontinued</th>
                 </tr>
-                <tr style="background-color: #3496d7">
-                    <th>
-                        <input type="text" name="pId" />
+                <tr>
+                    <th id="product">
+                        <input type="text" name="id" />
                     </th>
-                    <th style="text-align: left">
-                        <input type="text" name="pName" />
-
+                    <th id="name">
+                        <input type="text" name="name" />
                     </th>
-                    <th>
-                        <input type="text" name="unitPrice">
-                        <input type="submit" value="" />
+                    <th id="price">
+                        <input type="text" name="price" />
+                        <input class="filter" type="image" src="filter.png" />
                     </th>
-                    <th>
-                        <input type="text" name="qperunit">
+                    <th id="quantity">
+                        <input type="text" name="quantity" />
                     </th>
-                    <th>
-                        <input type="text" name="unitInStock">
-                        <input type="submit" value="" />
+                    <th id="units">
+                        <input type="text" name="units" />
+                        <input class="filter" type="image" src="filter.png" />
                     </th>
-                    <th>
-                        <input type="checkbox" name="discontinued">
-                        <input type="submit" value="" />
+                    <th id="discountinued">
+                        <input type="checkbox" name="discountinued" />
+                        <input class="filter" type="image" src="filter.png" />
                     </th>
                 </tr>
             </thead>
             <tfoot>
-                <tr style="background-color: #3496d7">
-                    <td colspan="2" style="border: hidden">
-                        <input type="submit" name="fisrtPage" value="<<" />
-                        <input type="submit" formaction="" name="previous" value="<" />
-                        <a href="">1</a>
-                        <a href="">2</a>
-                        <a href="">3</a>
-                        <a href="">4</a>
-                        <a href="">5</a>
-                        <a href="">6</a>
-                        <a href="">7</a>
-                        <a href="">8</a>
-                        <a href="">9</a>
-                        <a href="">10</a>
-                        <a href="">...</a>
-                        <input type="submit" formaction="" name="previous" value=">" />
-                        <input type="submit" formaction="" name="fisrtPage" value=">>" />
-                        <span style="text-align: center">Page Size:
-                                    <select>
-                                        <option>10</option>
-                                        <option>20</option>
-                                        <option>30</option>
-                                        <option>40</option>
-                                        <option>50</option>
-                                        <option>60</option>
-                                        <option>70</option>
-                                        <option>80</option>
-                                        <option>90</option>
-                                        <option>100</option>
-                                    </select>
-                        </span>
+                <tr>
+                    <td colspan="2">
+                        <table id="nav">
+                            <tr>
+                                <td class="navtd">
+                                    <input class="arrow" type="image" name="start" src="arrow1.png" />
+                                    <input class="arrow" type="image" name="back" src="arrow2.png" />
+                                </td>
+                                <td class="navtd">
+                                    <a href="1.html">1</a>
+                                    <a href="2.html">2</a>
+                                    <a href="3.html">3</a>
+                                    <a href="4.html">4</a>
+                                    <a href="5.html">5</a>
+                                    <a href="6.html">6</a>
+                                    <a href="7.html">7</a>
+                                    <a href="8.html">8</a>
+                                    <a href="9.html">9</a>
+                                    <a href="10.html">10</a>
+                                    <a>...</a>
+                                </td>
+                                <td class="navtd">
+                                    <input class="arrow" type="image" name="forward" src="arrow3.png" />
+                                    <input class="arrow" type="image" name="end" src="arrow4.png" />
+                                </td>
+                            </tr>
+                        </table>
                     </td>
-                    <td colspan="2" style="border: hidden"></td>
-                    <td colspan="2" style="border: hidden; text-align: end">
-                        <span style="text-align: end">335104 items in 33511 pages</span>
+                    <td colspan="2">
+                        <span>Page size:</span>
+                        <select name="size">
+                            <option value="10" selected="selected">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
                     </td>
+                    <td id="items" colspan="2">335104 items in 33511 pages</td>
                 </tr>
             </tfoot>
             <tbody>
                 <tr>
-                    <td>1.</td>
-                    <td>Tea</td>
+                    <td>1</td>
+                    <td>Chai</td>
                     <td>$18.00</td>
                     <td>10 boxes x 20 bags</td>
                     <td>39</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>2.</td>
+                    <td>2</td>
                     <td>Chang</td>
                     <td>$19.00</td>
                     <td>24 - 12 oz bottles</td>
                     <td>17</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>3.</td>
-                    <td>Anissed Syrup</td>
+                    <td>3</td>
+                    <td>Aniseed Syrup</td>
                     <td>$10.00</td>
                     <td>12 - 550 ml bottles</td>
                     <td>13</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>4.</td>
+                    <td>4</td>
                     <td>Chef Anton's Cajun Seasoning</td>
                     <td>$22.00</td>
                     <td>48 - 6 oz jars</td>
                     <td>53</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>5.</td>
+                    <td>5</td>
                     <td>Chef Anton's Gumbo Mix</td>
                     <td>$21.35</td>
                     <td>36 boxes</td>
                     <td>0</td>
                     <td>
-                        <input type="checkbox" name="discontinued" checked="checked"></td>
+                        <input type="checkbox" checked />
+                    </td>
                 </tr>
                 <tr>
-                    <td>6.</td>
+                    <td>6</td>
                     <td>Grandma's Boysenberry Spread</td>
                     <td>$25.00</td>
                     <td>12 - 8 oz jars</td>
-                    <td>120</td>
+                    <td>53</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>7.</td>
+                    <td>7</td>
                     <td>Uncle Bob's Organic Dried Pears</td>
                     <td>$30.00</td>
-                    <td>12 -1 lb. pkgs.</td>
+                    <td>12 - 1 lb pkgs.</td>
                     <td>15</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>8.</td>
-                    <td>Northwoods Cranberry Sauce</td>
+                    <td>8</td>
+                    <td>Nortdwoods Cranberry Sauce</td>
                     <td>$40.00</td>
                     <td>12 - 12 oz jars</td>
                     <td>6</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
                 <tr>
-                    <td>9.</td>
+                    <td>9</td>
                     <td>Mishi Kobe Niku</td>
                     <td>$97.00</td>
                     <td>18 - 500 g pkgs.</td>
                     <td>29</td>
                     <td>
-                        <input type="checkbox" name="discontinued" checked="checked"></td>
+                        <input type="checkbox" checked />
+                    </td>
                 </tr>
                 <tr>
-                    <td>10.</td>
+                    <td>10</td>
                     <td>Ikura</td>
                     <td>$31.00</td>
                     <td>12 - 200 ml jars</td>
                     <td>31</td>
                     <td>
-                        <input type="checkbox" name="discontinued"></td>
+                        <input type="checkbox" />
+                    </td>
                 </tr>
-
             </tbody>
         </table>
     </form>

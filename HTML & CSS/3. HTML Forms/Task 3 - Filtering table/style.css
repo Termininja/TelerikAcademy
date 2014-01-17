@@ -1,1 +1,93 @@
+#table {
+    width: 100%;
+    font-size: 70%;
+    text-align: left;
+    color: #666;
+    border-collapse: collapse;
+}
 
+thead, tfoot {
+    background: #eee;
+}
+
+    th, tfoot td {
+        padding: 0.3em;
+    }
+
+tfoot, tbody td, th {
+    border: 1px solid #bbb;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+#items {
+    text-align: right;
+    padding-right: 0.3em;
+}
+
+.filter, .arrow {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+    margin-bottom: -3px;
+}
+
+#product {
+    width: 52px;
+}
+
+    #product input {
+        width: 20px;
+    }
+
+#price {
+    width: 70px;
+}
+
+    #price input:first-child {
+        width: 40px;
+    }
+
+#units {
+    width: 90px;
+}
+
+    #units input:first-child {
+        width: 60px;
+    }
+
+#discountinued {
+    width: 65px;
+}
+
+    #discountinued input:first-child {
+        margin-top: 0px;
+    }
+
+select {
+    color: #666;
+    font-size: 90%;
+}
+
+#nav {
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+}
+
+.navtd {
+    border: none;
+}
+
+a {
+    padding: 0.1em;
+    text-decoration: none;
+    color: inherit;
+}
+
+    a:first-child {
+        color: black;
+        border: 1px solid red;
+        border-radius: 3px;
+    }
