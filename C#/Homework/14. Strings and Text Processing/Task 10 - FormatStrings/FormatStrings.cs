@@ -7,16 +7,18 @@ class FormatStrings
 {
     static void Main()
     {
+        // Reads some text
         Console.Write("Please, enter some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        char[] text = Console.ReadLine().ToCharArray();     // reads some text
+        char[] text = Console.ReadLine().ToCharArray();
         Console.ResetColor();
 
+        // Prints the result
         Console.Write("\nThe result is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        foreach (var symbol in text)                        // for each character in the text
+        foreach (var symbol in text)
         {
-            Console.Write("\\u{0:X4}", symbol + 0);         // prints the result
+            Console.Write("\\u{0:X4}", symbol + 0);
         }
         Console.ResetColor();
         Console.WriteLine();

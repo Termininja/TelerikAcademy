@@ -8,18 +8,20 @@ class LengthOfString
 {
     static void Main()
     {
-        string str = "";
-        while (str.Length > 20 || str.Length == 0)          // if the string is empty or too long
+        string str = String.Empty;
+        while (str.Length > 20 || str.Length == 0)
         {
+            // Reads some string
             Console.Write("Please, enter some string of maximum 20 characters: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            str = Console.ReadLine();                       // reads the string
+            str = Console.ReadLine();
             Console.ResetColor();
         }
 
+        // Prints the result
         Console.Write("\nThe result is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(str.PadRight(20, '*'));           // prints the result
+        Console.WriteLine(str.PadRight(20, '*'));
         Console.ResetColor();
     }
 }

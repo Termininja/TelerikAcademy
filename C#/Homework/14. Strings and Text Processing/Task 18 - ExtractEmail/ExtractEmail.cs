@@ -8,16 +8,20 @@ class ExtractEmail
 {
     static void Main()
     {
+        // Reads some text including emails
         Console.Write("Please, enter some text including emails: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();           // reads some text including emails
+        string text = Console.ReadLine();
         Console.ResetColor();
 
+        // Prints the all emails
         Console.WriteLine("\nThe emails are:");
-        foreach (var email in Regex.Matches(text, @"\w+@\w+\.\w+"))  // for each email in the text
+
+        // For each email in the text
+        foreach (var email in Regex.Matches(text, @"\w+@\w+\.\w+"))
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(email);               // prints the all emails
+            Console.WriteLine(email);
             Console.ResetColor();
         }
     }

@@ -9,30 +9,32 @@ class DifferentWords
 {
     static void Main()
     {
+        // Reads some text
         Console.Write("Please, write some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                           // reads some text
+        string text = Console.ReadLine();
         Console.ResetColor();
 
-        Dictionary<string, int> D = new Dictionary<string, int>();  // creates empty Dictionary
-        foreach (var word in Regex.Matches(text, @"\w+"))           // for each one word in the text
+        // Creates empty Dictionary
+        Dictionary<string, int> D = new Dictionary<string, int>();
+
+        // For each one word in the text
+        foreach (var word in Regex.Matches(text, @"\w+"))
         {
-            if (D.ContainsKey(word.ToString()))                     // if the word is in the Dictionary
-            {
-                D[word.ToString()] += 1;                            // count++ for the word
-            }
-            else
-            {
-                D.Add(word.ToString(), 1);                          // adds this word in the Dictionary
-            }
+            // If the word is in the Dictionary
+            if (D.ContainsKey(word.ToString())) D[word.ToString()] += 1;
+            else D.Add(word.ToString(), 1);
         }
 
         Console.WriteLine();
         foreach (var w in D)
         {
-            Console.Write("{0,15}: ", w.Key);                       // prints the words from the Dictionary
+            // Prints the words from the Dictionary
+            Console.Write("{0,15}: ", w.Key);
+
+            // Prints how many times each word is found
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(w.Value);                             // prints how many times each word is found
+            Console.WriteLine(w.Value);
             Console.ResetColor();
         }
     }

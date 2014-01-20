@@ -13,37 +13,46 @@ class ExtractSentences
 {
     static void Main()
     {
-        /* 1st variant*/
+        #region First variant
+        // Reads some text
         Console.WriteLine("Please, write some sentences:");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                                       // reads some text
-        Console.ResetColor();
-        Console.Write("Please, write some word: ");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        string w = Console.ReadLine();                                          // reads some word
+        string text = Console.ReadLine();                                      
         Console.ResetColor();
 
+        // Reads some word
+        Console.Write("Please, write some word: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        string w = Console.ReadLine();                                         
+        Console.ResetColor();
+
+        // Printthe result
         Console.WriteLine("\nThe result is: ");
-        foreach (var sentence in Regex.Matches(text, @"\w[^\.]+"))              // matches all sentences
+
+        // Matches all sentences
+        foreach (var sentence in Regex.Matches(text, @"\w[^\.]+"))              
         {
-            foreach (var word in Regex.Matches(sentence.ToString(), @"\w+"))    // matches all words in each sentence
+            // Matches all words in each sentence
+            foreach (var word in Regex.Matches(sentence.ToString(), @"\w+"))    
             {
-                if (word.ToString().ToLower() == w)                             // is the word eaqual to our word 'w'
+                if (word.ToString().ToLower() == w)                             
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write(sentence + ". ");                             // prints the sentence including 'w'
+                    Console.Write(sentence + ". ");                        
                     Console.ResetColor();
                     break;
                 }
             }
         }
         Console.WriteLine();
+        #endregion
 
-        /* 2nd variant*/
+        #region Second variant
         foreach (Match sentence in Regex.Matches(text, @"[^\.]*\b" + w + @".*?\."))
         {
             Console.Write(sentence);
         }
         Console.WriteLine();
+        #endregion
     }
 }

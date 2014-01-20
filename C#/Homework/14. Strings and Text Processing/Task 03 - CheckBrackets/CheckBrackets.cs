@@ -8,24 +8,23 @@ class CheckBrackets
 {
     static void Main()
     {
+        // Reads some expression and put it in array
         Console.Write("Please, write some expression: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        char[] expression = Console.ReadLine().ToCharArray();   // reads some expression and put it in array
+        char[] expression = Console.ReadLine().ToCharArray();
         Console.ResetColor();
 
-        bool correct = true;                                    // if the brackets are put correctly
-        int count = 0;                                          // the number of not closed open-brackets
-        for (int i = 0; i < expression.Length; i++)             // checks the brackets
+        bool correct = true;
+        int count = 0;
+
+        // Checks the brackets
+        for (int i = 0; i < expression.Length; i++)
         {
-            if (expression[i] == '(')
-            {
-                count++;
-            }
-            if (expression[i] == ')')
-            {
-                count--;
-            }
-            if (count < 0)                                      // if some bracket is closed before to be opened
+            if (expression[i] == '(') count++;
+            if (expression[i] == ')') count--;
+
+            // If some bracket is closed before to be opened
+            if (count < 0)
             {
                 correct = false;
                 break;

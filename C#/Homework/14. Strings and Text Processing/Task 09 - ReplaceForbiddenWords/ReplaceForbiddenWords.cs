@@ -15,36 +15,43 @@ class ReplaceForbiddenWords
 {
     static void Main()
     {
-        /* 1st variant */
+        #region First variant
+        // Reads some text
         Console.Write("Please, write some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                               // reads some text
+        string text = Console.ReadLine();
         Console.ResetColor();
         Console.Write("\nPlease, enter some list of forbidden words: ");
 
-        // reads the list of forbidden words
+        // Reads the list of forbidden words
         Console.ForegroundColor = ConsoleColor.Yellow;
         string[] list = Console.ReadLine().Trim().Replace(" ", ",").Replace(",,", ",").Split(',');
         Console.ResetColor();
 
-        foreach (var word in Regex.Matches(text.ToString(), @"\w+"))    // matches each one word in the text
+        // Matches each one word in the text
+        foreach (var word in Regex.Matches(text.ToString(), @"\w+"))
         {
-            foreach (var forbidden in list)                             // for each one word in the list
+            // For each one word in the list
+            foreach (var forbidden in list)
             {
                 if (word.ToString() == forbidden)
                 {
-                    // replaces the forbidden words with asterisks
+                    // Replaces the forbidden words with asterisks
                     text = text.Replace(forbidden, new string('*', word.ToString().Length));
                 }
             }
         }
+
+        // Prints the result
         Console.Write("\nThe result is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(text);                                        // prints the result
+        Console.WriteLine(text);
         Console.ResetColor();
+        #endregion
 
-        /* 2nd variant */
+        #region Second variant
         //string check = "PHP, CLR, Microsoft";
         //Console.WriteLine(Regex.Replace(text, check, m => new String('*', m.Length)));
+        #endregion
     }
 }

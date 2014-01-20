@@ -9,39 +9,49 @@ class DifferentLetters
 {
     static void Main()
     {
+        // Reads some text
         Console.Write("Please, enter some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                           // reads some text
+        string text = Console.ReadLine();
         Console.ResetColor();
         Console.WriteLine();
 
+        // How many are the different letters
         Console.WriteLine("All letters in the text are:");
-        int w = 0;                                                  // how many are the different letters
-        for (int i = 65; i <= 122; i++)                             // for each letters (case sensitive)
+        int w = 0;
+
+        // For each letters (case sensitive)
+        for (int i = 65; i <= 122; i++)
         {
-            int count = 0;                                          // count each one letter
-            foreach (var letter in Regex.Matches(text, @"\w"))      // for each letter in the text
+            int countLetters = 0;
+
+            // For each letter in the text
+            foreach (var letter in Regex.Matches(text, @"\w"))
             {
                 if (((char)i).ToString() == (letter.ToString()))
                 {
-                    if (count == 0)                                 // marks different word
-                    {
-                        w++;
-                    }
-                    count++;
-                    Console.SetCursorPosition(2, 5 + w);            // different row for each one letter
-                    Console.Write("{0}: ", letter);                 // prints the letter which is found
+                    // Marks different word
+                    if (countLetters == 0) w++;
+                    countLetters++;
+
+                    // Different row for each one letter
+                    Console.SetCursorPosition(2, 5 + w);
+
+                    // Prints the letter which is found
+                    Console.Write("{0}: ", letter);
+
+                    // Prints how many times the letter is found
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(count);                       // prints how many times the letter is found
+                    Console.WriteLine(countLetters);
                     Console.ResetColor();
-                    Thread.Sleep(200);                              // sleeps for 200ms
+
+                    // Sleeps for 200ms
+                    Thread.Sleep(200);
                 }
             }
 
-            if (i == 90)                                            // to check only the letters
-            {
-                i = 96;
-            }
+            // Check only the letters
+            if (i == 90) i = 96;
         }
     }
 }

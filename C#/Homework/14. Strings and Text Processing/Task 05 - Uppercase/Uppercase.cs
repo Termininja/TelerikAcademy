@@ -12,35 +12,45 @@ class Uppercase
 {
     static void Main()
     {
-        /* Long variant */
+        #region Long variant
+        // Reads some text
         Console.Write("Please, write some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                                       // reads some text
+        string text = Console.ReadLine();
         Console.ResetColor();
 
         while (true)
         {
-            int index_start = text.IndexOf("<upcase>");                         // find the open-tag
-            int index_end = text.IndexOf("</upcase>");                          // find the close-tag
-            if (index_start >= 0)                                               // if the result is not "-1"
+            // Find the open-tag
+            int index_start = text.IndexOf("<upcase>");
+
+            // Find the close-tag
+            int index_end = text.IndexOf("</upcase>");
+
+            // If the result is not "-1"
+            if (index_start >= 0)
             {
                 // extract the tagged text
                 string tagged = text.Substring(index_start + 8, index_end - index_start - 8);
 
-                text = text.Remove(index_start, index_end - index_start + 9);   // remove the tagged text
-                text = text.Insert(index_start, tagged.ToUpper());              // insert the uppered tagged text
+                // Remove the tagged text
+                text = text.Remove(index_start, index_end - index_start + 9);
+
+                // Insert the uppered tagged text
+                text = text.Insert(index_start, tagged.ToUpper());
             }
-            else
-            {
-                break;
-            }
+            else break;
         }
+
+        // Prints the final result
         Console.Write("\nThe result is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(text);                                                // prints the final result
+        Console.WriteLine(text);
         Console.ResetColor();
+        #endregion
 
-        /* Short variant (with regular expressions) */
+        #region Short variant (with regular expressions)
         //Console.WriteLine(Regex.Replace(text, "<upcase>(.*?)</upcase>", m => m.Groups[1].Value.ToUpper()));
+        #endregion
     }
 }

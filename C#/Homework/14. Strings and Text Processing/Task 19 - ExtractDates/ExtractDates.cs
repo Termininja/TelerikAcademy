@@ -9,19 +9,24 @@ class ExtractDates
 {
     static void Main()
     {
+        // Reads some text including dates
         Console.WriteLine("Please, enter some text including dates in format day.month.year: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                                       // reads some text including dates
+        string text = Console.ReadLine();
         Console.ResetColor();
 
+        // For each date in the text
         Console.WriteLine("\nThe dates are:");
-        foreach (var date in Regex.Matches(text, @"\d\d?\.\d\d?\.\d{4}"))       // for each date in the text
+        foreach (var date in Regex.Matches(text, @"\d\d?\.\d\d?\.\d{4}"))
         {
-            DateTime result;                                                    // the real date
+            // The real date
+            DateTime result;
+
+            // Prints all dates
             Console.ForegroundColor = ConsoleColor.Green;
             if (DateTime.TryParseExact(date.ToString(), "d.M.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
             {
-                Console.WriteLine(result.ToShortDateString().ToString(new CultureInfo("en-CA")));   // prints the all dates
+                Console.WriteLine(result.ToShortDateString().ToString(new CultureInfo("en-CA")));
             }
             Console.ResetColor();
         }

@@ -14,24 +14,29 @@ class Dictionary
     {
         try
         {
-            Dictionary<string, string> D = new Dictionary<string, string>();    // creates a new dictionary
+            // Creates a new dictionary
+            Dictionary<string, string> D = new Dictionary<string, string>();
 
-            //put some words and their explanations in the dictionary
+            // Put some words and their explanations in the dictionary
             D[".NET"] = "platform for applications from Microsoft";
             D["CLR"] = "managed execution environment for .NET";
             D["namespace"] = "hierarchial organization of classes";
 
+            // Reads some word
             Console.Write("Please, enter some word: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            string word = Console.ReadLine();               // reads some word
+            string word = Console.ReadLine();
+
+            // Prints the result for the word from the dictionary
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("{0} - {1}", word, D[word]);  // prints the result for the word from the dictionary
+            Console.WriteLine("{0} - {1}", word, D[word]);
             Console.ResetColor();
         }
-        catch (System.Collections.Generic.KeyNotFoundException)     // if the word is missing in the dictionary
+        catch (System.Collections.Generic.KeyNotFoundException)
         {
+            // Prints some error message
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("The word is not found!");            // prints some error message
+            Console.WriteLine("The word is not found!");
             Console.ResetColor();
         }
     }

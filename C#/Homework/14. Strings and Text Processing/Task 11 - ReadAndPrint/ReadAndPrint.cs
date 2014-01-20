@@ -7,12 +7,13 @@ class ReadAndPrint
 {
     static void Main()
     {
+        // Reads some number
         Console.Write("Please, enter some number: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string number = Console.ReadLine();                 // reads some number
+        string number = Console.ReadLine();
         Console.ResetColor();
 
-        // prints the result aligned right in 15 symbols
+        // Prints the result aligned right in 15 symbols
         Console.WriteLine();
         Print("In decimal format: ", "{0,15:F}", number);
         Print("In hexadecimal format: ", "{0,15:X}", number);
@@ -22,7 +23,7 @@ class ReadAndPrint
 
     static void Print(string text, string format, string num)
     {
-        Console.Write("{0,-33}", text);                     // align the text to left
+        Console.Write("{0,-33}", text);
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(format, int.Parse(num));
         Console.ResetColor();

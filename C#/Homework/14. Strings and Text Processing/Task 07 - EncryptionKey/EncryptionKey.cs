@@ -9,35 +9,45 @@ class EncryptionKey
 {
     static void Main()
     {
+        // Reads some text
         Console.Write("Please, enter some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();                       // reads some text
+        string text = Console.ReadLine();
         Console.ResetColor();
+
+        // Reads some encryption key
         Console.Write("Please, enter some encryption key: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string key = Console.ReadLine();                        // reads some encryption key
+        string key = Console.ReadLine();
         Console.ResetColor();
 
+        // Encode the text
+        string encoded = Encryption(text, key);
 
-        string encoded = Encryption(text, key);                 // encode the text
+        // The result from encoding
         Console.WriteLine("\nEncoded text is:");
         Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine(encoded);                             // the result from encoding
+        Console.WriteLine(encoded);
         Console.ResetColor();
 
+        // The result from decoding
         Console.WriteLine("\nDecoded text is:");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(Encryption(encoded, key));            // the result from decoding
+        Console.WriteLine(Encryption(encoded, key));
         Console.ResetColor();
     }
 
-    static string Encryption(string text, string key)           // encodes some text by given key
+    // Encodes some text by a given key
+    static string Encryption(string text, string key)
     {
         string result = "";
-        for (int i = 0; i < text.Length; i++)                
+        for (int i = 0; i < text.Length; i++)
         {
-            result += (char)(text[i] ^ key[i % key.Length]);    // XOR for each one letter
+            // XOR for each one letter
+            result += (char)(text[i] ^ key[i % key.Length]);
         }
-        return result;                                          // returns the encoded text
+
+        // Returns the encoded text
+        return result;
     }
 }

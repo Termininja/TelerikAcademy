@@ -8,29 +8,39 @@ class SeriesOfLetters
 {
     static void Main()
     {
-        /* Long variant */
+        #region Long variant
+        // Reads some text
         Console.Write("Please, write some text: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string text = Console.ReadLine();               // reads some text
+        string text = Console.ReadLine();
         Console.ResetColor();
 
-        for (int i = 0; i < text.Length; i++)           // for each symbol in the text
+        // For each symbol in the text
+        for (int i = 0; i < text.Length; i++)
         {
             if (i > 0)
             {
-                if (text[i] == text[i - 1])             // if the previous symbol is the same
+                // If the previous symbol is the same
+                if (text[i] == text[i - 1])
                 {
-                    text = text.Remove(i, 1);           // removes the current symbol
-                    i = -1;                             // to start from beginning
+                    // Removes the current symbol
+                    text = text.Remove(i, 1);
+
+                    // Start from beginning
+                    i = -1;
                 }
             }
         }
+
+        // Prints the result
         Console.Write("The result is: ");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(text);                        // prints the result
+        Console.WriteLine(text);
         Console.ResetColor();
+        #endregion
 
-        /* Short variant (with regular expressions) */
+        #region Short variant (with regular expressions)
         //Console.WriteLine(Regex.Replace(text, @"(\w)\1+", "$1"));
+        #endregion
     }
 }
