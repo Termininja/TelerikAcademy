@@ -1,49 +1,40 @@
 using System;
-using System.Collections.Generic;
+using System.Numerics;
 
-class Task
+class MultiverseCommunication
 {
     static void Main()
     {
-        string input = Console.ReadLine();
-        List<byte> Result = new List<byte>();
+        string input = Console.ReadLine().Trim();
+        string output = String.Empty;
         while (input.Length > 0)
         {
-            string code = String.Empty;
-            byte num = 0;
-            for (int i = 0; i < input.Length; i++)
+            switch ((input.Length > 3) ? input.Remove(3) : input)
             {
-                bool go = false;
-                code += input[i];
-                switch (code)
-                {
-                    case "CHU": num = 0; break;
-                    case "TEL": num = 1; break;
-                    case "OFT": num = 2; break;
-                    case "IVA": num = 3; break;
-                    case "EMY": num = 4; break;
-                    case "VNB": num = 5; break;
-                    case "POQ": num = 6; break;
-                    case "ERI": num = 7; break;
-                    case "CAD": num = 8; break;
-                    case "K-A": num = 9; break;
-                    case "IIA": num = 10; break;
-                    case "YLO": num = 11; break;
-                    case "PLA": num = 12; break;
-                    default: go = true; break;
-                }
-                if (!go) break;
+                case "CHU": output += "0"; break;
+                case "TEL": output += "1"; break;
+                case "OFT": output += "2"; break;
+                case "IVA": output += "3"; break;
+                case "EMY": output += "4"; break;
+                case "VNB": output += "5"; break;
+                case "POQ": output += "6"; break;
+                case "ERI": output += "7"; break;
+                case "CAD": output += "8"; break;
+                case "K-A": output += "9"; break;
+                case "IIA": output += "A"; break;
+                case "YLO": output += "B"; break;
+                case "PLA": output += "C"; break;
+                default: break;
             }
-            Result.Insert(0, num);
-            input = input.Remove(0, code.Length);
+            input = input.Remove(0, 3);
         }
-        ulong Sum = 0;
-        for (int i = 0; i < Result.Count; i++)
+
+        BigInteger result = 0;
+        for (int i = output.Length - 1, p = 1; i >= 0; i--, p *= 13)
         {
-            ulong result = 1;
-            for (int j = 0; j < i; j++) result *= 13;
-            Sum += (Result[i] * result);
+            BigInteger get = (output[i] >= 'A') ? output[i] - 'A' + 10 : output[i] - '0';
+            result += get * p;
         }
-        Console.WriteLine(Sum);
+        Console.WriteLine(result);
     }
 }
