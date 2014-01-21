@@ -6,35 +6,31 @@ class MagicWords
 {
     static void Main()
     {
-        List<string> list = new List<string>();
         int n = int.Parse(Console.ReadLine());
-        for (int word = 0; word < n; word++)
-            list.Add(Console.ReadLine());
-
-        for (int word = 0; word < n; word++)
+        List<string> words = new List<string>();
+        for (int i = 0; i < n; i++) words.Add(Console.ReadLine());
+        for (int i = 0; i < n; i++)
         {
-            string tempWord = list[word];
-            list[word] = null;
-            if (tempWord.Length % (n + 1) == n)
-                list.Add(tempWord);
-            else 
-                list.Insert(tempWord.Length % (n + 1), tempWord);
-            list.Remove(null);
+            string tempWord = words[i];
+            words[i] = null;
+            words.Insert(tempWord.Length % (n + 1), tempWord);
+            words.Remove(null);
         }
-
         StringBuilder result = new StringBuilder();
-        bool cont = true;
-        for (int letter = 0; cont == true; letter++)
+        bool loop = true;
+        int letter = 0;
+        while (loop)
         {
-            cont = false;
-            for (int word = 0; word < n; word++)
+            loop = false;
+            for (int i = 0; i < n; i++)
             {
-                if (letter < list[word].Length)
+                if (words[i].Length > letter)
                 {
-                    result.Append(list[word][letter]);
-                    cont = true;
+                    result.Append(words[i][letter]);
+                    loop = true;
                 }
             }
+            letter++;
         }
         Console.WriteLine(result);
     }
