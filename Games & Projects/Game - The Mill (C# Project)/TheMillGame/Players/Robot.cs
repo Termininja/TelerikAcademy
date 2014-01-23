@@ -277,7 +277,7 @@
                     }
                 }
             }
-            throw new Exception("There is not piece for removig!");
+            throw new Exception("There is not piece for removing!");
         }
     }
 }
