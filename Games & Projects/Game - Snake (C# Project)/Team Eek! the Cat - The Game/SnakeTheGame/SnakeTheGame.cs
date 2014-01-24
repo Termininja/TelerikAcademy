@@ -68,6 +68,8 @@ namespace SnakeTheGame
             int bossDirection1 = 0;
             int bossDirection2 = 0;
 
+            Console.CursorVisible = false;
+
             while (true)
             {
                 if (level > maxLevels)
@@ -110,7 +112,7 @@ namespace SnakeTheGame
                 Console.BackgroundColor = ConsoleColor.Black;                           // background color
 
                 /* Generate some level map */
-                string map = "maps/map " + level.ToString().PadLeft(2, '0') + ".txt";   //the path to map file
+                string map = "../../maps/map " + level.ToString().PadLeft(2, '0') + ".txt";   //the path to map file
                 MapVisualiser(map);
 
                 /* Generate random food position */
@@ -158,7 +160,7 @@ namespace SnakeTheGame
                             }
                             else
                             {
-                                using (MemoryStream death = new MemoryStream(File.ReadAllBytes("sound/die.wav")))
+                                using (MemoryStream death = new MemoryStream(File.ReadAllBytes("../../sound/die.wav")))
                                 {
                                     SoundPlayer snakeDie = new SoundPlayer(death);
                                     snakeDie.Play();
@@ -185,7 +187,7 @@ namespace SnakeTheGame
                         {
                             if (bossSound1)
                             {
-                                MemoryStream file1 = new MemoryStream(File.ReadAllBytes("sound/snake.wav"));
+                                MemoryStream file1 = new MemoryStream(File.ReadAllBytes("../../sound/snake.wav"));
                                 SoundPlayer boss1 = new SoundPlayer(file1);
                                 boss1.Play();
                                 bossSound1 = false;
@@ -197,7 +199,7 @@ namespace SnakeTheGame
                         {
                             if (bossSound2)
                             {
-                                MemoryStream file2 = new MemoryStream(File.ReadAllBytes("sound/snake.wav"));
+                                MemoryStream file2 = new MemoryStream(File.ReadAllBytes("../../sound/snake.wav"));
                                 SoundPlayer boss2 = new SoundPlayer(file2);
                                 boss2.Play();
                                 bossSound2 = false;
@@ -213,7 +215,7 @@ namespace SnakeTheGame
                         {
                             try
                             {
-                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/food.wav")))
+                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("../../sound/food.wav")))
                                 {
                                     SoundPlayer effect = new SoundPlayer(pickup);
                                     effect.Play();
@@ -274,7 +276,7 @@ namespace SnakeTheGame
                         {
                             try
                             {
-                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/food-bonus.wav")))
+                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("../../sound/food-bonus.wav")))
                                 {
                                     SoundPlayer effect = new SoundPlayer(pickup);
                                     effect.Play();
@@ -326,7 +328,7 @@ namespace SnakeTheGame
                         {
                             try
                             {
-                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("sound/life.wav")))
+                                using (MemoryStream pickup = new MemoryStream(File.ReadAllBytes("../../sound/life.wav")))
                                 {
                                     SoundPlayer effect = new SoundPlayer(pickup);
                                     effect.Play();
@@ -374,7 +376,7 @@ namespace SnakeTheGame
         /* The 1st welcome page in the game */
         static void WelcomeScreen()
         {
-            MemoryStream background = new MemoryStream(File.ReadAllBytes("sound/intro.wav"));
+            MemoryStream background = new MemoryStream(File.ReadAllBytes("../../sound/intro.wav"));
             SoundPlayer music = new SoundPlayer(background);
             music.Play();
             Console.BackgroundColor = ConsoleColor.Black;                   // background color
@@ -415,7 +417,7 @@ namespace SnakeTheGame
 
             try
             {
-                StreamReader reader = new StreamReader("maps/map " + 1.ToString().PadLeft(2, '0') + ".txt");
+                StreamReader reader = new StreamReader("../../maps/map " + 1.ToString().PadLeft(2, '0') + ".txt");
 
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(31, 20);
@@ -847,7 +849,7 @@ namespace SnakeTheGame
                 {
                     try
                     {
-                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("../../sound/tick.wav")))
                         {
                             SoundPlayer ticks = new SoundPlayer(tick);
                             ticks.Play();
@@ -872,7 +874,7 @@ namespace SnakeTheGame
                 {
                     try
                     {
-                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("../../sound/tick.wav")))
                         {
                             SoundPlayer ticks = new SoundPlayer(tick);
                             ticks.Play();
@@ -897,7 +899,7 @@ namespace SnakeTheGame
                 {
                     try
                     {
-                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("../../sound/tick.wav")))
                         {
                             SoundPlayer ticks = new SoundPlayer(tick);
                             ticks.Play();
@@ -920,7 +922,7 @@ namespace SnakeTheGame
                 {
                     try
                     {
-                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("sound/tick.wav")))
+                        using (MemoryStream tick = new MemoryStream(File.ReadAllBytes("../../sound/tick.wav")))
                         {
                             SoundPlayer ticks = new SoundPlayer(tick);
                             ticks.Play();
@@ -1335,7 +1337,7 @@ namespace SnakeTheGame
         static void GameOverScreen(DateTime gameStart, int totalScores, string snakeName)
         {
             DateTime gameEnd = DateTime.Now;
-            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("sound/gameover.wav")))
+            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("../../sound/gameover.wav")))
             {
                 snd = new SoundPlayer(music);
                 snd.Play();
@@ -1385,7 +1387,7 @@ namespace SnakeTheGame
         static void YouWinScreen(string snakeName, DateTime gameStart, int totalScores)
         {
             DateTime gameEnd = DateTime.Now;
-            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("sound/intro.wav")))
+            using (MemoryStream music = new MemoryStream(File.ReadAllBytes("../../sound/intro.wav")))
             {
                 snd = new SoundPlayer(music);
                 snd.Play();
@@ -1436,9 +1438,9 @@ namespace SnakeTheGame
 
             switch (difficulty)
             {
-                case "Easy": rankListName = "RankList - Easy.txt"; break;
-                case "Medium": rankListName = "RankList - Medium.txt"; break;
-                case "Hard": rankListName = "RankList - Hard.txt"; break;
+                case "Easy": rankListName = "../../RankList - Easy.txt"; break;
+                case "Medium": rankListName = "../../RankList - Medium.txt"; break;
+                case "Hard": rankListName = "../../RankList - Hard.txt"; break;
                 default: break;
             }
 
