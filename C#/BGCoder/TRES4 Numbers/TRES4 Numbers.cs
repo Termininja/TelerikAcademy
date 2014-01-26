@@ -6,7 +6,14 @@ class TRES4Numbers
 {
     static void Main()
     {
-        string result = _10ToX(BigInteger.Parse(Console.ReadLine()), 9);
+        BigInteger num = BigInteger.Parse(Console.ReadLine());
+        string result = String.Empty;
+        for (; num != 0; num /= 9)
+        {
+            BigInteger i = num % 9;
+            char get = (i >= 10) ? (char)('A' + i - 10) : (char)('0' + i);
+            result = get + result;
+        }
         StringBuilder output = new StringBuilder();
         if (result == "") output.Append("LON+");
         else
@@ -29,17 +36,5 @@ class TRES4Numbers
             }
         }
         Console.WriteLine(output);
-    }
-
-    private static string _10ToX(BigInteger num, int x)
-    {
-        string h = String.Empty;
-        for (; num != 0; num /= x)
-        {
-            BigInteger i = num % x;
-            char get = (i >= 10) ? (char)('A' + i - 10) : (char)('0' + i);
-            h = get + h;
-        }
-        return h;
     }
 }
