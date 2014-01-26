@@ -1,5 +1,5 @@
 using System;
- 
+
 class JoroTheRabbit
 {
     static void Main()
@@ -10,9 +10,7 @@ class JoroTheRabbit
         {
             numbers[i] = int.Parse(input[i]);
         }
- 
         int dotsMax = 0;
- 
         for (int startPosition = 0; startPosition < input.Length; startPosition++)
         {
             for (int step = 0; step < input.Length; step++)
@@ -20,28 +18,16 @@ class JoroTheRabbit
                 int p = startPosition;
                 int d = 1;
                 int next = (p + step);
-                if (next >= numbers.Length)
-                {
-                    next -= numbers.Length;
-                }
+                if (next >= numbers.Length) next -= numbers.Length;
                 while (next != startPosition)
                 {
                     next = (p + step);
-                    if (next >= numbers.Length)
-                    {
-                        next -= numbers.Length;
-                    }
-                    if (numbers[next] <= numbers[p])
-                    {
-                        break;
-                    }
+                    if (next >= numbers.Length) next -= numbers.Length;
+                    if (numbers[next] <= numbers[p]) break;
                     d++;
                     p = next;
                 }
-                if (d >= dotsMax)
-                {
-                    dotsMax = d;
-                }
+                if (d >= dotsMax) dotsMax = d;
             }
         }
         Console.WriteLine(dotsMax);
