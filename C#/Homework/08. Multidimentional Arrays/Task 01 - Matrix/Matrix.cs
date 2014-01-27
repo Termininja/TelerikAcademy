@@ -18,18 +18,19 @@ class Matrix
 
         // Prints the result for all variants
         Console.WriteLine("\nVarant A:");
-        PrintMatrix(VariantA(N, M));
+        PrintMatrix(VariantA(M));
         Console.WriteLine("\nVarant B:");
-        PrintMatrix(VariantB(N, M));
+        PrintMatrix(VariantB(M));
         Console.WriteLine("\nVarant C:");
-        PrintMatrix(VariantC(N, M));
+        PrintMatrix(VariantC(M));
         Console.WriteLine("\nVarant D:");
-        PrintMatrix(VariantD(N, M));
+        PrintMatrix(VariantD(M));
     }
 
     // VARIANT << A >>
-    static int[,] VariantA(int N, int[,] M)
+    static int[,] VariantA(int[,] M)
     {
+        int N = M.GetLength(0);
         int col = -1;
         for (int n = 0; n < N * N; n++)
         {
@@ -43,8 +44,9 @@ class Matrix
     }
 
     // VARIANT << B >>
-    static int[,] VariantB(int N, int[,] M)
+    static int[,] VariantB(int[,] M)
     {
+        int N = M.GetLength(0);
         int col = -1;
         int row = 0;
         for (int n = 0; n < N * N; n++)
@@ -61,8 +63,9 @@ class Matrix
     }
 
     // VARIANT << C >>
-    static int[,] VariantC(int N, int[,] M)
+    static int[,] VariantC(int[,] M)
     {
+        int N = M.GetLength(0);
         int col = 0;
         int row = N - 1;
         int specialPos = N - 1;
@@ -91,8 +94,9 @@ class Matrix
     }
 
     // VARIANT << D >>
-    static int[,] VariantD(int N, int[,] M)
+    static int[,] VariantD(int[,] M)
     {
+        int N = M.GetLength(0);
         int col = 0;
         int row = 0;
         int rowMin = 0;
@@ -110,22 +114,46 @@ class Matrix
             {
                 // If direction is "down"
                 case 'd': row++;
-                    if (row > rowMax) row--; col++; rowMax--; direction = 'r';
+                    if (row > rowMax)
+                    {
+                        row--;
+                        col++;
+                        rowMax--;
+                        direction = 'r';
+                    }
                     break;
 
                 // If direction is "right"
                 case 'r': col++;
-                    if (col > colMax) col--; row--; colMax--; direction = 'u';
+                    if (col > colMax)
+                    {
+                        col--;
+                        row--;
+                        colMax--;
+                        direction = 'u';
+                    }
                     break;
 
                 // If direction is "up"
                 case 'u': row--;
-                    if (row < rowMin) col--; row++; rowMin++; direction = 'l';
+                    if (row < rowMin)
+                    {
+                        col--;
+                        row++;
+                        rowMin++;
+                        direction = 'l';
+                    }
                     break;
 
                 // If direction is "left"
                 case 'l': col--;
-                    if (col < colMin) col++; row++; colMin++; direction = 'd';
+                    if (col < colMin)
+                    {
+                        col++;
+                        row++;
+                        colMin++;
+                        direction = 'd';
+                    }
                     break;
                 default: break;
             }
