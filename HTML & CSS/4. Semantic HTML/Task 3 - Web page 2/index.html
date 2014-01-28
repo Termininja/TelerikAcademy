@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Web page 2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="#">LinkedIn</a>
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">What is LinkedIn?</a>
+                </li>
+                <li>
+                    <a href="#">Join Today</a>
+                </li>
+                <li>
+                    <fieldset>
+                        <legend>Sign In</legend>
+                        <form name="SignIn" method="get" action="signin.php">
+                            <ul>
+                                <li>
+                                    <label for="email-in">Email:</label>
+                                    <input id="email-in" type="email" required name="email" />
+                                </li>
+                                <li>
+                                    <label for="pass-in">Password:</label>
+                                    <input id="pass-in" type="password" required name="pass" />
+                                </li>
+                                <li>
+                                    <input value="Sign In" type="submit" />
+                                </li>
+                            </ul>
+                        </form>
+                    </fieldset>
+                </li>
+            </ul>
+        </nav>
+        <hr />
+    </header>
+    <section>
+        <h2>Over 175 million professionals use LinkedIn to exchange information, ideas and opportunities</h2>
+        <ul>
+            <li>Stay informed about your constacts and industry</li>
+            <li>Find the people &amp; knowledge you need to achieve your goals</li>
+            <li>Control your professional identity online</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Join LinkedIn Today</h3>
+        <fieldset>
+            <legend>Sign Up</legend>
+            <form name="SignUp" method="get" action="signup.php">
+                <ul>
+                    <li>
+                        <label for="first">First Name:</label><br />
+                        <input id="first" type="text" required name="first" />
+                    </li>
+                    <li>
+                        <label for="last">Last Name:</label><br />
+                        <input id="last" type="text" required name="last" />
+                    </li>
+                    <li>
+                        <label for="email-up">Email:</label><br />
+                        <input id="email-up" type="email" required name="email" />
+                    </li>
+                    <li>
+                        <label for="pass-up">Password:</label><br />
+                        <input id="pass-up" type="password" required name="pass" />
+                        <p>6 or more characters</p>
+                    </li>
+                </ul>
+                <div>
+                    <input type="submit" value="Join Now" />
+                    <a href="#">*</a>
+                </div>
+            </form>
+            <br />
+            <div>
+                <span>Already on LinkedIn?</span>
+                <a href="#">Sign in.</a>
+            </div>
+        </fieldset>
+    </section>
+    <aside>
+        <header>
+            <h3>Search for someone by name:</h3>
+        </header>
+        <section>
+            <form name="Search" method="get" action="search.php">
+                <ul>
+                    <li>
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" name="first" placeholder="First Name" />
+                    </li>
+                    <li>
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" name="last" placeholder="Last Name" />
+                    </li>
+                </ul>
+                <input type="submit" value="Go" />
+            </form>
+        </section>
+    </aside>
+</body>
+</html>

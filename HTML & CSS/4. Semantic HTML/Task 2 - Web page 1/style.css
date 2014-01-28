@@ -1,0 +1,27 @@
+header {
+    margin-left: 1.5em;
+}
+
+img {
+    float: left;
+    font-size: 180%;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 120%;
+    margin-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+table, tr, th, td {
+    width: 260px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 0.2em;
+    text-align: center;
+}
