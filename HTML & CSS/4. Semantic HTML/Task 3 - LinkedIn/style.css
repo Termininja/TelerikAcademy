@@ -1,0 +1,15 @@
+body {
+    background: black;
+}
+
+a, h2, h3 {
+    color: #00688B;
+}
+
+#main {
+    border-top: 3px groove #00688B;
+}
+
+fieldset, ul, input {
+    color: gray;
+}
