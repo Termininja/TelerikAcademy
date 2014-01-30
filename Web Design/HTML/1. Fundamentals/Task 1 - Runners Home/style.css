@@ -1,3 +1,8 @@
+body {
+    background: #f4f2f2;
+    color: #4d4b4b;
+}
+
 p, ul {
     padding: 0;
     margin: 0;

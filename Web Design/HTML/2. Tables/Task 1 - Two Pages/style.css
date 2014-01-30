@@ -1,7 +1,19 @@
+body {
+    background: #f4f2f2;
+}
+
 #title {
     text-align: center;
     font-size: 150%;
     padding: 0;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border: 1px solid gray;
+    background: white;
 }
 
 .text {
@@ -20,7 +32,7 @@ td {
     width: 28px;
 }
 
-#center {
+#table2 {
     text-align: center;
     font-weight: bolder;
 }

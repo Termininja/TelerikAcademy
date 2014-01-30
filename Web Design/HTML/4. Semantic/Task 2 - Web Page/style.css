@@ -1,8 +1,14 @@
+body {
+    background: #f4f2f2;
+    color: #353535;
+}
+
 header {
     margin-left: 1.5em;
 }
 
 img {
+    width: 30px;
     float: left;
     font-size: 180%;
 }

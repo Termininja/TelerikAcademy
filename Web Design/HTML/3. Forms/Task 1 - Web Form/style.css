@@ -1,18 +1,26 @@
+body {
+    background: #f4f2f2;
+}
+
 table, tr, td {
+    margin: auto;
+    background: white;
+    color: #5c5959;
     border-collapse: collapse;
     border: 1px solid grey;
     width: 420px;
-    padding:2px;
+    padding: 2px;
 }
 
 select.dropdown {
+    color: #5c5959;
     width: 100px;
 }
 
 .submit {
     text-align: center;
     background-color: rgb(51, 181, 202);
-    padding:7px;
+    padding: 7px;
 }
 
 td.align {

@@ -1,4 +1,5 @@
 body {
+    background: #f4f2f2;
     text-align: center;
 }
 
@@ -9,7 +10,8 @@ table {
 }
 
 a:link {
-    color: deepskyblue;
+    color: gray;
+    text-decoration: none;
     font-size: 2em;
     padding: 2px;
 }
@@ -18,6 +20,12 @@ a:link {
     margin-bottom: 1em;
 }
 
+label {
+    color: gray;
+}
+
 .notebooks {
-    border: 1px solid black;
+    background: white;
+    color: gray;
+    border: 4px double lightgray;
 }
