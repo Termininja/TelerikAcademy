@@ -30,7 +30,6 @@
                 <td class="align">City</td>
                 <td>
                     <input name="city" type="text" placeholder="Kaspichan" size="28" />
-
                 </td>
                 <td>State</td>
                 <td>
@@ -62,11 +61,11 @@
                 <td colspan="3">
                     <div>
                         (+                  
-                        <input type="text" name="countryCode" placeholder="359" size="2" />
+                        <input type="tel" name="countryCode" placeholder="359" size="2" pattern="^\d{3,4}$" title="xxxx" />
                         )
-                        <input type="text" name="areaCode" placeholder="88" size="2" />
+                        <input type="tel" name="areaCode" placeholder="88" size="2" pattern="^\d{2}$" title="xx" />
                         -
-                        <input type="text" name="number" placeholder="8334343" size="24" />
+                        <input type="tel" name="number" placeholder="8334343" size="24" pattern="^\d{7}$" title="xxxxxxx" />
                     </div>
                 </td>
             </tr>
@@ -81,11 +80,11 @@
                 <td colspan="3">
                     <div>
                         Month
-                        <input name="m" type="text" placeholder="06" size="1" />
+                        <input name="m" type="text" placeholder="06" size="1" pattern="^(0?\d|1[0-2])$" title="01-12" />
                         Day
-                        <input name="d" type="text" placeholder="14" size="1" />
+                        <input name="d" type="text" placeholder="14" size="1" pattern="^([0-2]?\d|3[01])$" title="01-31" />
                         Year (4 digit)
-                        <input name="y" type="text" placeholder="1980" size="4" />
+                        <input name="y" type="text" placeholder="1980" size="4" pattern="^(19\d{2}|20(0\d|1[0-4]))$" title="1900-2014" />
                     </div>
                 </td>
             </tr>
