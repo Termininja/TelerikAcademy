@@ -1,2 +1,2 @@
-TelerikAcademy
-==============
+Telerik Academy
+===============
