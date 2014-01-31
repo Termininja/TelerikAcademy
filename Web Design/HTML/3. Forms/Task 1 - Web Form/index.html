@@ -11,13 +11,13 @@
             <tr>
                 <td class="align">Last Name</td>
                 <td colspan="3">
-                    <input type="text" name="last" placeholder="Nakov" size="45" />
+                    <input type="text" name="last" pattern="^[a-zA-Z]*$" title="a-z & A-Z" placeholder="Nakov" size="45" />
                 </td>
             </tr>
             <tr>
                 <td class="align">First Name</td>
                 <td colspan="3">
-                    <input type="text" name="first" placeholder="Svetlin" size="45" />
+                    <input type="text" name="first" pattern="^[a-zA-Z]*$" title="a-z & A-Z" placeholder="Svetlin" size="45" />
                 </td>
             </tr>
             <tr>
@@ -29,17 +29,17 @@
             <tr>
                 <td class="align">City</td>
                 <td>
-                    <input name="city" type="text" placeholder="Kaspichan" size="28" />
+                    <input name="city" type="text" pattern="^[a-zA-Z]*$" title="a-z & A-Z" placeholder="Kaspichan" size="28" />
                 </td>
                 <td>State</td>
                 <td>
-                    <input name="state" type="text" size="6" />
+                    <input name="state" type="text" pattern="^[a-zA-Z]*$" title="a-z & A-Z" size="6" />
                 </td>
             </tr>
             <tr>
                 <td class="align">Zip/Post Code</td>
                 <td colspan="3">
-                    <input name="zip" type="text" placeholder="9325" size="45" />
+                    <input name="zip" type="text" pattern="^\d*$" title="0-9" placeholder="9325" size="45" />
                 </td>
             </tr>
             <tr>

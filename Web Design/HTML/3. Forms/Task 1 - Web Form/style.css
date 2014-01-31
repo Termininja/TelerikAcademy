@@ -26,3 +26,11 @@ select.dropdown {
 td.align {
     text-align: right;
 }
+
+input:not([type="submit"]):not([type="reset"]):invalid, textarea:invalid {
+    color: #ff3232;
+}
+
+input:not([type="submit"]):not([type="reset"]):focus, textarea:focus, select:focus {
+    background: #92f866;
+}

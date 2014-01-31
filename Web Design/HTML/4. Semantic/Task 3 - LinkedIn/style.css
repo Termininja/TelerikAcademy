@@ -13,3 +13,7 @@ a, h2, h3 {
 fieldset, ul, input {
     color: gray;
 }
+
+    input:not([type=submit]):focus {
+        background: #a3ff56;
+    }

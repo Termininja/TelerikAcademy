@@ -8,6 +8,7 @@ var Factor = Math.PI / 180;
 var Flag = false;
 var Operation = "";
 var ClickSound = "click.mp3";
+
 function Num(number) {
     if (Power) {
         PlaySound(ClickSound);
@@ -23,6 +24,7 @@ function Num(number) {
 }
 function Function(value) {
     if (Power) {
+        PlaySound(ClickSound);
         var Display = Key.Display.value;
         if (Flag && Operation != "=");
         else {
@@ -42,6 +44,7 @@ function Function(value) {
 }
 function Decimal() {
     if (Power) {
+        PlaySound(ClickSound);
         var curDisplay = Key.Display.value;
         if (Flag) {
             curDisplay = "0.";
@@ -55,6 +58,7 @@ function Decimal() {
 }
 function ClearEntry() {
     if (Power) {
+        PlaySound(ClickSound);
         Key.Display.value = "0";
         Flag = true;
     }
@@ -67,56 +71,100 @@ function Clear() {
     }
 }
 function Neg() {
-    if (Power) Key.Display.value = parseFloat(Key.Display.value) * -1;
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = parseFloat(Key.Display.value) * -1;
+    }
 }
 function Percent() {
-    if (Power) Key.Display.value = (parseFloat(Key.Display.value) / 100) * parseFloat(Keep);
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = (parseFloat(Key.Display.value) / 100) * parseFloat(Keep);
+    }
 }
 function Sin() {
-    if (Power) Key.Display.value = Math.sin(Factor * parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.sin(Factor * parseFloat(Key.Display.value));
+    }
 }
 function Cos() {
-    if (Power) Key.Display.value = Math.cos(Factor * parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.cos(Factor * parseFloat(Key.Display.value));
+    }
 }
 function Tan() {
-    if (Power) Key.Display.value = Math.tan(Factor * parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.tan(Factor * parseFloat(Key.Display.value));
+    }
 }
 function Log() {
-    if (Power) Key.Display.value = Math.log(parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.log(parseFloat(Key.Display.value));
+    }
 }
 function Rec() {
-    if (Power) Key.Display.value = 1 / parseFloat(Key.Display.value);
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = 1 / parseFloat(Key.Display.value);
+    }
 }
 function Fact() {
     if (Power) {
+        PlaySound(ClickSound);
         var f = 1;
         for (var i = 2; i <= parseFloat(Key.Display.value) ; i++) f *= i;
         Key.Display.value = f;
     }
 }
 function Sqrt() {
-    if (Power) Key.Display.value = Math.sqrt(parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.sqrt(parseFloat(Key.Display.value));
+    }
 }
 function Pi() {
-    if (Power) Key.Display.value = Math.PI;
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.PI;
+    }
 }
 function X2() {
-    if (Power) Key.Display.value = Math.pow(parseFloat(Key.Display.value), 2);
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.pow(parseFloat(Key.Display.value), 2);
+    }
 }
 function X3() {
-    if (Power) Key.Display.value = Math.pow(parseFloat(Key.Display.value), 3);
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.pow(parseFloat(Key.Display.value), 3);
+    }
 }
 function Exp() {
-    if (Power) Key.Display.value = Math.exp(parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.exp(parseFloat(Key.Display.value));
+    }
 }
 function Root3() {
-    if (Power) Key.Display.value = Math.pow(parseFloat(Key.Display.value), 1 / 3);
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.pow(parseFloat(Key.Display.value), 1 / 3);
+    }
 }
 function TenX() {
-    if (Power) Key.Display.value = Math.pow(10, parseFloat(Key.Display.value));
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.pow(10, parseFloat(Key.Display.value));
+    }
 }
 function Back() {
     if (Power) {
+        PlaySound(ClickSound);
         var value = parseFloat(Key.Display.value).toString();
         if ((Key.Display.value > 0 && value.length > 1) ||
             (Key.Display.value < 0 && value.length > 2)) {
@@ -126,8 +174,12 @@ function Back() {
     }
 }
 function Log10() {
-    if (Power) Key.Display.value = Math.log(parseFloat(Key.Display.value)) / Math.LN10;
+    if (Power) {
+        PlaySound(ClickSound);
+        Key.Display.value = Math.log(parseFloat(Key.Display.value)) / Math.LN10;
+    }
 }
+
 function Angle(value) {
     switch (value) {
         case 'deg': Factor = Math.PI / 180; break;
@@ -135,6 +187,7 @@ function Angle(value) {
         default: Factor = 1; break;
     }
 }
+
 function Switch() {
     if (!Power) {
         Power = true;
@@ -214,13 +267,14 @@ function Clock(value) {
     }
 }
 
-function PlaySound(file) {
+function PlaySound(file, hidden) {
     var source = document.createElement('source');
     source.setAttribute('src', file);
 
     var sound = document.createElement('audio');
     sound.appendChild(source);
-    sound.play();
+    if (hidden) { sound.load(); }
+    else { sound.play(); }
 }
 
 function State() {
@@ -249,6 +303,7 @@ function CheckState() {
 }
 
 window.onload = function () {
+    PlaySound(ClickSound, true);
     Clock('on');
     CheckState();
 };
