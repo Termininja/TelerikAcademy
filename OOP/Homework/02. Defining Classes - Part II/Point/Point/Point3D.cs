@@ -2,7 +2,8 @@
 
 namespace Point
 {
-    public struct Point3D                       // creates a structure for 3D-coordinates {X, Y, Z}
+    // Creates a structure for 3D-coordinates {X, Y, Z}
+    public struct Point3D
     {
         // Fields
         private static readonly Point3D o;      // the start of the coordinate system

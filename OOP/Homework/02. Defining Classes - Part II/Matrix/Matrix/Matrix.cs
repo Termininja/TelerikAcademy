@@ -32,18 +32,20 @@ namespace Matrix
             }
         }
 
-        // Operators
-        public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)  // addition of matrices of the same size
+        // Addition of matrices of the same size
+        public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)
         {
             return Operation(m1, m2, 1);
         }
 
-        public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)  // subtraction of matrices of the same size
+        // Subtraction of matrices of the same size
+        public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)
         {
             return Operation(m1, m2, 2);
         }
 
-        public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)  // multiplication of matrices of the same size
+        // Multiplication of matrices of the same size
+        public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
         {
             // Throw an exception when the operation cannot be performed
             if (m1.rows != m2.rows || m1.columns != m2.columns)
@@ -67,31 +69,28 @@ namespace Matrix
             }
         }
 
-        public static bool operator true(Matrix<T> m)                   // implement the 'true' operator
+        // Implement the 'true' operator
+        public static bool operator true(Matrix<T> m)
         {
             foreach (var item in m.matrix)
             {
-                if (!item.Equals(default(T)))
-                {
-                    return true;
-                }
+                if (!item.Equals(default(T))) return true;
             }
             return false;
         }
 
-        public static bool operator false(Matrix<T> m)                  // implement the 'false' operator
+        // Implement the 'false' operator
+        public static bool operator false(Matrix<T> m)
         {
             foreach (var item in m.matrix)
             {
-                if (!item.Equals(default(T)))
-                {
-                    return false;
-                }
+                if (!item.Equals(default(T))) return false;
             }
             return true;
         }
 
-        public static bool operator !(Matrix<T> m)                      // implement the '!' operator
+        // Implement the '!' operator
+        public static bool operator !(Matrix<T> m)
         {
             if (m) { return false; }
             else { return true; }
@@ -114,8 +113,15 @@ namespace Matrix
                     {
                         switch (Operator)
                         {
-                            case 1: m[r, c] = (dynamic)m1[r, c] + m2[r, c]; break;      // addition
-                            case 2: m[r, c] = (dynamic)m1[r, c] - m2[r, c]; break;      // subtraction
+                            // Addition
+                            case 1:
+                                m[r, c] = (dynamic)m1[r, c] + m2[r, c];
+                                break;
+
+                            // Subtraction
+                            case 2:
+                                m[r, c] = (dynamic)m1[r, c] - m2[r, c];
+                                break;
                             default: break;
                         }
                     }
@@ -124,7 +130,8 @@ namespace Matrix
             }
         }
 
-        public void Clear()                     // clears all cells in the matrix
+        // Clears all cells in the matrix
+        public void Clear()
         {
             matrix = new T[rows, columns];
         }

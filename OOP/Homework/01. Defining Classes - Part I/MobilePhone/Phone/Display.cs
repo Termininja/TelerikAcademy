@@ -7,20 +7,20 @@ namespace MobilePhone
 {
     public class Display
     {
-        // display characteristics
+        // Fields
         private byte? size;
         private uint? colors;
 
-        // constructors
-        public Display() { }                        // constructor without parameters
+        // Constructors
+        public Display() { }
 
-        public Display(byte? size, uint? colors)    // constructor with two parameters
+        public Display(byte? size, uint? colors)
         {
             this.Size = size;
             this.Colors = colors;
         }
 
-        // properties
+        // Properties
         public byte? Size
         {
             get { return this.size; }
@@ -30,10 +30,7 @@ namespace MobilePhone
                 {
                     throw new ArgumentOutOfRangeException("Too big size of display!");
                 }
-                else
-                {
-                    this.size = value;
-                }
+                else this.size = value;
             }
         }
 
@@ -46,17 +43,14 @@ namespace MobilePhone
                 {
                     throw new ArgumentOutOfRangeException("The number of colors is too big!");
                 }
-                else
-                {
-                    this.colors = value;
-                }
+                else this.colors = value;
             }
         }
 
-        // methods
+        // Methods
         public override string ToString()
         {
-            return 
+            return
                 "\nDisplay information" +
                 "\n\tSize: \t\t" + this.size +
                 "\n\tColors: \t" + this.colors;

@@ -29,7 +29,7 @@ namespace Point
 
             // Define some list of points from a file
             Path points = PathStorage.LoadPath(@"..\..\input.txt");
-            points.Add(new Point3D(4, 5, 6));           // adding a new point
+            points.Add(new Point3D(4, 5, 6));
 
             // Prints the distance between two points in 3D space
             if (points.Count() >= 2)
@@ -37,7 +37,8 @@ namespace Point
                 Console.WriteLine("\nDistance between point B and point C: " + Distance.D(points.Points[0], points.Points[1]));
             }
 
-            points.Clear();                             // clear the all points in the path
+            // Clears all points in the path
+            points.Clear();
 
             // Save the path with all points to a text file "output.txt"
             PathStorage.SavePath(points);
@@ -46,7 +47,8 @@ namespace Point
             points.Add(new Point3D(7, 1, -6));
             points.Add(new Point3D(92, 54, 65));
 
-            points.RemoveAt(1);                 // removes the 2nd point
+            // Removes the 2nd point
+            points.RemoveAt(1);
 
             PathStorage.SavePath(points);
         }

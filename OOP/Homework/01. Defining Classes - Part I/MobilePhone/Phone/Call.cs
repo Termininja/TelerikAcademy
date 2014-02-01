@@ -5,13 +5,14 @@ using System.Text;
 
 namespace MobilePhone
 {
-    public class Call               // holds a call performed through each one GSM
+    // Holds a call performed through each one GSM
+    public class Call
     {
         private DateTime dateTime;
         private string dialedNumber;
         private int duration;       // in seconds
 
-        // constructors
+        // Constructors
         public Call() { }
 
         public Call(DateTime dateTime, string dialedNumber, int duration)
@@ -21,7 +22,7 @@ namespace MobilePhone
             this.Duration = duration;
         }
 
-        // properties
+        // Properties
         public DateTime DateTime
         {
             get { return this.dateTime; }
@@ -40,7 +41,7 @@ namespace MobilePhone
             set { this.duration = value; }
         }
 
-        // methods
+        // Methods
         public override string ToString()
         {
             return

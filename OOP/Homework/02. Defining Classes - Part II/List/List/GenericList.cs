@@ -61,23 +61,19 @@ namespace List
             count++;
         }
 
-        public void Remove(int index)               // removing element by index
+        // Removing element by index
+        public void Remove(int index)
         {
-            if (index >= count)
-            {
-                throw new IndexOutOfRangeException();
-            }
+            if (index >= count) throw new IndexOutOfRangeException();
             Array.Copy(array, index + 1, array, index, array.Length - index - 1);
             count--;
             Resize(count);
         }
 
-        public void Insert(int index, T value)      // inserting element at given position
+        // Inserting element at given position
+        public void Insert(int index, T value)
         {
-            if (index >= count)
-            {
-                throw new IndexOutOfRangeException();
-            }
+            if (index >= count) throw new IndexOutOfRangeException();
             if (count == array.Length)
             {
                 T[] newArray = new T[capacity * 2];
@@ -91,14 +87,16 @@ namespace List
             Resize(count);
         }
 
-        public void Clear()                         // clearing the list
+        // Clearing the list
+        public void Clear()
         {
             array = new T[defaultCapacity];
             capacity = defaultCapacity;
             count = 0;
         }
 
-        public int IndexOf(T value)                 // finding element by its value
+        // Finding element by its value
+        public int IndexOf(T value)
         {
             return Array.IndexOf(array, value);
         }

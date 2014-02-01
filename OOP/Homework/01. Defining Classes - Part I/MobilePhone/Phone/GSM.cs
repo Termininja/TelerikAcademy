@@ -7,24 +7,23 @@ namespace MobilePhone
 {
     class GSM
     {
-        // basic information
+        // Basic information
         private string model, manufacturer, owner;
         private decimal? price;
         private Display d;
         private Battery b;
 
-        // hold the information about iPhone 4S
+        // Hold the information about iPhone 4S
         private static GSM iphone4S = new GSM(
-            "IPhone4S",
-            "Apple",
+            "IPhone4S", "Apple",
             new Display(45, 6000),
             new Battery("M-45", 80, 14, BatteryType.LiIon)
             );
 
-        // holds a list of the performed calls
+        // Holds a list of the performed calls
         private List<Call> callHistory = new List<Call>();
 
-        // constructors
+        // Constructors
         public GSM(string model, string manufacturer)
             : this(model, manufacturer, null, null, null, null) { }
 
@@ -44,7 +43,7 @@ namespace MobilePhone
             this.B = b;
         }
 
-        // properties
+        // Properties
         public string Model
         {
             get { return this.model; }
@@ -58,10 +57,7 @@ namespace MobilePhone
                 {
                     throw new ArgumentException("The model has to be maximum 10 symbols!");
                 }
-                else
-                {
-                    this.model = value;
-                }
+                else this.model = value;
             }
         }
 
@@ -78,14 +74,12 @@ namespace MobilePhone
                 {
                     throw new ArgumentException("The manufacturer has to be maximum 10 symbols!");
                 }
-                else
-                {
-                    this.manufacturer = value;
-                }
+                else this.manufacturer = value;
             }
         }
 
-        public string Owner                             // optional parameter "owner"
+        // Optional parameter "owner"
+        public string Owner
         {
             get { return this.owner; }
             set
@@ -100,15 +94,13 @@ namespace MobilePhone
                     {
                         throw new ArgumentException("The name has to be maximum 10 symbols!");
                     }
-                    else
-                    {
-                        this.owner = value;
-                    }
+                    else this.owner = value;
                 }
             }
         }
 
-        public decimal? Price                           // optional parameter "price"
+        // Optional parameter "price"
+        public decimal? Price
         {
             get { return this.price; }
             set
@@ -119,10 +111,7 @@ namespace MobilePhone
                     {
                         throw new ArgumentOutOfRangeException("The price is not correct!");
                     }
-                    else
-                    {
-                        this.price = value;
-                    }
+                    else this.price = value;
                 }
             }
         }
@@ -132,10 +121,7 @@ namespace MobilePhone
             get { return this.d; }
             set
             {
-                if (value != null)
-                {
-                    this.d = value;
-                }
+                if (value != null) this.d = value;
             }
         }
 
@@ -144,45 +130,49 @@ namespace MobilePhone
             get { return this.b; }
             set
             {
-                if (value != null)
-                {
-                    this.b = value;
-                }
+                if (value != null) this.b = value;
             }
         }
 
         public static GSM IPhone4S
         {
-            get { return iphone4S; }                        // get information about IPhone 4S
+            // Get information about IPhone 4S
+            get { return iphone4S; }
         }
 
         public List<Call> CallHistory
         {
-            get { return this.callHistory; }                // get information about call history
+            // Get information about call history
+            get { return this.callHistory; }
         }
 
-        // methods
+        /* Methods */
         public void AddCall(Call call)
         {
-            this.callHistory.Add(call);                     // add some new call
+            // Add some new call
+            this.callHistory.Add(call);
         }
 
         public void DeleteCall(int index)
         {
-            this.callHistory.RemoveAt(index);               // delete some call by position
+            // Delete some call by position
+            this.callHistory.RemoveAt(index);
         }
 
         public void DeleteCall(Call call)
         {
-            this.callHistory.Remove(call);                  // delete some call by entry
+            // Delete some call by entry
+            this.callHistory.Remove(call);
         }
 
         public void ClearAllCalls()
         {
-            this.callHistory.Clear();                       // clear whole call history
+            // Clear whole call history
+            this.callHistory.Clear();
         }
 
-        public decimal TotalPrice(decimal callPrice)        // calculates the total price for all calls
+        // Calculates the total price for all calls
+        public decimal TotalPrice(decimal callPrice)
         {
             decimal totalPrice = 0;
             foreach (var call in this.callHistory)

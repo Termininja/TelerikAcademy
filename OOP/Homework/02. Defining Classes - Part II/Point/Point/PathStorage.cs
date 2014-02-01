@@ -8,10 +8,12 @@ namespace Point
         // To load paths from a text file
         public static Path LoadPath(string file)
         {
-            StreamReader read = new StreamReader(file);     // reads some text file
+            // Reads some text file
+            StreamReader read = new StreamReader(file);
             using (read)
             {
-                Path points = new Path();                   // creates empty path of points
+                // Creates empty path of points
+                Path points = new Path();
 
                 string text = read.ReadLine();
                 for (int line = 0; text != null; line++)
@@ -23,9 +25,10 @@ namespace Point
                     points.Points.Add(new Point3D(
                         int.Parse(currentLine[0]),
                         int.Parse(currentLine[1]),
-                        int.Parse(currentLine[2])
-                        ));
-                    text = read.ReadLine();                 // reads the next line
+                        int.Parse(currentLine[2])));
+
+                    // Reads the next line
+                    text = read.ReadLine();
                 }
                 return points;
             }

@@ -54,9 +54,11 @@ namespace MobilePhone
     {
         static void Main()
         {
-            WindowSize();                   // change console width and height
+            // Change console width and height
+            WindowSize();
 
-            decimal callPrice = 0.37m;      // price per minute
+            // Price per minute
+            decimal callPrice = 0.37m;
 
             while (true)
             {
@@ -83,14 +85,18 @@ namespace MobilePhone
 
                 switch (Input.Key)
                 {
-                    case ConsoleKey.D1:                         // Test 1
+                    // Test 1
+                    case ConsoleKey.D1:
                         GSMTest.CreateGSM();
                         GSMTest.PrintGSM();
                         break;
-                    case ConsoleKey.D2:                         // Test 2
+
+                    // Test 2
+                    case ConsoleKey.D2:
                         GSMCallHistoryTest.AddCalls();
                         GSMCallHistoryTest.PrintGSMs(callPrice);
                         break;
+
                     default:
                         break;
                 }
