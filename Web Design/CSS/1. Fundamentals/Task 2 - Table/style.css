@@ -1,0 +1,59 @@
+body {
+    background: #f4f2f2;
+}
+
+table, tr, td {
+    text-align: left;
+    margin: auto;
+    border-spacing: 0;
+    padding: 0.5em 5em 0.5em 0.5em;
+    font-family: Verdana;
+}
+
+    td:not(:first-child) {
+        border-left: 2px solid #b9b9b9;
+    }
+
+    td:nth-child(3) {
+        padding-left: 3em;
+    }
+
+    tr:first-child td:nth-child(3) {
+        background: url("flag-de.png") no-repeat 0.5em center;
+        background-size: 30px 20px;
+    }
+
+    tr:nth-child(2) td:nth-child(3), tr:nth-child(3) td:nth-child(3) {
+        background: url("flag-mx.png") no-repeat 0.5em center;
+        background-size: 30px 20px;
+    }
+
+    tr:nth-child(4) td:nth-child(3) {
+        background: url("flag-uk.png") no-repeat 0.5em center;
+        background-size: 30px 20px;
+    }
+
+    tr:nth-child(2n) {
+        background: #f0f0db;
+    }
+
+    tr:nth-child(2n+1) {
+        background: white;
+    }
+
+th {
+    font-weight: normal;
+    background: #5CC006;
+    padding: 0.3em;
+    padding-right: 1em;
+    color: white;
+    border-bottom: 2px solid #469104;
+}
+
+    th:not(:first-child) {
+        border-left: 2px solid #469104;
+    }
+
+    th:not(:last-child) {
+        border-right: 2px solid #8ccd51;
+    }
