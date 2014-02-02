@@ -19,17 +19,17 @@ table, tr, td {
     }
 
     tr:first-child td:nth-child(3) {
-        background: url("flag-de.png") no-repeat 0.5em center;
+        background: url("images/flag-de.png") no-repeat 0.5em center;
         background-size: 30px 20px;
     }
 
     tr:nth-child(2) td:nth-child(3), tr:nth-child(3) td:nth-child(3) {
-        background: url("flag-mx.png") no-repeat 0.5em center;
+        background: url("images/flag-mx.png") no-repeat 0.5em center;
         background-size: 30px 20px;
     }
 
     tr:nth-child(4) td:nth-child(3) {
-        background: url("flag-uk.png") no-repeat 0.5em center;
+        background: url("images/flag-uk.png") no-repeat 0.5em center;
         background-size: 30px 20px;
     }
 
