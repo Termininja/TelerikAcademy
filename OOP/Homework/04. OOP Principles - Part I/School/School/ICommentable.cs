@@ -7,7 +7,7 @@ namespace School
         // Property
         List<string> Comments { get; set; }
 
-        // AddClass
+        // Method
         void AddComment(string comment);
     }
 }

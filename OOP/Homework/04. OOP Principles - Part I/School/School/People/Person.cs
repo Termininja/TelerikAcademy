@@ -2,13 +2,15 @@
 {
     class Person
     {
-        // Property
+        #region Property
         public string Name { get; private set; }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Person(string name)
         {
             this.Name = name;
         }
+        #endregion
     }
 }

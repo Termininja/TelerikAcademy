@@ -5,10 +5,11 @@ namespace School
 {
     class Discipline : ICommentable
     {
-        // Field
+        #region Field
         private List<string> comments = new List<string>();
+        #endregion
 
-        // Properties
+        #region Properties
         public string Name { get; private set; }
         public uint NumberOfLectures { get; private set; }
         public uint NumberOfExercises { get; private set; }
@@ -18,8 +19,9 @@ namespace School
             get { return comments; }
             set { comments = value; }
         }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Discipline(string name, uint numberOfLectures, uint numberOfExercises)
         {
             if (name.Length >= 2) this.Name = name;
@@ -37,8 +39,9 @@ namespace School
             }
             else this.NumberOfExercises = numberOfExercises;
         }
+        #endregion
 
-        // Methods
+        #region Methods
         public void AddComment(string comment)
         {
             Comments.Add(comment);
@@ -48,5 +51,6 @@ namespace School
         {
             return Name;
         }
+        #endregion
     }
 }

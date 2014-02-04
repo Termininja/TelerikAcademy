@@ -5,10 +5,11 @@ namespace School
 {
     class SchoolClass : ICommentable
     {
-        // Field
+        #region Field
         private List<string> comments = new List<string>();
+        #endregion
 
-        // Properties
+        #region Properties
         public string TextID { get; private set; }
         public List<Student> Students { get; private set; }
         public List<Teacher> Teachers { get; private set; }
@@ -18,16 +19,18 @@ namespace School
             get { return comments; }
             set { comments = value; }
         }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public SchoolClass(string textID, List<Student> students, List<Teacher> teachers)
         {
             this.TextID = textID;
             this.Students = students;
             this.Teachers = teachers;
         }
+        #endregion
 
-        // Methods
+        #region Methods
         public void AddComment(string comment)
         {
             Comments.Add(comment);
@@ -78,5 +81,6 @@ namespace School
             }
             return result;
         }
+        #endregion
     }
 }

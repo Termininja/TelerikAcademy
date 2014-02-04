@@ -8,18 +8,20 @@ namespace Animals
 
     class Animal
     {
-        // Properties
+        #region Properties
         public string Name { get; set; }
         public byte Age { get; set; }
         public Sex Sex { get; set; }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Animal(string name, byte age, Sex sex)
         {
             this.Name = name;
             this.Age = age;
             this.Sex = sex;
         }
+        #endregion
 
         // Average age of each kind of animal
         public static double? AverageAge(Animal[] animals)

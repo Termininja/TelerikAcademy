@@ -5,18 +5,21 @@ namespace People
 {
     class Worker : Human
     {
-        // Properties
+        #region Properties
         public decimal WeekSalary { get; private set; }
         public byte WorkHoursPerDay { get; private set; }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Worker(string firstName, string lastName, decimal weekSalary, byte workHoursPerDay)
             : base(firstName, lastName)
         {
             this.WeekSalary = weekSalary;
             this.WorkHoursPerDay = workHoursPerDay;
         }
+        #endregion
 
+        #region Methods
         // Returns the money earned by hour by the worker
         public decimal MoneyPerHour()
         {
@@ -44,5 +47,6 @@ namespace People
         {
             return FirstName + " " + LastName;
         }
+        #endregion
     }
 }

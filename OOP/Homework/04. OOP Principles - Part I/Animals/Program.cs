@@ -26,6 +26,7 @@ namespace Animals
             bool exit = false;
             while (!exit)
             {
+                Console.CursorVisible = false;
                 Console.CursorTop = 0;
                 {
                     // The menu
@@ -135,6 +136,7 @@ namespace Animals
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("\n\nA new {0} is added to the list of animals", char.ToLower(kind[0]) + kind.Substring(1));
                     Console.ResetColor();
+                    Console.CursorVisible = true;
                     Console.Write("Press any key to continue...");
                     Console.ReadKey();
                     count++;
@@ -170,6 +172,7 @@ namespace Animals
                 }
                 LineOfTable("  ╚", new string('═', 27), "╝", ConsoleColor.Cyan);
             }
+            Console.CursorVisible = true;
             Console.Write("\nPress any key to continue...");
             Console.ReadKey();
         }

@@ -5,18 +5,20 @@ namespace School
 {
     class School
     {
-        // Properties
+        #region Properties
         public string SchoolName { get; private set; }
         public List<SchoolClass> Classes { get; private set; }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public School(string schoolName, List<SchoolClass> classes)
         {
             this.SchoolName = schoolName;
             this.Classes = classes;
         }
+        #endregion
 
-        // Methods
+        #region Methods
         public void AddClass(SchoolClass theClass)
         {
             Classes.Add(theClass);
@@ -33,5 +35,6 @@ namespace School
             foreach (SchoolClass schoolClass in Classes) result += schoolClass + "\n";
             return result;
         }
+        #endregion
     }
 }

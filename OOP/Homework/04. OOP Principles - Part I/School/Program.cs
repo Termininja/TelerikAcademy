@@ -35,6 +35,7 @@ namespace School
             bool exit = false;
             while (!exit)
             {
+                Console.CursorVisible = false;
                 Console.Clear();
                 try
                 {
@@ -60,6 +61,7 @@ namespace School
                     // Our choice
                     ConsoleKeyInfo key = Console.ReadKey();
                     Console.Write("\b \b");
+                    Console.CursorVisible = true;
                     switch (key.Key)
                     {
                         // Create some new discipline in the school

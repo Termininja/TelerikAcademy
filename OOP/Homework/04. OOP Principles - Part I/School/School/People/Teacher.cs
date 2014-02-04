@@ -5,10 +5,11 @@ namespace School
 {
     class Teacher : Person, ICommentable
     {
-        // Field
+        #region Field
         private List<string> comments = new List<string>();
+        #endregion
 
-        // Properties
+        #region Properties
         public List<Discipline> Disciplines { get; set; }
 
         public List<string> Comments
@@ -16,15 +17,17 @@ namespace School
             get { return comments; }
             set { comments = value; }
         }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Teacher(string name, List<Discipline> discipline)
             : base(name)
         {
             this.Disciplines = discipline;
         }
+        #endregion
 
-        // Methods
+        #region Methods
         public void AddComment(string comment)
         {
             Comments.Add(comment);
@@ -68,5 +71,6 @@ namespace School
             }
             return result;
         }
+        #endregion
     }
 }

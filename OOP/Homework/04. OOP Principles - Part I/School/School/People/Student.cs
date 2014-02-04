@@ -5,10 +5,11 @@ namespace School
 {
     class Student : Person, ICommentable
     {
-        // Field
+        #region Field
         private List<string> comments = new List<string>();
+        #endregion
 
-        // Properties
+        #region Properties
         public uint ClassNumber { get; private set; }
 
         public List<string> Comments
@@ -16,8 +17,9 @@ namespace School
             get { return comments; }
             set { comments = value; }
         }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Student(string name, uint classNumber)
             : base(name)
         {
@@ -30,8 +32,9 @@ namespace School
                 throw new ArgumentException("The number is not correct!");
             }
         }
+        #endregion
 
-        // Methods
+        #region Methods
         public void AddComment(string comment)
         {
             Comments.Add(comment);
@@ -51,5 +54,6 @@ namespace School
             }
             return result;
         }
+        #endregion
     }
 }
