@@ -27,9 +27,9 @@ using System.Collections.Generic;
 
 namespace Bank
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             // Create a list of accounts
             List<Account> accounts = new List<Account>();
@@ -73,7 +73,8 @@ namespace Bank
 
         private static void TestAccount(List<Account> accounts)
         {
-            while (true)
+            bool exit = false;
+            while (!exit)
             {
                 try
                 {
@@ -121,7 +122,7 @@ namespace Bank
                             Console.WriteLine("Interest amount: " + accounts[3].InterestAmount(months));
                             break;
                         case ConsoleKey.P: Console.WriteLine(accounts[3]); break;
-                        case ConsoleKey.Q: Environment.Exit(1); break;
+                        case ConsoleKey.Q: exit = true; break;
                         default: break;
                     }
                     Console.WriteLine();

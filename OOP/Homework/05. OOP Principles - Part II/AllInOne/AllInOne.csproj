@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F2386D9-F9FC-4436-838D-1E0BF0AD2D30}</ProjectGuid>
+    <ProjectGuid>{F066C2A9-C570-4E89-A2BE-932AAF1B6A7C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bank</RootNamespace>
-    <AssemblyName>Bank</AssemblyName>
+    <RootNamespace>AllInOne</RootNamespace>
+    <AssemblyName>AllInOne</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,18 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bank\Accounts\Deposit.cs" />
-    <Compile Include="Bank\Accounts\Loan.cs" />
-    <Compile Include="Bank\Accounts\Mortgage.cs" />
-    <Compile Include="Bank\Accounts\Account.cs" />
-    <Compile Include="Customer\Company.cs" />
-    <Compile Include="Customer\Customer.cs" />
-    <Compile Include="Customer\Personal.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="AllInOne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Diagram.cd" />
+    <ProjectReference Include="..\Bank\02. Bank.csproj">
+      <Project>{7f2386d9-f9fc-4436-838d-1e0bf0ad2d30}</Project>
+      <Name>02. Bank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exceptions\03. Exceptions.csproj">
+      <Project>{4fc734c0-d586-4782-a5de-15030282034d}</Project>
+      <Name>03. Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shapes\01. Shapes.csproj">
+      <Project>{b5a3bfde-4a11-4c54-a4b3-e13615ebafd5}</Project>
+      <Name>01. Shapes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

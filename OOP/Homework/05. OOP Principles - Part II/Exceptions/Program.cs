@@ -12,9 +12,9 @@ using System;
 
 namespace Exceptions
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             // Numbers in the range: [1 … 100]
             Console.ForegroundColor = ConsoleColor.White;

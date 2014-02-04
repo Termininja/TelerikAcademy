@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Bank", "Bank\02. Bank.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Exceptions", "Exceptions\03. Exceptions.csproj", "{4FC734C0-D586-4782-A5DE-15030282034D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllInOne", "AllInOne\AllInOne.csproj", "{F066C2A9-C570-4E89-A2BE-932AAF1B6A7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{4FC734C0-D586-4782-A5DE-15030282034D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC734C0-D586-4782-A5DE-15030282034D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC734C0-D586-4782-A5DE-15030282034D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F066C2A9-C570-4E89-A2BE-932AAF1B6A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F066C2A9-C570-4E89-A2BE-932AAF1B6A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F066C2A9-C570-4E89-A2BE-932AAF1B6A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F066C2A9-C570-4E89-A2BE-932AAF1B6A7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

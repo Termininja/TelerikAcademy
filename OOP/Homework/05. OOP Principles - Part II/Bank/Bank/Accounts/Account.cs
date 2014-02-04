@@ -5,19 +5,22 @@ namespace Bank
 {
     abstract class Account
     {
-        // Properties
+        #region Properties
         public Customer Customer { get; protected set; }
         public decimal Balance { get; protected set; }
         public decimal InterestRate { get; protected set; }
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Account(Customer customer, decimal balance, decimal interestRate)
         {
             this.Customer = customer;
             this.Balance = balance;
             this.InterestRate = interestRate;
         }
+        #endregion
 
+        #region Methods
         // All accounts are allowed to deposit money
         public void Deposit(decimal amount)
         {
@@ -39,5 +42,6 @@ namespace Bank
                 "\nBalance: " + this.Balance +
                 "\nInterest rate: " + this.InterestRate;
         }
+        #endregion
     }
 }
