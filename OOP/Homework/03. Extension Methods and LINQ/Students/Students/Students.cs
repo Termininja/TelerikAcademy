@@ -6,19 +6,22 @@ namespace Students
 {
     class Students
     {
-        // Constructor
+        #region Constructor
         public Students(string first, string last, byte age)
         {
             this.First = first;
             this.Last = last;
             this.Age = age;
         }
+        #endregion
 
-        // Properties
+        #region Properties
         public string First { get; set; }
         public string Last { get; set; }
         public int Age { get; set; }
+        #endregion
 
+        #region Methods
         // Method that finds all students whose first name is before its last name alphabetically
         public static List<Students> FilterByName(Students[] list)
         {
@@ -50,5 +53,6 @@ namespace Students
         {
             return "  " + this.First + " " + this.Last + " (" + this.Age + ")";
         }
+        #endregion
     }
 }

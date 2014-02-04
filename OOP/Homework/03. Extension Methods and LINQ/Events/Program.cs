@@ -13,6 +13,7 @@ namespace Events
             while (true)
             {
                 // Input data
+                Console.CursorVisible = false;
                 Console.SetCursorPosition(0, 0);
                 Cow cow1 = InputCow("Betsy", 'B');
                 Cow cow2 = InputCow("George", 'G');
@@ -64,7 +65,7 @@ namespace Events
             Console.ResetColor();
             Console.WriteLine(" moo!\n");
 
-            // Checking the state of the cow
+            // Checks the state of the cow
             switch (e.CurrentCowState)
             {
                 case CowState.Awake:

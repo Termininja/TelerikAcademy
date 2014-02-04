@@ -13,12 +13,23 @@ public static class IEnumerableExtension
         Test<int>("int collection", "{0,3}", "{0,12}", 3 / 2, 12);
         while (true)
         {
+            // Clear the user input key
             if (key.Key != ConsoleKey.Q) Console.Clear();
-            if (key.Key == ConsoleKey.I) Test<int>("int collection", "{0,3}", "{0,12}", 3 / 2, 12);                     // test for type int
-            else if (key.Key == ConsoleKey.D) Test<double>("double collection", "{0,6:F2}", "{0,12:F2}", 0.73, 8);      // test for type double
-            else if (key.Key == ConsoleKey.F) Test<float>("float collection", "{0,5:F1}", "{0,12:F1}", 0.49f, 9);       // test for type float
-            else if (key.Key == ConsoleKey.M) Test<decimal>("decimal collection", "{0,7:F3}", "{0,12:F3}", 0.491m, 7);  // test for type decimal
-            else if (key.Key == ConsoleKey.Q) break;                                                                    // exit
+
+            // Test for type int
+            if (key.Key == ConsoleKey.I) Test<int>("int collection", "{0,3}", "{0,12}", 3 / 2, 12);
+
+            // Test for type double
+            else if (key.Key == ConsoleKey.D) Test<double>("double collection", "{0,6:F2}", "{0,12:F2}", 0.73, 8);
+
+            // Test for type float
+            else if (key.Key == ConsoleKey.F) Test<float>("float collection", "{0,5:F1}", "{0,12:F1}", 0.49f, 9);
+
+            // Test for type decimal
+            else if (key.Key == ConsoleKey.M) Test<decimal>("decimal collection", "{0,7:F3}", "{0,12:F3}", 0.491m, 7);
+
+            // Exit
+            else if (key.Key == ConsoleKey.Q) break;
         }
     }
 
@@ -78,7 +89,7 @@ public static class IEnumerableExtension
         }
     }
 
-    // Methods
+    // Print menu function
     private static void PrintMenu(char key, string name)
     {
         Console.Write("[");
@@ -88,22 +99,25 @@ public static class IEnumerableExtension
         Console.Write("] {0}", name);
     }
 
-    // Extension methods
-    static T Sum<T>(this IEnumerable<T> collection)                                 // sum function
+    #region Extension methods
+    // Sum function
+    static T Sum<T>(this IEnumerable<T> collection)
     {
         dynamic sum = 0;
         foreach (var item in collection) sum += (dynamic)item;
         return sum;
     }
 
-    static T Product<T>(this IEnumerable<T> collection)                             // product function
+    // Product function
+    static T Product<T>(this IEnumerable<T> collection)
     {
         dynamic product = 1;
         foreach (var item in collection) product *= (dynamic)item;
         return product;
     }
 
-    static T Min<T>(this IEnumerable<T> collection) where T : IComparable<T>        // min function
+    // Min function
+    static T Min<T>(this IEnumerable<T> collection) where T : IComparable<T>
     {
         T min = collection.First<T>();
         foreach (var item in collection)
@@ -113,7 +127,8 @@ public static class IEnumerableExtension
         return min;
     }
 
-    static T Max<T>(this IEnumerable<T> collection) where T : IComparable<T>        // max function
+    // Max function
+    static T Max<T>(this IEnumerable<T> collection) where T : IComparable<T>
     {
         T max = collection.First<T>();
         foreach (var item in collection)
@@ -123,21 +138,25 @@ public static class IEnumerableExtension
         return max;
     }
 
-    static T Average<T>(this IEnumerable<T> collection) where T : IComparable<T>    // average function
+    // Average function
+    static T Average<T>(this IEnumerable<T> collection) where T : IComparable<T>
     {
         return (dynamic)collection.Sum<T>() / collection.Count<T>();
     }
 
-    static T First<T>(this IEnumerable<T> collection)                               // first element function
+    // First element function
+    static T First<T>(this IEnumerable<T> collection)
     {
         foreach (var item in collection) return item;
         return default(T);
     }
 
-    static T Count<T>(this IEnumerable<T> collection)                               // count function
+    // Count function
+    static T Count<T>(this IEnumerable<T> collection)
     {
         dynamic count = 0;
         foreach (var item in collection) count++;
         return count;
     }
+    #endregion
 }

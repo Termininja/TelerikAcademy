@@ -21,15 +21,15 @@ namespace Students
         {
             // Given array of students
             Students[] students = { 
-                                      new Students("Hristo", "Stoichkov", 47), 
-                                      new Students("Desi", "Slava", 34),
-                                      new Students("Kubrat", "Pulev", 32), 
-                                      new Students("Ejko", "Bejko", 23), 
-                                      new Students("Ivet", "Lalova", 29), 
-                                      new Students("Boyko", "Borisov", 54), 
-                                      new Students("Ejko", "Taralejko", 78), 
-                                      new Students("Lubo", "Ganev", 48),
-                                      new Students("Radka", "Piratka", 19)
+                        new Students("Hristo", "Stoichkov", 47), 
+                        new Students("Desi", "Slava", 34),
+                        new Students("Kubrat", "Pulev", 32), 
+                        new Students("Ejko", "Bejko", 23), 
+                        new Students("Ivet", "Lalova", 29), 
+                        new Students("Boyko", "Borisov", 54), 
+                        new Students("Ejko", "Taralejko", 78), 
+                        new Students("Lubo", "Ganev", 48),
+                        new Students("Radka", "Piratka", 19)
                                   };
 
             // Prints all students
@@ -41,9 +41,9 @@ namespace Students
             // Extract and print only the students with age between 18 and 24
             Print(Students.FilterByAge(students), "\nStudents with age between 18 and 24: ");
 
-            // Sorting the students by first name and last name
-            LambdaAndLINQ(students, "Lambda");                                  // by Lambda
-            LambdaAndLINQ(students, "LINQ");                                    // by LINQ
+            // Sorting the students by first name and last name by using Lambda and LINQ
+            LambdaAndLINQ(students, "Lambda");
+            LambdaAndLINQ(students, "LINQ");
         }
 
         private static void LambdaAndLINQ(Students[] students, string method)

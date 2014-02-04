@@ -4,13 +4,15 @@ namespace Events
 {
     class CowTippedEventArgs : EventArgs
     {
-        // Constructor
+        #region Constructor
         public CowTippedEventArgs(CowState currentCowState)
         {
             this.CurrentCowState = currentCowState;
         }
+        #endregion
 
-        // Property
+        #region Property
         public CowState CurrentCowState { get; private set; }
+        #endregion
     }
 }

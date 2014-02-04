@@ -16,6 +16,7 @@ namespace Matrix
     {
         static void Main()
         {
+            // Creates two matrices of the same size
             Matrix<float> matrix1 = new Matrix<float>(4, 4);
             Matrix<float> matrix2 = new Matrix<float>(4, 4);
 
@@ -48,11 +49,12 @@ namespace Matrix
             else Console.WriteLine("Zero matrix!");
         }
 
-        private static void Print(object action, string text)
+        // Prints some matrix
+        private static void Print(object matrix, string text)
         {
             Console.WriteLine(text);
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(action);
+            Console.WriteLine(matrix);
             Console.ResetColor();
         }
     }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\CowState.cs" />
     <Compile Include="Events\CowTippedEventArgs.cs" />
     <Compile Include="Events\Cow.cs" />
     <Compile Include="Program.cs" />

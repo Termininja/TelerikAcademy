@@ -8,6 +8,7 @@ class AllTasks
         Console.BufferWidth = Console.WindowWidth = 100;
         Console.BufferHeight = Console.WindowHeight = 34;
         InOut("Welcome!");
+        Console.CursorVisible = true;
         while (true)
         {
             Console.Clear();
@@ -33,6 +34,7 @@ class AllTasks
                     }
                     else break;
 
+                    Console.CursorVisible = true;
                     TextButton("\n\nThis was the end of the program.\nPress ", "Enter");
                     TextButton(" to try again or ", "Esc");
                     TextButton(" to go to Main Menu . . .", null);
@@ -56,6 +58,7 @@ class AllTasks
         }
     }
 
+    // All homework problems
     static void Contents()
     {
         TextButton("\n\n   Homework 3. Extension Methods, Delegates, Lambda and LINQ\n", null);
@@ -82,12 +85,13 @@ class AllTasks
               Re-implement the above using .NET events and following the best practices.
                          ");
         Console.ResetColor();
-        TextButton("   Please, select a task number from ", "1");
+        TextButton("\n   Please, select a task number from ", "1");
         TextButton(" to ", "8");
         TextButton(" or press ", "ESC");
         TextButton(" to exit... ", null);
     }
 
+    // Print some button
     private static void TextButton(string text, string key)
     {
         Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -104,11 +108,12 @@ class AllTasks
         Console.ResetColor();
     }
 
+    // Welcome and Goodbye screen
     static void InOut(string text)
     {
+        Console.CursorVisible = false;
         Console.SetCursorPosition(47, 10);
         Console.Write(text);
-        Console.SetCursorPosition(99, 33);
         Thread.Sleep(2000);
     }
 }

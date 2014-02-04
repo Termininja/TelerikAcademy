@@ -6,17 +6,23 @@ using System;
 
 namespace Attribute
 {
-    [Version(2.11)]                                                 // applying the attribute 'Version'
+    // Applying the attribute 'Version'
+    [Version(2.11)]
     class Program
     {
         static void Main()
         {
-            Type t = typeof(Program);                           // takes the type of class 'TestProgram'
-            object[] attributes = t.GetCustomAttributes(false);
+            object[] attributes = typeof(Program).GetCustomAttributes(false);
 
+            /* First variant */
             Console.WriteLine("Version: {0}", attributes[0]);
-            //foreach (VersionAttribute item in attributes)         // second variant which prints all elements
-            //    Console.WriteLine(item.version);
+
+            /* Second variant which prints all elements */
+            Console.Write("Version: ");
+            foreach (VersionAttribute item in attributes)
+            {
+                Console.WriteLine(item.version);
+            }
         }
     }
 }

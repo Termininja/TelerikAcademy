@@ -18,17 +18,23 @@ namespace Matrix
         }
 
         // Indexer
-        public T this[int r, int c]                                     // accessing the inner matrix cells
+        public T this[int r, int c]
         {
             get
             {
                 if (r < rows && c < columns) return matrix[r, c];
-                else throw new IndexOutOfRangeException("The index is not in the range of the matrix!");
+                else
+                {
+                    throw new IndexOutOfRangeException("The index is not in the range of the matrix!");
+                }
             }
             set
             {
                 if (r < rows && c < columns) matrix[r, c] = value;
-                else throw new IndexOutOfRangeException("The index is not in the range of the matrix!");
+                else
+                {
+                    throw new IndexOutOfRangeException("The index is not in the range of the matrix!");
+                }
             }
         }
 

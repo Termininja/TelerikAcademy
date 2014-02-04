@@ -13,6 +13,7 @@ namespace IntegerNumbers
             while (true)
             {
                 // Create and print some array of integers
+                Console.CursorVisible = false;
                 Console.WriteLine("Array of random integers:");
                 IntegerNumbers[] numbers = new IntegerNumbers[25];
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -24,13 +25,15 @@ namespace IntegerNumbers
                 }
                 Console.ResetColor();
 
-                // Prints all numbers that are divisible by 7 and 3
-                Print(IntegerNumbers.DivisibleBy21usingLambda(numbers), "Lambda");      // by using lambda expressions
-                Print(IntegerNumbers.DivisibleBy21usingLINQ(numbers), "LINQ");          // by using LINQ
+                // Prints all numbers that are divisible by 7 and 3 by using Lambda and LINQ
+                Print(IntegerNumbers.DivisibleBy21usingLambda(numbers), "Lambda");
+                Print(IntegerNumbers.DivisibleBy21usingLINQ(numbers), "LINQ");
 
                 Console.WriteLine("\n\n\nPress any key to stop the test...");
                 Thread.Sleep(500);
-                if (Console.KeyAvailable)                                               // stop the loop
+
+                // Stop the loop
+                if (Console.KeyAvailable)
                 {
                     Console.ReadKey(false);
                     Console.Write("\b \b");

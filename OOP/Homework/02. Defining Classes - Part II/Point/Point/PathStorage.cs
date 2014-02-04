@@ -43,7 +43,9 @@ namespace Point
             {
                 // Exports all points in the path in different lines
                 for (int i = 0; i < path.Points.Count; i++)
+                {
                     write.WriteLine(path.Points[i]);
+                }
             }
         }
     }

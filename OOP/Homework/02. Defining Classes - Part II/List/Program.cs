@@ -20,7 +20,10 @@ namespace List
     {
         static void Main()
         {
+            // Creates a new GenericList
             GenericList<int> test = new GenericList<int>();
+
+            // Testing all methods for this class
             test.Add(4);
             test.Add(44);
             test.Add(345);
@@ -30,14 +33,11 @@ namespace List
             test.Add(23);
             test.Insert(4, -93);
 
+            // Prints the result from all tests
             Console.WriteLine(test.ToString());
             Console.WriteLine("The length is: {0}", test.Count());
-            Console.WriteLine("The allocated length is: {0}", test.Length());
-            
-            Console.WriteLine();
-            Console.WriteLine("The index of element with value {0} is: {1}", -93, test.IndexOf(-93));
-
-            Console.WriteLine();
+            Console.WriteLine("The allocated length is: {0}\n", test.Length());
+            Console.WriteLine("The index of element with value {0} is: {1}\n", -93, test.IndexOf(-93));
             Console.WriteLine("The minimum value is: {0}", test.Min<int>());
             Console.WriteLine("The maximum value is: {0}", test.Max<int>());
         }

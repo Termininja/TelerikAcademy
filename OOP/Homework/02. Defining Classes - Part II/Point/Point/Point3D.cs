@@ -5,8 +5,8 @@ namespace Point
     // Creates a structure for 3D-coordinates {X, Y, Z}
     public struct Point3D
     {
-        // Fields
-        private static readonly Point3D o;      // the start of the coordinate system
+        // The start of the coordinate system
+        private static readonly Point3D o;
 
         // Constructors
         public Point3D(int x, int y, int z)
@@ -27,8 +27,8 @@ namespace Point
             get { return o; }
         }
 
-        // Methods
-        public override string ToString()       // to enable printing a 3D point
+        // Prints a 3D point
+        public override string ToString()
         {
             return String.Format("{0},{1},{2}", this.X, this.Y, this.Z);
         }

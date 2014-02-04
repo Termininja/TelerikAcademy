@@ -2,18 +2,17 @@
 
 namespace Events
 {
-    // Cow states
-    public enum CowState { Awake, Sleeping, Dead }
-
     class Cow
     {
-        // Event
+        #region Event
         public event EventHandler<CowTippedEventArgs> Moo;
+        #endregion
 
-        // Property
+        #region Property
         public string Name { get; set; }
+        #endregion
 
-        // Methods
+        #region Method
         public void BeTippedOver()
         {
             if (Moo != null)
@@ -30,5 +29,6 @@ namespace Events
                 Moo(this, new CowTippedEventArgs(state));
             }
         }
+        #endregion
     }
 }

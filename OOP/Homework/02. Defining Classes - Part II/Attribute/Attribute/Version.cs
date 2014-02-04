@@ -22,9 +22,13 @@ namespace Attribute
         }
 
         // Property
-        public double Ver { get; private set; }
+        public double Ver
+        {
+            get;
+            private set;
+        }
 
-        // String output for this class
+        // Override ToString output for this class
         public override string ToString()
         {
             return this.version.ToString();

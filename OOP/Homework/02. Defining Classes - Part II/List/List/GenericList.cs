@@ -5,6 +5,7 @@ namespace List
 {
     class GenericList<T> where T : IComparable
     {
+        // Fields
         private const int defaultCapacity = 1;
         private T[] array;
         private int count = 0;
@@ -20,22 +21,19 @@ namespace List
         }
 
         // Indexer
-        public T this[int index]                    // accessing element by index
+        public T this[int index]
         {
             get
             {
-                if (index >= count)
-                {
-                    throw new IndexOutOfRangeException();
-                }
+                if (index >= count) throw new IndexOutOfRangeException();
                 return array[index];
             }
         }
 
-        // Methods
-        private void Resize(int count)              // reasize the array if it is full
+        // Reasize the array if it is full
+        private void Resize(int count)
         {
-            // decrease the lenght of array
+            // Decrease the lenght of array
             if (count > array.Length - 1)
             {
                 T[] newArray = new T[capacity * 2];
@@ -44,7 +42,7 @@ namespace List
                 array = newArray;
             }
 
-            // increase the lenght of array
+            // Increase the lenght of array
             if (count < array.Length / 2)
             {
                 T[] newArray = new T[capacity / 2];
@@ -54,7 +52,8 @@ namespace List
             }
         }
 
-        public void Add(T value)                    // adding element
+        // Adding element
+        public void Add(T value)
         {
             Resize(count);
             array[count] = value;
@@ -102,10 +101,16 @@ namespace List
         }
 
         // Counting the current length of the array
-        public int Count() { return count; }
+        public int Count()
+        {
+            return count;
+        }
 
         // Counting the allocated length of the array
-        public int Length() { return array.Length; }
+        public int Length()
+        {
+            return array.Length;
+        }
 
         // Generic method for finding the minimal element in array
         public T Min<T>()
@@ -129,7 +134,7 @@ namespace List
             return max;
         }
 
-        // String output for this class
+        // Override ToString output for this class
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();
