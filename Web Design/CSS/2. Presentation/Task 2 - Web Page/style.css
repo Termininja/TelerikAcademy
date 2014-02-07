@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 .clearfix, body header div#header-container, body header nav, body header nav ul, body header nav ul li ul.sub-nav-list, body section, body aside {
     zoom: 1;
 }
@@ -24,6 +28,16 @@ div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
 }
 
 body {
+    background: rgb(212,146,255);
+    background: -moz-linear-gradient(top, rgba(212,146,255,1) 0%, rgba(167,66,244,1) 17%, rgba(146,21,242,1) 26%, rgba(146,21,242,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(212,146,255,1)), color-stop(17%,rgba(167,66,244,1)), color-stop(26%,rgba(146,21,242,1)), color-stop(100%,rgba(146,21,242,1)));
+    background: -webkit-linear-gradient(top, rgba(212,146,255,1) 0%,rgba(167,66,244,1) 17%,rgba(146,21,242,1) 26%,rgba(146,21,242,1) 100%);
+    background: -o-linear-gradient(top, rgba(212,146,255,1) 0%,rgba(167,66,244,1) 17%,rgba(146,21,242,1) 26%,rgba(146,21,242,1) 100%);
+    background: -ms-linear-gradient(top, rgba(212,146,255,1) 0%,rgba(167,66,244,1) 17%,rgba(146,21,242,1) 26%,rgba(146,21,242,1) 100%);
+    background: linear-gradient(to bottom, rgba(212,146,255,1) 0%,rgba(167,66,244,1) 17%,rgba(146,21,242,1) 26%,rgba(146,21,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d492ff', endColorstr='#9215f2',GradientType=0 );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font: 14px normal Arial;
     color: white;
 }
@@ -38,6 +52,10 @@ body {
         body header div#header-container div#logo-container {
             float: left;
             position: relative;
+        }
+
+        body header #logo-container img {
+            border: hidden;
         }
 
         body header div#header-container div#reg-form-container {
@@ -60,6 +78,7 @@ body {
                     width: 130px;
                     border: 1px solid #603382;
                     border-radius: 10px;
+                    background: rgb(179, 94, 243);
                     padding: 2px 5px;
                     margin: 5px;
                 }
@@ -68,10 +87,12 @@ body {
                 margin-left: auto;
                 margin-right: auto;
                 font-weight: bold;
-                border: 1px solid #603382;
+                border: 2px solid #603382;
                 border-style: outset;
                 border-radius: 10px;
                 padding: 5px 8px;
+                color: white;
+                background: transparent;
             }
 
                 body header div#header-container div#reg-form-container button:hover {
@@ -85,6 +106,7 @@ body {
             margin: 20px 20px 20px 20px;
             padding: 12px;
             border: 2px solid #000;
+            border-radius: 15px;
         }
 
             body header nav ul.nav-list {
@@ -146,9 +168,11 @@ body {
     }
 
         body section article {
+            color: white;
             margin: 20px;
             padding: 20px;
             border: 1px solid black;
+            border-radius: 15px;
         }
 
             body section article header {
@@ -177,6 +201,8 @@ body {
 
                     body section article footer p a {
                         text-decoration: none;
+                        color: white;
+                        opacity: 0.5;
                     }
 
                         body section article footer p a:hover {
@@ -257,6 +283,7 @@ body {
     }
 
         body footer p {
+            text-align: center;
             font-size: 1.2em;
             font-weight: bold;
         }
