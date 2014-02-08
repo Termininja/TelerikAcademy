@@ -7,7 +7,7 @@ body {
         border-radius: 6px;
         box-shadow: 2px 2px 13px black;
         margin: 10% auto auto auto;
-        width: 458px;
+        width: 462px;
         padding: 0.1em;
     }
 
@@ -172,6 +172,11 @@ nav {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e6f6',GradientType=0 ); /* IE6-9 */
 }
 
+    nav ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
     nav a {
         display: inline-block;
         text-decoration: none;
@@ -191,6 +196,52 @@ nav {
             border: 1px solid #aaa;
             border-radius: 3px;
         }
+
+    nav > ul > li, nav > ul {
+        display: inline-block;
+        margin: 0;
+        cursor: default;
+    }
+
+        nav > ul ul {
+            display: none;
+            border: 1px solid #aaa;
+            font-size: 13px;
+            background: #f0f0f0;
+            padding-left: 27px;
+            position: absolute;
+            box-shadow: 1px 1px 2px #555;
+        }
+
+        nav > ul > li:hover > ul {
+            display: block;
+        }
+
+        nav > ul > li > ul > li:hover > ul {
+            display: inline-block;
+            left: 185px;
+        }
+
+        nav > ul ul li {
+            padding: 0.1em 0.4em;
+            border: 1px solid transparent;
+            border-left: 1px inset rgba(221, 221, 221, 0.3);
+            width: 150px;
+        }
+
+            nav > ul ul li:hover {
+                background: rgb(236, 240, 246);
+                border: 1px solid rgb(174, 207, 247);
+                border-radius: 3px;
+            }
+
+            nav > ul ul li span:nth-child(2) {
+                float: right;
+            }
+
+            nav > ul ul li #arrow {
+                font-size: 8px;
+            }
 
 /* Calculator */
 section > table {
