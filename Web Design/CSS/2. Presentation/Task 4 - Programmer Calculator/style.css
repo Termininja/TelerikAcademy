@@ -30,23 +30,22 @@ body {
 
             /* Main page buttons */
             body > section header > table {
-                margin: -0.8% 5px 0 0;
+                margin: -0.1em 5px 0 0;
                 float: right;
                 border-spacing: 0;
             }
 
-                /* Minimize & Maximize buttons */
-                body > section header > table td:not(:last-child) button {
-                    z-index: 1;
-                    height: 22px;
+                body > section header > table button {
+                    text-shadow: 1px 1px 0 #555, -1px 1px 0 #555, 1px -1px 0 #555, -1px -1px 0 #555, 0px 1px 0 #555, 0px -1px 0 #555, -1px 0px 0 #555, 1px 0px 0 #555;
                     width: 30px;
+                    height: 22px;
+                    display: block;
                     border: 1px solid #666;
                     border-top: none;
                     box-shadow: 0 0 1px white inset;
                     color: white;
-                    font-size: 14px;
                     font-weight: bold;
-                    line-height: 0px;
+                    font-family: Consolas;
                     background: rgb(248,248,248); /* Old browsers */
                     background: -moz-linear-gradient(top, rgba(248,248,248,1) 0%, rgba(231,231,231,1) 41%, rgba(207,207,207,1) 57%, rgba(207,207,207,1) 100%); /* FF3.6+ */
                     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,248,248,1)), color-stop(41%,rgba(231,231,231,1)), color-stop(57%,rgba(207,207,207,1)), color-stop(100%,rgba(207,207,207,1))); /* Chrome,Safari4+ */
@@ -59,14 +58,8 @@ body {
 
                 /* Minimize button */
                 body > section header > table td:first-child button {
-                    z-index: 1;
-                    position: inherit;
                     border-right: none;
-                    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000, 0px 1px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000, 1px 0px 0 #000;
                     border-bottom-left-radius: 5px;
-                    padding-top: 6px;
-                    vertical-align: -7px;
-                    font-size: 28px;
                 }
 
                     body > section header > table td:first-child button:hover {
@@ -84,64 +77,43 @@ body {
 
                 /* Maximize button */
                 body > section header > table td:nth-child(2) button {
-                    /*font-size: 20px;*/
                     text-shadow: 1px 1px 0 #aaa, -1px 1px 0 #aaa, 1px -1px 0 #aaa, -1px -1px 0 #aaa, 0px 1px 0 #aaa, 0px -1px 0 #aaa, -1px 0px 0 #aaa, 1px 0px 0 #aaa;
                 }
 
                 /* Close button */
-                body > section header > table td:last-child button {
-                    height: 23px;
-                    width: 52px;
-                    line-height: 0px;
-                    color: white;
-                    border: none;
-                    position: absolute;
-                    background: transparent;
-                    text-shadow: 1px 1px 0 #555, -1px 1px 0 #555, 1px -1px 0 #555, -1px -1px 0 #555, 0px 1px 0 #555, 0px -1px 0 #555, -1px 0px 0 #555, 1px 0px 0 #555;
-                    font-family: Consolas;
-                    font-size: 22px;
-                    font-weight: bold;
+                body > section header > table td:last-child {
+                    border-bottom-right-radius: 5px;
+                    background: rgb(177,71,57); /* Old browsers */
+                    background: -moz-linear-gradient(left, rgba(177,71,57,1) 0%, rgba(216,77,53,1) 50%, rgba(177,71,57,1) 100%); /* FF3.6+ */
+                    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(177,71,57,1)), color-stop(50%,rgba(216,77,53,1)), color-stop(100%,rgba(177,71,57,1))); /* Chrome,Safari4+ */
+                    background: -webkit-linear-gradient(left, rgba(177,71,57,1) 0%,rgba(216,77,53,1) 50%,rgba(177,71,57,1) 100%); /* Chrome10+,Safari5.1+ */
+                    background: -o-linear-gradient(left, rgba(177,71,57,1) 0%,rgba(216,77,53,1) 50%,rgba(177,71,57,1) 100%); /* Opera 11.10+ */
+                    background: -ms-linear-gradient(left, rgba(177,71,57,1) 0%,rgba(216,77,53,1) 50%,rgba(177,71,57,1) 100%); /* IE10+ */
+                    background: linear-gradient(to right, rgba(177,71,57,1) 0%,rgba(216,77,53,1) 50%,rgba(177,71,57,1) 100%); /* W3C */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b14739', endColorstr='#b14739',GradientType=1 ); /* IE6-9 */
                 }
 
-                    body > section header > table td:last-child button:hover {
-                        box-shadow: 0 0 10px #e40d0d;
+                    body > section header > table td:last-child button {
+                        width: 52px;
+                        color: white;
+                        border-left: none;
                         border-bottom-right-radius: 5px;
+                        font-size: 22px;
+                        line-height: 0;
+                        background: rgb(242,242,242);
+                        background: -moz-linear-gradient(top, rgba(242,242,242,0.5)0%, rgba(244,211,205,0.5)37%, rgba(214,37,2,0.5)59%, rgba(211,35,0,0.5)100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,1)), color-stop(37%,rgba(244,211,205,1)), color-stop(59%,rgba(214,37,2,1)), color-stop(100%,rgba(211,35,0,1)));
+                        background: -webkit-linear-gradient(top, rgba(242,242,242,0.5)0%,rgba(244,211,205,0.5)37%,rgba(214,37,2,0.5)59%,rgba(211,35,0,0.5)100%);
+                        background: -o-linear-gradient(top, rgba(242,242,242,0.5)0%,rgba(244,211,205,0.5)37%,rgba(214,37,2,0.5)59%,rgba(211,35,0,0.5)100%);
+                        background: -ms-linear-gradient(top, rgba(242,242,242,0.5)0%,rgba(244,211,205,0.5)37%,rgba(214,37,2,0.5)59%,rgba(211,35,0,0.5)100%);
+                        background: linear-gradient(to bottom, rgba(242,242,242,0.5)0%,rgba(244,211,205,0.5)37%,rgba(214,37,2,0.5)59%,rgba(211,35,0,0.5)100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#d32300',GradientType=0 );
                     }
 
-                /* Background for close button */
-                body > section header > table td:last-child table {
-                    border-spacing: 0;
-                    padding-top: 2px;
-                    width: 52px;
-                }
-
-                    body > section header > table td:last-child table tr:first-child td {
-                        height: 10px;
-                        border-right: 1px solid #666;
-                        background: rgb(206,98,86); /* Old browsers */
-                        background: -moz-linear-gradient(left, rgba(206,98,86,1) 0%, rgba(236,140,123,1) 49%, rgba(206,98,86,1) 100%); /* FF3.6+ */
-                        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(206,98,86,1)), color-stop(49%,rgba(236,140,123,1)), color-stop(100%,rgba(206,98,86,1))); /* Chrome,Safari4+ */
-                        background: -webkit-linear-gradient(left, rgba(206,98,86,1) 0%,rgba(236,140,123,1) 49%,rgba(206,98,86,1) 100%); /* Chrome10+,Safari5.1+ */
-                        background: -o-linear-gradient(left, rgba(206,98,86,1) 0%,rgba(236,140,123,1) 49%,rgba(206,98,86,1) 100%); /* Opera 11.10+ */
-                        background: -ms-linear-gradient(left, rgba(206,98,86,1) 0%,rgba(236,140,123,1) 49%,rgba(206,98,86,1) 100%); /* IE10+ */
-                        background: linear-gradient(to right, rgba(206,98,86,1) 0%,rgba(236,140,123,1) 49%,rgba(206,98,86,1) 100%); /* W3C */
-                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce6256', endColorstr='#ce6256',GradientType=1 ); /* IE6-9 */
-                    }
-
-                    body > section header > table td:last-child table tr:last-child td {
-                        height: 11px;
-                        border-right: 1px solid #666;
-                        border-bottom: 1px solid #666;
-                        border-bottom-right-radius: 5px;
-                        background: rgb(180,74,59); /* Old browsers */
-                        background: -moz-linear-gradient(left, rgba(180,74,59,1) 0%, rgba(216,78,55,1) 49%, rgba(180,74,59,1) 100%); /* FF3.6+ */
-                        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(180,74,59,1)), color-stop(49%,rgba(216,78,55,1)), color-stop(100%,rgba(180,74,59,1))); /* Chrome,Safari4+ */
-                        background: -webkit-linear-gradient(left, rgba(180,74,59,1) 0%,rgba(216,78,55,1) 49%,rgba(180,74,59,1) 100%); /* Chrome10+,Safari5.1+ */
-                        background: -o-linear-gradient(left, rgba(180,74,59,1) 0%,rgba(216,78,55,1) 49%,rgba(180,74,59,1) 100%); /* Opera 11.10+ */
-                        background: -ms-linear-gradient(left, rgba(180,74,59,1) 0%,rgba(216,78,55,1) 49%,rgba(180,74,59,1) 100%); /* IE10+ */
-                        background: linear-gradient(to right, rgba(180,74,59,1) 0%,rgba(216,78,55,1) 49%,rgba(180,74,59,1) 100%); /* W3C */
-                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b44a3b', endColorstr='#b44a3b',GradientType=1 ); /* IE6-9 */
-                    }
+                        body > section header > table td:last-child button:hover {
+                            box-shadow: 0 0 10px #e40d0d;
+                            border-bottom-right-radius: 5px;
+                        }
 
         body > section > section {
             background: rgb(237,244,252); /* Old browsers */
@@ -176,6 +148,10 @@ nav {
         padding: 0;
         list-style-type: none;
     }
+
+        nav ul li.selected {
+            list-style-type: disc;
+        }
 
     nav a {
         display: inline-block;
@@ -229,7 +205,7 @@ nav {
             width: 150px;
         }
 
-            nav > ul ul li:hover {
+            nav > ul ul li:hover:not(.disabled) {
                 background: rgb(236, 240, 246);
                 border: 1px solid rgb(174, 207, 247);
                 border-radius: 3px;
@@ -241,6 +217,10 @@ nav {
 
             nav > ul ul li #arrow {
                 font-size: 8px;
+            }
+
+            nav > ul ul li.disabled {
+                color: #777;
             }
 
 /* Calculator */
