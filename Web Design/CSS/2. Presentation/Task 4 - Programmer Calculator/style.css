@@ -220,7 +220,13 @@ nav {
             }
 
             nav > ul ul li.disabled {
-                color: #777;
+                color: #888;
+            }
+
+            nav > ul ul li hr {
+                margin: 0;
+                opacity: 0.4;
+                color: #ccc;
             }
 
 /* Calculator */
