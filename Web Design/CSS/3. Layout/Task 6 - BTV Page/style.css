@@ -1,1 +1,73 @@
+body {
+    background: #f4f2f2;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+}
 
+    body > div {
+        text-align: left;
+        width: 590px;
+        height: 300px;
+        margin: 10% auto;
+        background: rgb(30, 55, 65);
+        border: 0.1em solid rgb(55, 125, 140);
+        border-radius: 8px;
+        padding-top: 10px;
+    }
+
+/* Navigaition 1 */
+nav a {
+    background: rgb(75, 95, 103);
+    color: rgb(147, 172, 182);
+    text-decoration: none;
+    font-size: 11px;
+    margin: 1.3em -1px;
+    padding: 0.8em 0.9em;
+}
+
+    nav a:first-child {
+        background: transparent;
+        color: white;
+        cursor: default;
+    }
+
+    nav a:hover:not(:first-child) {
+        text-decoration: underline;
+    }
+
+/* Navigaition 2 */
+aside {
+    float: left;
+    width: 235px;
+    font-size: 12px;
+}
+
+    aside ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        aside ul li {
+            padding: 0.6em 1.5em 0.6em 0.5em;
+            cursor: pointer;
+        }
+
+            aside ul li:not(:last-child) {
+                border-bottom: 1px solid rgb(147, 172, 182);
+            }
+
+    aside a {
+        text-decoration: none;
+        color: rgb(165, 175, 179);
+    }
+
+/* Media */
+figure {
+    margin-right: 0;
+}
+
+    figure img {
+        width: 320px;
+    }

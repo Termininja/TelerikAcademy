@@ -1,1 +1,47 @@
+body {
+    background: rgb(238, 238, 238);
+    font-family: sans-serif;
+}
 
+h1 {
+    font-size: 28px;
+    margin-left: 0.8em;
+}
+
+section {
+    border: 0.12em solid rgb(153, 153, 153);
+    background: white;
+    width: 400px;
+    height: 100px;
+    padding: 1em;
+    margin: 3em 1.5em;
+}
+
+    section img {
+        border: 0.12em solid rgb(153, 153, 153);
+        float: left;
+        margin-right: 1em;
+        height: 100px;
+    }
+
+    section p {
+        font-size: 14px;
+        margin: 0 1em 0 0;
+    }
+
+    section button {
+        float: right;
+        font-size: 11px;
+        color: white;
+        margin: 12px 2px;
+        padding: 3px 15px 3px 20px;
+        border-style: solid;
+        border-color: rgb(230, 130, 130) rgb(101, 0, 0) rgb(101, 0, 0) rgb(156, 40, 40);
+        border-width: 2px;
+        background: url("images/button.gif") repeat-y rgb(204, 0, 0);
+    }
+
+        section button:hover {
+            background-color: #EF1818;
+            cursor: pointer;
+        }

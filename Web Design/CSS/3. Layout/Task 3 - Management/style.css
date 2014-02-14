@@ -1,1 +1,75 @@
+body {
+    background: #e4e2e2;
+}
 
+table {
+    border-radius: 15px;
+    margin: 10% auto;
+    padding: 1em;
+    width: 750px;
+    height: 400px;
+    background-color: rgb(59, 59, 59);
+}
+
+    table thead {
+        background: url(images/line_shadow.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center bottom;
+    }
+
+    table th {
+        background: url(images/monitor.png) no-repeat;
+        background-size: 45px;
+        background-position: 0 30%;
+        height: 70px;
+    }
+
+    table td {
+        padding-right: 50px;
+    }
+
+label {
+    color: white;
+    font-family: Georgia;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+input {
+    padding-left: 10px;
+    margin: 0 10px;
+}
+
+button {
+    margin-left: 0.6em;
+    color: white;
+    background: url(images/button.png) no-repeat;
+    background-position: 50% 50%;
+    background-size: 60px auto;
+    border-radius: 12px;
+    border: 2px solid white;
+    height: 30px;
+    width: 60px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+    button:hover {
+        opacity: 1;
+    }
+
+h1 {
+    color: rgb(251, 214, 26);
+    font: 33px Georgia;
+}
+
+p {
+    color: rgb(164, 164, 164);
+    font-size: 18px;
+    margin: 0 0;
+}
+
+span {
+    color: white;
+}
