@@ -130,6 +130,8 @@ body {
 
 /* Navigation menu */
 nav {
+    z-index: 100;
+    position: relative;
     height: 20px;
     font-size: 14px;
     padding-left: 0.2em;
@@ -153,7 +155,7 @@ nav {
             list-style-type: disc;
         }
 
-    nav a {
+    nav > ul > li > a {
         display: inline-block;
         text-decoration: none;
         border: 1px solid transparent;
@@ -164,11 +166,11 @@ nav {
         color: black;
     }
 
-        nav a span:first-child {
+        nav > ul > li > a span:first-child {
             text-decoration: underline;
         }
 
-        nav a:hover {
+        nav > ul > li > a:hover {
             border: 1px solid #aaa;
             border-radius: 3px;
         }
@@ -219,28 +221,34 @@ nav {
                 font-size: 8px;
             }
 
-            nav > ul ul li.disabled {
-                color: #888;
-            }
-
             nav > ul ul li hr {
                 margin: 0;
                 opacity: 0.4;
                 color: #ccc;
             }
 
+        nav > ul > li > ul > li a {
+            text-decoration: none;
+            cursor: default;
+            color: black;
+        }
+
+        nav > ul > li > ul > li.disabled a {
+            color: #888;
+        }
+
 /* Calculator */
-section > table {
+form > table {
     border-spacing: 0.4em;
     margin: 0.4em;
 }
 
-    section > table th, td {
+    form > table th, td {
         padding: 0;
     }
 
     /* Display */
-    section > table thead input {
+    form > table thead input {
         width: 420px;
         height: 40px;
         background: rgb(229,239,251); /* Old browsers */
@@ -265,39 +273,49 @@ section > table {
     }
 
     /* Bits */
-    section > table table {
-        text-align: justify;
+    form > table table {
         width: 100%;
-        font-size: 12px;
+        font-size: 13px;
         border: 1px solid white;
         box-shadow: 0 0 1px #222;
         border-radius: 2px;
         border-spacing: 0;
         cursor: default;
-        padding: 2px 1em 2px 0.5em;
+        padding: 0.2em 1em 2px 0.5em;
+        color: #666;
+        font-family: Consolas;
     }
 
-        section > table table td {
-            height: 12px;
-            width: 50px;
-            border: none;
-            font-family: Consolas;
-            background: transparent;
-            color: #666;
+        form > table table td {
+            width: 20px;
         }
 
-        section > table table tr:nth-child(2n+1) td {
-            color: #1C3759;
-            letter-spacing: 0.1em;
-        }
+            form > table table td input {
+                font-size: 13px;
+                margin: 0.17em -0.03em;
+                padding: 0;
+                cursor: default;
+                color: #1C3759;
+                font-family: Consolas;
+                display: inline-block;
+                float: left;
+                background: transparent;
+                width: 0.7em;
+                height: 0.7em;
+                border: none;
+            }
 
-        section > table table td:last-child {
-            width: 1px;
-            text-align: right;
-        }
+            form > table table td:last-child {
+                text-align: right;
+                width: 0;
+            }
+
+                form > table table td:last-child input {
+                    float: right;
+                }
 
     /* Radio buttons */
-    section > table > tbody > tr:nth-child(3n+2) td:first-child {
+    form > table > tbody > tr:nth-child(3n+2) td:first-child {
         border: 1px solid #93a1b3;
         border-radius: 3px;
         width: 100%;
@@ -305,12 +323,12 @@ section > table {
         font-size: 12px;
     }
 
-        section > table > tbody > tr:nth-child(3n+2) td:first-child label {
+        form > table > tbody > tr:nth-child(3n+2) td:first-child label {
             vertical-align: 2px;
         }
 
     /* Normal buttons */
-    section > table tbody button {
+    form > table tbody button {
         height: 29px;
         width: 37px;
         color: #1C3759;
@@ -327,32 +345,27 @@ section > table {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f6fb', endColorstr='#d9e3f1',GradientType=0 ); /* IE6-9 */
         font-size: 0.7em;
         font-family: Segoe UI;
+        position: relative;
+        z-index: 10;
     }
 
-        section > table tbody button:hover, section > table tbody button.number:hover {
-            background: rgb(255,245,233); /* Old browsers */
-            background: -moz-linear-gradient(top, rgba(255,245,233,1) 0%, rgba(255,228,199,1) 45%, rgba(255,208,109,1) 57%, rgba(255,234,133,1) 100%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,245,233,1)), color-stop(45%,rgba(255,228,199,1)), color-stop(57%,rgba(255,208,109,1)), color-stop(100%,rgba(255,234,133,1))); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* Opera 11.10+ */
-            background: -ms-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* IE10+ */
-            background: linear-gradient(to bottom, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5e9', endColorstr='#ffea85',GradientType=0 ); /* IE6-9 */
+        form > table tbody button:hover .transition1, form > table tbody button.number:hover .transition1 {
+            opacity: 1;
         }
 
     /* Zero button */
-    section > table tbody tr:last-child td:nth-child(4) button {
+    form > table tbody tr:last-child td:nth-child(4) button {
         width: 81px;
     }
 
     /* Equal button */
-    section > table tbody tr:nth-child(6) td:last-child button {
+    form > table tbody tr:nth-child(6) td:last-child button {
         height: 65px;
         font-size: 26px;
     }
 
-    /* Blocked buttons */
-    section > table tbody button.blocked {
+    /* Blocked Dec buttons */
+    form > table tbody button.blocked {
         border: 1px solid #aaa;
         box-shadow: none;
         border-radius: 3px;
@@ -361,14 +374,24 @@ section > table {
         font-size: 13px;
     }
 
+    /* Blocked Oct & Bin buttons */
+    form > table tbody button.oct, form > table tbody button.bin {
+        border: 1px solid #aaa;
+        box-shadow: none;
+        border-radius: 3px;
+        background: transparent;
+        font-family: Segoe UI;
+        font-size: 18px;
+    }
+
     /* Letter buttons */
-    section > table tbody button.letter {
+    form > table tbody button.letter {
         font-size: 16px;
         font-family: Segoe UI;
     }
 
     /* Number buttons */
-    section > table tbody button.number {
+    form > table tbody button.number {
         border: 1px solid white;
         box-shadow: 0 0 1px #222;
         border-radius: 3px;
@@ -384,32 +407,78 @@ section > table {
     }
 
     /* Backspace arrow */
-    section > table > tbody > tr:nth-child(3) td:nth-child(4) button {
+    form > table > tbody > tr:nth-child(3) td:nth-child(4) button {
         font-size: 28px;
         font-family: Lucida Console;
         line-height: 25px;
     }
 
     /* Operation buttons */
-    section > table > tbody button.operation {
+    form > table > tbody button.operation {
         font-size: 16px;
     }
 
     /* Memory buttons */
-    section > table > tbody > tr:nth-child(2) td:nth-last-child(-n+5) button {
+    form > table > tbody > tr:nth-child(2) td:nth-last-child(-n+5) button {
         border: 1px solid white;
         box-shadow: 0 0 1px #222;
         border-radius: 3px;
         background: transparent;
+        position: relative;
+        z-index: 10;
     }
 
-        section > table > tbody > tr:nth-child(2) td:nth-last-child(-n+5) button:hover {
-            background: rgb(255,206,104); /* Old browsers */
-            background: -moz-linear-gradient(top, rgba(255,206,104,1) 0%, rgba(255,208,109,1) 48%, rgba(255,237,135,1) 100%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,206,104,1)), color-stop(48%,rgba(255,208,109,1)), color-stop(100%,rgba(255,237,135,1))); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* Opera 11.10+ */
-            background: -ms-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* IE10+ */
-            background: linear-gradient(to bottom, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffce68', endColorstr='#ffed87',GradientType=0 ); /* IE6-9 */
+        form > table > tbody > tr:nth-child(2) td:nth-last-child(-n+5) button:hover .transition2 {
+            opacity: 1;
         }
+
+/* Transitions */
+.transition1 {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 0 3px yellow inherit;
+    background: rgb(255,245,233); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,245,233,1) 0%, rgba(255,228,199,1) 45%, rgba(255,208,109,1) 57%, rgba(255,234,133,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,245,233,1)), color-stop(45%,rgba(255,228,199,1)), color-stop(57%,rgba(255,208,109,1)), color-stop(100%,rgba(255,234,133,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5e9', endColorstr='#ffea85',GradientType=0 ); /* IE6-9 */
+    -o-transition: opacity 0.8s ease-in-out;
+    -moz-transition: opacity 0.8s ease-in-out;
+    -khtml-transition: opacity 0.8s ease-in-out;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    -ms-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.transition2 {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 0 3px yellow inherit;
+    background: rgb(255,206,104); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,206,104,1) 0%, rgba(255,208,109,1) 48%, rgba(255,237,135,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,206,104,1)), color-stop(48%,rgba(255,208,109,1)), color-stop(100%,rgba(255,237,135,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffce68', endColorstr='#ffed87',GradientType=0 ); /* IE6-9 */
+    -o-transition: opacity 0.8s ease-in-out;
+    -moz-transition: opacity 0.8s ease-in-out;
+    -khtml-transition: opacity 0.8s ease-in-out;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    -ms-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+}
