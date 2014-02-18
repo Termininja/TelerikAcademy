@@ -1,0 +1,4 @@
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BitArray\bin\Debug\BitArray.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BitArray\bin\Debug\BitArray.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BitArray\obj\Debug\BitArray.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BitArray\obj\Debug\BitArray.pdb

@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\07. Academy Popcorn\AcademyPopcorn\bin\Debug\AcademyPopcorn.exe.config
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\07. Academy Popcorn\AcademyPopcorn\bin\Debug\AcademyPopcorn.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\07. Academy Popcorn\AcademyPopcorn\bin\Debug\AcademyPopcorn.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\07. Academy Popcorn\AcademyPopcorn\obj\Debug\AcademyPopcorn.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\07. Academy Popcorn\AcademyPopcorn\obj\Debug\AcademyPopcorn.pdb

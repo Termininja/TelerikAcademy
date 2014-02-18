@@ -16,7 +16,7 @@ namespace BitArray
             this.Number = number;
         }
 
-        // indexator
+        // Indexator
         public int this[int index]
         {
             get
