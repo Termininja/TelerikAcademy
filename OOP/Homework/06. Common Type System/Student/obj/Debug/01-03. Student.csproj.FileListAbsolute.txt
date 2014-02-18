@@ -1,5 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Student\bin\Debug\Student.exe
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Student\bin\Debug\Student.pdb
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Student\obj\Debug\01-03. Student.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Student\obj\Debug\Student.exe
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Student\obj\Debug\Student.pdb

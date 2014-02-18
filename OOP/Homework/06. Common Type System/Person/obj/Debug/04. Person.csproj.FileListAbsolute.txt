@@ -1,4 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Person\bin\Debug\Person.exe
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Person\bin\Debug\Person.pdb
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Person\obj\Debug\Person.exe
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\Person\obj\Debug\Person.pdb

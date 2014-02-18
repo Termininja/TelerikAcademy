@@ -1,5 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BinarySearchTree\bin\Debug\BinarySearchTree.exe
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BinarySearchTree\obj\Debug\06. BinarySearchTree.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BinarySearchTree\obj\Debug\BinarySearchTree.exe
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\06. Common Type System\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
