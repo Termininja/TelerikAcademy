@@ -1,0 +1,63 @@
+body, table {
+    background: #555555;
+}
+
+table {
+    border-spacing: 5px;
+    border: 20px outset gray;
+    border-top: 20px outset #bbbbbb;
+    border-bottom: 20px outset #666666;
+    box-shadow: 20px 20px 20px #222;
+    margin: 100px auto;
+    padding: 0;
+    text-align: center;
+    cursor: default;
+}
+
+    table td a > img {
+        width: 150px;
+        border: none;
+        opacity: 0.6;
+        -o-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -khtml-transition: opacity 0.3s;
+        -webkit-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        vertical-align: middle;
+    }
+
+        table td a > img:hover {
+            opacity: 1;
+        }
+
+    table tr:nth-child(2) td:nth-child(2) {
+        background: url("../images/logo.jpg") no-repeat;
+        background-position: 7px 5px;
+        background-size: 588px;
+        height: 360px;
+        width: 600px;
+        border: 20px outset gray;
+        border-top: 20px outset #bbbbbb;
+        border-bottom: 20px outset #666666;
+        vertical-align: middle;
+    }
+
+    table td > img {
+        display: block;
+        width: 600px;
+        position: absolute;
+        top: 243px;
+        opacity: 0;
+        -o-transition: opacity 3s;
+        -moz-transition: opacity 3s;
+        -khtml-transition: opacity 3s;
+        -webkit-transition: opacity 3s;
+        -ms-transition: opacity 3s;
+        transition: opacity 3s;
+    }
+
+        table td > img:target {
+            opacity: 1;
+            height: auto;
+        }
