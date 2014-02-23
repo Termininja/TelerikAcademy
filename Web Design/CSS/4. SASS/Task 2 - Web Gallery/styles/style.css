@@ -17,6 +17,7 @@ table {
 
     table td a > img {
         width: 150px;
+        height: 90px;
         border: none;
         opacity: 0.5;
         -o-transition: opacity 0.3s;
