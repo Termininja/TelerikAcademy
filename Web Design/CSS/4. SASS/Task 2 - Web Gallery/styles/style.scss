@@ -18,21 +18,22 @@ $height: 360px;
 }
 
 body, table {
-	background: #555;
+	background: url("../images/background.jpg");
+	cursor: default;
 }
 
 table {
+	background: #555;
 	border-spacing: 5px;
 	@include border(20px, gray, #bbb, #666);
 	box-shadow: 20px 20px 20px #222;
 	margin: 100px auto;
 	padding: 0;
 	text-align: center;
-	cursor: default;
 	td a > img {
 		width: 150px;
 		border: none;
-		@include transition(0.6, 0.3s);
+		@include transition(0.5, 0.3s);
 		vertical-align: middle;
 		&:hover {
 			opacity: 1;

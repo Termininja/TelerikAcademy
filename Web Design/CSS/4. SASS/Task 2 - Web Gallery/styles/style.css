@@ -1,8 +1,10 @@
 body, table {
-    background: #555555;
+    background: url("../images/background.jpg");
+    cursor: default;
 }
 
 table {
+    background: #555;
     border-spacing: 5px;
     border: 20px outset gray;
     border-top: 20px outset #bbbbbb;
@@ -11,13 +13,12 @@ table {
     margin: 100px auto;
     padding: 0;
     text-align: center;
-    cursor: default;
 }
 
     table td a > img {
         width: 150px;
         border: none;
-        opacity: 0.6;
+        opacity: 0.5;
         -o-transition: opacity 0.3s;
         -moz-transition: opacity 0.3s;
         -khtml-transition: opacity 0.3s;
