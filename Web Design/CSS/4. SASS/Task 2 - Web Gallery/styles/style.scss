@@ -11,10 +11,10 @@ $height: 360px;
 	transition: opacity $time;
 }
 
-@mixin border($width, $color1, $color2, $color3) {
-	border: $width outset gray;
-	border-top: $width outset #bbb;
-	border-bottom: $width outset #666;
+@mixin border($width, $style, $color1, $color2, $color3) {
+	border: $width $style $color1;
+	border-top: $width $style $color2;
+	border-bottom: $width $style $color3;
 }
 
 body, table {
@@ -25,7 +25,7 @@ body, table {
 table {
 	background: #555;
 	border-spacing: 5px;
-	@include border(20px, gray, #bbb, #666);
+	@include border(20px, outset, gray, #bbb, #666);
 	box-shadow: 20px 20px 20px #222;
 	margin: 100px auto;
 	padding: 0;
@@ -45,7 +45,7 @@ table {
 		background-size: 588px;
 		height: $height;
 		width: $width;
-		@include border(20px, gray, #666, #bbb);
+		@include border(20px, inset, gray, #666, #bbb);
 		vertical-align: middle;
 	}
 	td > img {

@@ -38,9 +38,9 @@ table {
         background-size: 588px;
         height: 360px;
         width: 600px;
-        border: 20px outset gray;
-        border-top: 20px outset #bbbbbb;
-        border-bottom: 20px outset #666666;
+        border: 20px inset gray;
+        border-top: 20px inset #666666;
+        border-bottom: 20px inset #bbbbbb;
         vertical-align: middle;
     }
 
