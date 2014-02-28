@@ -1,1 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\OOP\Homework\07. Workshop\Workshop 2 - Particle System\ParticleSystem\bin\Debug\ParticleSystem.exe.config

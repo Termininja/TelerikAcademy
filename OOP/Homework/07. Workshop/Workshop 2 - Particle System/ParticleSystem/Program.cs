@@ -19,17 +19,53 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ParticleSystem
 {
     class Program
     {
-        static void Main(string[] args)
+        const int GameRows = 20;
+        const int GameCols = 70;
+        const int Delay = 200;
+
+        static readonly Random RandomGenerator = new Random();
+
+        static void Main()
         {
+            // Set console window width and height
+            Console.BufferWidth = Console.WindowWidth = GameCols + 1;
+            Console.WindowHeight = Console.WindowHeight = GameRows + 2;
+
+            ConsoleRenderer renderer = new ConsoleRenderer(GameRows, GameCols);
+            ParticleUpdater updater = new AdvancedParticleUpdater();
+
+            // Create a list of particles
+            List<Particle> particles = new List<Particle>()
+            {
+                // normal particle
+                new Particle(new MatrixCoords(4, 0), new MatrixCoords(0, 1)),
+
+                // emitter particle
+                new VariousParticleEmitter(new MatrixCoords(7, 5), new MatrixCoords(0, 0), RandomGenerator), 
+
+                // repeller particles
+                new ParticleRepeller(new MatrixCoords(18, 25), new MatrixCoords(0, 0), 1),
+                new ParticleRepeller(new MatrixCoords(3, 65), new MatrixCoords(0, 0), 1),
+                new ParticleRepeller(new MatrixCoords(12, 57), new MatrixCoords(0, 0), 1),
+
+                // attractor particle
+                new ParticleAttractor(new MatrixCoords(12, 50), new MatrixCoords(0, 0), 1),
+
+                // chaotic particle
+                new ChaoticParticle(new MatrixCoords(12, 40), new MatrixCoords(0, 0), RandomGenerator),
+
+                // chicken particle
+                new ChickenParticle(new MatrixCoords(12, 40), new MatrixCoords(0, 0), RandomGenerator)
+            };
+
+            // Create and run some engine
+            Engine engine = new Engine(renderer, updater, particles, Delay);
+            engine.Run();
         }
     }
 }

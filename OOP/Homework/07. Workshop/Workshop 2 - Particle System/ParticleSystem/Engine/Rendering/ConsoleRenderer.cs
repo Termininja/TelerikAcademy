@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace ParticleSystem
 {
+    // Print something on console
     public class ConsoleRenderer : IRenderer
     {
+        #region Fields
         int renderContextMatrixRows;
         int renderContextMatrixCols;
         char[,] renderContextMatrix;
+        #endregion
 
+        #region Constructor
         public ConsoleRenderer(int visibleConsoleRows, int visibleConsoleCols)
         {
             renderContextMatrix = new char[visibleConsoleRows, visibleConsoleCols];
@@ -20,7 +22,9 @@ namespace ParticleSystem
 
             this.ClearQueue();
         }
+        #endregion
 
+        #region Methods
         public void EnqueueForRendering(IRenderable obj)
         {
             char[,] objImage = obj.GetImage();
@@ -75,5 +79,6 @@ namespace ParticleSystem
                 }
             }
         }
+        #endregion
     }
 }
