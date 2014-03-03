@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace AcademyRPG
 {
     public struct Point
     {
+        // Fields
         public readonly int X;
-
         public readonly int Y;
 
+        // Constructors
         public Point(int x, int y)
         {
             this.X = x;
@@ -23,11 +21,7 @@ namespace AcademyRPG
             this.Y = int.Parse(yString);
         }
 
-        public override int GetHashCode()
-        {
-            return this.X * 7 + this.Y;
-        }
-
+        // Operators
         public static bool operator ==(Point a, Point b)
         {
             return a.X == b.X && a.Y == b.Y;
@@ -38,9 +32,10 @@ namespace AcademyRPG
             return !(a == b);
         }
 
-        public override string ToString()
+        // Methods
+        public override int GetHashCode()
         {
-            return String.Format("({0},{1})", this.X, this.Y);
+            return this.X * 7 + this.Y;
         }
 
         public static Point Parse(string pointString)
@@ -48,6 +43,11 @@ namespace AcademyRPG
             string coordinatesPairString = pointString.Substring(1, pointString.Length - 2);
             string[] coordinates = coordinatesPairString.Split(',');
             return new Point(coordinates[0], coordinates[1]);
+        }
+
+        public override string ToString()
+        {
+            return String.Format("({0},{1})", this.X, this.Y);
         }
     }
 }

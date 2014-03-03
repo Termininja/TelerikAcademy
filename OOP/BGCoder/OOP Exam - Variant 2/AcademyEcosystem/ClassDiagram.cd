@@ -15,53 +15,53 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Animal">
-    <Position X="14.75" Y="5" Width="1.5" />
+    <Position X="9.5" Y="5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAQAAAAAEAAAAAQQAAAAAAAAAAAAABAAAAMA=</HashCode>
       <FileName>Organisms\Animals\Animal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Boar">
-    <Position X="14.75" Y="10" Width="1.5" />
+    <Position X="15" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Boar.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.973" />
   </Class>
   <Class Name="AcademyEcosystem.Lion">
-    <Position X="10.75" Y="10" Width="1.5" />
+    <Position X="9.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Carnivores\Lion.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.973" />
   </Class>
   <Class Name="AcademyEcosystem.Wolf">
-    <Position X="12.75" Y="10" Width="1.5" />
+    <Position X="11.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Carnivores\Wolf.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.986" />
   </Class>
   <Class Name="AcademyEcosystem.Deer">
-    <Position X="16.75" Y="10" Width="1.5" />
+    <Position X="13.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Herbivores\Deer.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="1.011" />
   </Class>
   <Class Name="AcademyEcosystem.Zombie">
-    <Position X="8.25" Y="10" Width="2" />
+    <Position X="7.5" Y="9.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Zombie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Organism">
-    <Position X="8.75" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQQAAAAAAAAAgAAEAAIAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Organism.cs</FileName>
@@ -69,35 +69,35 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AcademyEcosystem.Bush">
-    <Position X="5.5" Y="10" Width="2" />
+    <Position X="5.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Plants\Bush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Grass">
-    <Position X="3" Y="10" Width="2" />
+    <Position X="3.25" Y="9.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Plants\Grass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Plant">
-    <Position X="3" Y="5" Width="2" />
+    <Position X="3.25" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Organisms\Plants\Plant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Tree">
-    <Position X="0.5" Y="10" Width="2" />
+    <Position X="1.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Plants\Tree.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyEcosystem.Program">
-    <Position X="16.5" Y="0.5" Width="1.75" />
+    <Position X="14.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -111,28 +111,28 @@
     </TypeIdentifier>
   </Struct>
   <Interface Name="AcademyEcosystem.ICarnivore">
-    <Position X="12.75" Y="7.25" Width="1.5" />
+    <Position X="11.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Carnivores\ICarnivore.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AcademyEcosystem.IHerbivore">
-    <Position X="16.75" Y="7.25" Width="1.5" />
+    <Position X="11.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\Animals\Herbivores\IHerbivore.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AcademyEcosystem.IOrganism">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+    <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQQAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisms\IOrganism.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="AcademyEcosystem.AnimalState">
-    <Position X="16.75" Y="5" Width="1.5" />
+    <Position X="11.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEA=</HashCode>
       <FileName>Organisms\Animals\AnimalState.cs</FileName>

@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyRPG
+﻿namespace AcademyRPG
 {
     public class Tree : StaticObject, IResource
     {
+        // Properties
         protected int Size { get; private set; }
 
-        public ResourceType Type 
-        { 
-            get 
-            { 
-                return ResourceType.Lumber; 
-            } 
+        public ResourceType Type
+        {
+            get
+            {
+                return ResourceType.Lumber;
+            }
         }
 
         public int Quantity
@@ -25,6 +21,7 @@ namespace AcademyRPG
             }
         }
 
+        // Constructor
         public Tree(int size, Point position)
             : base(position)
         {

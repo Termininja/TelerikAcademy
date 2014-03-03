@@ -27,7 +27,6 @@ namespace HTMLRenderer
 
         private static void CompileAndRun(string csharpCode)
         {
-            // Prepare a C# program for compilation
             string[] csharpClass =
             {
                 @"using System;
@@ -42,7 +41,6 @@ namespace HTMLRenderer
                   }"
             };
 
-            // Compile the C# program
             CompilerParameters compilerParams = new CompilerParameters();
             compilerParams.GenerateInMemory = true;
             compilerParams.TempFiles = new TempFileCollection(".");
@@ -52,7 +50,6 @@ namespace HTMLRenderer
             CompilerResults compile = csharpProvider.CompileAssemblyFromSource(
                 compilerParams, csharpClass);
 
-            // Check for compilation errors
             if (compile.Errors.HasErrors)
             {
                 string errorMsg = "Compilation error: ";
@@ -63,7 +60,6 @@ namespace HTMLRenderer
                 throw new Exception(errorMsg);
             }
 
-            // Invoke the Main() method of the compiled class
             Assembly assembly = compile.CompiledAssembly;
             Module module = assembly.GetModules()[0];
             Type type = module.GetType("RuntimeCompiledClass");

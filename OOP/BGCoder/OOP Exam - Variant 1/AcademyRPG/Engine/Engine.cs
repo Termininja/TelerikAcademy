@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace AcademyRPG
 {
@@ -12,16 +10,12 @@ namespace AcademyRPG
         protected List<WorldObject> allObjects;
         protected List<IControllable> controllables;
         protected List<IResource> resources;
-        //protected List<IGatherer> gatherers;
-        //protected List<IFighter> fighters;
 
         public Engine()
         {
             this.allObjects = new List<WorldObject>();
             this.controllables = new List<IControllable>();
             this.resources = new List<IResource>();
-            //this.gatherers = new List<IGatherer>();
-            //this.fighters = new List<IFighter>();
         }
 
         public void AddObject(WorldObject obj)
@@ -39,42 +33,21 @@ namespace AcademyRPG
             {
                 this.resources.Add(objAsResource);
             }
-
-            //IGatherer objAsGatherer = obj as IGatherer;
-            //if (objAsGatherer != null)
-            //{
-            //    this.gatherers.Add(objAsGatherer);
-            //}
-
-            //IFighter objAsFighter = obj as IFighter;
-            //if (objAsFighter != null)
-            //{
-            //    this.fighters.Add(objAsFighter);
-            //}
         }
-
 
         private void RemoveDestroyed()
         {
             this.allObjects.RemoveAll(obj => obj.IsDestroyed);
             this.controllables.RemoveAll(obj => obj.IsDestroyed);
             this.resources.RemoveAll(obj => obj.IsDestroyed);
-            //this.gatherers.RemoveAll(obj => obj.IsDestroyed);
-            //this.fighters.RemoveAll(obj => obj.IsDestroyed);
         }
 
         public void ExecuteCommand(string command)
         {
             string[] commandWords = command.Split(Engine.separators, StringSplitOptions.RemoveEmptyEntries);
 
-            if (commandWords[0] == "create")
-            {
-                this.ExecuteCreateObjectCommand(commandWords);
-            }
-            else
-            {
-                this.ExecuteControllableCommand(commandWords);
-            }
+            if (commandWords[0] == "create") this.ExecuteCreateObjectCommand(commandWords);
+            else this.ExecuteControllableCommand(commandWords);
 
             this.RemoveDestroyed();
         }
@@ -126,21 +99,9 @@ namespace AcademyRPG
             {
                 switch (commandWords[1])
                 {
-                    case "go":
-                        {
-                            HandleGoCommand(commandWords, current);
-                            break;
-                        }
-                    case "attack":
-                        {
-                            HandleAttackCommand(current);
-                            break;
-                        }
-                    case "gather":
-                        {
-                            HandleGatherCommand(current);
-                            break;
-                        }
+                    case "go": HandleGoCommand(commandWords, current); break;
+                    case "attack": HandleAttackCommand(current); break;
+                    case "gather": HandleGatherCommand(current); break;
                 }
             }
         }
@@ -150,7 +111,6 @@ namespace AcademyRPG
             var currentAsGatherer = current as IGatherer;
             if (currentAsGatherer != null)
             {
-                //List<WorldObject> objectsAtGathererPosition = new List<WorldObject>();
                 IResource resource = null;
                 foreach (var obj in this.resources)
                 {
@@ -214,8 +174,6 @@ namespace AcademyRPG
                 Console.WriteLine("{0} gathered {1} {2} from {3}", gatherer, resource.Quantity, resource.Type, resource);
                 resource.HitPoints = 0;
             }
-
-
         }
 
         private void HandleBattle(IFighter attacker, WorldObject defender)
@@ -229,15 +187,8 @@ namespace AcademyRPG
 
             int damage = attacker.AttackPoints - defenderDefensePoints;
 
-            if (damage < 0)
-            {
-                damage = 0;
-            }
-
-            if (damage > defender.HitPoints)
-            {
-                damage = defender.HitPoints;
-            }
+            if (damage < 0) damage = 0;
+            if (damage > defender.HitPoints) damage = defender.HitPoints;
 
             defender.HitPoints -= damage;
 

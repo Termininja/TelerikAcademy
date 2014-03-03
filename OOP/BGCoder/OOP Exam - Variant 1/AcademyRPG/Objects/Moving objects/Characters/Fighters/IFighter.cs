@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace AcademyRPG
 {
     public interface IFighter : IControllable
     {
-        int AttackPoints
-        {
-            get;
-        }
+        // Properties
+        int AttackPoints { get; }
+        int DefensePoints { get; }
 
-        int DefensePoints
-        {
-            get;
-        }
-
+        // Method
         int GetTargetIndex(List<WorldObject> availableTargets);
     }
 }

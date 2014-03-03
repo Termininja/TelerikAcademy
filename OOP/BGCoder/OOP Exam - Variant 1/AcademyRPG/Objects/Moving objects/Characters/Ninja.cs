@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace AcademyRPG
 {
     public class Ninja : Character, IFighter, IGatherer
     {
+        // Field
         private int attackPoints;
 
+        // Constructor
         public Ninja(string name, Point position, int owner)
             : base(name, position, owner)
         {
@@ -16,6 +15,7 @@ namespace AcademyRPG
             this.attackPoints = 0;
         }
 
+        // Properties
         public int AttackPoints
         {
             get { return this.attackPoints; }
@@ -26,6 +26,7 @@ namespace AcademyRPG
             get { return int.MaxValue; }
         }
 
+        // Methods
         public int GetTargetIndex(List<WorldObject> availableTargets)
         {
             int highestHitPoints = 0;

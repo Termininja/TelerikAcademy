@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoftwareAcademy
+﻿namespace SoftwareAcademy
 {
-    // All teachers and courses are created here
+    // Create some teacher or course
     public class CourseFactory : ICourseFactory
     {
+        // Methods
         public ITeacher CreateTeacher(string name)
         {
             return new Teacher(name);

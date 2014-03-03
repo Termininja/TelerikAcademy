@@ -2,6 +2,7 @@
 {
     public class HTMLElementFactory : IElementFactory
     {
+        // Methods
         public IElement CreateElement(string name)
         {
             return new HTMLElement(name);

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AcademyEcosystem
 {
     public struct Point
     {
+        // Fields
         public readonly int X;
-
         public readonly int Y;
 
+        // Constructors
         public Point(int x, int y)
         {
             this.X = x;
@@ -24,11 +21,7 @@ namespace AcademyEcosystem
             this.Y = int.Parse(yString);
         }
 
-        public override int GetHashCode()
-        {
-            return this.X * 7 + this.Y;
-        }
-
+        // Operators
         public static bool operator ==(Point a, Point b)
         {
             return a.X == b.X && a.Y == b.Y;
@@ -39,9 +32,10 @@ namespace AcademyEcosystem
             return !(a == b);
         }
 
-        public override string ToString()
+        // Methods
+        public override int GetHashCode()
         {
-            return String.Format("({0},{1})", this.X, this.Y);
+            return this.X * 7 + this.Y;
         }
 
         public static Point Parse(string pointString)
@@ -54,6 +48,11 @@ namespace AcademyEcosystem
         public static int GetManhattanDistance(Point a, Point b)
         {
             return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
+        }
+
+        public override string ToString()
+        {
+            return String.Format("({0},{1})", this.X, this.Y);
         }
     }
 }

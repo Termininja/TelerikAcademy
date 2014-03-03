@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyEcosystem
+﻿namespace AcademyEcosystem
 {
     public abstract class Animal : Organism
     {
+        // Field
         protected int sleepRemaining;
 
+        // Properties
         public AnimalState State { get; protected set; }
-
         public string Name { get; private set; }
 
+        // Constructor
         protected Animal(string name, Point location, int size)
             : base(location, size)
         {
@@ -20,6 +17,7 @@ namespace AcademyEcosystem
             this.sleepRemaining = 0;
         }
 
+        // Methods
         public virtual int GetMeatFromKillQuantity()
         {
             this.IsAlive = false;
@@ -29,10 +27,7 @@ namespace AcademyEcosystem
         public void GoTo(Point destination)
         {
             this.Location = destination;
-            if (this.State == AnimalState.Sleeping)
-            {
-                this.Awake();
-            }
+            if (this.State == AnimalState.Sleeping) this.Awake();
         }
 
         public void Sleep(int time)
@@ -49,10 +44,7 @@ namespace AcademyEcosystem
 
         public override void Update(int timeElapsed)
         {
-            if (this.sleepRemaining == 0)
-            {
-                this.Awake();
-            }
+            if (this.sleepRemaining == 0) this.Awake();
         }
 
         public override string ToString()

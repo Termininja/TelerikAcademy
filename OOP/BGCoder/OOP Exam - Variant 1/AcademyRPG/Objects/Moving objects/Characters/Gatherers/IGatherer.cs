@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyRPG
+﻿namespace AcademyRPG
 {
     public interface IGatherer : IControllable
     {
+        // Method
         bool TryGather(IResource resource);
     }
 }

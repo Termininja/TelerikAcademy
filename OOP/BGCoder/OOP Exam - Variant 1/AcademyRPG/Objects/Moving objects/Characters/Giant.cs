@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace AcademyRPG
 {
     public class Giant : Character, IFighter, IGatherer
     {
+        // Fields
         private bool isTaken;
         private int attackPoints;
 
+        // Constructor
         public Giant(string name, Point position)
             : base(name, position, 0)
         {
@@ -18,6 +17,7 @@ namespace AcademyRPG
             this.attackPoints = 150;
         }
 
+        // Properties
         public int AttackPoints
         {
             get { return this.attackPoints; }
@@ -28,16 +28,13 @@ namespace AcademyRPG
             get { return 80; }
         }
 
+        // Methods
         public int GetTargetIndex(List<WorldObject> availableTargets)
         {
             for (int i = 0; i < availableTargets.Count; i++)
             {
-                if (availableTargets[i].Owner != 0)
-                {
-                    return i;
-                }
+                if (availableTargets[i].Owner != 0) return i;
             }
-
             return -1;
         }
 
@@ -52,7 +49,6 @@ namespace AcademyRPG
                 }
                 return true;
             }
-
             return false;
         }
     }

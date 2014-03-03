@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace AcademyRPG
 {
     public class Knight : Character, IFighter
     {
+        // Constructor
         public Knight(string name, Point position, int owner)
             : base(name, position, owner)
         {
             this.HitPoints = 100;
         }
 
+        // Properties
         public int AttackPoints
         {
             get { return 100; }
@@ -23,6 +22,7 @@ namespace AcademyRPG
             get { return 100; }
         }
 
+        // Method
         public int GetTargetIndex(List<WorldObject> availableTargets)
         {
             for (int i = 0; i < availableTargets.Count; i++)
@@ -32,7 +32,6 @@ namespace AcademyRPG
                     return i;
                 }
             }
-
             return -1;
         }
     }

@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyEcosystem
+﻿namespace AcademyEcosystem
 {
-    public enum AnimalState
-    {
-        Sleeping,
-        Awake
-    }
+    // Enumerator
+    public enum AnimalState { Sleeping, Awake }
 }

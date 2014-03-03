@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyEcosystem
+﻿namespace AcademyEcosystem
 {
     public interface IHerbivore
     {
+        // Method
         int EatPlant(Plant plant);
     }
 }

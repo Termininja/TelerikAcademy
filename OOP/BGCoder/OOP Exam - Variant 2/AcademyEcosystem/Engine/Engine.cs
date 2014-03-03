@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace AcademyEcosystem
 {
     public class Engine
     {
+        #region Fields
         protected static readonly char[] separators = new char[] { ' ' };
-
         protected List<Organism> allOrganisms;
         protected List<Plant> plants;
         protected List<Animal> animals;
+        #endregion
 
+        #region Constructor
         public Engine()
         {
             this.allOrganisms = new List<Organism>();
             this.plants = new List<Plant>();
             this.animals = new List<Animal>();
         }
+        #endregion
 
+        #region Methods
         public void AddOrganism(Organism organism)
         {
             this.allOrganisms.Add(organism);
@@ -27,29 +29,16 @@ namespace AcademyEcosystem
             var organismAsAnimal = organism as Animal;
             var organismAsPlant = organism as Plant;
 
-            if (organismAsAnimal != null)
-            {
-                this.animals.Add(organismAsAnimal);
-            }
-
-            if (organismAsPlant != null)
-            {
-                this.plants.Add(organismAsPlant);
-            }
+            if (organismAsAnimal != null) this.animals.Add(organismAsAnimal);
+            if (organismAsPlant != null) this.plants.Add(organismAsPlant);
         }
 
         public void ExecuteCommand(string command)
         {
             string[] commandWords = command.Split(Engine.separators, StringSplitOptions.RemoveEmptyEntries);
 
-            if (commandWords[0] == "birth")
-            {
-                this.ExecuteBirthCommand(commandWords);
-            }
-            else
-            {
-                this.ExecuteAnimalCommand(commandWords);
-            }
+            if (commandWords[0] == "birth") this.ExecuteBirthCommand(commandWords);
+            else this.ExecuteAnimalCommand(commandWords);
 
             this.RemoveAndReportDead();
         }
@@ -161,10 +150,7 @@ namespace AcademyEcosystem
         private void HandleSleep(string name, int sleepTime)
         {
             Animal current = GetAnimalByName(name);
-            if (current != null)
-            {
-                current.Sleep(sleepTime);
-            }
+            if (current != null) current.Sleep(sleepTime);
         }
 
         private Animal GetAnimalByName(string name)
@@ -185,10 +171,7 @@ namespace AcademyEcosystem
         {
             foreach (var organism in this.allOrganisms)
             {
-                if (!organism.IsAlive)
-                {
-                    Console.WriteLine("{0} is dead ;(", organism);
-                }
+                if (!organism.IsAlive) Console.WriteLine("{0} is dead ;(", organism);
             }
 
             this.allOrganisms.RemoveAll(o => !o.IsAlive);
@@ -203,5 +186,6 @@ namespace AcademyEcosystem
                 organism.Update(timeElapsed);
             }
         }
+        #endregion
     }
 }

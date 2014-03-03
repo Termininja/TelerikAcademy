@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyRPG
+﻿namespace AcademyRPG
 {
     public interface IControllable : IWorldObject
     {
-        string Name
-        {
-            get;
-        }
+        // Property
+        string Name { get; }
     }
 }

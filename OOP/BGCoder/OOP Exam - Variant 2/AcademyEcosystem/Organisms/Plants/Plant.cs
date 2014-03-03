@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyEcosystem
+﻿namespace AcademyEcosystem
 {
     public abstract class Plant : Organism
     {
+        // Constructor
         protected Plant(Point location, int size)
             : base(location, size)
         {
         }
 
+        // Methods
         public int GetEatenQuantity(int biteSize)
         {
             if (biteSize > this.Size)
@@ -30,6 +27,6 @@ namespace AcademyEcosystem
         public override string ToString()
         {
             return base.ToString() + " " + this.Location;
-        } 
+        }
     }
 }

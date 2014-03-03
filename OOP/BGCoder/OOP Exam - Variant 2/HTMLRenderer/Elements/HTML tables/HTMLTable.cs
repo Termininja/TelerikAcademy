@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace HTMLRenderer
@@ -42,9 +41,7 @@ namespace HTMLRenderer
                 output.Append("<tr>");
                 for (int c = 0; c < this.Cols; c++)
                 {
-                    output.Append("<td>");
-                    output.Append(this.Cell[r, c]);
-                    output.Append("</td>");
+                    output.Append("<td>" + this.Cell[r, c] + "</td>");
                 }
                 output.Append("</tr>");
             }

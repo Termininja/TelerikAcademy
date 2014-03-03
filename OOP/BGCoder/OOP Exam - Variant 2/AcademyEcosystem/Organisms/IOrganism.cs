@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AcademyEcosystem
+﻿namespace AcademyEcosystem
 {
     public interface IOrganism
     {
+        // Properties
         bool IsAlive { get; }
-
         Point Location { get; }
-
         int Size { get; }
 
+        // Methods
         void Update(int timeElapsed);
     }
 }
