@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FurnitureManufacturer.Command" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgAAAAAAAAEAgAAAAAAAwAAAAEAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Engine\Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FurnitureManufacturer.ConsoleRenderer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\ConsoleRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FurnitureManufacturer.EngineConstants" Collapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QiAAACRAEgABAACAREQACAAAAJAABAAAAkEEQCgAAAA=</HashCode>
+      <FileName>Engine\EngineConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FurnitureManufacturer.FurnitureManufacturerEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAGAAAAAABgAACCAAAEJARAAARAAMAAQAgEA=</HashCode>
+      <FileName>Engine\FurnitureManufacturerEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FurnitureManufacturer.CompanyFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Engine\Factories\CompanyFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FurnitureManufacturer.FurnitureFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAABAAABAAAAAAAACAABIAAAAAAEAQAQAA=</HashCode>
+      <FileName>Engine\Factories\FurnitureFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FurnitureManufacturer.FurnitureProgram" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FurnitureManufacturer.Furniture" Collapsed="true">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEABAAAABQIAAAQAAAAAAAAAAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>Furnitures\Furniture.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FurnitureManufacturer.Table" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAEBAAAAAAAAAAAAAAQAAAAE=</HashCode>
+      <FileName>Furnitures\Tables\Table.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.971" />
+  </Class>
+  <Class Name="FurnitureManufacturer.Chair" Collapsed="true">
+    <Position X="2.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Furnitures\Chairs\Chair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.993" />
+  </Class>
+  <Class Name="FurnitureManufacturer.AdjustableChair" Collapsed="true">
+    <Position X="1.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Furnitures\Chairs\AdjustableChair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.894" />
+  </Class>
+  <Class Name="FurnitureManufacturer.ConvertibleChair" Collapsed="true">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAEAIAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Furnitures\Chairs\ConvertibleChair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.982" />
+  </Class>
+  <Class Name="FurnitureManufacturer.Company" Collapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAACABAQBAAAMAEBAAABAAAAAAAA=</HashCode>
+      <FileName>Companies\Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="FurnitureManufacturer.ICommand" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Engine\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.ICompanyFactory" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Interfaces\Engine\ICompanyFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IFurnitureFactory" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAABAAAAAAAEAQAAAA=</HashCode>
+      <FileName>Interfaces\Engine\IFurnitureFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IFurnitureManufacturerEngine" Collapsed="true">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Engine\IFurnituresManufacturerEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IRenderer" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Engine\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IAdjustableChair" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IAdjustableChair.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IChair" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IChair.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.ICompany" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAQBAAAIAEBAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICompany.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IConvertibleChair" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IConvertibleChair.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.IFurniture" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFurniture.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FurnitureManufacturer.ITable" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Interfaces\ITable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="FurnitureManufacturer.MaterialType" Collapsed="true">
+    <Position X="13.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Furnitures\MaterialType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
