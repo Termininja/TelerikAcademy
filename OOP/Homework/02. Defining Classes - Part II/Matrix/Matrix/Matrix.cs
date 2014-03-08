@@ -54,9 +54,9 @@ namespace Matrix
         public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
         {
             // Throw an exception when the operation cannot be performed
-            if (m1.rows != m2.rows || m1.columns != m2.columns)
+            if (m1.rows != m2.columns || m1.columns != m2.rows)
             {
-                throw new ArgumentException("The size of the matrices is not the same!");
+                throw new ArgumentException("The size of the matrices is wrong!");
             }
             else
             {

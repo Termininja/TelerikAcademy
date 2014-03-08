@@ -14,23 +14,27 @@ namespace Matrix
 {
     class Program
     {
+        // Rows and columns of the matrices
+        private const int Rows = 4;
+        private const int Cols = 4;
+
         static void Main()
         {
             // Creates two matrices of the same size
-            Matrix<float> matrix1 = new Matrix<float>(4, 4);
-            Matrix<float> matrix2 = new Matrix<float>(4, 4);
+            Matrix<float> matrix1 = new Matrix<float>(Rows, Cols);
+            Matrix<float> matrix2 = new Matrix<float>(Rows, Cols);
 
             // Generate values for the matrices by random generator
             Random Generator = new Random();
-            for (int r = 0; r < 4; r++)
+            for (int r = 0; r < Rows; r++)
             {
-                for (int c = 0; c < 4; c++)
+                for (int c = 0; c < Cols; c++)
                 {
                     matrix1[r, c] = Generator.Next(-100, 100) * 0.37f;
                     matrix2[r, c] = Generator.Next(-100, 100) * 0.37f;
                 }
             }
-            matrix2[2, 3] = 0;
+            matrix2[1, 2] = 0;
 
             // Print the result
             Print(matrix1, "Matrix 1");
@@ -45,8 +49,9 @@ namespace Matrix
             matrix2.Clear();
             Console.WriteLine("Matrix 2 is: {0}", matrix2 ? "Non-zero matrix!" : "Zero matrix!");
 
-            if (!matrix1) Console.WriteLine("Non-zero matrix!");
-            else Console.WriteLine("Zero matrix!");
+            Console.Write("Matrix 1 is: ");
+            if (!matrix1) Console.WriteLine("Zero matrix!");
+            else Console.WriteLine("Non-zero matrix!");
         }
 
         // Prints some matrix
