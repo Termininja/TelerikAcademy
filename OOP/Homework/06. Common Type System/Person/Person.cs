@@ -18,7 +18,7 @@ namespace Person
         // Override to string method
         public override string ToString()
         {
-            return String.Format("{0,-20} {1}", this.Name, (dynamic)this.Age ?? "not specified");
+            return String.Format("{0,-20} {1}", this.Name, this.Age.ToString() ?? "not specified");
         }
     }
 }
