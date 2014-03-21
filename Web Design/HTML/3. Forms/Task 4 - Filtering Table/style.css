@@ -3,8 +3,9 @@ body {
 }
 
 #table {
+    margin: auto;
     background: white;
-    width: 100%;
+    width: 900px;
     font-size: 70%;
     text-align: left;
     color: #666;

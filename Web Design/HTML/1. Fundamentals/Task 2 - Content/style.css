@@ -7,3 +7,11 @@ body {
     padding: 0;
     margin-left: 1.2em;
 }
+
+#disc {
+    list-style-type: disc;
+}
+
+#circle {
+    list-style-type: circle;
+}

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Calculator</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
@@ -16,13 +17,14 @@
                 </tr>
                 <tr>
                     <th id="power">
-                        <input type="button" onclick="Switch()" />
+                        <input type="button" onclick="Switch()" value="o" />
                     </th>
                     <th id="screen">
-                        <div id="hat">
-                            <input id="clock" readonly="true" disabled name="DateTime" value="" />
-                        </div>
-                        <input id="display" readonly="true" disabled name="Display" value="" />
+                        <span id="glass"></span>
+                        <span id="hat">
+                            <input type="text" id="clock" disabled name="DateTime" value="" />
+                        </span>
+                        <input id="display" disabled name="Display" value="" />
                     </th>
                     <th>&nbsp;</th>
                 </tr>
@@ -153,14 +155,10 @@
                                     <input class="hide button" type="button" value=" exp " onclick="Exp()" />
                                 </td>
                                 <td>
-                                    <button class="hide button" type="button" onclick="Root3()">
-                                        <div class="hide math">3</div>
-                                        &radic;x</button>
+                                    <button class="hide button" type="button" onclick="Root3()"><span class="hide math">3</span>&radic;x</button>
                                 </td>
                                 <td>
-                                    <button class="hide button" type="button" onclick="Function('root')">
-                                        <div class="hide math">y</div>
-                                        &radic;x</button></td>
+                                    <button class="hide button" type="button" onclick="Function('root')"><span class="hide math">y</span>&radic;x</button></td>
                                 <td>
                                     <button class="hide button" type="button" onclick="Function('pow')">x<sup>y</sup> </button>
                                 </td>

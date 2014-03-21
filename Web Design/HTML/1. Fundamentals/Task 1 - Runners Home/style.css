@@ -3,13 +3,9 @@ body {
     color: #4d4b4b;
 }
 
-p, ul {
+p {
     padding: 0;
     margin: 0;
-}
-
-li:before {
-    content: "- ";
 }
 
 sup {

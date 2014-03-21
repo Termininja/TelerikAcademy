@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Students</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
@@ -26,24 +27,26 @@
         <tfoot>
             <tr>
                 <td class="foot" colspan="9">
-                    <table class="table2">
-                        <tr>
-                            <td class="buttons previous"></td>
-                            <td class="buttons">
-                                <b>1</b>,
-                                <a href="page2.html">2</a>,
-                                <a href="page3.html">3</a>,
-                                <a href="page4.html">4</a>,
-                                ...,
-                                <a href="page10.html">10</a>
-                            </td>
-                            <td class="buttons next">
-                                <form action="page2.html">
+                    <form name="Form" action="form.php" method="get">
+                        <table class="table2">
+                            <tr>
+                                <td class="buttons previous">
+                                    <input type="submit" value="Previous" />
+                                </td>
+                                <td class="buttons">
+                                    <a href="#">1</a>,
+                                    <b>2</b>,
+                                    <a href="#">3</a>,
+                                    <a href="#">4</a>,
+                                    ...,
+                                    <a href="#">10</a>
+                                </td>
+                                <td class="buttons next">
                                     <input type="submit" value="Next" />
-                                </form>
-                            </td>
-                        </tr>
-                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </td>
             </tr>
         </tfoot>

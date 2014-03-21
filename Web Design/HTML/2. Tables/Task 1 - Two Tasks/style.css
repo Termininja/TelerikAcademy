@@ -28,11 +28,20 @@ td {
     padding: 0.5em;
 }
 
+em {
+    font-weight: bold;
+}
+
+p {
+    text-align: center;
+}
+
 .width {
     width: 28px;
 }
 
-#table2 {
+#table2, #table2 td {
+    border: 1px solid black;
     text-align: center;
     font-weight: bolder;
 }

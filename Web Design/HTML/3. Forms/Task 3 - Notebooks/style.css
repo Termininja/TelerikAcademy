@@ -1,0 +1,38 @@
+body {
+    background: #f4f2f2;
+    text-align: center;
+}
+
+    body > div, body > table, hr {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    font-family: Georgia;
+}
+
+a {
+    color: deepskyblue;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 0 0.2em;
+}
+
+.sliders div {
+    margin-bottom: 1em;
+}
+
+label {
+    color: gray;
+}
+
+.notebooks {
+    background: white;
+    color: gray;
+    border: 2px solid #818181;
+}

@@ -8,6 +8,7 @@ table {
     background: white;
     padding: 0.5em;
     border: 1px solid gray;
+    width: 400px;
 }
 
 #button {
@@ -20,4 +21,8 @@ table {
     width: 90px;
     margin-bottom: 0px;
     cursor: pointer;
+}
+
+input:not([type=button]) {
+    width: 220px;
 }
