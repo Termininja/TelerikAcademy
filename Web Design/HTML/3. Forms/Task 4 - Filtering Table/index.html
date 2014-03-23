@@ -7,7 +7,7 @@
 </head>
 <body>
     <form name="Form" method="get" action="form.php">
-        <table id="table">
+        <table>
             <thead>
                 <tr>
                     <th colspan="6">Drag a column header and drop it here to group by tdat column</th>
@@ -29,18 +29,18 @@
                     </th>
                     <th id="price">
                         <input type="text" name="price" />
-                        <input class="filter" type="image" src="filter.png" alt="filter icon" />
+                        <img src="filter.png" alt="filter icon" />
                     </th>
                     <th id="quantity">
                         <input type="text" name="quantity" />
                     </th>
                     <th id="units">
                         <input type="text" name="units" />
-                        <input class="filter" type="image" src="filter.png" alt="filter icon" />
+                        <img src="filter.png" alt="filter icon" />
                     </th>
                     <th id="discountinued">
                         <input type="checkbox" name="discountinued" />
-                        <input class="filter" type="image" src="filter.png" alt="filter icon" />
+                        <img src="filter.png" alt="filter icon" />
                     </th>
                 </tr>
             </thead>
@@ -50,8 +50,12 @@
                         <table id="nav">
                             <tr>
                                 <td class="navtd">
-                                    <input class="arrow" type="image" name="start" src="arrow1.png" alt="start arrow icon" />
-                                    <input class="arrow" type="image" name="back" src="arrow2.png" alt="back arrow icon" />
+                                    <button name="start">
+                                        <img src="arrow1.png" alt="start arrow icon" />
+                                    </button>
+                                    <button name="back">
+                                        <img src="arrow2.png" alt="back arrow icon" />
+                                    </button>
                                 </td>
                                 <td class="navtd">
                                     <a href="#">1</a>
@@ -67,8 +71,12 @@
                                     <a>...</a>
                                 </td>
                                 <td class="navtd">
-                                    <input class="arrow" type="image" name="forward" src="arrow3.png" alt="forward arrow icon" />
-                                    <input class="arrow" type="image" name="end" src="arrow4.png" alt="end arrow icon" />
+                                    <button name="forward">
+                                        <img src="arrow3.png" alt="forward arrow icon" />
+                                    </button>
+                                    <button name="end">
+                                        <img src="arrow4.png" alt="end arrow icon" />
+                                    </button>
                                 </td>
                             </tr>
                         </table>

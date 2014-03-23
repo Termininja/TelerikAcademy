@@ -1,9 +1,8 @@
 body {
-    background: #f4f2f2;
     text-align: center;
 }
 
-    body > div, body > table, hr {
+    body > div, form > table, hr {
         width: 700px;
         margin-left: auto;
         margin-right: auto;
