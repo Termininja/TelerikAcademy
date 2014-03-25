@@ -2,10 +2,9 @@ body {
     background: #f4f2f2;
 }
 
-#title {
+th {
     text-align: center;
     font-size: 150%;
-    padding: 0;
 }
 
 table {
@@ -16,7 +15,7 @@ table {
     background: white;
 }
 
-.text {
+#text {
     width: 270px;
 }
 
@@ -36,12 +35,27 @@ p {
     text-align: center;
 }
 
+#table2 td {
+    border: 1px solid black;
+    font-weight: bolder;
+}
+
 .width {
     width: 28px;
 }
 
-#table2, #table2 td {
-    border: 1px solid black;
+.center {
     text-align: center;
-    font-weight: bolder;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.bottom {
+    vertical-align: bottom;
 }
