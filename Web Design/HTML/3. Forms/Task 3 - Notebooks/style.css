@@ -26,12 +26,11 @@ a {
     margin-bottom: 1em;
 }
 
-label {
+td, output, label, .notebooks {
     color: gray;
 }
 
 .notebooks {
     background: white;
-    color: gray;
     border: 2px solid #818181;
 }

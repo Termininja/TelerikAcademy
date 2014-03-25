@@ -138,21 +138,25 @@
                     </table>
                 </td>
                 <td class="sliders">
-                    <label>Min price: 500 USD</label>
+                    <label for="Price1">Min price:</label>
+                    <output name="minPrice">700</output>&nbsp;USD
                     <div>
-                        <input type="range" min="500" max="1500" />
+                        <input type="range" id="Price1" min="500" max="1500" value="700" step="50" oninput="minPrice.value=this.value" />
                     </div>
-                    <label>Max price: 1500 USD</label>
+                    <label for="Price2">Max price:</label>
+                    <output name="maxPrice">1000</output>&nbsp;USD
                     <div>
-                        <input type="range" min="500" max="1500" />
+                        <input type="range" id="Price2" min="500" max="1500" value="1000" step="50" oninput="maxPrice.value=this.value" />
                     </div>
-                    <label>Min RAM: 4 GB</label>
+                    <label for="RAM1">Min RAM:</label>
+                    <output name="minRAM">5</output>&nbsp;GB
+                     <div>
+                         <input type="range" id="RAM1" min="4" max="16" value="5" oninput="minRAM.value=this.value" />
+                     </div>
+                    <label for="RAM2">Max RAM:</label>
+                    <output name="maxRAM">12</output>&nbsp;GB
                     <div>
-                        <input type="range" min="4" max="16" />
-                    </div>
-                    <label>Max RAM: 16 GB</label>
-                    <div>
-                        <input type="range" min="4" max="16" />
+                        <input type="range" id="RAM2" min="4" max="16" value="12" oninput="maxRAM.value=this.value" />
                     </div>
                 </td>
             </tr>
