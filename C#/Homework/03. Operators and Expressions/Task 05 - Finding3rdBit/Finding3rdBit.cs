@@ -8,7 +8,7 @@ class Finding3rdBit
     {
         /* Short variant */
         //int n = 3456;
-        //bool result = (n & (1 << 3)) >> 3 == 1;
+        //bool result = ((n >> 3) & 1) == 1;
 
         /* Long variant */
         for (int i = 0; ; i++)                                      // check continuously for some number
