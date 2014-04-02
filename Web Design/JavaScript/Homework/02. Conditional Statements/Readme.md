@@ -10,14 +10,14 @@
 
 **Task 05.** Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
 
-**Task 06.** Write a script that enters the coefficients `a`, `b` and `c` of a quadratic equation `a*x2 + b*x + c = 0` and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+**Task 06.** Write a script that enters the coefficients `a`, `b` and `c` of a quadratic equation ax²+bx+c=0 and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
 
 **Task 07.** Write a script that finds the greatest of given 5 variables.
 
 **Task 08.** Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.
-Examples
-	0 → "Zero"
-	273 → "Two hundred seventy three"
-	400 → "Four hundred"
-	501 → "Five hundred and one"
-	711 → "Seven hundred and eleven"
+>Examples:
+* 0 → **"Zero"**
+* 273 → **"Two hundred seventy three"**
+* 400 → **"Four hundred"**
+* 501 → **"Five hundred and one"**
+* 711 → **"Seven hundred and eleven"**
