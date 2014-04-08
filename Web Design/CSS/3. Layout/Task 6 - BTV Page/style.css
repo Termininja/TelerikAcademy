@@ -5,11 +5,11 @@ body {
     font-weight: bold;
 }
 
-    body > div {
+    body > section {
         text-align: left;
         width: 590px;
         height: 300px;
-        margin: 10% auto;
+        margin: 7% auto;
         background: rgb(30, 55, 65);
         border: 0.1em solid rgb(55, 125, 140);
         border-radius: 8px;
@@ -70,4 +70,5 @@ figure {
 
     figure img {
         width: 320px;
+        height: 230px;
     }

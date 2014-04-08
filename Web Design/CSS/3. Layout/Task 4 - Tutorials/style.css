@@ -1,25 +1,24 @@
-body {
-}
-
-table {
+﻿#frame {
     background: rgb(241, 241, 241);
-    margin: auto auto;
-    width: 870px;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    font-size: 20px;
+    width: 1200px;
+    margin: auto;
     border: 1px solid black;
-    padding-left: 0.1em;
-    font-size: 13px;
 }
 
-    table td {
-        vertical-align: top;
-    }
-
-    table tr:last-child td {
-        height: 5em;
+    #frame:after {
+        content: "";
+        display: block;
+        clear: both;
     }
 
 #navigation {
-    width: 130px;
+    color: red;
+    float: left;
+    width: 200px;
+    height: 100%;
 }
 
     #navigation ul {
@@ -29,16 +28,16 @@ table {
     }
 
     #navigation h1 {
-        font-size: 13px;
+        font-size: 20px;
         line-height: 25px;
-        background: url(home.png) no-repeat 0 -4px;
-        background-size: 20px;
-        padding-left: 22px;
+        background: url(home.png) no-repeat 0 -6px;
+        background-size: 25px 30px;
+        padding-left: 27px;
         margin-top: 1em;
     }
 
     #navigation h2 {
-        font-size: 13px;
+        font-size: 20px;
         margin: 1em 0 0 0;
     }
 
@@ -56,130 +55,33 @@ table {
         color: rgb(149, 11, 9);
     }
 
-#sections {
-    background: white;
-    border: 1px solid rgb(146, 146, 146);
-    padding: 0.4em;
-}
-
-    #sections .image {
-        position: absolute;
-        width: 110px;
-        height: 110px;
-        font-style: italic;
-        cursor: default;
-    }
-
-        #sections .image#open {
-            margin-top: 20px;
-            margin-left: 5px;
-            font-size: 58px;
-            color: rgb(106, 101, 94);
-            opacity: 0.7;
-        }
-
-        #sections .image#dots {
-            margin-top: -50px;
-            margin-left: 40px;
-            font-size: 90px;
-            color: rgb(144, 129, 88);
-        }
-
-        #sections .image#commas {
-            margin-top: -16px;
-            margin-left: 30px;
-            font-size: 90px;
-            color: rgb(144, 129, 88);
-            opacity: 0.5;
-        }
-
-        #sections .image#css {
-            font-size: 50px;
-            margin-top: -12px;
-            margin-left: 6px;
-            color: rgb(67, 76, 130);
-            font-weight: bold;
-            font-family: 'Segoe Script';
-            text-shadow: 3px 3px 1px #ccc;
-        }
-
-        #sections .image#close {
-            margin-top: -8px;
-            margin-left: 108px;
-            font-size: 58px;
-            color: rgb(106, 101, 94);
-        }
-
-    #sections .left {
-        margin-left: 150px;
-    }
-
-    #sections hr {
-        height: 50%;
-    }
-
-    #sections span {
-        font-size: 9px;
-        position: absolute;
-        display: inline-block;
-        cursor: pointer;
-        margin-top: 2px;
-    }
-
-        #sections span:first-of-type {
-            margin-left: 4px;
-        }
-
-        #sections span:last-of-type {
-            margin-left: 98px;
-        }
-
-    #sections p {
-        font-family: Verdana;
-    }
-
-    #sections h2, #aside h2 {
-        padding-left: 0.3em;
-        font-size: 15px;
-        color: white;
-        background: rgb(128, 128, 128);
-    }
-
-    #sections button {
-        background: white;
-        border: 1px solid black;
-        font-size: 12px;
-        width: 110px;
-        cursor: pointer;
-    }
-
-        #sections button:hover {
-            background: rgb(241, 241, 241);
-        }
-
 #aside {
-    width: 140px;
+    float: right;
+    width: 200px;
+    height: 100%;
     padding: 0;
+    padding-top: 0.4em;
     text-align: center;
-    font-size: 13px;
+    font-size: 20px;
 }
 
     #aside div {
         background: white;
         border: 1px solid rgb(146, 146, 146);
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         padding-bottom: 0.5em;
     }
 
     #aside input[type=text] {
         margin-top: 0.3em;
-        margin-left: 0.3em;
-        width: 90px;
+        margin-left: 0.1em;
+        width: 120px;
     }
 
     #aside input[type=button] {
         margin-right: 0.3em;
         width: 24px;
+        border-radius: 0.4em;
     }
 
     #aside h2 {
@@ -199,11 +101,11 @@ table {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bd7f7', endColorstr='#9bd7f7',GradientType=1 );
         display: block;
         padding-top: 0.3em;
-        font-size: 15px;
+        font-size: 22px;
         font-weight: bolder;
-        height: 22px;
+        height: 33px;
         color: rgb(44, 201, 254);
-        margin: 0.2em 1.5em 0 1.5em;
+        margin: 0.2em 1.2em 0 1.2em;
         border: 2px solid rgb(80, 140, 146);
         box-shadow: 0 0 5px white inset;
     }
@@ -220,3 +122,112 @@ table {
         #aside a:hover, #sections a:hover {
             color: red;
         }
+
+#sections {
+    background: white;
+    float: right;
+    width: 770px;
+    height: 100%;
+    margin: 0.3em;
+    border: 1px solid rgb(146, 146, 146);
+    padding: 0.4em;
+    font-size: 91%;
+}
+
+    #sections .image {
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        font-style: italic;
+        cursor: default;
+    }
+
+        #sections .image#open {
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 73px;
+            color: rgb(106, 101, 94);
+            opacity: 0.7;
+        }
+
+        #sections .image#dots {
+            margin-top: -50px;
+            margin-left: 59px;
+            font-size: 105px;
+            color: rgb(144, 129, 88);
+        }
+
+        #sections .image#commas {
+            margin-top: -10px;
+            margin-left: 45px;
+            font-size: 105px;
+            color: rgb(144, 129, 88);
+            opacity: 0.5;
+        }
+
+        #sections .image#css {
+            font-size: 65px;
+            margin-top: -12px;
+            margin-left: 6px;
+            color: rgb(67, 76, 130);
+            font-weight: bold;
+            font-family: 'Segoe Script';
+            text-shadow: 3px 3px 1px #ccc;
+        }
+
+        #sections .image#close {
+            margin-top: -8px;
+            margin-left: 138px;
+            font-size: 73px;
+            color: rgb(106, 101, 94);
+        }
+
+    #sections .left {
+        margin-left: 175px;
+    }
+
+    #sections hr {
+        height: 50%;
+    }
+
+    #sections p {
+        font-family: Verdana;
+    }
+
+    #sections h2, #aside h2 {
+        padding-left: 0.3em;
+        font-size: 23px;
+        color: white;
+        background: rgb(128, 128, 128);
+    }
+
+    #sections button {
+        background: white;
+        border: 1px solid black;
+        font-size: 19px;
+        padding: 0.1em;
+        width: 160px;
+        cursor: pointer;
+    }
+
+        #sections button:first-of-type:before {
+            content: "\25C0";
+            position: absolute;
+            margin-left: -35px;
+        }
+
+        #sections button:last-of-type:after {
+            content: "\25B6";
+            position: absolute;
+            margin-left: 35px;
+        }
+
+        #sections button:hover {
+            background: rgb(241, 241, 241);
+        }
+
+    #sections:after {
+        content: "_";
+        line-height: 30px;
+        opacity: 0;
+    }

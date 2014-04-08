@@ -1,70 +1,72 @@
 body {
     text-align: center;
+    font-family: Georgia;
 }
 
-    body header {
-        width: 600px;
-        margin: auto auto;
+form > header {
+    font-family: Arial;
+    width: 600px;
+    margin: auto;
+}
+
+    form > header a {
+        color: rgb(30, 180, 240);
+        font-size: 150%;
+        font-weight: bold;
+        margin: 0 0.1em;
     }
 
-        body header a {
-            color: rgb(30, 180, 240);
-            font-size: 150%;
-            font-weight: bold;
-            margin: 0 0.1em;
-        }
+form > hr {
+    width: 660px;
+    height: 1px;
+}
 
-    body hr {
-        width: 660px;
-        height: 1px;
+form > section {
+    background: white;
+    width: 490px;
+    margin: auto auto;
+    padding: 0.2em 0.2em 0.6em 0.2em;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+    form > section fieldset {
+        display: inline-block;
+        width: 200px;
+        padding-right: 20px;
+        margin: 0.2em;
     }
 
-    body section {
-        font-family: Georgia;
-        cursor: default;
+        form > section fieldset img {
+            width: 110px;
+            float: left;
+        }
+
+        form > section fieldset p:last-of-type {
+            float: left;
+            margin: 0 0 0 20px;
+        }
+
+        form > section fieldset p:nth-last-of-type(2) {
+            float: right;
+            margin: 0 -10px 0 0;
+        }
+
+form > aside {
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    padding: 70px 10px 0 10px;
+    width: 170px;
+}
+
+    form > aside label {
+        text-align: left;
+        font-size: 110%;
     }
 
-        body section:first-of-type {
-            background: white;
-            width: 490px;
-            margin: auto auto;
-            padding: 0.2em 0.2em 0.6em 0.2em;
-            border: 1px solid black;
-            display: inline-block;
-        }
-
-            body section:first-of-type fieldset {
-                display: inline-block;
-                width: 200px;
-                padding-right: 20px;
-                margin: 0.2em;
-            }
-
-                body section:first-of-type fieldset img {
-                    width: 110px;
-                    float: left;
-                }
-
-                body section:first-of-type fieldset p:last-of-type {
-                    float: left;
-                    margin: 0 0 0 20px;
-                }
-
-                body section:first-of-type fieldset p:nth-last-of-type(2) {
-                    float: right;
-                    margin: 0 -10px 0 0;
-                }
-
-        body section:last-of-type {
-            margin: 0 auto 0;
-            display: inline-block;
-            vertical-align: top;
-            padding: 70px 0 0 10px;
-        }
-
-            body section:last-of-type label {
-                text-align: left;
-                font-size: 110%;
-                display: block;
-                margin: 1.5em 0 0.7em;
-            }
+    form > aside input {
+        cursor: pointer;
+        display: block;
+        margin: 1em 1em 3em;
+    }
