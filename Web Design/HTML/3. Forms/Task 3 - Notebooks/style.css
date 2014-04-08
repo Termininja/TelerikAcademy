@@ -22,9 +22,14 @@ a {
     margin: 0 0.2em;
 }
 
-.sliders div {
-    margin-bottom: 1em;
+
+.sliders {
+    width: 170px;
 }
+
+    .sliders div {
+        margin-bottom: 1em;
+    }
 
 td, output, label, .notebooks {
     color: gray;
