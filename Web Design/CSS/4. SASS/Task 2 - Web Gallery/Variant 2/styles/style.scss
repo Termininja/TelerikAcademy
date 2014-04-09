@@ -1,0 +1,63 @@
+$width: 600px;
+$height: 360px;
+
+@mixin transition($opacity, $time){
+	opacity: $opacity;
+	-o-transition: opacity $time;
+	-moz-transition: opacity $time;
+	-khtml-transition: opacity $time;
+	-webkit-transition: opacity $time;
+	-ms-transition: opacity $time;
+	transition: opacity $time;
+}
+
+@mixin border($width, $style, $color1, $color2, $color3) {
+	border: $width $style $color1;
+	border-top: $width $style $color2;
+	border-bottom: $width $style $color3;
+}
+
+body, table {
+	background: url("../images/background.jpg");
+	cursor: default;
+}
+
+table {
+	background: #555;
+	border-spacing: 5px;
+	@include border(20px, outset, gray, #bbb, #666);
+	box-shadow: 20px 20px 20px #222;
+	margin: 100px auto;
+	padding: 0;
+	text-align: center;
+	td a > img {
+		width: 150px;
+		height: 90px;
+		border: none;
+		@include transition(0.5, 0.3s);
+		vertical-align: middle;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	tr:nth-child(2) td:nth-child(2) {
+		background: url("../images/logo.jpg") no-repeat;
+		background-position: 7px 5px;
+		background-size: 588px;
+		height: $height;
+		width: $width;
+		@include border(20px, inset, gray, #666, #bbb);
+		vertical-align: middle;
+	}
+	td > img {
+		display: block;
+		width: $width;
+		position: absolute;
+		top: 243px;
+		@include transition(0, 3s);
+		&:target {
+			opacity: 1;
+			height: auto;
+		}
+	}
+}

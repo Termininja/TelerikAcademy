@@ -1,0 +1,11 @@
+body > img {
+    display: none;
+}
+
+a > img {
+    width: 112px;
+}
+
+img:target {
+    display: inline;
+}
