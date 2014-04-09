@@ -4,6 +4,8 @@
 }
 
 p {
+    margin: auto;
+    width: 1300px;
     color: #0094ff;
     font-family: Consolas;
     font-size: 30px;
@@ -14,6 +16,6 @@ p {
         font-size: 3em;
     }
 
-    P:first-line {
+    p:first-line {
         font-weight: bold;
     }

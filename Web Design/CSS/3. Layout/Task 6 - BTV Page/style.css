@@ -26,21 +26,13 @@ nav a {
     padding: 0.8em 0.9em;
 }
 
-    nav a:first-child {
-        background: transparent;
-        color: white;
-        cursor: default;
-    }
-
-    nav a:hover:not(:first-child) {
-        text-decoration: underline;
-    }
-
 /* Navigaition 2 */
 aside {
-    float: left;
     width: 235px;
     font-size: 12px;
+    margin-top: 16px;
+    position: absolute;
+    visibility: hidden;
 }
 
     aside ul {
@@ -65,7 +57,8 @@ aside {
 
 /* Media */
 figure {
-    margin-right: 0;
+    float: left;
+    margin-left: 235px;
 }
 
     figure img {

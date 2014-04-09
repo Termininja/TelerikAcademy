@@ -6,7 +6,7 @@ body {
         border: 1px solid black;
         border-radius: 6px;
         box-shadow: 2px 2px 13px black;
-        margin: 10% auto auto auto;
+        margin: 5% auto auto auto;
         width: 462px;
         padding: 0.1em;
     }
@@ -60,7 +60,17 @@ body {
                 body > section header > table td:first-child button {
                     border-right: none;
                     border-bottom-left-radius: 5px;
+                    margin-right: -0.1em;
                 }
+
+                    body > section header > table td:first-child button span {
+                        background: white;
+                        width: 1.2em;
+                        height: 0.25em;
+                        margin: 12px -2px;
+                        display: inline-block;
+                        border: 1px solid #555;
+                    }
 
                     body > section header > table td:first-child button:hover {
                         position: relative;
@@ -78,7 +88,17 @@ body {
                 /* Maximize button */
                 body > section header > table td:nth-child(2) button {
                     text-shadow: 1px 1px 0 #aaa, -1px 1px 0 #aaa, 1px -1px 0 #aaa, -1px -1px 0 #aaa, 0px 1px 0 #aaa, 0px -1px 0 #aaa, -1px 0px 0 #aaa, 1px 0px 0 #aaa;
+                    margin-right: -0.1em;
                 }
+
+                    body > section header > table td:nth-child(2) button span {
+                        width: 0.7em;
+                        height: 0.45em;
+                        margin-top: 5px;
+                        display: inline-block;
+                        border: 0.22em solid #e6e6e6;
+                        box-shadow: gray 0 0 1px inset, gray 0 0 1px;
+                    }
 
                 /* Close button */
                 body > section header > table td:last-child {
@@ -96,7 +116,6 @@ body {
                     body > section header > table td:last-child button {
                         width: 52px;
                         color: white;
-                        border-left: none;
                         border-bottom-right-radius: 5px;
                         font-size: 22px;
                         line-height: 0;
@@ -128,10 +147,14 @@ body {
             border: 1px solid #aaa;
         }
 
+    /* Remove the border on all buttons */
+    body button:focus {
+        outline: 0;
+    }
+
 /* Navigation menu */
 nav {
     z-index: 100;
-    position: relative;
     height: 20px;
     font-size: 14px;
     padding-left: 0.2em;
@@ -188,6 +211,7 @@ nav {
             background: #f0f0f0;
             padding-left: 27px;
             position: absolute;
+            z-index: 200;
             box-shadow: 1px 1px 2px #555;
         }
 
@@ -237,6 +261,16 @@ nav {
             color: #888;
         }
 
+/* Glass shield over display */
+#GlassShield {
+    position: absolute;
+    width: 450px;
+    height: 65px;
+    background: white;
+    opacity: 0;
+    z-index: 100;
+}
+
 /* Calculator */
 form > table {
     border-spacing: 0.4em;
@@ -247,8 +281,23 @@ form > table {
         padding: 0;
     }
 
+    /* Memory */
+    form > table thead input:first-child {
+        position: absolute;
+        z-index: 10;
+        background: transparent;
+        color: rgb(50, 50, 70);
+        text-align: left;
+        font-size: 15px;
+        font-family: Consolas;
+        padding-top: 22px;
+        padding-left: 0.3em;
+        height: 28px;
+        border: none;
+    }
+
     /* Display */
-    form > table thead input {
+    form > table thead input:last-child {
         width: 420px;
         height: 40px;
         background: rgb(229,239,251); /* Old browsers */
@@ -275,52 +324,43 @@ form > table {
     /* Bits */
     form > table table {
         width: 100%;
-        font-size: 13px;
         border: 1px solid white;
         box-shadow: 0 0 1px #222;
         border-radius: 2px;
         border-spacing: 0;
         cursor: default;
-        padding: 0.2em 1em 2px 0.5em;
-        color: #666;
-        font-family: Consolas;
+        padding: 0.2em 0 2px 0.2em;
     }
 
-        form > table table td {
-            width: 20px;
+        form > table table tr:nth-child(2n) span {
+            color: #888;
         }
 
-            form > table table td input {
-                font-size: 13px;
-                margin: 0.17em -0.03em;
+        form > table table td {
+            padding-left: 0.4em;
+        }
+
+            form > table table td span {
+                float: left;
+                width: 0.7em;
+                border: none;
+                margin: 0em -0.03em auto auto;
                 padding: 0;
                 cursor: default;
-                color: #1C3759;
-                font-family: Consolas;
-                display: inline-block;
-                float: left;
                 background: transparent;
-                width: 0.7em;
-                height: 0.7em;
-                border: none;
+                color: #1C3759;
+                font-size: 13px;
+                font-family: Consolas;
             }
-
-            form > table table td:last-child {
-                text-align: right;
-                width: 0;
-            }
-
-                form > table table td:last-child input {
-                    float: right;
-                }
 
     /* Radio buttons */
     form > table > tbody > tr:nth-child(3n+2) td:first-child {
         border: 1px solid #93a1b3;
         border-radius: 3px;
-        width: 100%;
+        width: 73px;
         color: #1C3759;
         font-size: 12px;
+        padding: 0.1em;
     }
 
         form > table > tbody > tr:nth-child(3n+2) td:first-child label {
@@ -450,12 +490,12 @@ form > table {
     background: -ms-linear-gradient(top, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(255,245,233,1) 0%,rgba(255,228,199,1) 45%,rgba(255,208,109,1) 57%,rgba(255,234,133,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5e9', endColorstr='#ffea85',GradientType=0 ); /* IE6-9 */
-    -o-transition: opacity 0.8s ease-in-out;
-    -moz-transition: opacity 0.8s ease-in-out;
-    -khtml-transition: opacity 0.8s ease-in-out;
-    -webkit-transition: opacity 0.8s ease-in-out;
-    -ms-transition: opacity 0.8s ease-in-out;
-    transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -khtml-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .transition2 {
@@ -475,10 +515,10 @@ form > table {
     background: -ms-linear-gradient(top, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(255,206,104,1) 0%,rgba(255,208,109,1) 48%,rgba(255,237,135,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffce68', endColorstr='#ffed87',GradientType=0 ); /* IE6-9 */
-    -o-transition: opacity 0.8s ease-in-out;
-    -moz-transition: opacity 0.8s ease-in-out;
-    -khtml-transition: opacity 0.8s ease-in-out;
-    -webkit-transition: opacity 0.8s ease-in-out;
-    -ms-transition: opacity 0.8s ease-in-out;
-    transition: opacity 0.8s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -khtml-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
