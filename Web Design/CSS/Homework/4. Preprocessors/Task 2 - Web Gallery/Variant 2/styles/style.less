@@ -1,0 +1,69 @@
+.size(@w, @h) {
+    width: @w;
+	height: @h;
+}
+
+.transition(@t) {
+	-o-transition: opacity @t;
+	-moz-transition: opacity @t;
+	-khtml-transition: opacity @t;
+	-webkit-transition: opacity @t;
+	-ms-transition: opacity @t;
+	transition: opacity @t;
+}
+
+.border(@type) {
+    border: 20px @type gray;
+    border-top: 20px @type #bbbbbb;
+    border-bottom: 20px @type #666666;
+}
+
+body, table {
+    background: url("../images/background.jpg");
+    cursor: default;
+}
+table {
+    background: #555;
+    border-spacing: 5px;
+    box-shadow: 20px 20px 20px #222;
+    margin: 100px auto;
+    padding: 0;
+    text-align: center;
+	.border(outset);
+    td {
+        a {
+            & > img {
+                border: none;
+                opacity: 0.5;
+                vertical-align: middle;
+				.size(150px, 90px);
+				.transition(0.3s);
+            }
+            & > img:hover {
+                opacity: 1;
+            }
+        }
+        & > img {
+            display: block;
+            width: 600px;
+            position: absolute;
+            top: 243px;
+            opacity: 0;
+			.transition(3s);
+        }
+        & > img:target {
+            opacity: 1;
+            height: auto;
+        }
+    }
+    tr:nth-child(2) {
+        td:nth-child(2) {
+            background: url("../images/logo.jpg") no-repeat;
+            background-position: 7px 5px;
+            background-size: 588px;
+            vertical-align: middle;
+			.size(360px, 600px);
+			.border(inset);
+        }
+    }
+}
