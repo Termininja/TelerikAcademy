@@ -1,0 +1,90 @@
+﻿html, body, div, ul, li, a, img, span {
+    margin: 0;
+    padding: 0;
+}
+
+    body > div {
+        font-family: 'Courier New', Courier, 'Nimbus Mono L', monospace;
+        font-size: 16px;
+    }
+
+        body > div > ul {
+            background: linear-gradient(to bottom, #AFAFAF, #DDD 85%);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border: 1px solid black;
+            margin: 25px 0 0 25px;
+            list-style-type: none;
+            width: 470px;
+            position: relative;
+        }
+
+            /* Menu */
+            body > div > ul > li {
+                display: inline-block;
+                padding: 5px 15px 4px 15px;
+                border-bottom: 1px solid black;
+            }
+
+                body > div > ul > li:not(:last-child) {
+                    border-right: 1px solid black;
+                }
+
+                body > div > ul > li > a {
+                    font-size: 120%;
+                }
+
+                /* Content */
+                body > div > ul > li > div.content {
+                    position: absolute;
+                    display: none;
+                    background: linear-gradient(2deg, #CDCDCD, #DDD 70%);
+                    width: 470px;
+                    left: -1px;
+                    margin-top: 5px;
+                    border: 1px solid black;
+                    border-top: none;
+                }
+
+                    body > div > ul > li > div.content > ul {
+                        list-style-type: none;
+                        padding: 0 10px;
+                    }
+
+                        body > div > ul > li > div.content > ul a, body > div > ul > li > a {
+                            text-decoration: none;
+                            color: #777;
+                        }
+
+                            body > div > ul > li > div.content > ul a:hover {
+                                text-decoration: underline;
+                            }
+
+                            body > div > ul > li > div.content > ul a span {
+                                margin-left: 5px;
+                            }
+
+                                body > div > ul > li > div.content > ul a span strong {
+                                    color: #5F6268;
+                                }
+
+
+                        body > div > ul > li > div.content > ul li {
+                            padding: 5px;
+                        }
+
+                body > div > ul > li:nth-of-type(2) > div.content > ul li {
+                    padding-left: 0px;
+                }
+
+                body > div > ul, body > div > ul > li:hover {
+                    border-bottom: none;
+                }
+
+                    body > div > ul > li:hover > div.content {
+                        display: block;
+                    }
+
+img {
+    width: 15px;
+}

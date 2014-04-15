@@ -15,3 +15,28 @@ Each of the folders contains a folder titled **task-images**, an **HTML** file a
 **Important:** you are not allowed to **change the HTML file or the name of the CSS file**.
 
 Only your **last** code submission will be evaluated. You have exactly **3 hours** to solve all given problems.
+
+
+
+
+
+
+
+
+==================
+
+
+**Task 1**
+  * Resolution-width: ***960px***
+  * font-family: ***Helvetica, Arial (2), 'DejaVu Sans' (2), 'Liberation Sans' (2), Freesans (2), sans-serif (2)***
+  * font-size: ***16px, 18px***
+
+**Task 2**
+  * Resolution-width: ***960px***
+  * font-family: ***Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif, 'Courier New', Courier, 'Nimbus Mono L', monospace***
+  * font-size: ***16px (2)***
+  
+**Task 3**
+  * Resolution-width: ***960px***
+  * font-family: ***Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif, Verdana, Geneva, 'DejaVu Sans', sans-serif***
+  * font-size: ***16px (2)***

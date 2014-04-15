@@ -1,0 +1,107 @@
+html, body, div, h1, ul, li, span, p, button, input {
+    margin: 0;
+    padding: 0;
+}
+
+    body > div {
+        font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+        font-size: 16px;
+    }
+
+        body > div > div {
+            text-align: center;
+            color: #555;
+            width: 380px;
+            height: 463px;
+            border: 1px solid black;
+            border-radius: 15px;
+            margin: 30px auto auto 30px;
+            background: linear-gradient(to bottom, #eee, #aaa);
+        }
+
+            body > div > div h1 {
+                padding: 15px 0 5px 0;
+                font-size: 180%;
+            }
+
+            body > div > div ul {
+                list-style-type: none;
+            }
+
+                /* All */
+                body > div > div ul li {
+                    text-align: left;
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    width: 200px;
+                    height: 55px;
+                    padding: 0.3em 0.95em;
+                    margin-top: 5.5px;
+                }
+
+                    body > div > div ul li span:first-child {
+                        font-weight: bold;
+                        font-size: 110%;
+                    }
+
+                /* Me */
+                body > div > div ul .me-item {
+                    float: right;
+                    margin-right: 15px;
+                    background: linear-gradient(to bottom, #2fedff, #d4ffff);
+                }
+
+                    body > div > div ul .me-item .date {
+                        display: block;
+                        text-align: right;
+                    }
+
+                /* Toshko */
+                body > div > div ul .toshko-item {
+                    float: left;
+                    margin-left: 15px;
+                    background: linear-gradient(to bottom, #d9ffcb, #71ff3d);
+                }
+
+                    body > div > div ul .toshko-item span:first-child {
+                        display: block;
+                        text-align: right;
+                    }
+
+                    body > div > div ul .toshko-item span:last-child {
+                        display: block;
+                    }
+
+                /* Dates */
+                body > div > div ul .date {
+                    font-size: 80%;
+                    font-family: Consolas;
+                }
+
+        /* Fields */
+        body > div input {
+            width: 260px;
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            background: #EEE;
+            color: #555;
+            margin-top: 7px;
+            outline: none;
+            padding-left: 15px;
+        }
+
+        body > div button {
+            vertical-align: middle;
+            font-size: 110%;
+            margin-top: -1px;
+            width: 70px;
+            height: 32px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #e9e9e9, #ababab);
+        }
+
+            body > div button:hover {
+                background: #EEE;
+            }
