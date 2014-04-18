@@ -23,10 +23,10 @@ Only your **last** code submission will be evaluated. You have exactly **3 hours
 
 **Task 2**
   * Resolution-width: ***960px***
-  * font-family: ***'Freeserif', 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif***
+  * font-family: ***Verdana, 'Freeserif', 'DejaVu Sans', 'Liberation Sans', Freesans***
   * font-size: ***16px***
 
 **Task 3**
   * Resolution-width: ***960px***
-  * font-family: ***Arial, Cambria, 'Times New Roman', 'DejaVu Sans', sans-serif***
+  * font-family: ***serif, Cambria, 'Times New Roman', 'DejaVu Sans', sans-serif***
   * font-size: ***16px***
