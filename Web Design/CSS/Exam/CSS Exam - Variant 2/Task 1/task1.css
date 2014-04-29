@@ -28,7 +28,7 @@ html, body, div, aside, ul, li, a {
         position: absolute;
         margin-left: 190px;
         margin-top: -36px;
-        background: #B5AAFF url('imgs/arrow.png') no-repeat 5px 15px;
+        background: #B5AAFF url('images/arrow.png') no-repeat 5px 15px;
     }
 
         aside li > ul li {

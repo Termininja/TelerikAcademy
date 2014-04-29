@@ -30,27 +30,27 @@ html, body, div, hgroup, h1, h2, h3, p, a, span {
 
         /* Images */
         #wrapper > div:first-child hgroup {
-            background-image: url(imgs/install.png);
+            background-image: url(images/install.png);
         }
 
         #wrapper > div:nth-child(2) hgroup {
-            background-image: url(imgs/tuneUp.png);
+            background-image: url(images/tuneUp.png);
         }
 
         #wrapper > div:nth-child(3) hgroup {
-            background-image: url(imgs/manage.png);
+            background-image: url(images/manage.png);
         }
 
         #wrapper > div:nth-child(4) hgroup {
-            background-image: url(imgs/openSource.png);
+            background-image: url(images/openSource.png);
         }
 
         #wrapper > div:nth-child(5) hgroup {
-            background-image: url(imgs/twitter.png);
+            background-image: url(images/twitter.png);
         }
 
         #wrapper > div:last-child hgroup {
-            background: url(imgs/about.png) no-repeat;
+            background: url(images/about.png) no-repeat;
             background-position: 0px 9px;
         }
 

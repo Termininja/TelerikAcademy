@@ -61,12 +61,12 @@
                         }
 
                         #wrapper > ul > li > .msg-bar-content > ul > li.me-item > span:first-child {
-                            background: url(imgs/me.png) no-repeat;
+                            background: url(images/me.png) no-repeat;
                             background-position: 5px;
                         }
 
                         #wrapper > ul > li > .msg-bar-content > ul > li.other-item > span:first-child {
-                            background: url(imgs/male.png) no-repeat;
+                            background: url(images/male.png) no-repeat;
                             background-position: 5px;
                         }
 

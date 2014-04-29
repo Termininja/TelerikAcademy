@@ -10,7 +10,7 @@ You must submit only **one ZIP file** with the three CSS files, labeled **task1.
 
 The trainers will give you a link to download ZIP with the assignments. In the ZIP you will find three folders, titled **task1**, **task2** and **task3**.
 
-Each of the folders contains a folder titled **task-images**, an **HTML** file and empty **CSS** file, and may contain JavaScript files or other images. Your task is to write the **CSS** to the **HTML** file, so that it looks as similar as possible to all the images in **task-images folders**.
+Each of the folders contains a folder titled **task**, an **HTML** file and empty **CSS** file, and may contain JavaScript files or other images. Your task is to write the **CSS** to the **HTML** file, so that it looks as similar as possible to all the images in **task folders**.
 
 **Important:** you are not allowed to **change the HTML file or the name of the CSS file**.
 
