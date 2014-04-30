@@ -1,0 +1,50 @@
+body {
+    background: #f4f2f2;
+}
+
+    body > div {
+        margin: 3% auto auto auto;
+        position: relative;
+        width: 800px;
+    }
+
+        body > div > textarea {
+            position: absolute;
+            width: 686px;
+            height: 249px;
+            margin: 40px auto auto 45px;
+            padding: 0.5em;
+            border: none;
+            background: transparent;
+            resize: none;
+            cursor: default;
+            overflow: hidden;
+            color: white;
+            font-size: 150%;
+            font-family: Consolas;
+        }
+
+            body > div > textarea:focus {
+                outline: 0;
+            }
+
+        body > div > span {
+            position: absolute;
+            top: 0px;
+            display: block;
+            width: 800px;
+            height: 330px;
+        }
+
+        body > div > iframe {
+            border: none;
+            top: 340px;
+            left: 44px;
+            width: 712px;
+            height: 169px;
+            background: white;
+            position: absolute;
+            outline: none;
+            -webkit-filter: invert(100%); /*Chrome*/
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix in='SourceGraphic' type='matrix' values='-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0'/></filter></svg>#invert"); /*Firefox*/
+        }

@@ -2,7 +2,7 @@
     var number = parseInt(input);
 
     if (isInt(number)) {
-        var result = (Math.round((number / 100) % 10) === 7);
+        var result = (number.toString()[number.toString().length - 3] === "7");
         display.value += "The third digit is " + (result ? "" : "not ") + "7!\n\n";
     }
     else {

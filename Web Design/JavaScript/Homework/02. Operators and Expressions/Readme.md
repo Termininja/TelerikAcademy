@@ -6,7 +6,7 @@
 
 **Task 03.** Write an expression that calculates rectangle’s area by given `width` and `height`.
 
-**Task 04.** Write an expression that checks for given integer if its third digit (right-to-left) is 7.
+**Task 04.** Write an expression that checks for given integer if its third digit (right-to-left) is `7`.
 >Example: 1732 → **true**
 
 **Task 05.** Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.
