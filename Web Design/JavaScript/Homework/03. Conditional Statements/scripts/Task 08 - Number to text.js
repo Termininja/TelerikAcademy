@@ -1,0 +1,71 @@
+﻿//Task 8. Write a script that converts a number to 
+//a text corresponding to its English pronunciation.
+
+function Task8() {
+    var names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
+        'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
+        'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
+    var bigNames = ['', 'm', 'b', 'tr', 'quadr', 'quint', 'sext', 'sept', 'oct',
+        'non', 'dec', 'vigint', 'trigint', 'quadragint', 'quinquagint',
+        'sexagint', 'septuagint', 'octogint', 'nonagint', 'cent'];
+    var prefixes = ['', 'un', 'duo', 'tre', 'quattuor', 'quin', 'sex',
+        'septen', 'octo', 'novem'];
+
+    names[30] = "thirty";
+    names[40] = "forty";
+    names[50] = "fifty";
+    names[60] = "sixty";
+    names[70] = "seventy";
+    names[80] = "eighty";
+    names[90] = "ninety";
+
+    var maxLength = 600;
+    var input = document.getElementById('input8').value;
+    var result = document.getElementById('result8');
+    result.style.color = "red";
+
+    if (document.getElementById('input8').value === "") result.innerHTML = "";
+    else if (isNaN(parseInt(input))) {
+        result.innerHTML = "This is not a number!";
+    }
+    else {
+        if (parseInt(input) >= 0) {
+            if (input == "1" + new Array(101).join("0")) {
+                result.innerHTML = "Googol";
+            }
+            else if (input.length <= maxLength + 1) {
+                result.style.color = "#333";
+                var name = BigNum(input, maxLength);
+                result.innerHTML = name[0].toUpperCase() + name.slice(1);
+            }
+            else result.innerHTML = "The number is too big!";
+        }
+        else result.innerHTML = "The number has to be positive!"
+    }
+
+    function BigNum(n, k) {
+        var result = "";
+        if ((n.replace(/^0+/, '')).length > k) {
+            result = ((k == 2) ? names[parseInt(n / 100)] :
+                BigNum(n.substr(0, n.length - k), ((k == 3) ? 2 : k - 3))) + " " +
+                ((k == 2) ? "hundred" : ((k == 3) ? "thousand" : (((k >= 60) ?
+                (prefixes[parseInt((k % 60) / 6)] + bigNames[parseInt(k / 60) + 9]) :
+                bigNames[parseInt(k / 6)]) + ((k % 6 == 0) ? "illion" : "illiard"))));
+
+            n = n.substring(n.length - k);
+            if (n > 0) result += ((k == 2) ? " and " : " ") +
+                ((k == 2) ? Tens(n) : ((k == 3) ?
+                BigNum(n, 2) : BigNum(n, k - 3)));
+        }
+        else result += (k == 2) ? Tens(n) : ((k == 3) ?
+            BigNum(n, 2) : BigNum(n, k - 3));
+        return result;
+    }
+
+    function Tens(n) {
+        return (names[n % 100] != null) ? names[n % 100] :
+            (names[(parseInt((n % 100) / 10)) * 10] +
+            ((((n % 100) / 10) * 10 > 0 && n % 10 > 0) ? "-" : "") +
+            names[n % 10]);
+    }
+}

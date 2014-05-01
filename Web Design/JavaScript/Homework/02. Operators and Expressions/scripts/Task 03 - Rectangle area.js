@@ -1,4 +1,5 @@
-﻿function Task3(input) {
+﻿// Task 3. Write an expression that calculates rectangle’s area by given width and height.
+function Task3(input) {
     var words = input.split(' ');
     var width = parseFloat(words[0]);
     var height = parseFloat(words[1]);

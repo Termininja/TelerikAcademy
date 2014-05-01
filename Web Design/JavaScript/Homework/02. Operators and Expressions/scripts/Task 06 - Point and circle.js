@@ -1,4 +1,5 @@
-﻿function Task6(input) {
+﻿// Task 6. Write an expression that checks if given point P(x,y) is within a circle K((0,0),5).
+function Task6(input) {
     var CircleRadius = 5;
     var words = input.split(' ');
     var x = parseFloat(words[0]);

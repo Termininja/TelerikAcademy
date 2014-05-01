@@ -1,4 +1,5 @@
-﻿function Task4(input) {
+﻿// Task 4. Write an expression that checks for given integer if its third digit (right-to-left) is 7.
+function Task4(input) {
     var number = parseInt(input);
 
     if (isInt(number)) {

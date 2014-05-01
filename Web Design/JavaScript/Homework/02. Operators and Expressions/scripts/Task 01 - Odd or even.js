@@ -1,4 +1,5 @@
-﻿function Task1(input) {
+﻿// Task 1. Write an expression that checks if given integer is odd or even.
+function Task1(input) {
     var number = parseInt(input);
 
     if (isInt(number)) {
