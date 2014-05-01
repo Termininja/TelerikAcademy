@@ -24,7 +24,7 @@ function Task8() {
     var result = document.getElementById('result8');
     result.style.color = "red";
 
-    if (document.getElementById('input8').value === "") result.innerHTML = "";
+    if (input === "") result.innerHTML = "";
     else if (isNaN(parseInt(input))) {
         result.innerHTML = "This is not a number!";
     }

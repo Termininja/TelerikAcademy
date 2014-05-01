@@ -28,8 +28,9 @@ body {
                 width: 85%;
             }
 
-                body section article header h4, p.task {
-                    display: inline;
+                body section article header h2 {
+                    font-weight: normal;
+                    font-size: 100%;
                 }
 
             body section article fieldset {
