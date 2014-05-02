@@ -16,7 +16,7 @@
 
 **Task 08.** Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.
 >Examples:
-* 0 → **"Zero"**
+* 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ **"Zero"**
 * 273 → **"Two hundred seventy three"**
 * 400 → **"Four hundred"**
 * 501 → **"Five hundred and one"**
