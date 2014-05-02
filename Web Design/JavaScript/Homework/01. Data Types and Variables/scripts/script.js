@@ -7,6 +7,7 @@ var quotedStringVariable;
 var undefinedVariable;
 var nullVariable = null;
 var arrow = "&#8658;&nbsp;&nbsp;&nbsp;";
+var array = [];
 
 // Default values for the all variables
 window.onload = function () {
@@ -15,6 +16,17 @@ window.onload = function () {
     booleanVariable = document.getElementById('checkboxID').checked = true;
     Integer(25);
     Float(3.14);
+    Array();
+}
+
+// Change the value of integerVariable
+function Array() {
+    array = [integerVariable, floatVariable, stringVariable, booleanVariable, undefinedVariable, nullVariable];
+    var element = document.getElementById('spanArray');
+    element.innerHTML = ' = [' + (isNaN(integerVariable) ? "" : array[0] + ', ') +
+        (isNaN(floatVariable) ? "" : array[1] + ', ') +
+        (stringVariable == "" ? "" : '\"' + array[2] + '"' + ', ') +
+        array[3] + ', undefined, null]';
 }
 
 // Change the value of integerVariable
@@ -54,6 +66,8 @@ function Boolean(value) {
 
 // The type of all of variables
 function TypeOf() {
+    Array();
+    document.getElementById('typeArray').innerHTML = arrow + typeof array;
     document.getElementById('typeInt').innerHTML = isNaN(integerVariable) ? "" : (arrow + typeof integerVariable);
     document.getElementById('typeFloat').innerHTML = (isNaN(floatVariable) ? "" : (arrow + typeof floatVariable));
     document.getElementById('typeString').innerHTML = arrow + typeof stringVariable;
