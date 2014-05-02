@@ -36,7 +36,7 @@ function PopTip() {
     ShowMenu(true, 'ToolTip');
 
     if (b === "Netscape") {
-        if ((pX + 120) > window.innerWidth) {
+        if (pX + 120 > window.innerWidth) {
             pX = window.innerWidth - 150;
         }
 
@@ -49,12 +49,12 @@ function PopTip() {
             pY = event.y;
 
             if (addScroll) {
-                pX = pX + document.body.scrollLeft;
-                pY = pY + document.body.scrollTop;
+                pX += document.body.scrollLeft;
+                pY += document.body.scrollTop;
             }
 
             if ((pX + 120) > document.body.clientWidth) {
-                pX = pX - 150;
+                pX -= 150;
             }
 
             theLayer.style.pixelLeft = pX + 10;
