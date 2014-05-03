@@ -14,9 +14,7 @@ function Solve(params) {
                 sum += arr[p];
             }
 
-            if (sum > maxSum) {
-                maxSum = sum;
-            }
+            if (sum > maxSum) maxSum = sum;
         }
     }
 
