@@ -1,7 +1,7 @@
 ﻿//Task 2. Write a script that shows the sign of the product of three
 //numbers without calculating it. Use a sequence of if statements.
 
-function Task2() {
+function ShowTheSign() {
     //Variables
     var input1 = parseFloat(document.getElementById('input21').value);
     var input2 = parseFloat(document.getElementById('input22').value);

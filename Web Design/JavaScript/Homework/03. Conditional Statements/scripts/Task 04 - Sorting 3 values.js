@@ -1,6 +1,6 @@
 ﻿//Task 4. Sort 3 numbers in descending order using nested if statements.
 
-function Task4() {
+function Sorting3Values() {
     //Variables
     var input1 = parseFloat(document.getElementById('input41').value);
     var input2 = parseFloat(document.getElementById('input42').value);

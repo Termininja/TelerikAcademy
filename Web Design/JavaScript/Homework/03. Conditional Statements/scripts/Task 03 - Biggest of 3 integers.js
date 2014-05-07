@@ -1,6 +1,6 @@
 ﻿//Task 3. Write a script that finds the biggest of three integers.
 
-function Task3() {
+function BiggestOf3Integers() {
     //Variables
     var input1 = parseInt(document.getElementById('input31').value);
     var input2 = parseInt(document.getElementById('input32').value);

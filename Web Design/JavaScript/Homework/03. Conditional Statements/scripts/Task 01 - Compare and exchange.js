@@ -1,7 +1,7 @@
 //Task 1. Write an if statement that examines two integers and
 //exchanges their values if the first is greater than the second one.
 
-function Task1() {
+function CompareAndExchange() {
     //Variables
     var input1 = parseInt(document.getElementById('input11').value);
     var input2 = parseInt(document.getElementById('input12').value);

@@ -1,7 +1,7 @@
 ﻿//Task 8. Write a script that converts a number to 
 //a text corresponding to its English pronunciation.
 
-function Task8() {
+function NumberToText() {
     //Some basic number names and prefixes
     var names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
         'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
