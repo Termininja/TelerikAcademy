@@ -1,6 +1,6 @@
 //Task 3. Write a script that finds the max and min number from a sequence of numbers.
 
-function MinAndMaxOfSequence() {
+function minAndMaxOfSequence() {
     //Variables
     var input = document.getElementById('input3').value.trim().split(' ');
     var result1 = document.getElementById('result31');

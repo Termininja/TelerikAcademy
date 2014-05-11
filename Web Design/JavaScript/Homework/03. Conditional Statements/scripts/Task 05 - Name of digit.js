@@ -1,7 +1,7 @@
 ﻿//Task 5. Write script that asks for a digit and shows
 //the name of that digit by using a switch statement.
 
-function NameOfDigit() {
+function nameOfDigit() {
     //Variables
     var input = document.getElementById('input5').value;
     var result = document.getElementById('result5');

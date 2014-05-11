@@ -2,7 +2,7 @@
 //and largest property in document, window and navigator objects.
 
 //Return the smallest and the largest property in some object
-function FindProperty(object) {
+function findProperty(object) {
     var min = 'z';
     var max = 'a';
     for (var p in object) {
@@ -17,7 +17,7 @@ window.onload = function () {
     var output = document.getElementById('result4');
 
     //Print the final result;
-    output.innerHTML = FindProperty(document) + "<br />";
-    output.innerHTML += FindProperty(window) + "<br />";
-    output.innerHTML += FindProperty(navigator);
+    output.innerHTML = findProperty(document) + "<br />";
+    output.innerHTML += findProperty(window) + "<br />";
+    output.innerHTML += findProperty(navigator);
 }

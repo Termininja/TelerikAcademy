@@ -1,5 +1,5 @@
 ﻿// Task 7. Write an expression that checks if given positive integer number n (n ≤ 100) is prime.
-function Task7(input) {
+function primeNumbers(input) {
     var number = parseInt(input);
 
     if (isInt(number)) {

@@ -1,7 +1,7 @@
 ﻿//Task 8. Write a script that converts a number to 
 //a text corresponding to its English pronunciation.
 
-function NumberToText() {
+function numberToText() {
     //Some basic number names and prefixes
     var names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
         'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
@@ -41,7 +41,7 @@ function NumberToText() {
                 result.style.color = "#333";
 
                 //Get the name of the number
-                var name = Mil(input, maxLength);
+                var name = mil(input, maxLength);
                 result.innerHTML = name[0].toUpperCase() + name.slice(1);
             }
             else result.innerHTML = "The number is too big!";
@@ -50,29 +50,29 @@ function NumberToText() {
     }
 
     //Recursion from 10^600 (k = 600) to 10^3 (k = 3)
-    function Mil(n, k) {
+    function mil(n, k) {
         var result = "";
         if ((n.replace(/^0+/, '')).length > k) {
             result = ((k == 2) ? names[parseInt(n / 100)] :
-                Mil(n.substr(0, n.length - k), ((k == 3) ? 2 : k - 3))) + " " +
+                mil(n.substr(0, n.length - k), ((k == 3) ? 2 : k - 3))) + " " +
                 ((k == 2) ? "hundred" : ((k == 3) ? "thousand" : (((k >= 60) ?
                 (prefixes[parseInt((k % 60) / 6)] + bigNames[parseInt(k / 60) + 9]) :
                 bigNames[parseInt(k / 6)]) + ((k % 6 === 0) ? "illion" : "illiard"))));
 
             n = n.substring(n.length - k);
-            if (n > 0) result += ((k == 2) ? " and " : " ") + Hundreds(n, k);
+            if (n > 0) result += ((k == 2) ? " and " : " ") + hundreds(n, k);
         }
-        else result += Hundreds(n, k);
+        else result += hundreds(n, k);
         return result;
     }
 
     //Get the name of the number (0 to 999)
-    function Hundreds(n, k) {
-        return (k == 2) ? Tens(n) : ((k == 3) ? Mil(n, 2) : Mil(n, k - 3));
+    function hundreds(n, k) {
+        return (k == 2) ? tens(n) : ((k == 3) ? mil(n, 2) : mil(n, k - 3));
     }
 
     //Get the name of the number (0 to 99)
-    function Tens(n) {
+    function tens(n) {
         return (names[n % 100] !== undefined) ? names[n % 100] :
             (names[(parseInt((n % 100) / 10)) * 10] +
             ((((n % 100) / 10) * 10 > 0 && n % 10 > 0) ? "-" : "") +

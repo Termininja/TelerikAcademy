@@ -1,7 +1,7 @@
 ﻿//Task 6. Write a script that enters the coefficients a, b and c
 //of a quadratic equation and calculates and prints its real roots.
 
-function QuadraticEquation() {
+function quadraticEquation() {
     //Variables
     var a = parseFloat(document.getElementById('input61').value);
     var b = parseFloat(document.getElementById('input62').value);
@@ -42,7 +42,7 @@ function QuadraticEquation() {
             var x1 = (-b + Math.sqrt(D)) / 2 * a;
             var x2 = (-b - Math.sqrt(D)) / 2 * a;
             result.innerHTML +=
-                "has two real roots: x1 = " +
+                "has two real roots:<br />x1 = " +
                 x1.toFixed(3) + ", x2 = " + x2.toFixed(3);
         }
     }

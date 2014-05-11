@@ -3,6 +3,7 @@ body {
     padding: 0 0 0 15px;
     background: #F9F9F9;
     color: #333;
+    cursor: default;
 }
 
     body > header {

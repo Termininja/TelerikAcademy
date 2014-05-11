@@ -1,6 +1,6 @@
 ﻿//Task 7. Write a script that finds the greatest of given 5 variables.
 
-function GreatestOf5Variables() {
+function greatestOf5Variables() {
     //Variables
     var input1 = parseFloat(document.getElementById('input71').value);
     var input2 = parseFloat(document.getElementById('input72').value);

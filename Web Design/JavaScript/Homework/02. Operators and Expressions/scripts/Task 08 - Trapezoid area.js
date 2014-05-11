@@ -1,5 +1,5 @@
 ﻿// Task 8. Write an expression that calculates trapezoid's area by given sides a and b and height h.
-function Task8(input) {
+function trapezoidArea(input) {
     // Extract the values from the input string
     var words = input.split(' ');
     var a = parseFloat(words[0]);

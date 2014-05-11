@@ -1,9 +1,11 @@
 ﻿// Task 6. Write an expression that checks if given point P(x,y) is within a circle K((0,0),5).
-function Task6(input) {
+function pointAndCircle(input) {
+    //Variables
     var CircleRadius = 5;
     var words = input.split(' ');
     var x = parseFloat(words[0]);
     var y = parseFloat(words[1]);
+
     if ((isFloat(x) || isInt(x)) && (isFloat(y) || isInt(y))) {
         // The distance from the center of the circle
         var distance = Math.sqrt(x * x + y * y);

@@ -29,6 +29,8 @@
                 <li>var booleanVariable
                     <span id="spanBoolean">= true</span>;
                     <span id="typeBool"></span></li>
+                <li>function functionExample() {...}
+                    <span id="typeFunction"></span></li>
             </ul>
             <p>
                 <strong>Task 2:</strong> Create a string variable with quoted text in it.
@@ -54,23 +56,23 @@
         <div>
             <p>
                 Enter some integer number:
-                <input id="integer" type="text" oninput="Integer(this.value)" value="25" />
+                <input id="integer" type="text" oninput="setInteger(this.value)" value="25" />
             </p>
             <p>
                 Enter some floating-point number:
-                <input type="text" oninput="Float(this.value)" value="3.14" />
+                <input type="text" oninput="setFloat(this.value)" value="3.14" />
             </p>
             <p>
                 Enter some text:
-                <input type="text" id="stringID" oninput="String(this.value)" />
+                <input type="text" id="stringID" oninput="setString(this.value)" />
             </p>
             <p>
                 Enter some quoted text:
-                <input type="text" id="quotedStringID" oninput="QuotedString(this.value)" />
+                <input type="text" id="quotedStringID" oninput="setQuotedString(this.value)" />
             </p>
             <p>
                 Check/uncheck the box:
-                <input type="checkbox" id="checkboxID" onclick="Boolean(this.checked)" />
+                <input type="checkbox" id="checkboxID" onclick="setBoolean(this.checked)" />
             </p>
         </div>
     </section>
