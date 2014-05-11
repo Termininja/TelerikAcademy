@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Minesweeper", "Minesweeper\04. Minesweeper.csproj", "{A9F61447-4D2E-47A7-87BD-5FB157C4BAEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Human", "Human\02. Human.csproj", "{DB54DB7F-2302-4CED-ADD4-8EE6BA2D6233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. BrowserName", "BrowserName\03. BrowserName.csproj", "{9890F478-E6E4-4148-9E1E-2C23AF66FD37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Class123", "Class123\01. Class123.csproj", "{FE4BB335-4783-4C1E-9F6E-A7D2C5C1F056}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9F61447-4D2E-47A7-87BD-5FB157C4BAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F61447-4D2E-47A7-87BD-5FB157C4BAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F61447-4D2E-47A7-87BD-5FB157C4BAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F61447-4D2E-47A7-87BD-5FB157C4BAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB54DB7F-2302-4CED-ADD4-8EE6BA2D6233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB54DB7F-2302-4CED-ADD4-8EE6BA2D6233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB54DB7F-2302-4CED-ADD4-8EE6BA2D6233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB54DB7F-2302-4CED-ADD4-8EE6BA2D6233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9890F478-E6E4-4148-9E1E-2C23AF66FD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9890F478-E6E4-4148-9E1E-2C23AF66FD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9890F478-E6E4-4148-9E1E-2C23AF66FD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9890F478-E6E4-4148-9E1E-2C23AF66FD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4BB335-4783-4C1E-9F6E-A7D2C5C1F056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4BB335-4783-4C1E-9F6E-A7D2C5C1F056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4BB335-4783-4C1E-9F6E-A7D2C5C1F056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4BB335-4783-4C1E-9F6E-A7D2C5C1F056}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

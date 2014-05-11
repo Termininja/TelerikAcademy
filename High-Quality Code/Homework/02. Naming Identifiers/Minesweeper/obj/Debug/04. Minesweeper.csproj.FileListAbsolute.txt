@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\04. Minesweeper\bin\Debug\_04.Minesweeper.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\04. Minesweeper\bin\Debug\_04.Minesweeper.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\04. Minesweeper\obj\Debug\04. Minesweeper.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\04. Minesweeper\obj\Debug\_04.Minesweeper.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\04. Minesweeper\obj\Debug\_04.Minesweeper.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Minesweeper\obj\Debug\_04.Minesweeper.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Minesweeper\obj\Debug\_04.Minesweeper.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Minesweeper\bin\Debug\_04.Minesweeper.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Minesweeper\bin\Debug\_04.Minesweeper.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Minesweeper\obj\Debug\04. Minesweeper.csprojResolveAssemblyReference.cache
