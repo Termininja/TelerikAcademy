@@ -20,11 +20,8 @@ class ReplaceHTMLTags
          * outside the groups (1 and 2) with "[URL=", "]" and "[/URL]"
          */
         string TextInHTML = @"<p>Please visit <a href=""http://academy.telerik.com"">our site</a> to choose...</p>";
-        Console.WriteLine(Regex.Replace(TextInHTML,
-                                        @"<a href=""(.*?)"">(.*?)</a>",
-                                        m => "[URL=" + m.Groups[1] + "]" + m.Groups[2] + "[/URL]"
-                                        )
-                         );
+        Console.WriteLine(Regex.Replace(TextInHTML, @"<a href=""(.*?)"">(.*?)</a>",
+            m => "[URL=" + m.Groups[1] + "]" + m.Groups[2] + "[/URL]"));
         Console.WriteLine();
     }
 }
