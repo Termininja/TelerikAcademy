@@ -23,15 +23,11 @@ function Solve(args) {
         else if (direction == 'r') C++;
         else if (direction == 'u') R--;
         else if (direction == 'd') R++;
-        else {
-            return "lost " + count;
-            break;
-        }
-
+        else  return "lost " + count;
+        
         count++;
         if (C < 0 || C > M - 1 || R < 0 || R > N - 1) {
             return "out " + sum;
-            break;
         }
     }
 }
