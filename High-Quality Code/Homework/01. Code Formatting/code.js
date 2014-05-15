@@ -1,12 +1,22 @@
+﻿/* Code refactoring:
+ *
+ * All missing semicolons are created
+ * Defined are all undefined variables
+ * Fixed are mixed spaces and tabs
+ * Removed are some unnecessary semicolons
+ * Removed are some unused variables
+ * Eval is removed because it can be harmful
+ * All menu functions are put in one method because of code repetition
+ */
+
 var theLayer;
 var pX = 0;
 var pY = 0;
-
-addScroll = false;
-b = navigator.appName;
+var addScroll = false;
+var browser = navigator.appName;
 
 document.onmousemove = mouseMove;
-if (b === "Netscape") {
+if (browser === "Netscape") {
     document.captureEvents(Event.MOUSEMOVE);
 }
 
@@ -16,7 +26,7 @@ if ((navigator.userAgent.indexOf('MSIE 5') > 0) ||
 }
 
 function mouseMove(evn) {
-    if (b === "Netscape") {
+    if (browser === "Netscape") {
         pX = evn.pageX - 5;
         pY = evn.pageY;
         if (document.layers.ToolTip.visibility === 'show') {
@@ -35,7 +45,7 @@ function mouseMove(evn) {
 function PopTip() {
     ShowMenu(true, 'ToolTip');
 
-    if (b === "Netscape") {
+    if (browser === "Netscape") {
         if (pX + 120 > window.innerWidth) {
             pX = window.innerWidth - 150;
         }
@@ -64,32 +74,12 @@ function PopTip() {
 }
 
 function ShowMenu(show, menu) {
-    if (b === "Netscape") {
-        theLayer = document.layers.menu;
+    if (browser === "Netscape") {
+        theLayer = document.layers[menu];
         theLayer.visibility = (show) ? 'show' : 'hide';
     }
     else {
-        theLayer = document.all.menu;
+        theLayer = document.all[menu];
         theLayer.style.visibility = (show) ? 'visible' : 'hidden';
     }
-}
-
-function HideTip() {
-    ShowMenu(false, 'ToolTip');
-}
-
-function HideMenu1() {
-    ShowMenu(false, 'menu1');
-}
-
-function HideMenu2() {
-    ShowMenu(false, 'menu2');
-}
-
-function ShowMenu1() {
-    ShowMenu(true, 'menu1');
-}
-
-function ShowMenu2() {
-    ShowMenu(true, 'menu2');
 }
