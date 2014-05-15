@@ -39,8 +39,8 @@ function quadraticEquation() {
         }
         else {
             //If there are two real roots 'x1' and 'x2'
-            var x1 = (-b + Math.sqrt(D)) / 2 * a;
-            var x2 = (-b - Math.sqrt(D)) / 2 * a;
+            var x1 = (-b + Math.sqrt(D)) / (2 * a);
+            var x2 = (-b - Math.sqrt(D)) / (2 * a);
             result.innerHTML +=
                 "has two real roots:<br />x1 = " +
                 x1.toFixed(3) + ", x2 = " + x2.toFixed(3);

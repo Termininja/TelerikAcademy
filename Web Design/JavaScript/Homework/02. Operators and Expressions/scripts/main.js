@@ -59,39 +59,39 @@ function input(str) {
             switch (task) {
                 case "1":
                     display.value = task1string;
-                    text.src = "scripts/Task 01 - Odd or even.js";
+                    text.src = "scripts/task-01-odd-or-even.js";
                     break;
                 case "2":
                     display.value = task2string;
-                    text.src = "scripts/Task 02 - Devided by 7 and 5.js";
+                    text.src = "scripts/task-02-devided-by-7-and-5.js";
                     break;
                 case "3":
                     display.value = task3string;
-                    text.src = "scripts/Task 03 - Rectangle area.js";
+                    text.src = "scripts/task-03-rectangle-area.js";
                     break;
                 case "4":
                     display.value = task4string;
-                    text.src = "scripts/Task 04 - Third digit.js";
+                    text.src = "scripts/task-04-third-digit.js";
                     break;
                 case "5":
                     display.value = task5string;
-                    text.src = "scripts/Task 05 - Third bit.js";
+                    text.src = "scripts/task-05-third-bit.js";
                     break;
                 case "6":
                     display.value = task6string;
-                    text.src = "scripts/Task 06 - Point and circle.js";
+                    text.src = "scripts/task-06-point-and-circle.js";
                     break;
                 case "7":
                     display.value = task7string;
-                    text.src = "scripts/Task 07 - Prime numbers.js";
+                    text.src = "scripts/task-07-prime-numbers.js";
                     break;
                 case "8":
                     display.value = task8string;
-                    text.src = "scripts/Task 08 - Trapezoid area.js";
+                    text.src = "scripts/task-08-trapezoid-area.js";
                     break;
                 case "9":
                     display.value = task9string;
-                    text.src = "scripts/Task 09 - Point, circle and rectangle.js";
+                    text.src = "scripts/task-09-point-circle-and-rectangle.js";
                     break;
                 default:
                     display.value += wrongTask + selectTask;
