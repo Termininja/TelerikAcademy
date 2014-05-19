@@ -1,5 +1,0 @@
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\BrowserName\bin\Button.dll
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\BrowserName\bin\Button.pdb
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\BrowserName\obj\Debug\03. BrowserName.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\BrowserName\obj\Debug\Button.dll
-C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\BrowserName\obj\Debug\Button.pdb
