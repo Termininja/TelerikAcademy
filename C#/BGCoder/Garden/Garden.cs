@@ -14,9 +14,7 @@ class Garden
             if (i < 5) beansArea -= int.Parse(Console.ReadLine());
         }
 
-        Console.WriteLine("Total costs: {0:F2}", totalCost);
-        if (beansArea < 0) Console.WriteLine("Insufficient area");
-        else if (beansArea == 0) Console.WriteLine("No area for beans");
-        else Console.WriteLine("Beans area: {0}", beansArea);
+        Console.WriteLine(String.Format("Total costs: {0:F2}\n" + ((beansArea < 0) ? "Insufficient area" :
+            ((beansArea == 0) ? "No area for beans" : "Beans area: {1}")), totalCost, beansArea));
     }
 }

@@ -1,5 +1,5 @@
 using System;
- 
+
 class DancingBits
 {
     static void Main()
@@ -9,45 +9,28 @@ class DancingBits
         int N = int.Parse(Console.ReadLine());
         for (int n = 0; n < N; n++)
         {
-            int number = int.Parse(Console.ReadLine());
- 
-            S += Convert.ToString(number, 2);
+            S += Convert.ToString(int.Parse(Console.ReadLine()), 2);
         }
         int result = 0;
-        int count_0 = 0;
-        int count_1 = 0;
+        int count0 = 0;
+        int count1 = 0;
         for (int i = 0; i < S.Length; i++)
         {
-            if (K == 0)
-            {
-                result = 0;
-            }
+            if (K == 0) result = 0;
             else
             {
                 if (S[i] == '0')
                 {
-                    count_1 = 0;
-                    count_0++;
+                    count1 = 0;
+                    count0++;
                 }
                 if (S[i] == '1')
                 {
-                    count_0 = 0;
-                    count_1++;
+                    count0 = 0;
+                    count1++;
                 }
-                if (i == S.Length - 1)
-                {
-                    if (count_0 == K || count_1 == K)
-                    {
-                        result++;
-                    }
-                }
-                else
-                {
-                    if ((count_0 == K || count_1 == K) && S[i + 1] != S[i])
-                    {
-                        result++;
-                    }
-                }
+                if ((i == S.Length - 1 && (count0 == K || count1 == K)) || 
+                    ((count0 == K || count1 == K) && S[i + 1] != S[i])) result++;
             }
         }
         Console.WriteLine(result);

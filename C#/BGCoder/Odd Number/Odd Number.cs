@@ -9,12 +9,9 @@ class OddNumber
         List<long> Numbers = new List<long>();
         long sum = 0;
 
-        for (int i = 0; i < N; i++)
-        {
-            long number = long.Parse(Console.ReadLine());
-            Numbers.Add(number);
-        }
-        foreach (var num in Numbers) sum = sum ^ num;
+        for (int i = 0; i < N; i++) Numbers.Add(long.Parse(Console.ReadLine()));
+        foreach (var num in Numbers) sum ^= num;
+
         Console.WriteLine(sum);
     }
 }

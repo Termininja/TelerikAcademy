@@ -9,12 +9,12 @@ class UK_Flag
         {
             for (int col = 0; col < N; col++)
             {
-                if (row == col && row == N / 2) Console.Write("*");
-                else if (col == N / 2) Console.Write("|");
-                else if (row == N / 2) Console.Write("-");
-                else if (row == col) Console.Write("\\");
-                else if (col == N - row - 1) Console.Write("/");
-                else Console.Write(".");
+                Console.Write((row == col && row == N / 2) ?
+                    "*" : ((col == N / 2) ?
+                    "|" : ((row == N / 2) ?
+                    "-" : ((row == col) ?
+                    "\\" : ((col == N - row - 1) ?
+                    "/" : ".")))));
             }
             Console.WriteLine();
         }
