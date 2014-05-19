@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Human\obj\Debug\02. Human.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Human\bin\Debug\Human.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Human\bin\Debug\Human.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Human\obj\Debug\Human.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Human\obj\Debug\Human.pdb

@@ -1,0 +1,4 @@
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Printer\bin\Debug\Class123.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Printer\bin\Debug\Class123.pdb
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Printer\obj\Debug\Class123.exe
+C:\Users\Administrator\Documents\GitHub\TelerikAcademy\High-Quality Code\Homework\02. Naming Identifiers\Printer\obj\Debug\Class123.pdb
