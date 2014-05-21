@@ -4,11 +4,8 @@ function solve(args) {
         var command = args[i].trim();
         command = command.substring(1, command.length - 1).trim();
         if (i < args.length - 1 && command.substring(0, 4) === 'def ') {
-            command = command.substr(4).trim();
-            var spaceIndex = command.indexOf(' ');
-            var bracketIndex = command.indexOf('(');
-            var endOfProperty = (bracketIndex >= 0) ? ((spaceIndex >= 0) ? Math.min(spaceIndex, bracketIndex) : bracketIndex) : spaceIndex;
-            var varName = command.substring(0, endOfProperty).trim();
+            command = command.substr(4).trim().split('(').join(' ( ');
+            var varName = command.substring(0, command.indexOf(' ')).trim();
             variables[varName] = calc(command.substr(varName.length).trim());
             if (Math.abs(variables[varName]) === Infinity) return 'Division by zero! At Line:' + (i + 1);
         }

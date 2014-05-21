@@ -3,10 +3,9 @@ function solve(args) {
 
     for (var i = 0; i < args.length; i++) {
         if (i < args.length - 1 && args[i].trim().substring(0, 4) !== 'def ') continue;
-        var command = args[i].replace('def ', '').trim();
+        var command = args[i].replace('def ', '').split('[').join(' [ ').trim();
         if (i < args.length - 1) {
-            var property = command.substring(0, command.indexOf((command.indexOf('[') < command.indexOf(' ')) ? '[' : ' '));
-            if (property === '') property = command.substr(0, command.indexOf('['));
+            var property = command.substring(0, command.indexOf(' '));
             variables[property] = calc(command.substr(property.length).trim());
         }
         else return Math.floor(calc(command));
