@@ -1,0 +1,1 @@
+function(n){for(i=a=1;i<n;)a*=(4*++i-2)/(1+i);return a/2}
