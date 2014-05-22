@@ -1,1 +1,1 @@
-function(n){for(i=a=1;i<n;)a*=(4*++i-2)/(1+i);return a/2}
+function s(n){return n?(4*n-2)/(--n+2)*s(n):.5}
