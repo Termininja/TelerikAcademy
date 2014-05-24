@@ -1,1 +1,0 @@
-function s(n){return n?(4*n-2)/(--n+2)*s(n):.5}
