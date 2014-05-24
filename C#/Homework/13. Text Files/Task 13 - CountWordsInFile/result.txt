@@ -1,3 +1,0 @@
-shark: 3
-chair: 10
-ninja: 24
