@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Cooking", "Cooking\1. Cooking.csproj", "{2BA57E78-34E7-4885-AC10-10FA06117B3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. IfStatements", "IfStatements\2. IfStatements.csproj", "{C83ABFB9-8695-41BF-A0B4-51DFDEEA7462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Loop", "Loop\3. Loop.csproj", "{37A5F114-A1FA-4D58-92E5-C69C86107D16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BA57E78-34E7-4885-AC10-10FA06117B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA57E78-34E7-4885-AC10-10FA06117B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA57E78-34E7-4885-AC10-10FA06117B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA57E78-34E7-4885-AC10-10FA06117B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C83ABFB9-8695-41BF-A0B4-51DFDEEA7462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83ABFB9-8695-41BF-A0B4-51DFDEEA7462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83ABFB9-8695-41BF-A0B4-51DFDEEA7462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83ABFB9-8695-41BF-A0B4-51DFDEEA7462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A5F114-A1FA-4D58-92E5-C69C86107D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A5F114-A1FA-4D58-92E5-C69C86107D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A5F114-A1FA-4D58-92E5-C69C86107D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A5F114-A1FA-4D58-92E5-C69C86107D16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
