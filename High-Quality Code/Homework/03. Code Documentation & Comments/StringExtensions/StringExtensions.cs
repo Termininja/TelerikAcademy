@@ -11,11 +11,16 @@ namespace Telerik.ILS.Common
     using System.Text;
     using System.Text.RegularExpressions;
 
+    /// <summary>
+    /// Provides some extensions for class String.
+    /// </summary>
     public static class StringExtensions
     {
         /// <summary>
-        /// Creates MD5 hash
+        /// Creates MD5 hash.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns hash of the string.</returns>
         public static string ToMd5Hash(this string input)
         {
             var md5Hash = MD5.Create();
@@ -39,8 +44,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Checks if some input string is equal to one of the stringTrueValues
+        /// Checks if some input string is equal to one of the stringTrueValues.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns true or false.</returns>
         public static bool ToBoolean(this string input)
         {
             var stringTrueValues = new[] { "true", "ok", "yes", "1", "да" };
@@ -48,8 +55,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Parse some input string to short integer
+        /// Parse some input string to short integer.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns 16-bit signed integer.</returns>
         public static short ToShort(this string input)
         {
             short shortValue;
@@ -58,8 +67,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Parse some input string to an integer
+        /// Parse some input string to an integer.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns 32-bit signed integer.</returns>
         public static int ToInteger(this string input)
         {
             int integerValue;
@@ -68,8 +79,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Parse some input string to long number
+        /// Parse some input string to long number.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns 64-bit signed integer.</returns>
         public static long ToLong(this string input)
         {
             long longValue;
@@ -78,8 +91,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Parse some input string as a DateTime
+        /// Parse some input string as a DateTime.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns a string value as DataTime</returns>
         public static DateTime ToDateTime(this string input)
         {
             DateTime dateTimeValue;
@@ -88,8 +103,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Capitalizes the first letter of the inputed string
+        /// Capitalizes the first letter of the input string.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns the same string with capitalized first letter.</returns>
         public static string CapitalizeFirstLetter(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -101,8 +118,13 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Returns the first substring between the startString and the endString string
+        /// Returns the first substring between the startString and the endString string.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <param name="startString">The starting substring in the base string.</param>
+        /// <param name="endString">The ending substring in the base string.</param>
+        /// <param name="startFrom">Start position.</param>
+        /// <returns>Returns the first substring.</returns>
         public static string GetStringBetween(this string input, string startString, string endString, int startFrom = 0)
         {
             input = input.Substring(startFrom);
@@ -128,8 +150,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Convert some input string from cyrillic to latin
+        /// Convert some input string from cyrillic to latin.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns the latin version of the string.</returns>
         public static string ConvertCyrillicToLatinLetters(this string input)
         {
             var bulgarianLetters = new[]
@@ -137,7 +161,7 @@ namespace Telerik.ILS.Common
                 "а", "б", "в", "г", "д", "е", "ж", "з", "и", "й", "к", "л", "м", "н", "о", "п",
                 "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ь", "ю", "я"
             };
-            var latinRepresentationsOfBulgarianLetters = new[] 
+            var latinRepresentationsOfBulgarianLetters = new[]
             {
                 "a", "b", "v", "g", "d", "e", "j", "z", "i", "y", "k","l", "m", "n", "o", "p",
                 "r", "s", "t", "u", "f", "h", "c", "ch", "sh", "sht", "u", "i", "yu", "ya"
@@ -152,8 +176,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Convert some input string from latin to cyrillic
+        /// Convert some input string from latin to cyrillic.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns the cyrillic version of the string.</returns>
         public static string ConvertLatinToCyrillicKeyboard(this string input)
         {
             var latinLetters = new[]
@@ -177,8 +203,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Convert some username string to its valid one
+        /// Convert some username string to its valid one.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns a string as valid username.</returns>
         public static string ToValidUsername(this string input)
         {
             input = input.ConvertCyrillicToLatinLetters();
@@ -186,8 +214,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Convert some file name string to its valid one
+        /// Convert some file name string to its valid one.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns a string as valid file name.</returns>
         public static string ToValidLatinFileName(this string input)
         {
             input = input.Replace(" ", "-").ConvertCyrillicToLatinLetters();
@@ -195,16 +225,21 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Returns the first charsCount charackters from some input string
+        /// Returns the first charsCount characters from some input string.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <param name="charsCount">The number of the characters in the substring.</param>
+        /// <returns>Returns a substring with specified length.</returns>
         public static string GetFirstCharacters(this string input, int charsCount)
         {
             return input.Substring(0, Math.Min(input.Length, charsCount));
         }
 
         /// <summary>
-        /// Returns the extension of some file
+        /// Returns the extension of some file.
         /// </summary>
+        /// <param name="fileName">The name of the file.</param>
+        /// <returns>Returns the file extension.</returns>
         public static string GetFileExtension(this string fileName)
         {
             if (string.IsNullOrWhiteSpace(fileName))
@@ -222,8 +257,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Get the content type from some string file extension
+        /// Get the content type from some string file extension.
         /// </summary>
+        /// <param name="fileExtension">The file extension.</param>
+        /// <returns>Returns the content type of given file extension.</returns>
         public static string ToContentType(this string fileExtension)
         {
             var fileExtensionToContentType = new Dictionary<string, string>
@@ -246,8 +283,10 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Get the ASCII table of each character from some input string
+        /// Get the ASCII table of each character from some input string.
         /// </summary>
+        /// <param name="input">Some input string.</param>
+        /// <returns>Returns the ASCII table.</returns>
         public static byte[] ToByteArray(this string input)
         {
             var bytesArray = new byte[input.Length * sizeof(char)];
