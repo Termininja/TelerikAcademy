@@ -1,38 +1,53 @@
 ﻿//Task 2. Refactor the following examples to produce code with well-named identifiers in C#:
 
-using System;
-
-class Program
+namespace Person
 {
-    enum Sex { Man, Woman };
+    using System;
 
-    class Person
+    public enum Sex { Male, Female };
+
+    /// <summary>
+    /// Class for person.
+    /// </summary>
+    public class Person
     {
         public string Name { get; set; }
         public int Age { get; set; }
         public Sex Sex { get; set; }
-    }
 
-    private static Person CreatePerson(int age)
-    {
-        Person person = new Person();
-        person.Age = age;
-        if (age % 2 == 0)
+        /// <summary>
+        /// Creates some person.
+        /// </summary>
+        /// <param name="age">The age of the person.</param>
+        /// <returns>Returns an new person.</returns>
+        public static Person CreatePerson(int age)
         {
-            person.Name = "Батката";
-            person.Sex = Sex.Man;
+            Person person = new Person();
+            person.Age = age;
+            if (age % 2 == 0)
+            {
+                person.Name = "Батката";
+                person.Sex = Sex.Male;
+            }
+            else
+            {
+                person.Name = "Мацето";
+                person.Sex = Sex.Female;
+            }
+
+            return person;
         }
-        else
+
+        /// <summary>
+        /// Returns all informationa about the person like string.
+        /// </summary>
+        /// <returns>Returns the name, the age and the sex of the person like string.</returns>
+        public override string ToString()
         {
-            person.Name = "Мацето";
-            person.Sex = Sex.Woman;
+            string result = String.Format("Name:{0}; Age: {1}; Sex: {2}",
+                this.Name, this.Age, this.Sex);
+
+            return result;
         }
-
-        return person;
-    }
-
-    static void Main()
-    {
-        Person newPerson = CreatePerson(22);
     }
 }

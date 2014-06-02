@@ -1,22 +1,20 @@
 ﻿//Task 1. Refactor the following examples to produce code with well-named C# identifiers:
 
-using System;
-
-class Printer
+namespace Printer
 {
-    private const int MaxCount = 6;
+    using System;
 
-    class Print
+    public class Printer
     {
+        private const int MaxCount = 6;
+
+        /// <summary>
+        /// Prints the value of the variable like string
+        /// </summary>
+        /// <param name="variable">Some boolean variable.</param>
         public void ToString(bool variable)
         {
             Console.WriteLine(variable.ToString());
         }
-    }
-
-    static void Main()
-    {
-        Print printer = new Print();
-        printer.ToString(true);
     }
 }
