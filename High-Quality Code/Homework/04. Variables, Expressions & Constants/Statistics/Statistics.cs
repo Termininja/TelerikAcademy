@@ -1,53 +1,77 @@
 ﻿//Task 2: Refactor the following code to apply variable usage and naming best practices
 
-using System;
-
-class Statistics
+namespace Statistics
 {
-    public void PrintMinElement(double[] array, int count)
+    using System;
+
+    static class Statistics
     {
-        double minElement = double.MaxValue;
-        for (int i = 0; i < count; i++)
+        /// <summary>
+        /// Calculates the minimal value in the array.
+        /// </summary>
+        /// <param name="array">An array of double elements.</param>
+        /// <param name="count">The number of elements to be compared.</param>
+        static double MinElement(double[] array, int count)
         {
-            if (array[i] < minElement)
+            double minElement = double.MaxValue;
+            for (int i = 0; i < count; i++)
             {
-                minElement = array[i];
+                if (array[i] < minElement)
+                {
+                    minElement = array[i];
+                }
             }
+
+            return minElement;
         }
 
-        Console.WriteLine(minElement);
-    }
-
-    public void PrintMaxElement(double[] array, int count)
-    {
-        double maxElement = double.MinValue;
-        for (int i = 0; i < count; i++)
+        /// <summary>
+        /// Calculates the maximal value in the array.
+        /// </summary>
+        /// <param name="array">An array of double elements.</param>
+        /// <param name="count">The number of elements to be compared.</param>
+        static double MaxElement(double[] array, int count)
         {
-            if (array[i] > maxElement)
+            double maxElement = double.MinValue;
+            for (int i = 0; i < count; i++)
             {
-                maxElement = array[i];
+                if (array[i] > maxElement)
+                {
+                    maxElement = array[i];
+                }
             }
+
+            return maxElement;
         }
 
-        Console.WriteLine(maxElement);
-    }
-
-    public void PrintAverage(double[] array, int count)
-    {
-        double sumOfElements = 0;
-        for (int i = 0; i < count; i++)
+        /// <summary>
+        /// Calculates the average value in the array.
+        /// </summary>
+        /// <param name="array">An array of double elements.</param>
+        /// <param name="count">The number of elements to be compared.</param>
+        static double Average(double[] array, int count)
         {
-            sumOfElements += array[i];
+            double sumOfElements = 0;
+            for (int i = 0; i < count; i++)
+            {
+                sumOfElements += array[i];
+            }
+
+            double average = sumOfElements / count;
+
+            return average;
         }
 
-        double average = sumOfElements / count;
-        Console.WriteLine(average);
-    }
-
-    public void PrintStatistics(double[] array, int count)
-    {
-        PrintMaxElement(array, count);
-        PrintMinElement(array, count);
-        PrintAverage(array, count);
+        /// <summary>
+        /// Print the minimal, maximal and the average value in array.
+        /// </summary>
+        /// <param name="array">An array of double elements.</param>
+        /// <param name="count">The number of elements to be compared.</param>
+        public static void PrintStatistics(double[] array, int count)
+        {
+            Console.WriteLine("Max element: " + MaxElement(array, count));
+            Console.WriteLine("Min element: " + MinElement(array, count));
+            Console.WriteLine("Average: " + Average(array, count));
+        }
     }
 }

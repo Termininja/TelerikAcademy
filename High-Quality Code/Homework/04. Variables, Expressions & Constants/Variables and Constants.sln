@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Figure", "Figure\1. Figure.csproj", "{4AE06132-9FC7-4724-9774-36994452A9D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Rectangle", "Rectangle\1. Rectangle.csproj", "{4AE06132-9FC7-4724-9774-36994452A9D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Statistics", "Statistics\2. Statistics.csproj", "{8ECD6F77-A9FC-4E02-8053-4BC2E64D7757}"
 EndProject
