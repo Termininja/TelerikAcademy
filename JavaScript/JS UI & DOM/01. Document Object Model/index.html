@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Model</title>
+    <meta charset="utf-8" />
+    <style>
+        body div {
+            text-align: center;
+            padding: 0 5px 5px 5px;
+            background: yellow;
+            border: 1px solid #000;
+        }
+
+        body > div {
+            margin: 5px;
+            width: 400px;
+        }
+
+            body > div > div {
+                display: inline-block;
+            }
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div>
+        outer div<br />
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+    </div>
+    <div>
+        outer div<br />
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+    </div>
+    <div>
+        outer div<br />
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+        <div>inner div</div>
+    </div>
+    <input type="button" value="Select all divs in divs" onclick="selectDivElements()" />
+
+    <input type="text" value="some value" />
+    <input type="button" value="Get values" onclick="getValue()" />
+    <input type="color" onchange="document.body.style.background = this.value" />
+</body>
+</html>
