@@ -5,7 +5,7 @@
     /// <summary>
     /// Demonstration of class Person
     /// </summary>
-    class Program
+    class Demo
     {
         static void Main()
         {

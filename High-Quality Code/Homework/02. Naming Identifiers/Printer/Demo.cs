@@ -5,7 +5,7 @@
     /// <summary>
     /// Demostration of class Printer
     /// </summary>
-    class Program
+    class Demo
     {
         static void Main()
         {
