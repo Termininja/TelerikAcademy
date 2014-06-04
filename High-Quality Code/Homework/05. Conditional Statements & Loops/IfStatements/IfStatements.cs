@@ -1,24 +1,20 @@
 ﻿//Task 2: Refactor the following if statements
-
-using System;
-
-class IfStatements
+namespace Cooking
 {
-    static void Main()
-    {
-        Potato potato = new Potato();
+    using System;
 
-        if (potato != null)
+    public class IfStatements
+    {
+        public static bool isVisitedCell { get; set; }
+
+        public static void Cook(Vegetable vegetable)
         {
-            if (potato.isPeeled && !potato.isRotten)
-            {
-                Cook(potato);
-            }
+            Console.WriteLine("Cooking");
         }
 
-        if ((x >= MIN_X && x <= MAX_X) && (y >= MIN_Y && y <= MAX_Y) && !isVisitedCell)
+        public static void VisitCell()
         {
-            VisitCell();
+            Console.WriteLine("Cell is visited");
         }
     }
 }

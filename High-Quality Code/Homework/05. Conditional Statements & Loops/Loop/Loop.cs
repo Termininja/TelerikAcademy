@@ -1,30 +1,30 @@
-﻿//Task 3: Refactor the following loop
+﻿//Task 3: Refactor the given loop
 
-using System;
-
-class Loop
+namespace Loop
 {
-    static void Main()
-    {
-        int[] array = { 25, 3, 66, 4, 75, 232, 63 };
+    using System;
 
-        if (FindValue(array, 660))
+    class Loop
+    {
+        static void Main()
         {
-            Console.WriteLine("Value Found");
+            int[] array = { 25, 3, -66, -4, 75, 232, -4, 35, 5, 39, 63, 17 };
+            FindValue(array, 63);
         }
-    }
 
-    static bool FindValue(int[] array, int expectedValue)
-    {
-        int i = 0;
-        for (i = 0; i < array.Length; i++)
+        static void FindValue(int[] array, int expectedValue)
         {
-            if (array[i] * 10 == expectedValue)
+            for (int i = 0; i < array.Length; i++)
             {
-                return true;
+                Console.WriteLine(array[i]);
+                if (i % 10 == 0)
+                {
+                    if (array[i] == expectedValue)
+                    {
+                        Console.WriteLine("Value Found");
+                    }
+                }
             }
         }
-
-        return false;
     }
 }
