@@ -17,12 +17,9 @@ namespace Loop
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine(array[i]);
-                if (i % 10 == 0)
+                if (i % 10 == 0 && array[i] == expectedValue)
                 {
-                    if (array[i] == expectedValue)
-                    {
-                        Console.WriteLine("Value Found");
-                    }
+                    Console.WriteLine("Value Found");
                 }
             }
         }
