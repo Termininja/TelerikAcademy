@@ -1,6 +1,9 @@
 ﻿namespace Cooking
 {
-    class Program
+    /// <summary>
+    /// Demonstration of class Chef
+    /// </summary>
+    class Demo
     {
         static void Main()
         {

@@ -46,7 +46,7 @@
     <Compile Include="Chef.cs" />
     <Compile Include="Vegetables\Potato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Demo.cs" />
     <Compile Include="Vegetables\Vegetable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
