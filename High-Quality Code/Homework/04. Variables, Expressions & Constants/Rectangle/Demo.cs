@@ -5,7 +5,7 @@
     /// <summary>
     /// Demonstration of class Rectangle
     /// </summary>
-    class Program
+    class Demo
     {
         static void Main()
         {
