@@ -12,6 +12,8 @@ namespace Cooking
             Carrot carrot = GetCarrot();
 
             Peel(potato);
+            Peel(carrot);
+            Cut(potato);
             Cut(carrot);
 
             Bowl bowl = GetBowl();
