@@ -1,8 +1,17 @@
-﻿﻿namespace InheritanceAndPolymorphism
+﻿//Task 04. Redesign the classes and refactor the code from the solution
+//"Inheritance-and-Polymorphism" to follow the best practices in high-quality
+//classes. Extract abstract base class and move all common properties in it.
+//Encapsulate the fields and make sure required fields are not left without
+//a value. Reuse the repeating code though base methods.
+
+﻿namespace InheritanceAndPolymorphism
  {
      using System;
      using System.Collections.Generic;
 
+     /// <summary>
+     /// Demonstration of class LocalCourse and OffsiteCourse.
+     /// </summary>
      public class CoursesExamples
      {
          public static void Main()

@@ -2,10 +2,12 @@
  {
      using System;
      using System.Collections.Generic;
-     using System.Text;
 
      public class LocalCourse : Course
      {
+         /// <summary>
+         /// The lab of the local course.
+         /// </summary>
          private string lab;
 
          public LocalCourse(string name)
@@ -23,6 +25,9 @@
              this.Lab = lab;
          }
 
+         /// <summary>
+         /// The lab of the local course.
+         /// </summary>
          public string Lab
          {
              get
@@ -43,6 +48,10 @@
              }
          }
 
+         /// <summary>
+         /// Gets the all information about the local course.
+         /// </summary>
+         /// <returns>Returns the local course information like string.</returns>
          public override string ToString()
          {
              if (this.Lab != null)

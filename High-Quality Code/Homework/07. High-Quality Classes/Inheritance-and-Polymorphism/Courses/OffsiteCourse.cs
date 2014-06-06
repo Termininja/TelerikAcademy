@@ -2,10 +2,12 @@
  {
      using System;
      using System.Collections.Generic;
-     using System.Text;
 
      public class OffsiteCourse : Course
      {
+         /// <summary>
+         /// The town of the offsite course.
+         /// </summary>
          private string town;
 
          public OffsiteCourse(string name)
@@ -23,6 +25,9 @@
              this.Town = town;
          }
 
+         /// <summary>
+         /// The town of the offsite course.
+         /// </summary>
          public string Town
          {
              get
@@ -43,6 +48,10 @@
              }
          }
 
+         /// <summary>
+         /// Gets the all information about the offsite course.
+         /// </summary>
+         /// <returns>Returns the offsite course information like string.</returns>
          public override string ToString()
          {
              if (this.Town != null)

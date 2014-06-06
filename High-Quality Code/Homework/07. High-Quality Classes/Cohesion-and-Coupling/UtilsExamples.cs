@@ -1,7 +1,14 @@
-﻿namespace CohesionAndCoupling
+﻿//Task 03. Take the VS solution "Cohesion-and-Coupling" and refactor its code to follow
+//the principles of good abstraction, loose coupling and strong cohesion. Split the class
+//Utils to other classes that have strong cohesion and are loosely coupled internally.
+
+namespace CohesionAndCoupling
 {
     using System;
 
+    /// <summary>
+    /// Demonstration of class Utils, Utils2D and Utils3D.
+    /// </summary>
     public class UtilsExamples
     {
         public static void Main()
