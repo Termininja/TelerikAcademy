@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+#task1, #task3 {
+    background: black;
+}
+
+#task2 {
+    border: 1px solid black;
+}
