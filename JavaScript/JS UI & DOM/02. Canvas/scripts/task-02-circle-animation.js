@@ -4,7 +4,7 @@ window.onload = function () {
     var x = 100;
     var y = 400;
     var r = 15;
-    var timeInterval = 3;
+    var speed = 3;
     var direction = 'ur';
 
     function animation() {
@@ -18,10 +18,10 @@ window.onload = function () {
         context.fill();
 
         switch (direction) {
-            case 'ur': x += timeInterval; y -= timeInterval; break;
-            case 'ul': x -= timeInterval; y -= timeInterval; break;
-            case 'dr': x += timeInterval; y += timeInterval; break;
-            case 'dl': x -= timeInterval; y += timeInterval; break;
+            case 'ur': x += speed; y -= speed; break;
+            case 'ul': x -= speed; y -= speed; break;
+            case 'dr': x += speed; y += speed; break;
+            case 'dl': x -= speed; y += speed; break;
             default: break;
         }
 
