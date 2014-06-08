@@ -3,57 +3,91 @@
 <head>
     <title>Document Object Model</title>
     <meta charset="utf-8" />
-    <style>
-        body div {
-            text-align: center;
-            padding: 0 5px 5px 5px;
-            background: yellow;
-            border: 1px solid #000;
-        }
-
-        body > div {
-            margin: 5px;
-            width: 400px;
-        }
-
-            body > div > div {
-                display: inline-block;
-            }
-    </style>
-    <script src="main.js"></script>
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/task-01-select-div-elements.js"></script>
+    <script src="scripts/task-02-get-value.js"></script>
+    <script src="scripts/task-03-change-backgroud.js"></script>
+    <script src="scripts/task-04-query-in-older-browsers.js"></script>
 </head>
 <body>
-    <div>
-        outer div<br />
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-    </div>
-    <div>
-        outer div<br />
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-    </div>
-    <div>
-        outer div<br />
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-        <div>inner div</div>
-    </div>
-    <input type="button" value="Select all divs in divs" onclick="selectDivElements()" />
-
-    <input type="text" value="some value" />
-    <input type="button" value="Get values" onclick="getValue()" />
-    <input type="color" onchange="document.body.style.background = this.value" />
+    <header>
+        <h1>JavaScript UI & DOM</h1>
+        <h2>Homework 1: Document Object Model</h2>
+    </header>
+    <section>
+        <article>
+            <header>
+                <h2><strong>Task 1.</strong> Write a script that selects all the div nodes that are directly inside other div elements. Create a function using querySelectorAll(). Create a function using getElementsByTagName().</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-01-select-div-elements.js"></iframe>
+            </fieldset>
+            <fieldset id="task1">
+                <legend>Demo</legend>
+                <div>
+                    outer div<br />
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                </div>
+                <div>
+                    outer div<br />
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                    <div>inner div</div>
+                </div>
+                <input class="center" type="button" value="Select all divs in divs" onclick="selectDivElements()" />
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 2.</strong> Create a function that gets the value of input type="text" and prints its value to the console.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-02-get-value.js"></iframe>
+            </fieldset>
+            <fieldset id="task2">
+                <legend>Demo</legend>
+                <input type="text" value="some value" />
+                <input type="button" value="Get value" onclick="getValue()" />
+                <div id="output2"></div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 3.</strong> Create a function that gets the value of input type="color" and sets the background of the body to this value.</h2>
+            </header>
+            <fieldset id="task3">
+                <legend>JS</legend>
+                <iframe src="scripts/task-03-change-backgroud.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <input class="center" type="color" onchange="document.body.style.background = this.value" />
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 4*.</strong> Write a script that shims querySelector and querySelectorAll in older browsers.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-04-query-in-older-browsers.js"></iframe>
+            </fieldset>
+            <fieldset id="task4">
+                <legend>Demo</legend>
+                <input class="center" type="button" value="Test" onclick="queryInOlderBrowsers()" />
+                <div class="center" id="output4"></div>
+            </fieldset>
+        </article>
+    </section>
 </body>
 </html>
