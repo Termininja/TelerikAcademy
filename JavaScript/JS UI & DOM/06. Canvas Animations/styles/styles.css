@@ -1,0 +1,26 @@
+﻿body {
+    text-align: center;
+}
+
+#aircraft-canvas {
+    background: #99FFFF;
+    border: 1px solid black;
+}
+
+
+#container {
+    margin: auto;
+}
+
+    #container > p {
+        position: absolute;
+        display: inline-block;
+        margin-left: 10px;
+        color: white;
+        font-family: Consolas;
+    }
+
+    #container > img {
+        position: absolute;
+        z-index: -1;
+    }
