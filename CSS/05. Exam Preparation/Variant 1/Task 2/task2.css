@@ -1,0 +1,81 @@
+﻿html, body, div, a, form, fieldset, legend, input, label, button {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    font-family: Verdana, 'Freeserif', 'DejaVu Sans', 'Liberation Sans', Freesans;
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 120%;
+}
+
+    a.current {
+        font-weight: bold;
+    }
+
+    a:not(.current):hover {
+        color: #666;
+    }
+
+/* Forms */
+form {
+    background: linear-gradient(to bottom, #fff 10%, #5b5b5b 97%);
+    width: 450px;
+}
+
+    form.invisible {
+        display: none;
+    }
+
+    form fieldset {
+        border: 5px solid #000;
+        border-radius: 5px;
+        text-align: right;
+        padding-right: 75px;
+    }
+
+        form fieldset legend {
+            padding: 0 10px;
+            margin-bottom: 13px;
+            font-size: 170%;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* Text fields */
+        form fieldset label {
+            font-weight: bold;
+        }
+
+        form fieldset input {
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(to bottom, #000, #CACACA);
+            height: 36px;
+            width: 164px;
+            padding-left: 15px;
+            margin: auto auto 7px 1px;
+            outline: none;
+            color: white;
+        }
+
+        /* Buttons */
+        form fieldset button {
+            border: 2px solid #000;
+            border-radius: 15px;
+            background: linear-gradient(to bottom, #000, #FFF);
+            padding: 5px 10px;
+            margin: 3px auto 10px auto;
+            font-size: 120%;
+        }
+
+#form-register fieldset button:hover {
+    background: linear-gradient(to bottom, #000, #BDBDBD 90%);
+}

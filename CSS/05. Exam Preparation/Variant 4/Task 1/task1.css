@@ -1,0 +1,94 @@
+﻿html, body, div, ul, li, a, span {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+    font-size: 16px;
+}
+
+    #wrapper > ul {
+        list-style-type: none;
+        width: 480px;
+        margin: 205px 0 0 50px;
+    }
+
+        /* Menu */
+        #wrapper > ul > li {
+            background: linear-gradient(to bottom, #AAFFEF 20%, #1DFFEF);
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid black;
+        }
+
+            #wrapper > ul > li > a {
+                text-decoration: none;
+                color: #008EFE;
+            }
+
+            /* Content */
+            #wrapper > ul > li > .msg-bar-content {
+                position: absolute;
+                left: 50px;
+                top: 43px;
+                border: 1px solid black;
+                border-bottom: none;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                display: none;
+                background: #AAFFEF;
+            }
+
+                #wrapper > ul > li > .msg-bar-content > ul {
+                    list-style-type: none;
+                    width: 430px;
+                    padding: 10px 15px;
+                }
+
+                    #wrapper > ul > li > .msg-bar-content > ul > li {
+                        color: #008EFE;
+                    }
+
+                        #wrapper > ul > li > .msg-bar-content > ul > li > span:first-child {
+                            border: 1px solid black;
+                            border-radius: 20px;
+                            padding: 5px 15px 5px 25px;
+                            float: left;
+                            left: 0;
+                            position: absolute;
+                            margin-left: 15px;
+                        }
+
+                        #wrapper > ul > li > .msg-bar-content > ul > li.me-item > span:first-child {
+                            background: url(images/me.png) no-repeat;
+                            background-position: 5px;
+                        }
+
+                        #wrapper > ul > li > .msg-bar-content > ul > li.other-item > span:first-child {
+                            background: url(images/male.png) no-repeat;
+                            background-position: 5px;
+                        }
+
+                        #wrapper > ul > li > .msg-bar-content > ul > li > span:last-child {
+                            padding: 5px 15px;
+                            display: block;
+                            text-align: right;
+                            border-bottom: 1px solid black;
+                            margin-left: 100px;
+                            margin-bottom: 6px;
+                        }
+
+                        #wrapper > ul > li > .msg-bar-content > ul > li:last-child > span:last-child {
+                            border-bottom: none;
+                            margin-bottom: 0px;
+                        }
+
+            #wrapper > ul > li:hover > .msg-bar-content {
+                display: block;
+            }
+
+            #wrapper > ul > li:hover {
+                background: #00DDB3;
+                border-top: none;
+            }
