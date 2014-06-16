@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using Objects</title>
+    <meta charset="utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/main.js"></script>
+    <script src="scripts/task-01-planar-system.js"></script>
+    <script src="scripts/task-02-remove-element-by-value.js"></script>
+    <script src="scripts/task-03-deep-copy.js"></script>
+    <script src="scripts/task-04-has-property.js"></script>
+    <script src="scripts/task-05-find-youngest.js"></script>
+    <script src="scripts/task-06-group-by.js"></script>
+</head>
+<body>
+    <header>
+        <h1>JavaScript</h1>
+        <h2>Homework 6: Using Objects</h2>
+    </header>
+    <section>
+        <article>
+            <header>
+                <h2><strong>Task 1.</strong> Write functions for working with shapes in standard Planar coordinate system. Points are represented by coordinates P(X,Y). Lines are represented by two points, marking their beginning and ending L(P1(X1,Y1),P2(X2,Y2)). Calculate the distance between two points. Check if three segment lines can form a triangle.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-01-planar-system.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <div>
+                        <label for="input1p1">Point 1:</label>
+                        <input placeholder="x" id="input1p1x" oninput="loadTask1()" />
+                        <input placeholder="y" id="input1p1y" oninput="loadTask1()" />
+                        <br />
+                        <label for="input1p2">Point 2:</label>
+                        <input placeholder="x" id="input1p2x" oninput="loadTask1()" />
+                        <input placeholder="y" id="input1p2y" oninput="loadTask1()" />
+                        <span id="segment1"></span>
+                        <br />
+                        <label for="input1p3">Point 3:</label>
+                        <input placeholder="x" id="input1p3x" oninput="loadTask1()" />
+                        <input placeholder="y" id="input1p3y" oninput="loadTask1()" />
+                        <br />
+                        <label for="input1p4">Point 4:</label>
+                        <input placeholder="x" id="input1p4x" oninput="loadTask1()" />
+                        <input placeholder="y" id="input1p4y" oninput="loadTask1()" />
+                        <span id="segment2"></span>
+                        <br />
+                        <label for="input1p5">Point 5:</label>
+                        <input placeholder="x" id="input1p5x" oninput="loadTask1()" />
+                        <input placeholder="y" id="input1p5y" oninput="loadTask1()" />
+                        <br />
+                        <label for="input1p6">Point 6:</label>
+                        <input placeholder="x" id="input1p6x" oninput="loadTask1()" />
+                        <input placeholder="y" id="input1p6y" oninput="loadTask1()" />
+                        <span id="segment3"></span>
+                        <br />
+                    </div>
+                    <div id="result1"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 2.</strong> Write a function that removes all elements with a given value. Attach it to the array class. Read about prototype and how to attach methods.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-02-remove-element-by-value.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <div class="center">
+                        <label for="input2">Select some element</label>
+                        <select id="input2" onchange="loadTask2(true)">
+                            <option value="null" selected disabled="disabled"></option>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <input class="generate" type="button" value="Generate new array" onclick="loadTask2()" />
+                    </div>
+                    <div id="result2"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 3.</strong> Write a function that makes a deep copy of an object. The function should work for both primitive and reference types.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-03-deep-copy.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <div id="result31"></div>
+                    <br />
+                    <input class="center" type="button" value="Make a copy" onclick="loadTask3(true)" />
+                    <div id="result32"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 4.</strong> Write a function that checks if a given object contains a given property.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-04-has-property.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <div id="result41"></div>
+                    <input class="center" id="input4" placeholder="Enter some property" oninput="loadTask4()" />
+                    <div id="result42"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 5.</strong> Write a function that finds the youngest person in an array of persons and prints his/hers full name. Each person have properties firstname, lastname and age.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-05-find-youngest.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <label for="input5f1">person1 = { firstname:</label>
+                    <input class="name" id="input5f1" placeholder="firstname" oninput="loadTask5()" />
+                    <label for="input5l1">, lastname:</label>
+                    <input class="name" id="input5l1" placeholder="lastname" oninput="loadTask5()" />
+                    <label for="input5a1">, age:</label>
+                    <input class="age" id="input5a1" placeholder="age" oninput="loadTask5()" />
+                    <label>};</label><br />
+                    <label for="input5f2">person2 = { firstname:</label>
+                    <input class="name" id="input5f2" placeholder="firstname" oninput="loadTask5()" />
+                    <label for="input5l2">, lastname:</label>
+                    <input class="name" id="input5l2" placeholder="lastname" oninput="loadTask5()" />
+                    <label for="input5a2">, age:</label>
+                    <input class="age" id="input5a2" placeholder="age" oninput="loadTask5()" />
+                    <label>};</label><br />
+                    <label for="input5f3">person3 = { firstname:</label>
+                    <input class="name" id="input5f3" placeholder="firstname" oninput="loadTask5()" />
+                    <label for="input5l3">, lastname:</label>
+                    <input class="name" id="input5l3" placeholder="lastname" oninput="loadTask5()" />
+                    <label for="input5a3">, age:</label>
+                    <input class="age" id="input5a3" placeholder="age" oninput="loadTask5()" />
+                    <label>};</label><br />
+                    <label for="input5f4">person4 = { firstname:</label>
+                    <input class="name" id="input5f4" placeholder="firstname" oninput="loadTask5()" />
+                    <label for="input5l4">, lastname:</label>
+                    <input class="name" id="input5l4" placeholder="lastname" oninput="loadTask5()" />
+                    <label for="input5a4">, age:</label>
+                    <input class="age" id="input5a4" placeholder="age" oninput="loadTask5()" />
+                    <label>};</label><br />
+                    <div id="result5"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 6.</strong> Write a function that groups an array of persons by age, first or last name. The function must return an associative array, with keys (the groups), and values (arrays with persons in this groups). Use function overloading.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-06-group-by.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <label for="input6f1">person1 = { firstname:</label>
+                    <input class="name" id="input6f1" placeholder="firstname" oninput="loadTask6()" />
+                    <label for="input6l1">, lastname:</label>
+                    <input class="name" id="input6l1" placeholder="lastname" oninput="loadTask6()" />
+                    <label for="input6a1">, age:</label>
+                    <input class="age" id="input6a1" placeholder="age" oninput="loadTask6()" />
+                    <label>};</label><br />
+                    <label for="input6f2">person2 = { firstname:</label>
+                    <input class="name" id="input6f2" placeholder="firstname" oninput="loadTask6()" />
+                    <label for="input6l2">, lastname:</label>
+                    <input class="name" id="input6l2" placeholder="lastname" oninput="loadTask6()" />
+                    <label for="input6a2">, age:</label>
+                    <input class="age" id="input6a2" placeholder="age" oninput="loadTask6()" />
+                    <label>};</label><br />
+                    <label for="input6f3">person3 = { firstname:</label>
+                    <input class="name" id="input6f3" placeholder="firstname" oninput="loadTask6()" />
+                    <label for="input6l3">, lastname:</label>
+                    <input class="name" id="input6l3" placeholder="lastname" oninput="loadTask6()" />
+                    <label for="input6a3">, age:</label>
+                    <input class="age" id="input6a3" placeholder="age" oninput="loadTask6()" />
+                    <label>};</label><br />
+                    <label for="input6f4">person4 = { firstname:</label>
+                    <input class="name" id="input6f4" placeholder="firstname" oninput="loadTask6()" />
+                    <label for="input6l4">, lastname:</label>
+                    <input class="name" id="input6l4" placeholder="lastname" oninput="loadTask6()" />
+                    <label for="input6a4">, age:</label>
+                    <input class="age" id="input6a4" placeholder="age" oninput="loadTask6()" />
+                    <label>};</label><br />
+                    <label for="input6f5">person5 = { firstname:</label>
+                    <input class="name" id="input6f5" placeholder="firstname" oninput="loadTask6()" />
+                    <label for="input6l5">, lastname:</label>
+                    <input class="name" id="input6l5" placeholder="lastname" oninput="loadTask6()" />
+                    <label for="input6a5">, age:</label>
+                    <input class="age" id="input6a5" placeholder="age" oninput="loadTask6()" />
+                    <label>};</label><br />
+                    <label for="input6f6">person6 = { firstname:</label>
+                    <input class="name" id="input6f6" placeholder="firstname" oninput="loadTask6()" />
+                    <label for="input6l6">, lastname:</label>
+                    <input class="name" id="input6l6" placeholder="lastname" oninput="loadTask6()" />
+                    <label for="input6a6">, age:</label>
+                    <input class="age" id="input6a6" placeholder="age" oninput="loadTask6()" />
+                    <label>};</label><br />
+                    <div class="center">
+                        <br />
+                        <label for="input6">Group persons by</label>
+                        <select id="input6" onchange="loadTask6()">
+                            <option value="null" selected disabled="disabled"></option>
+                            <option>firstname</option>
+                            <option>lastname</option>
+                            <option>age</option>
+                        </select>
+                        <input type="button" value="Group" onclick="loadTask6(true)" />
+                    </div>
+                    <div id="result6"></div>
+                </div>
+            </fieldset>
+        </article>
+    </section>
+</body>
+</html>

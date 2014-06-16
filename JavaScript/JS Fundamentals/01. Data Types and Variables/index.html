@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Types and Variables</title>
+    <meta charset="utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <h2>Homework 1: Data Types and Variables</h2>
+    <section>
+        <div>
+            <p>
+                <strong>Task 1:</strong> Assign all the possible JavaScript literals to different variables.
+            </p>
+            <ul>
+                <li>var array
+                    <span id="spanArray">= []</span>;
+                    <span id="typeArray"></span></li>
+                <li>var integerVariable
+                    <span id="spanInteger">= 25</span>;
+                    <span id="typeInt"></span></li>
+                <li>var floatVariable
+                    <span id="spanFloat">= 3.14</span>;
+                    <span id="typeFloat"></span></li>
+                <li>var stringVariable
+                    <span id="spanString">= "Some text"</span>;
+                    <span id="typeString"></span></li>
+                <li>var booleanVariable
+                    <span id="spanBoolean">= true</span>;
+                    <span id="typeBool"></span></li>
+                <li>function functionExample() {...}
+                    <span id="typeFunction"></span></li>
+            </ul>
+            <p>
+                <strong>Task 2:</strong> Create a string variable with quoted text in it.
+            </p>
+            <ul>
+                <li>var quotedStringVariable
+                    <span id="spanQuotedString">= ""How you doin'?", Joey said."</span>;
+                    <span id="typeQString"></span></li>
+            </ul>
+            <p>
+                <strong>Task 3:</strong> Try typeof on all variables you created.
+            </p>
+            <p>
+                <strong>Task 4:</strong> Create null, undefined variables and try typeof on them.
+            </p>
+            <ul>
+                <li>var undefinedVariable;
+                    <span id="typeUndefined"></span></li>
+                <li>var nullVariable = null;
+                    <span id="typeNull"></span></li>
+            </ul>
+        </div>
+        <div>
+            <p>
+                Enter some integer number:
+                <input id="integer" type="text" oninput="setInteger(this.value)" value="25" />
+            </p>
+            <p>
+                Enter some floating-point number:
+                <input type="text" oninput="setFloat(this.value)" value="3.14" />
+            </p>
+            <p>
+                Enter some text:
+                <input type="text" id="stringID" oninput="setString(this.value)" />
+            </p>
+            <p>
+                Enter some quoted text:
+                <input type="text" id="quotedStringID" oninput="setQuotedString(this.value)" />
+            </p>
+            <p>
+                Check/uncheck the box:
+                <input type="checkbox" id="checkboxID" onclick="setBoolean(this.checked)" />
+            </p>
+        </div>
+    </section>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

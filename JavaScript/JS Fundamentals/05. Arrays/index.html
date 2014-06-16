@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrays</title>
+    <meta charset="utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/main.js"></script>
+    <script src="scripts/task-01-multiplied-by-5.js"></script>
+    <script src="scripts/task-02-compare-2-arrays.js"></script>
+    <script src="scripts/task-03-max-sequence.js"></script>
+    <script src="scripts/task-04-max-increasing-sequence.js"></script>
+    <script src="scripts/task-05-sort-array.js"></script>
+    <script src="scripts/task-06-most-frequent-number.js"></script>
+    <script src="scripts/task-07-binary-search.js"></script>
+</head>
+<body>
+    <header>
+        <h1>JavaScript</h1>
+        <h2>Homework 5: Arrays</h2>
+    </header>
+    <section>
+        <article>
+            <header>
+                <h2><strong>Task 1.</strong> Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-01-multiplied-by-5.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <div id="result1"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 2.</strong> Write a script that compares two char arrays lexicographically (letter by letter).</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-02-compare-2-arrays.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <input class="center" type="button" value="Generate new arrays" onclick="loadTask2()" />
+                    <div id="result2"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 3.</strong> Write a script that finds the maximal sequence of equal elements in an array.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-03-max-sequence.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <input class="center" type="button" value="Generate new array" onclick="loadTask3()" />
+                    <div id="result3"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 4.</strong> Write a script that finds the maximal increasing sequence in an array.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-04-max-increasing-sequence.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <input class="center" type="button" value="Generate new array" onclick="loadTask4()" />
+                    <div id="result4"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 5.</strong> Write a script to sort the elements in an array in increasing order. Use the "selection sort" algorithm: Find the smallest element, move it at the first position, find the smallest from the rest, move it at the second position, etc.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-05-sort-array.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <input class="center" type="button" value="Generate new array" onclick="loadTask5()" />
+                    <div id="result5"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 6.</strong> Write a program that finds the most frequent number in an array.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-06-most-frequent-number.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <input class="center" type="button" value="Generate new array" onclick="loadTask6()" />
+                    <div id="result6"></div>
+                </div>
+            </fieldset>
+        </article>
+        <article>
+            <header>
+                <h2><strong>Task 7.</strong> Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm.</h2>
+            </header>
+            <fieldset>
+                <legend>JS</legend>
+                <iframe src="scripts/task-07-binary-search.js"></iframe>
+            </fieldset>
+            <fieldset>
+                <legend>Demo</legend>
+                <div>
+                    <div class="center">
+                        <label for="input7">Enter some number:</label>
+                        <input id="input7" value="37" oninput="loadTask7(true)" />
+                    </div>
+                    <div id="result7"></div>
+                    <br />
+                    <input class="center" type="button" value="Generate new array" onclick="loadTask7()" />
+                </div>
+            </fieldset>
+        </article>
+    </section>
+</body>
+</html>

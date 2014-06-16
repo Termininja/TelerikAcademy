@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0 0 0 15px;
+    background: #F9F9F9;
+    color: #333;
+    cursor: default;
+}
+
+    body > header {
+        text-align: center;
+    }
+
+        body > header > h1 {
+            text-shadow: 0 0 3px #3BB9FF;
+            font-style: italic;
+            font-family: 'Lucida Sans Unicode';
+        }
+
+    body section {
+        margin-bottom: 50px;
+    }
+
+        body section article {
+            margin: 30px 0 0 0;
+        }
+
+            body section article header {
+                margin-left: 8%;
+                width: 85%;
+            }
+
+                body section article header h2 {
+                    font-weight: normal;
+                    font-size: 100%;
+                }
+
+            body section article fieldset {
+                margin: 10px auto;
+                width: 80%;
+                border: 2px inset;
+                border-radius: 10px;
+                background: #F6F6F6;
+            }
+
+                body section article fieldset legend {
+                    color: #777;
+                    margin-left: 20px;
+                    padding: 0 15px;
+                    font-style: italic;
+                    font-size: 70%;
+                    font-weight: bold;
+                    border: 2px outset;
+                    border-radius: 10px;
+                    background: #F5F5F5;
+                }
+
+                body section article fieldset iframe {
+                    display: block;
+                    width: 100%;
+                    height: 330px;
+                    border: none;
+                    outline: none;
+                    overflow-x: hidden;
+                }
+
+                body section article fieldset > div {
+                    text-align: left;
+                    margin: auto auto;
+                    width: 450px;
+                }
+
+                    body section article fieldset > div input {
+                        font-size: 60%;
+                        padding: 3px 8px;
+                        outline: none;
+                        border-radius: 10px;
+                    }
+
+                    body section article fieldset > div span {
+                        margin-left: 100px;
+                        font-size: 80%;
+                        color: blue;
+                    }
+
+                    body section article fieldset > div div {
+                        margin-top: 10px;
+                        text-align: center;
+                        font-size: 80%;
+                    }
+
+            body section article:last-of-type fieldset > div input {
+                width: 95%;
+            }
