@@ -9,7 +9,7 @@ Create a calendar using pure (vanilla) JavaScript.
 
 ```js
 var events = [{
-	title: 'JavaScript UI & DOM exam", 	//a regular string
+	title: 'JavaScript UI & DOM exam', 	//a regular string
 	date: 17, 							//a number between 1 and 30 inclusive
 	time: '10:00', 						//a string in the format "HH:MM"
 	duration: 360  						//a positive number less than 1440 (24 hours * 60 minutes)
