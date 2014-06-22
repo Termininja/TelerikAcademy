@@ -12,7 +12,7 @@ var familyMembers = [{
   children: ['Teodora Petrova', 'Peter Petrov']
 }, {
   mother: 'Petra Stamatova',
-  father: Todor Stamatov',
+  father: 'Todor Stamatov',
   children: ['Maria Petrova']
 }] 
 ```
