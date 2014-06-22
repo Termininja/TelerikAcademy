@@ -1,6 +1,7 @@
 ## Canvas
 
 **Task 01.** Draw the following graphics using canvas:
+
 ![img](https://raw.githubusercontent.com/Termininja/TelerikAcademy/master/JavaScript/JS%20UI%20&%20DOM/02.%20Canvas/task-01.png)
 
 **Task 02.** Draw a circle that flies inside a box.
