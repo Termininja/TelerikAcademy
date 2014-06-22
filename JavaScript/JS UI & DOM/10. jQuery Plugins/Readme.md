@@ -26,7 +26,7 @@ $('#dropdown').dropdown()
 
  * And make it work as SELECT node
   * Selecting an one of the generated LI nodes, selects the corresponding OPTION node
-   * So `$('#dropdown:selected')` works
+   * So `$('#dropdown :selected')` works
 
 **Task 02\*.** Create a jQuery plugin for fading in/fading out message box
  * Creates a message box

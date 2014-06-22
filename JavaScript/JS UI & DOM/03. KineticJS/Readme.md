@@ -17,4 +17,4 @@ var familyMembers = [{
 }] 
 ```
 
-![img](https://raw.githubusercontent.com/Termininja/TelerikAcademy/master/JavaScript/JS%20UI%20&%20DOM/03.%20KineticJS/task-02.png)
+![img](https://raw.githubusercontent.com/Termininja/TelerikAcademy/master/JavaScript/JS%20UI%20&%20DOM/03.%20KineticJS/graph.png)
