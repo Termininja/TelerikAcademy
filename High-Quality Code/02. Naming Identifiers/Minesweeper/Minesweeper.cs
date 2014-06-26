@@ -258,7 +258,7 @@ namespace MinesweeperGame
             return board;
         }
 
-        private static void smetki(char[,] board)
+        private static void GetBombsCount(char[,] board)
         {
             int cols = board.GetLength(0);
             int rows = board.GetLength(1);
