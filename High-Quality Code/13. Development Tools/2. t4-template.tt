@@ -1,0 +1,13 @@
+<#@ template language=“C#” #>
+using System;   
+
+public class <#= this.ClassName #>
+{
+   public static void HelloWorld()
+   {
+      Console.WriteLine(”Hello, World!”);
+   }
+}
+<#+
+string ClassName = “MyClass”;
+#>
