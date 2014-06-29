@@ -88,9 +88,9 @@
             where T : IComparable<T>
         {
             Debug.Assert(arr != null, "The array can not be null!");
-            Debug.Assert(startIndex >= 0, "Start index is not positive!");
-            Debug.Assert(endIndex >= 0, "End index is not positive!");
-            Debug.Assert(startIndex <= endIndex, "Start index is not before end index!");
+            Debug.Assert(startIndex >= 0, "The start index is not positive!");
+            Debug.Assert(startIndex <= endIndex, "The start index is not before end index!");
+            Debug.Assert(endIndex < arr.Length, "The end index is not in the array!");
             while (startIndex <= endIndex)
             {
                 int midIndex = (startIndex + endIndex) / 2;
