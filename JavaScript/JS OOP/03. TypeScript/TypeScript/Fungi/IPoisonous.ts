@@ -1,0 +1,3 @@
+﻿interface IPoisonous {
+    dose: number;
+} 

@@ -43,7 +43,6 @@ $(document).ready(function () {
             animation();
         }
 
-        //The module
         return {
             add: add
         };

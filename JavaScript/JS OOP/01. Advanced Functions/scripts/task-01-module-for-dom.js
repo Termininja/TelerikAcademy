@@ -37,7 +37,6 @@ $(document).ready(function () {
             }
         }
 
-        //The module
         return {
             appendChild: appendChild,
             removeChild: removeChild,
