@@ -12,7 +12,6 @@
 
           var jsOopCourse = new Course('JavaScript OOP', jsOopCourseTotalScoreFormula);
 
-          //add students like this
           for (var i = 0; i < 30; i += 1) {
               var student = new Student({
                   name: 'Peter Petrov',

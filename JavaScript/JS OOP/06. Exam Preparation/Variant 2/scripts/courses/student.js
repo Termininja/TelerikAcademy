@@ -1,8 +1,7 @@
-define(function () {                // module
+define(function () {
     'use strict';
     var Student;
-    Student = (function () {        // class
-        //var studentID = 0;
+    Student = (function () {
         function Student(info) {
             this.name = info.name;
             this.exam = info.exam;
@@ -10,8 +9,6 @@ define(function () {                // module
             this.attendance = info.attendance;
             this.teamwork = info.teamwork;
             this.bonus = info.bonus;
-
-            //this._id = ++studentID;
         }
 
         return Student;

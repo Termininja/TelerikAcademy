@@ -1,7 +1,7 @@
-define(['courses/student'], function (Student) {                // module
+define(['courses/student'], function (Student) {
     'use strict';
     var Course;
-    Course = (function () {        // class
+    Course = (function () {
         function Course(title, formula) {
             this._students = [];
             this._title = title;
@@ -16,7 +16,7 @@ define(['courses/student'], function (Student) {                // module
             }
 
             this._students.push(student);
-            return this;        //for chaining
+            return this;
         };
 
         Course.prototype.calculateResults = function () {
