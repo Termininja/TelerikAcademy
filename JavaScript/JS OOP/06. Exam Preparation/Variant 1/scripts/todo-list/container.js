@@ -7,10 +7,12 @@ define(['todo-list/section'], function (Section) {
         }
 
         Container.prototype.add = function (section) {
+            if (!section) {
+                throw new Error('Section is not defined!');
+            }
+
             if (!(section instanceof Section)) {
-                throw {
-                    message: 'The object is not instance of Section'
-                };
+                throw new Error('This is not instance of Section!');
             }
 
             this._sections.push(section);

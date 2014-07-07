@@ -8,10 +8,12 @@ define(['todo-list/item'], function (Item) {
         }
 
         Section.prototype.add = function (item) {
+            if (!item) {
+                throw new Error('Item is not defined!');
+            }
+
             if (!(item instanceof Item)) {
-                throw {
-                    message: 'The object is not instance of Item'
-                };
+                throw new Error('This is not instance of Item!');
             }
 
             this._items.push(item);
