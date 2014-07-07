@@ -1,10 +1,11 @@
 (function () {
-    require(['modules/snake', 'modules/food'], function (Snake, Food) {
+    require(['modules/snake', 'modules/food', 'modules/stone'], function (Snake, Food, Stone) {
         var canvas = document.getElementById('canvas-container');
         var context = canvas.getContext('2d');
         var snakeX = 100;
         var snakeY = 400;
         var snakeR = 10;
+        var numberOfStones = 10;
         var speed = 2;
         var part = [1];
         var snakeLength = 30;
@@ -13,20 +14,41 @@
         var direction = 'up';
         var time = 0;
 
+        var Generator = (function () {
+            function Generator(type) {
+                var object;
+                var objectX = Math.floor(Math.random() * (canvas.width - 4 * snakeR) + 2 * snakeR);
+                var objectY = Math.floor(Math.random() * (canvas.height - 4 * snakeR) + 2 * snakeR);
+
+                switch (type) {
+                    case 'food':
+                        object = new Food(objectX, objectY);
+                        break;
+                    case 'stone':
+                        object = new Stone(objectX, objectY);
+                        break;
+                    default:
+                        throw new Error('Not defined type of object!');
+                }
+
+                return object;
+            }
+
+            return Generator;
+        })();
+
         var snake = new Snake();
         for (var i = 0; i < snakeLength; i++) {
             snake.addTail({ x: snakeX, y: snakeY + i });
         }
 
-        function foodGenerator() {
-            var foodX = Math.floor(Math.random() * (canvas.width - 4 * snakeR) + 2 * snakeR);
-            var foodY = Math.floor(Math.random() * (canvas.height - 4 * snakeR) + 2 * snakeR);
-            var food = new Food(foodX, foodY);
+        var food = Generator('food');
 
-            return food;
+        var stones = [];
+        for (var i = 0; i < numberOfStones; i++) {
+            stones.push(Generator('stone'));
         }
 
-        var food = foodGenerator();
         game();
 
         function game() {
@@ -42,6 +64,14 @@
             context.beginPath();
             context.fillStyle = 'yellow';
             context.rect(food.x, food.y, foodW, foodW);
+            context.fill();
+
+            //Draw stones
+            context.beginPath();
+            context.fillStyle = 'grey';
+            for (var i = 0; i < numberOfStones; i++) {
+                context.rect(stones[i].x, stones[i].y, foodW, foodW);
+            }
             context.fill();
 
             //Draw statistics
@@ -72,7 +102,7 @@
                 (food.x <= snake.body(0).x + snakeR && snake.body(0).x + snakeR <= food.x + foodW &&
                 food.y <= snake.body(0).y && snake.body(0).y <= food.y + foodW)) {
 
-                food = foodGenerator();
+                food = Generator('food');
                 points += 10;
                 speed += 0.1;
                 for (var i = 0; i < 10; i++) {
@@ -94,6 +124,17 @@
                 snake.body(0).x - snakeR < 0 || snake.body(0).x + snakeR > canvas.width) {
                 gameOver();
                 return;
+            }
+
+            //Snake & stones interaction
+            for (var i = 0; i < numberOfStones; i++) {
+                if (snake.body(0).x >= stones[i].x &&
+                    snake.body(0).x <= stones[i].x + snakeR &&
+                    snake.body(0).y >= stones[i].y &&
+                    snake.body(0).y <= stones[i].y + snakeR) {
+                    gameOver();
+                    return;
+                }
             }
 
             time++;
