@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "AbstractFactoryPattern\AbstractFactory.csproj", "{A77CB9D3-8FEF-4CA6-B358-CBC51E775899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "BuilderPattern\Builder.csproj", "{9F68A799-AB77-431B-88B2-5BD2C7076450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "BridgePattern\Bridge.csproj", "{AC39E755-E8CE-4F38-81EA-DE10AE046069}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A77CB9D3-8FEF-4CA6-B358-CBC51E775899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77CB9D3-8FEF-4CA6-B358-CBC51E775899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77CB9D3-8FEF-4CA6-B358-CBC51E775899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77CB9D3-8FEF-4CA6-B358-CBC51E775899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F68A799-AB77-431B-88B2-5BD2C7076450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F68A799-AB77-431B-88B2-5BD2C7076450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F68A799-AB77-431B-88B2-5BD2C7076450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F68A799-AB77-431B-88B2-5BD2C7076450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC39E755-E8CE-4F38-81EA-DE10AE046069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC39E755-E8CE-4F38-81EA-DE10AE046069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC39E755-E8CE-4F38-81EA-DE10AE046069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC39E755-E8CE-4F38-81EA-DE10AE046069}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
