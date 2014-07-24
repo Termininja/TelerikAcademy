@@ -3,8 +3,49 @@
 <head>
     <meta charset="utf-8" />
     <title>Web storages</title>
+    <style>
+        #number {
+            border-radius: 15px;
+            outline: none;
+            width: 30px;
+            padding: 3px 15px;
+        }
+
+        input[type="button"] {
+            cursor: pointer;
+        }
+
+        #rams, #sheep {
+            width: 80px;
+        }
+
+        p {
+            display: inline-block;
+        }
+
+        #hidden, #highScores {
+            display: none;
+        }
+    </style>
     <script src="scripts/script.js"></script>
 </head>
 <body>
+    <p>Enter some four-digit number: </p>
+    <input id="number" value="" autofocus />
+    <input type="button" value="Check" onclick="readNumber()" />
+    <br />
+    <span>Rams:</span>
+    <span id="rams">0</span>
+    <br />
+    <span>Sheep:</span>
+    <span id="sheep">0</span>
+    <br />
+    <div id="hidden">
+        <p>Please enter your name:</p>
+        <input id="name" />
+        <input type="button" value="Enter" onclick="readName()" />
+    </div>
+    <br />
+    <div id="highScores"></div>
 </body>
 </html>
