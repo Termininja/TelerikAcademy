@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+    padding: 20px;
+}
+
+button, input {
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#chat, #login {
+    margin: auto;
+    padding: 10px;
+    background: #00a7ff;
+    border: 1px solid black;
+    box-shadow: 0 0 10px darkblue;
+    border-radius: 15px;
+}
+
+    #chat div:last-of-type {
+        padding: 15px 0 5px 0;
+    }
+
+#chat-screen {
+    margin: auto;
+    height: 400px;
+    text-align: left;
+    background: black;
+    color: white;
+    padding: 20px;
+    overflow: auto;
+    overflow-x: hidden;
+    border-radius: 15px;
+}
