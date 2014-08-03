@@ -1,4 +1,5 @@
-﻿/// Not work for numbers bigger than 2^53 - 1 = 9 007 199 254 740 991
+﻿/// http://jsbin.com/oBoHiceZ/63/
+/// Not work for numbers bigger than 2^53 - 1 = 9 007 199 254 740 991
 
 var keep = 0;
 var memory = 0;
