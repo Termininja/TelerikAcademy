@@ -8,12 +8,16 @@
 
     require(['script'], function (HttpRequest) {
         var url = 'http://crowd-chat.herokuapp.com/posts';
+        var headers = {
+            contentType: 'application/json',
+            accept: 'application/json'
+        };
 
-        HttpRequest.postJSON(url, { user: 'Ivan', text: 'Hello' }).then(function (data) {
+        HttpRequest.postJSON(url, { user: 'Ivan', text: 'Hello' }, headers).then(function (data) {
             console.log(data);
         });
 
-        HttpRequest.getJSON(url).then(function (data) {
+        HttpRequest.getJSON(url, headers).then(function (data) {
             console.log(data[data.length - 1]);
         });
     });

@@ -1,9 +1,10 @@
 define(['jquery', 'q-promise'], function ($, Q) {
     var HttpRequest = (function () {
-        var get = function (url) {
+        var get = function (url, headers) {
             var deferred = Q.defer();
             $.ajax({
                 url: url,
+                headers: headers,
                 type: "GET",
                 contentType: "application/json",
                 success: function (data) {
@@ -17,10 +18,11 @@ define(['jquery', 'q-promise'], function ($, Q) {
             return deferred.promise;
         };
 
-        var post = function (url, data) {
+        var post = function (url, data, headers) {
             var deferred = Q.defer();
             $.ajax({
                 url: url,
+                headers: headers,
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(data),
