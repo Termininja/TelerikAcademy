@@ -1,0 +1,98 @@
+html, body, div, h1, h2, ul, li, span, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 610px;
+    font-family: Arial;
+    font-size: 18px;
+    padding: 8px 0 0 8px;
+    position: relative;
+}
+
+    /*Title*/
+    #root h1 {
+        color: #2AA0BD;
+        font-style: italic;
+        text-align: center;
+        font-size: 190%;
+        margin-bottom: 23px;
+    }
+
+    /*Block*/
+    #root > div {
+        width: 300px;
+        height: 500px;
+        background: linear-gradient(to bottom, #4AE871 45%, #F1FFBC 75%);
+        display: inline-block;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+    }
+
+        /*Block title*/
+        #root > div h2 {
+            color: #2AA0BD;
+            text-align: center;
+            margin: 22px auto;
+        }
+
+        /*Content*/
+        #root > div > div div.messages {
+            padding: 16px 15px 15px 15px;
+            color: #2AA0BD;
+            font-style: italic;
+        }
+
+            #root > div > div div.messages ul {
+                list-style-type: none;
+            }
+
+                #root > div > div div.messages ul li span {
+                    font-style: normal;
+                    word-break: break-all;
+                }
+
+                #root > div > div div.messages ul li.other {
+                    text-align: right;
+                }
+
+        /*Fields*/
+        #root > div > div div.sent-message {
+            position: absolute;
+            bottom: 0;
+        }
+
+            #root > div > div div.sent-message input {
+                width: 170px;
+            }
+
+            #root > div > div div.sent-message button {
+                margin-left: 0;
+            }
+
+input, button {
+    color: #2AA0BD;
+    font-size: 110%;
+    border: 1px solid #CCC;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: transparent;
+    padding: 5px 15px;
+    margin: 0 0 1px 5px;
+}
+
+    button:hover {
+        background: linear-gradient(to bottom, #4AE871 10%, #F1FFBC 80%);
+    }
+
+strong {
+    font-size: 96%;
+    display: block;
+    font-weight: normal;
+}
+
+/*Borders*/
+div.messages ul li:not(:first-child) {
+    border-top: 1px solid #000;
+}
