@@ -1,0 +1,28 @@
+button, input {
+    outline: none;
+    padding: 5px 10px;
+}
+
+button {
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#main, #chat, #login, #register {
+    padding: 15px 0 5px 0;
+}
+
+#posts {
+    margin: auto;
+    height: 400px;
+    text-align: left;
+    background: black;
+    color: white;
+    padding: 20px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.well {
+    color: black;
+}
