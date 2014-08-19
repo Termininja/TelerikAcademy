@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Computers.CPU" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIABAAABAAAAAAgAAQAAAAQgQAAAAAAAAAEAA=</HashCode>
+      <FileName>Components\CPU\CPU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.HardDrive" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAARACAAAAIAAAASAAIAAAAAAgAQAAAAAAg=</HashCode>
+      <FileName>Components\HardDrive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.LaptopBattery" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Components\LaptopBattery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.RAM" Collapsed="true">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAACAAAAAACAAAAAAAAAABAA=</HashCode>
+      <FileName>Components\RAM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.VideoCard" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAARACAAAAIAAAASAAIAAAAAAAAQAAAABAg=</HashCode>
+      <FileName>Components\VideoCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.Computer" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAgAAgACAAAACEAIAgAAAAAAAAAA=</HashCode>
+      <FileName>Computer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.ComputerEntryPoint" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAABACAAAI=</HashCode>
+      <FileName>ComputerEntryPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.InvalidArgumentException" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidArgumentException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Computers.IMotherboard" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Components\IMotherboard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Computers.CPUTypes" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\CPU\CPUTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Computers.ComputerType" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ComputerType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
