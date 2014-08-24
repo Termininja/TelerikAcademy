@@ -2,7 +2,7 @@
 
 **Task 01.** Create the following database diagram in SQL Server:
 
-![img](https://raw.githubusercontent.com/Termininja/TelerikAcademy/master/DB/01.%20Data-Modeling-and-ER-Diagrams/Diagram.png)
+![img](https://raw.githubusercontent.com/Termininja/TelerikAcademy/master/DB/01.%20Data%20Modeling%20and%20ER-Diagrams/Diagram.png)
 
 **Task 02.** Fill some sample data in the tables with SQL Server Management Studio.
 
