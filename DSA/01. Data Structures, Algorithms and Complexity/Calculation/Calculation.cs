@@ -7,7 +7,7 @@ class Calculation
     static void Main()
     {
         int[] arr = new int[] { 9, 4, 5, 7, 8, 9, 3, 4, 6, 3 };
-        int n = arr.Length; 
+        int n = arr.Length;
         Compute(arr);
 
         Console.WriteLine("n = {0}", n);
@@ -30,7 +30,8 @@ class Calculation
             {
                 if (arr[start] < arr[end])
                 {
-                    start++; count++;
+                    start++;
+                    count++;
                 }
                 else
                 {
