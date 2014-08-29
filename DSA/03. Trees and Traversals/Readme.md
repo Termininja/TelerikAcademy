@@ -2,7 +2,6 @@
 
 **Task 01.** You are given a **tree of N nodes** represented as a set of N-1 pairs of nodes (parent node, child node), each in the range (0..N-1).
 >Example:
-
 ![img](https://raw.githubusercontent.com/Termininja/TelerikAcademy/master/DSA/03.%20Trees%20and%20Traversals/Tree.png)
 
 Write a program to read the tree and find:
