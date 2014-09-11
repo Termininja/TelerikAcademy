@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ToysStore.DataGenerator.DataGenerators.AgeRangeDataGenerator" Collapsed="true">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DataGenerators\AgeRangeDataGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToysStore.DataGenerator.DataGenerators.CategoryDataGenerator" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DataGenerators\CategoryDataGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToysStore.DataGenerator.DataGenerators.DataGenerator" Collapsed="true">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEIQAAACBAAAAAQAAAAABAAAAAQAAEAAAAA=</HashCode>
+      <FileName>DataGenerators\DataGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ToysStore.DataGenerator.DataGenerators.ManufacturerDataGenerator" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DataGenerators\ManufacturerDataGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToysStore.DataGenerator.DataGenerators.ToyDataGenerator" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DataGenerators\ToyDataGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToysStore.DataGenerator.Logger.ConsoleLogger" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logger\ConsoleLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ToysStore.DataGenerator.ToysStoreEntryPoint" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ToysStoreEntryPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToysStore.DataGenerator.RandomDataGenerators.RandomDataGenerator" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAABCAAIAAAAAAAAAAQAQAAAAAAAA=</HashCode>
+      <FileName>RandomDataGenerators\RandomDataGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ToysStore.DataGenerator.DataGenerators.IDataGenerator" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DataGenerators\IDataGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ToysStore.DataGenerator.Logger.IConsoleLogger" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logger\IConsoleLogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ToysStore.DataGenerator.RandomDataGenerators.IRandomDataGenerator" Collapsed="true">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RandomDataGenerators\IRandomDataGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
