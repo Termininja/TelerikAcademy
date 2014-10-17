@@ -1,0 +1,23 @@
+﻿1 Category -> 8 Game:
+========================
+
+In Category
+===========
+private ICollection<Game> games;
+
+public Category()
+{
+    this.games = new HashSet<Game>();
+}
+
+public virtual ICollection<Game> Games
+{
+    get { return this.games; }
+    set { this.games = value; }
+}
+
+
+In Game
+==========
+public int CategoryID { get; set; }
+public virtual Category Category { get; set; }

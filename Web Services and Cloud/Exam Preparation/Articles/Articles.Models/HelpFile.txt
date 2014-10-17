@@ -1,0 +1,23 @@
+﻿1 Category -> 8 Article:
+========================
+
+In Category
+===========
+private ICollection<Article> articles;
+
+public Category()
+{
+    this.articles = new HashSet<Article>();
+}
+
+public virtual ICollection<Article> Articles
+{
+    get { return this.articles; }
+    set { this.articles = value; }
+}
+
+
+In Article
+==========
+public int CategoryID { get; set; }
+public virtual Category Category { get; set; }
