@@ -14,7 +14,7 @@ struct Object                                                                   
     public int y;                                                               // y coordinate of the object
     public int w;                                                               // the width of the object
     public string str;                                                          // the symbol of the object
-    public ConsoleColor col;                                                    // the color of the object
+    public ConsoleColor col;                                                    // the colour of the object
 }
 
 class FallingRocksGame
@@ -78,7 +78,7 @@ class FallingRocksGame
     static void CreateRocks()
     {
         Object NewRock = new Object();                                          // create one rock object
-        NewRock.col = ConsoleColor.White;                                       // set the color of the object
+        NewRock.col = ConsoleColor.White;                                       // set the colour of the object
         NewRock.x = RandomGenerator.Next(0, Console.WindowWidth);               // generate number between (0) and (Console.WindowWidth - 1)
         NewRock.y = -1;                                                         // because before to be displayed the object, we y++ 
         NewRock.str = TypeRocks[RandomGenerator.Next(11)];                      // takes different symbol from TypeRocks[]
@@ -262,7 +262,7 @@ class FallingRocksGame
                     }
                     else
                     {
-                        if (t >= 600)                                                   // this increases the width of the left wall when the base timer is 600
+                        if (t >= 600)                                                   // increases the width of the left wall when the base timer is 600
                         {
                             if (wall_width1 < 30)
                             {
@@ -366,11 +366,11 @@ class FallingRocksGame
         Dwarf.x = Console.WindowWidth / 2;                                      // default x coordinate for dwarf
         Dwarf.y = Console.WindowHeight - 1;                                     // default y coordinate for dwarf
         Dwarf.str = "(0)";                                                      // symbol for the dwarf
-        Dwarf.col = ConsoleColor.Yellow;                                        // color for the dwarf
+        Dwarf.col = ConsoleColor.Yellow;                                        // colour for the dwarf
 
         while (true)
         {
-            bool hitted = false;                                                // if the dwarf is hitted by some object
+            bool hit = false;                                                // if the dwarf is hit by some object
             t++;                                                                // global base timer
             LevelDifficulty();
 
@@ -420,8 +420,8 @@ class FallingRocksGame
 
                 if (old_rock.y + 1 == Dwarf.y && (old_rock.x >= Dwarf.x && old_rock.x <= Dwarf.x + Dwarf.str.Length - 1))
                 {
-                    hitted = true;
-                    goto hitted;
+                    hit = true;
+                    goto hit;
                 }
             }
 
@@ -508,8 +508,8 @@ class FallingRocksGame
                     BigRocksList.Remove(old_bigrock);
                     if (old_bigrock.y + 1 == Dwarf.y && ((Dwarf.x >= old_bigrock.x && Dwarf.x < old_bigrock.x + old_bigrock.w) || (Dwarf.x + Dwarf.str.Length > old_bigrock.x && Dwarf.x + Dwarf.str.Length < old_bigrock.x + old_bigrock.w)))
                     {
-                        hitted = true;
-                        goto hitted;
+                        hit = true;
+                        goto hit;
                     }
                 }
             }
@@ -535,8 +535,8 @@ class FallingRocksGame
                 WallList1.Remove(old_brick1);
                 if (old_brick1.y + 1 == Dwarf.y && old_brick1.w > Dwarf.x)
                 {
-                    hitted = true;
-                    goto hitted;
+                    hit = true;
+                    goto hit;
                 }
             }
 
@@ -561,17 +561,17 @@ class FallingRocksGame
                 WallList2.Remove(old_brick2);
                 if (old_brick2.y + 1 == Dwarf.y && Dwarf.x + Dwarf.str.Length > Console.WindowWidth - old_brick2.w - 1)
                 {
-                    hitted = true;
-                    goto hitted;
+                    hit = true;
+                    goto hit;
                 }
             }
 
             Console.Clear();
             DisplayObjects();
 
-        /* If the dwarf is hitted by some object */
-        hitted:
-            if (hitted)
+        /* If the dwarf is hit by some object */
+        hit:
+            if (hit)
             {
                 t_level = 0;                                                // reset the sub-timer for the level
                 t = 200 * (level - 1);                                      // reset the basic timer to the current level
@@ -595,7 +595,7 @@ class FallingRocksGame
             }
             else
             {
-                PrintObject(Dwarf.x, Dwarf.y, Dwarf.str, Dwarf.col);         // the dwarf is printed only if it is not hitted
+                PrintObject(Dwarf.x, Dwarf.y, Dwarf.str, Dwarf.col);         // the dwarf is printed only if it is not hit
             }
 
             /* Statistic information about the game*/
