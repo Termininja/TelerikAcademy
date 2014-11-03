@@ -1,0 +1,26 @@
+TVBrand	Resolution	Size	Colour
+Philips	HD	50	Silver
+LG	HD	42	White
+Panasonic	Ultra HD	50	Black
+Philips	Ultra HD	47	White
+LG	HD+	40	Black
+Philips	HD+	42	Silver
+Samsung	HD+	50	White
+Samsung	Full HD	40	Silver
+Panasonic	Full HD	47	White
+Philips	HD	40	Black
+Samsung	HD	47	Black
+Philips	Full HD	42	Black
+Panasonic	HD	47	Silver
+Sony	Ultra HD	50	Silver
+LG	HD+	47	Silver
+Panasonic	HD+	40	White
+Samsung	Ultra HD	42	Silver
+Sony	Full HD	50	Black
+Sony	HD	42	White
+LG	Ultra HD	50	Silver
+Sony	HD+	40	Silver
+Sony	HD+	47	Black
+Panasonic	Full HD	42	White
+Philips	Ultra HD	40	Black
+LG	Full HD	47	Silver

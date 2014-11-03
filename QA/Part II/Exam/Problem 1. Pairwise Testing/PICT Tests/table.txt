@@ -1,0 +1,4 @@
+TVBrand: Sony, LG, Samsung, Philips, Panasonic
+Resolution: HD, HD+, Full HD, Ultra HD
+Size: 40, 42, 47, 50
+Colour: Silver, Black, White
