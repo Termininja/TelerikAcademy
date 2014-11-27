@@ -23,6 +23,7 @@
         private const int WaitingTime = 10;
 
         private MainNavigation mainNavigation;
+		
         private LoginPage loginPage;
 
         [TestInitialize]
@@ -92,7 +93,6 @@
             this.NavigateTo("http://test.telerikacademy.com/Administration_SoftwareAcademy/Candidates");
 
             CheckCandidature();
-
             DeleteCandidature();
         }
 
