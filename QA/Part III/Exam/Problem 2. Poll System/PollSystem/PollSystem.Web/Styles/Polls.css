@@ -1,0 +1,339 @@
+﻿body
+{
+    font-family: Calibri, Arial, Helvetica;
+}
+
+
+#PageWrapper
+{
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px 30px;
+    background-image: url("background.png");
+}
+
+.pageHeader, .pageFooter
+{
+    padding: 5px;
+    background: #4F81BD;
+    font-size: 24pt;
+    font-weight: bold;
+    color: White;
+    text-align: center;
+    border: 3px solid #385D8A;
+    text-shadow: 0.8px 0.8px 2px #304E72;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+    .pageHeader a
+    {
+        color: #EAF1FA !important;
+        border-color: #EAF1FA !important;
+    }
+
+footer.pageFooter
+{
+    font-size: 15px;
+}
+
+header .LogoutLink
+{
+    padding-top: 8px;
+    margin-right: 10px;
+    float: right;
+    font-size: 14pt;
+    color: #7F6092;
+    border-bottom: 2px dotted #7F6092;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+header#menu
+{
+    font-size: 14pt;
+}
+
+header#menu a
+{
+    padding-right: 15px;
+}
+
+.great-wrapper
+{
+    margin: 15px 0;
+    padding: 15px;
+    padding-right: 10px;
+    background-color: #DCE6F2;
+    border: 3px solid #385D8A;
+    border-radius: 10px;
+}
+
+header.great-wrapper
+{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+    padding: 10px;
+}
+
+.single-wrapper
+{
+    background-color: #4F81BD;
+    border: 3px solid #385D8A;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0.8px 0.8px 2px black;
+    padding: 9px 9px;
+}
+
+    .single-wrapper.title
+    {
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .single-wrapper.question
+    {   
+        width: 245px;
+        max-width: 245px;
+        height: 322px;
+        max-height: 322px;
+        display: inline-block;
+        margin: 0 10px;
+        text-align: left;
+        float: left;
+    }
+
+      
+   
+.radiobuttons-wrapper
+{
+    height: 250px;
+    overflow-y: auto;    
+}
+
+h3
+{
+    margin: 0;
+    margin-bottom: 5px;
+}
+        .single-wrapper.question label
+        {
+            font-size: 20px;
+        }
+
+.answer-wrapper
+{
+    margin: 15px 0;
+}
+
+.answer-text
+{
+    display: inline-block;
+    width: 220px;
+}
+
+.full-votebar
+{
+    display: inline-block;
+    width: 600px;
+    height: 25px;
+}
+
+.votebar
+{
+    background-color: #77933C;
+    height: 25px;
+    position:relative;
+    top:4px;
+    display: inline-block;
+}
+        
+input[type='radio']
+{
+    background-image: url('radio-button.png');
+}
+
+input[type='submit']
+{
+    width: 244px;
+    padding: 5px 0;
+    position: relative;
+    bottom: 0px;
+}
+
+.button, input[value="Login"], input[value="Register"]
+{
+    background-color: #9BBB59;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px 0 black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0.8px 0.8px 2px black;
+}
+
+
+#BackButton
+{
+    display:block;
+    margin: 20px auto 0 auto;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px 30px;
+}
+
+.question-button
+{
+    width: 850px !important;
+    word-wrap: break-word;
+    display: inline-block;
+    border: none;
+    background-color: inherit;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 5px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.clear
+{
+    clear:both;
+}
+
+
+.paging
+{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.paging a, .paging span span
+{
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    background-color: #DCE6F2;
+    border: 3px solid #385D8A;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px 10px;  
+    text-decoration: none; 
+}
+
+    .paging a
+    {
+        color: #4F81BD;
+    }
+
+    .paging a.aspNetDisabled
+    {
+        color: black;
+    }
+
+    .paging .aspNetCurrentPage
+    {
+        background-color: #CCD6E2;
+    }
+
+input[value='First'], input[value='Last']
+{
+    padding: 7px 10px;
+    width: 100px;
+}
+
+
+.DialogBox
+{
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #FAC090;
+    border: 3px solid #B66D31;    
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px #B66D31;
+}
+
+.DialogBox > *
+{
+    display: block;
+    margin-top: 4px;
+}
+
+.DialogBox .BoxTitle
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.DialogBox hr
+{
+    border: 0;
+    border-bottom: 2px solid #B66D31;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #B66D31;
+}
+
+.DialogBox input[type='text'], input[type='password']
+{
+    width: 197px;
+    height: 25px;
+    border: 2px solid #F79646;
+    border-radius: 2px;
+}
+
+.DialogBox .RememberBox
+{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: -4px;
+}
+
+.DialogBox input[type='submit']
+{
+    color: White;
+    font-weight: bold;
+    background: #F79646;
+    padding: 10px 30px 8px 30px;
+    border: 3px solid #B66D31;
+    border-radius: 8px;
+}
+
+ut[type='submit']:hover
+{
+    color: #CCCCCC;
+    text-shadow: 1px 1px 5px black;
+    background: #F49977;
+}
+
+div.form
+{
+    text-align: center;
+}
+
+.single-wrapper.form input
+{
+    width: 700px;
+    margin: 10px;
+    height: 25px;
+}
+
+.single-wrapper.form input[type='submit']
+{
+    width: 200px;
+    height: 45px;
+}

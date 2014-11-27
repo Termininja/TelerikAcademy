@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PollSystem.Web.Site"%>
+
+<!DOCTYPE html>
+
+<html>
+
+<head id="Head1" runat="server">
+    <link href="Styles/Polls.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder 
+        ID="ContentPlaceHolderStyles" runat="server" />
+    <title></title>
+    <asp:ContentPlaceHolder 
+        ID="ContentPlaceHolderHead" runat="server" />
+</head>
+
+<body>
+    <form id="formMaster" runat="server">
+        <div id="PageWrapper">
+        <header class="pageHeader">
+            <asp:ContentPlaceHolder 
+                ID="ContentPlaceHolderTitle" runat="server" >
+            </asp:ContentPlaceHolder>
+        </header>
+
+        <header class="pageHeader" id="menu">
+            <a href="Polls.aspx">Polls</a>
+            <a href="ViewAllPolls.aspx">View Results</a>
+            <span id="AdminLinks" runat="server">
+                <a href="CreateNewPoll.aspx">Create New Poll</a>
+            </span>
+        </header>
+
+        <section id="MainContent">
+            <asp:ContentPlaceHolder 
+                ID="ContentPlaceHolderMain" runat="server" />
+        </section>
+
+        <footer class="pageFooter">
+            © 2012 by Telerik Software Academy, No Rights Reserved
+        </footer>
+        </div>
+    </form>
+</body>
+
+
+</html>
