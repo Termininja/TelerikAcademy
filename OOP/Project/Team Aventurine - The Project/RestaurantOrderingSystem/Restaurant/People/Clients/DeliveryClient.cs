@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    class DeliveryClient : Client
+    public class DeliveryClient : Client
     {
-        // Constructor
         public DeliveryClient(string name) : base(name) { }
     }
 }

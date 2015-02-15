@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    class Zone
+    using System.Collections.Generic;
+
+    public class Zone
     {
-        // Properties
         public string Name { get; set; }
+
         public Restaurant Restaurant { get; set; }
+
         public List<Table> Tables { get; set; }
     }
 }

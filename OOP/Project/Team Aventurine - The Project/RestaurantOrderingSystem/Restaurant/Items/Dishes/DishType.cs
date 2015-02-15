@@ -1,6 +1,6 @@
 ﻿namespace RestaurantOrderingSystem
 {
-    enum DishType
+    public enum DishType
     {
         Starter, MainDish, Desert
     }

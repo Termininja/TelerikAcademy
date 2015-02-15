@@ -1,6 +1,6 @@
 ﻿namespace RestaurantOrderingSystem
 {
-    enum DrinkType
+    public enum DrinkType
     {
         AlcoholicDrink, NonAlcoholicDrink, SoftDrink, Juice, HotDrink
     }

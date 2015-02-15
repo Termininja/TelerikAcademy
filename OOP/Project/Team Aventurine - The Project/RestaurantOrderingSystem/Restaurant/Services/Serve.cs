@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    class Serve : IServiceable
+    public class Serve : IServiceable
     {
-        // Methods
         public Table GetTable()
         {
             return null;
@@ -36,7 +29,7 @@ namespace RestaurantOrderingSystem
 
         public void TakeItem()
         {
-            
+
         }
 
         public void AddOrder()

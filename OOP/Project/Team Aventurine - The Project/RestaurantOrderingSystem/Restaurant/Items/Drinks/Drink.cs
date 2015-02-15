@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    class Drink : Item
+    public class Drink : Item
     {
         public DrinkType DrinkType { get; set; }
     }

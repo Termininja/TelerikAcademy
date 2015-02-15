@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    abstract class Person
+    public abstract class Person
     {
-        // Property
-        public string Name { get; set; }
-
-        // Constructor
         public Person(string name)
         {
             this.Name = name;
         }
+
+        public string Name { get; set; }
     }
 }

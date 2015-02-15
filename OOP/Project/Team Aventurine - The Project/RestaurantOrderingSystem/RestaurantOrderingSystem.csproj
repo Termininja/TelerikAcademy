@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Restaurant\FirmName.cs" />
     <Compile Include="Restaurant\NameStruct.cs" />
     <Compile Include="UI\CheckItem.xaml.cs">
       <DependentUpon>CheckItem.xaml</DependentUpon>

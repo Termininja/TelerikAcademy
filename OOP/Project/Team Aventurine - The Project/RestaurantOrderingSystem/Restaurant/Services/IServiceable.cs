@@ -1,8 +1,7 @@
 ﻿namespace RestaurantOrderingSystem
 {
-    interface IServiceable
+    public interface IServiceable
     {
-        // Methods
         void TakeItem();
         void AddOrder();
     }

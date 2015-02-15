@@ -1,27 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    struct FirmName
-    {
-        private string firmName;
-        public void DisplyName(string name)
-        {
-            firmName = name;
+    using System.Collections.Generic;
 
-        }
-    }
-
-    class Corporate
+    public class Corporate
     {
-        // Properties
         public string Name { get; set; }
-        public List<Restaurant> Restaurants { get; set; }
 
-        
+        public List<Restaurant> Restaurants { get; set; }
     }
 }

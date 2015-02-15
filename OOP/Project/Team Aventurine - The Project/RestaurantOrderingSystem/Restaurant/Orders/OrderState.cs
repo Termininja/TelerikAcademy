@@ -1,6 +1,6 @@
 ﻿namespace RestaurantOrderingSystem
 {
-    enum OrderState
+    public enum OrderState
     {
         New, Cooking, ReadyToServe, Closed, Cancelled
     }

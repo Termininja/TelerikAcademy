@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestaurantOrderingSystem
+﻿namespace RestaurantOrderingSystem
 {
-    class Speciality
+    using System.Collections.Generic;
+
+    public class Speciality
     {
-        // Properties
         public string Name { get; set; }
+
         public string Description { get; set; }
+
         public string Image { get; set; }
+
         public List<Item> Items { get; set; }
     }
 }
