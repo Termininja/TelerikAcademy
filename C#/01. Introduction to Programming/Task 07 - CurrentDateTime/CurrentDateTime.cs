@@ -22,7 +22,7 @@ class CurrentDateTime
             Console.WriteLine(DateTime.Now.ToString("h:m:ss.ff tt\n"));
             Console.ResetColor();
 
-            // Sleep the program for 90 milliseconds
+            // Sleep the program for 90 ms
             Thread.Sleep(90);
 
             // If some key is pressed

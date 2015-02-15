@@ -6,7 +6,6 @@ class HelloCS
 {
     static void Main()
     {
-        // Print some string
         Console.WriteLine("Hello C#");
     }
 }
