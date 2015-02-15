@@ -31,14 +31,14 @@ class CalculateSum
     {
         long sum = 0;
 
-        // repeated n times (n = matrix.GetLength(0))
+        // Repeated n times (n = matrix.GetLength(0))
         for (int col = 0; col < matrix.GetLength(0); col++)
         {
             sum += matrix[row, col];
             complexity++;
         }
 
-        // normaly should repeate m times (m = matrix.GetLength(1))
+        // Normaly should repeate m times (m = matrix.GetLength(1))
         // but actually stop when m=n with IndexOutOfRangeException 
         if (row + 1 < matrix.GetLength(1))
         {
