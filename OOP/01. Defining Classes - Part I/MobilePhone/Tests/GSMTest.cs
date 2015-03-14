@@ -1,63 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MobilePhone
+﻿namespace MobilePhone.Tests
 {
-    class GSMTest
+    using System;
+    using System.Threading;
+
+    using MobilePhone.Phone;
+
+    public static class GSMTest
     {
-        static GSM[] gsms = new GSM[4];                         // array with different phones
-
-        public static void CreateGSM()
+        public static void Start()
         {
-            // Creates an element with information about IPhone 4S
-            gsms[0] = GSM.IPhone4S;
+            Console.WriteLine("GSMTest start...");
 
-            // Creates a new GSM
-            gsms[1] = new GSM("Galaxy S4", "Samsung");          // only with mandatory parameters
+            // Creates an array of few instances of the GSM class.
+            var gsms = new GSM[] { 
+                new GSM("E72", "Nokia", null, "Pesho", new Battery("Toshiba", 3, 5, BatteryType.NiCd)),
+                new GSM("E1270", "Samsung", 34.8m, null, null, new Display(96, 256)),
+                new GSM("C21", "Yezz", 259.99m, "Ivan", new Battery("Toshiba", 20, 14, BatteryType.LiIon), new Display(128, 256000))
+            };
 
-            // Creates a second GSM
-            gsms[2] = new GSM(
-                "E71", "Nokia",
-                new Display(34, 16000),                         // information about the display
-                new Battery("Bat", 50, 20, BatteryType.NiCd)    // information about the battery
-                );
-            gsms[2].Owner = "Ivan Ivanov";                      // sets the optional parameter "owner"
-            gsms[2].Price = 175.85m;                            // sets the optional parameter "price"
-
-            // Creates a third GSM
-            gsms[3] = new GSM(
-                "E400", "LG", "Dimitar Petrov", 210m,
-                new Display(42, 36000),
-                new Battery("KL34", 80, 57, BatteryType.NiMH)
-                );
-        }
-
-        public static void PrintGSM()
-        {
-            // Display the information about all phones in array
-            for (int n = 0; n < gsms.Length; n++)
+            // Displays the information about the GSMs in the array.
+            foreach (var gsm in gsms)
             {
-                Console.Clear();
-                Console.WriteLine(gsms[n]);                     // prints the GSM info by using class GSMTest 
-
-                if (n < gsms.Length - 1)
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("\nPress << ");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("Enter");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(" >> to see next GSM");
-                    Console.ResetColor();
-                    while (Console.ReadKey().Key != ConsoleKey.Enter)
-                    {
-                        Console.Write("\b \b");
-                    }
-                    Console.WriteLine("\n");
-                }
+                Thread.Sleep(1000);
+                Console.WriteLine("\n" + gsm);
             }
+
+            // Displays the information about the static property IPhone4S.
+            Thread.Sleep(1000);
+            Console.WriteLine("\n{0}\n", GSM.IPhone4S);
+            Thread.Sleep(1000);
         }
     }
 }

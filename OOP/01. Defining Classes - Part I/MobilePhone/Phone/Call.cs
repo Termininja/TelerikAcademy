@@ -1,54 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MobilePhone
+﻿namespace MobilePhone.Phone
 {
-    // Holds a call performed through each one GSM
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Call
     {
-        private DateTime dateTime;
-        private string dialedNumber;
-        private int duration;       // in seconds
+        private string dialledPhoneNumber;
 
-        // Constructors
-        public Call() { }
-
-        public Call(DateTime dateTime, string dialedNumber, int duration)
+        public Call(DateTime dateTime, string dialledPhoneNumber, int duration)
         {
             this.DateTime = dateTime;
-            this.DialedNumber = dialedNumber;
+            this.DialledPhoneNumber = dialledPhoneNumber;
             this.Duration = duration;
         }
 
-        // Properties
-        public DateTime DateTime
+        public DateTime DateTime { get; set; }
+
+        public int Duration { get; set; }
+
+        public string DialledPhoneNumber
         {
-            get { return this.dateTime; }
-            set { this.dateTime = value; }
+            get
+            {
+                return this.dialledPhoneNumber;
+            }
+            set
+            {
+                if (value.Length < 5 || value.Length > 15)
+                {
+                    throw new ArgumentOutOfRangeException("The dialled phone number has to be between 5 and 15 characters long!");
+                }
+
+                this.dialledPhoneNumber = value;
+            }
         }
 
-        public string DialedNumber
-        {
-            get { return this.dialedNumber; }
-            set { this.dialedNumber = value; }
-        }
-
-        public int Duration
-        {
-            get { return this.duration; }
-            set { this.duration = value; }
-        }
-
-        // Methods
         public override string ToString()
         {
-            return
-                "Call information" +
-                "\n\tDate: \t\t" + this.dateTime +
-                "\n\tDialed Number: \t" + this.dialedNumber +
-                "\n\tDuration: \t" + this.duration + " sec";
+            var properties = new List<string>();
+            this.GetType().GetProperties().ToList().ForEach(p => properties.Add(p.Name + ": " + p.GetValue(this, null)));
+            var result = string.Join(", ", properties);
+
+            return result;
         }
     }
 }

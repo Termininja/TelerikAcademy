@@ -1,110 +1,83 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MobilePhone
+﻿namespace MobilePhone.Phone
 {
-    public enum BatteryType { LiIon, NiMH, NiCd }       // creates a new type called "BatteryType"
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class Battery
     {
-        // Battery characteristics
         private string model;
-        private uint? idle, talk;
-        private BatteryType? type;                      // adds a new parameter "type"
+        private int? hoursIdle;
+        private int? hoursTalk;
 
-        // constructors
-        public Battery() { }                            // without parameters
-
-        public Battery(BatteryType? type) : this(null, null, null, type) { }
-
-        public Battery(string model, uint? idle, uint? talk, BatteryType? type)
+        public Battery(string model = null, int? hoursIdle = null, int? hoursTalk = null, BatteryType? batteryType = null)
         {
             this.Model = model;
-            this.IdleTime = idle;                       // hours idle
-            this.TalkTime = talk;                       // hours talk
-            this.Type = type;
+            this.HoursIdle = hoursIdle;
+            this.HoursTalk = hoursTalk;
+            this.BatteryType = batteryType;
         }
 
-        // properties
         public string Model
         {
-            get { return this.model; }
+            get
+            {
+                return this.model;
+            }
             set
             {
-                if (value.Length < 1)
+                if (value.Length < 2 || value.Length > 20)
                 {
-                    throw new ArgumentException("The model has to be minimum 1 symbol!");
+                    throw new ArgumentOutOfRangeException("The battery model has to be between 2 and 20 characters long!");
                 }
-                else if (value.Length > 10)
-                {
-                    throw new ArgumentException("The model has to be maximum 10 symbols!");
-                }
-                else
-                {
-                    this.model = value;
-                }
+
+                this.model = value;
             }
         }
 
-        public uint? IdleTime
+        public int? HoursIdle
         {
-            get { return this.idle; }
+            get
+            {
+                return this.hoursIdle;
+            }
             set
             {
-                if (value > 1000)
+                if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Hours idle is too big!");
+                    throw new ArgumentOutOfRangeException("Hours idle of the battery can not be negative!");
                 }
-                else
-                {
-                    this.idle = value;
-                }
+
+                this.hoursIdle = value;
             }
         }
 
-        public uint? TalkTime
+        public int? HoursTalk
         {
-            get { return this.talk; }
+            get
+            {
+                return this.hoursTalk;
+            }
             set
             {
-                if (value > 100)
+                if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Hours talk is too big!");
+                    throw new ArgumentOutOfRangeException("Hours talk of the battery can not be negative!");
                 }
-                else
-                {
-                    this.talk = value;
-                }
+
+                this.hoursTalk = value;
             }
         }
 
-        public BatteryType? Type
-        {
-            get { return this.type; }
-            set
-            {
-                if (value.ToString() != "LiIon" && value.ToString() != "NiMH" && value.ToString() != "NiCd")
-                {
-                    throw new ArgumentException("This is not valid battery type!");
-                }
-                else
-                {
-                    this.type = value;
-                }
-            }
-        }
+        public BatteryType? BatteryType { get; set; }
 
-        // methods
         public override string ToString()
         {
-            return
-                "\nBattery information" +
-                "\n\tModel: \t\t" + this.model +
-                "\n\tIdle time: \t" + this.idle +
-                "\n\tTalk time: \t" + this.talk +
-                "\n\tType: \t\t" + this.type;
+            var properties = new List<string>();
+            this.GetType().GetProperties().ToList().ForEach(p => properties.Add(p.Name + ": " + p.GetValue(this, null)));
+            var result = "(" + string.Join(", ", properties) + ")";
+
+            return result;
         }
     }
 }

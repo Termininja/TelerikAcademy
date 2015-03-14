@@ -1,59 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MobilePhone
+﻿namespace MobilePhone.Phone
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Display
     {
-        // Fields
-        private byte? size;
-        private uint? colors;
+        private decimal? size;
+        private int? numberOfColors;
 
-        // Constructors
-        public Display() { }
-
-        public Display(byte? size, uint? colors)
+        public Display(decimal? size = null, int? numberOfColors = null)
         {
             this.Size = size;
-            this.Colors = colors;
+            this.NumberOfColors = numberOfColors;
         }
 
-        // Properties
-        public byte? Size
+        public decimal? Size
         {
-            get { return this.size; }
+            get
+            {
+                return this.size;
+            }
             set
             {
-                if (value > 150)
+                if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Too big size of display!");
+                    throw new ArgumentOutOfRangeException("The size can not be negative!");
                 }
-                else this.size = value;
+
+                this.size = value;
             }
         }
 
-        public uint? Colors
+        public int? NumberOfColors
         {
-            get { return this.colors; }
+            get
+            {
+                return this.numberOfColors;
+            }
             set
             {
-                if (value > 200000)
+                if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("The number of colors is too big!");
+                    throw new ArgumentOutOfRangeException("The number of display colors can not be negative!");
                 }
-                else this.colors = value;
+
+                this.numberOfColors = value;
             }
         }
 
-        // Methods
         public override string ToString()
         {
-            return
-                "\nDisplay information" +
-                "\n\tSize: \t\t" + this.size +
-                "\n\tColors: \t" + this.colors;
+            var properties = new List<string>();
+            this.GetType().GetProperties().ToList().ForEach(p => properties.Add(p.Name + ": " + p.GetValue(this, null)));
+            var result = "(" + string.Join(", ", properties) + ")";
+
+            return result;
         }
     }
 }

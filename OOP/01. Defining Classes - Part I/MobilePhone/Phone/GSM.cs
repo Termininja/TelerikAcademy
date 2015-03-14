@@ -1,199 +1,158 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MobilePhone
+﻿namespace MobilePhone.Phone
 {
-    class GSM
-    {
-        // Basic information
-        private string model, manufacturer, owner;
-        private decimal? price;
-        private Display d;
-        private Battery b;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-        // Hold the information about iPhone 4S
-        private static GSM iphone4S = new GSM(
-            "IPhone4S", "Apple",
-            new Display(45, 6000),
-            new Battery("M-45", 80, 14, BatteryType.LiIon)
+    public class GSM
+    {
+        private string model;
+        private string manufacturer;
+        private decimal? price;
+
+        /// <summary>
+        /// Holds the information about iPhone 4S.
+        /// </summary>
+        private static GSM iPhone4S = new GSM(
+            "IPhone4S", "Apple", 344, "Nobody",
+            new Battery("M-45", 80, 14, BatteryType.LiIon),
+            new Display(45, 6000)
             );
 
-        // Holds a list of the performed calls
-        private List<Call> callHistory = new List<Call>();
-
-        // Constructors
         public GSM(string model, string manufacturer)
-            : this(model, manufacturer, null, null, null, null) { }
-
-        public GSM(string model, string manufacturer, string owner, decimal? price)
-            : this(model, manufacturer, owner, price, null, null) { }
-
-        public GSM(string model, string manufacturer, Display d, Battery b)
-            : this(model, manufacturer, null, null, d, b) { }
-
-        public GSM(string model, string manufacturer, string owner, decimal? price, Display d, Battery b)
         {
             this.Model = model;
             this.Manufacturer = manufacturer;
-            this.Owner = owner;
-            this.Price = price;
-            this.D = d;
-            this.B = b;
+
+            this.CallHistory = new List<Call>();
         }
 
-        // Properties
+        public GSM(string model, string manufacturer, decimal? price = null, string owner = null, Battery battery = null, Display display = null)
+            : this(model, manufacturer)
+        {
+            this.Price = price;
+            this.Owner = owner;
+            this.Battery = battery;
+            this.Display = display;
+        }
+
         public string Model
         {
-            get { return this.model; }
+            get
+            {
+                return this.model;
+            }
             set
             {
-                if (value.Length < 1)
+                if (value.Length < 2 || value.Length > 20)
                 {
-                    throw new ArgumentException("The model has to be minimum 1 symbol!");
+                    throw new ArgumentOutOfRangeException("The GSM model has to be between 2 and 20 characters long!");
                 }
-                else if (value.Length > 10)
-                {
-                    throw new ArgumentException("The model has to be maximum 10 symbols!");
-                }
-                else this.model = value;
+
+                this.model = value;
             }
         }
 
         public string Manufacturer
         {
-            get { return this.manufacturer; }
+            get
+            {
+                return this.manufacturer;
+            }
             set
             {
-                if (value.Length < 1)
+                if (value.Length < 2 || value.Length > 20)
                 {
-                    throw new ArgumentException("The manufacturer has to be minimum 1 symbol!");
+                    throw new ArgumentOutOfRangeException("The GSM manufacturer has to be between 2 and 20 characters long!");
                 }
-                else if (value.Length > 10)
-                {
-                    throw new ArgumentException("The manufacturer has to be maximum 10 symbols!");
-                }
-                else this.manufacturer = value;
+
+                this.manufacturer = value;
             }
         }
 
-        // Optional parameter "owner"
-        public string Owner
-        {
-            get { return this.owner; }
-            set
-            {
-                if (value != null)
-                {
-                    if (value.Length < 1)
-                    {
-                        throw new ArgumentException("The name has to be minimum 1 symbol!");
-                    }
-                    else if (value.Length > 20)
-                    {
-                        throw new ArgumentException("The name has to be maximum 10 symbols!");
-                    }
-                    else this.owner = value;
-                }
-            }
-        }
-
-        // Optional parameter "price"
         public decimal? Price
         {
-            get { return this.price; }
+            get
+            {
+                return price;
+            }
             set
             {
-                if (value != null)
+                if (value < 0)
                 {
-                    if (value < 0 || value > decimal.MaxValue)
-                    {
-                        throw new ArgumentOutOfRangeException("The price is not correct!");
-                    }
-                    else this.price = value;
+                    throw new ArgumentOutOfRangeException("The GSM price can not be negative!");
                 }
+
+                price = value;
             }
         }
 
-        public Display D
-        {
-            get { return this.d; }
-            set
-            {
-                if (value != null) this.d = value;
-            }
-        }
+        public string Owner { get; set; }
 
-        public Battery B
-        {
-            get { return this.b; }
-            set
-            {
-                if (value != null) this.b = value;
-            }
-        }
+        public Battery Battery { get; set; }
+
+        public Display Display { get; set; }
+
+        /// <summary>
+        ///  Holds a list of the performed calls.
+        /// </summary>
+        public List<Call> CallHistory { get; set; }
 
         public static GSM IPhone4S
         {
-            // Get information about IPhone 4S
-            get { return iphone4S; }
+            get
+            {
+                return iPhone4S;
+            }
         }
 
-        public List<Call> CallHistory
-        {
-            // Get information about call history
-            get { return this.callHistory; }
-        }
-
-        /* Methods */
+        /// <summary>
+        /// Adds call to the call history.
+        /// </summary>
+        /// <param name="call">The call should be added to the call history.</param>
         public void AddCall(Call call)
         {
-            // Add some new call
-            this.callHistory.Add(call);
+            this.CallHistory.Add(call);
         }
 
-        public void DeleteCall(int index)
-        {
-            // Delete some call by position
-            this.callHistory.RemoveAt(index);
-        }
-
+        /// <summary>
+        /// Deletes call from the call history.
+        /// </summary>
+        /// <param name="call">The call should be deleted from the call history.</param>
         public void DeleteCall(Call call)
         {
-            // Delete some call by entry
-            this.callHistory.Remove(call);
+            this.CallHistory.Remove(call);
         }
 
-        public void ClearAllCalls()
+        /// <summary>
+        /// Clears the whole call history.
+        /// </summary>
+        public void ClearCallHistory()
         {
-            // Clear whole call history
-            this.callHistory.Clear();
+            this.CallHistory.Clear();
         }
 
-        // Calculates the total price for all calls
-        public decimal TotalPrice(decimal callPrice)
+        /// <summary>
+        /// Calculates the total price of the calls in the call history.
+        /// </summary>
+        /// <param name="pricePerMinute">The fixed price for one minute.</param>
+        /// <returns>Returns the total price of all performed calls.</returns>
+        public decimal TotalPrice(decimal pricePerMinute)
         {
-            decimal totalPrice = 0;
-            foreach (var call in this.callHistory)
-            {
-                totalPrice += (Convert.ToDecimal(call.Duration) / 60) * callPrice;
-            }
+            var totalPrice = 0m;
+            this.CallHistory.ForEach(call => totalPrice += call.Duration * pricePerMinute / 60);
+
             return totalPrice;
         }
 
-        // String output for this class
         public override string ToString()
         {
-            string result =
-                "Basic information" +
-                "\n\tModel: \t\t" + this.model +
-                "\n\tManufacturer: \t" + this.manufacturer +
-                "\n\tOwner: \t\t" + this.owner +
-                "\n\tPrice: \t\t" + this.price;
+            var result = new List<string>();
+            var properties = this.GetType().GetProperties().ToList();
+            properties.RemoveRange(properties.Count - 2, 2);
+            properties.ForEach(p => result.Add(p.Name + ": " + p.GetValue(this, null)));
 
-            return (D == null && B == null) ?
-                result : result + "\n" + this.D.ToString() + "\n" + this.B.ToString();
+            return string.Join("\n", result);
         }
     }
 }
