@@ -1,20 +1,19 @@
-﻿using System;
-using System.Text;
-
-namespace Matrix
+﻿namespace Matrix
 {
-    class Matrix<T>
-    {
-        // Fields
-        int rows, columns;
-        T[,] matrix;
+    using System;
+    using System.Linq;
+    using System.Text;
 
-        // Constructor
+    public class Matrix<T>
+    {
+        private int rows, columns;
+        private T[,] matrix;
+
         public Matrix(int rows, int columns)
         {
             this.rows = rows;
             this.columns = columns;
-            matrix = new T[rows, columns];
+            this.matrix = new T[rows, columns];
         }
 
         // Indexer
@@ -22,57 +21,57 @@ namespace Matrix
         {
             get
             {
-                if (r < rows && c < columns) return matrix[r, c];
-                else
+                if (r >= this.rows || c >= this.columns)
                 {
                     throw new IndexOutOfRangeException("The index is not in the range of the matrix!");
                 }
+
+                return this.matrix[r, c];
             }
             set
             {
-                if (r < rows && c < columns) matrix[r, c] = value;
-                else
+                if (r >= this.rows || c >= this.columns)
                 {
                     throw new IndexOutOfRangeException("The index is not in the range of the matrix!");
                 }
+
+                this.matrix[r, c] = value;
             }
         }
 
         // Addition of matrices of the same size
         public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)
         {
-            return Operation(m1, m2, 1);
+            return Operation(m1, m2, true);
         }
 
         // Subtraction of matrices of the same size
         public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)
         {
-            return Operation(m1, m2, 2);
+            return Operation(m1, m2, false);
         }
 
         // Multiplication of matrices of the same size
         public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
         {
-            // Throw an exception when the operation cannot be performed
             if (m1.rows != m2.columns || m1.columns != m2.rows)
             {
                 throw new ArgumentException("The size of the matrices is wrong!");
             }
-            else
+
+            var m = new Matrix<T>(m1.rows, m1.columns);
+            for (int r = 0; r < m.rows; r++)
             {
-                Matrix<T> m = new Matrix<T>(m1.rows, m1.columns);
-                for (int r = 0; r < m.rows; r++)
+                for (int c = 0; c < m.columns; c++)
                 {
-                    for (int c = 0; c < m.columns; c++)
+                    for (int k = 0; k < m.columns; k++)
                     {
-                        for (int k = 0; k < m.columns; k++)
-                        {
-                            m[r, c] += (dynamic)m1[r, k] * m2[k, c];
-                        }
+                        m[r, c] += (dynamic)m1[r, k] * m2[k, c];
                     }
                 }
-                return m;
             }
+
+            return m;
         }
 
         // Implement the 'true' operator
@@ -82,6 +81,7 @@ namespace Matrix
             {
                 if (!item.Equals(default(T))) return true;
             }
+
             return false;
         }
 
@@ -92,68 +92,56 @@ namespace Matrix
             {
                 if (!item.Equals(default(T))) return false;
             }
+
             return true;
         }
 
         // Implement the '!' operator
         public static bool operator !(Matrix<T> m)
         {
-            if (m) { return false; }
-            else { return true; }
+            return m ? false : true;
         }
 
-        // Methods
-        private static Matrix<T> Operation(Matrix<T> m1, Matrix<T> m2, byte Operator)
+        private static Matrix<T> Operation(Matrix<T> m1, Matrix<T> m2, bool addition)
         {
-            // Throw an exception when the operation cannot be performed
             if (m1.rows != m2.rows || m1.columns != m2.columns)
             {
                 throw new ArgumentException("The size of the matrices is not the same!");
             }
-            else
-            {
-                Matrix<T> m = new Matrix<T>(m1.rows, m1.columns);
-                for (int r = 0; r < m.rows; r++)
-                {
-                    for (int c = 0; c < m.columns; c++)
-                    {
-                        switch (Operator)
-                        {
-                            // Addition
-                            case 1:
-                                m[r, c] = (dynamic)m1[r, c] + m2[r, c];
-                                break;
 
-                            // Subtraction
-                            case 2:
-                                m[r, c] = (dynamic)m1[r, c] - m2[r, c];
-                                break;
-                            default: break;
-                        }
-                    }
+            var m = new Matrix<T>(m1.rows, m1.columns);
+            for (int r = 0; r < m.rows; r++)
+            {
+                for (int c = 0; c < m.columns; c++)
+                {
+                    m[r, c] = addition ?
+                        (dynamic)m1[r, c] + m2[r, c] :
+                        (dynamic)m1[r, c] - m2[r, c];
                 }
-                return m;
             }
+
+            return m;
         }
 
         // Clears all cells in the matrix
         public void Clear()
         {
-            matrix = new T[rows, columns];
+            this.matrix = new T[this.rows, this.columns];
         }
 
-        // String output for this class
         public override string ToString()
         {
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < rows; i++)
+            var result = new StringBuilder();
+            for (int i = 0; i < this.rows; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 0; j < this.columns; j++)
                 {
-                    result.Append(String.Format("{0,11:F2}", matrix[i, j]));
+                    result.Append(String.Format("{0,11:F2}", this.matrix[i, j]));
                 }
+
                 result.Append("\n");
             }
+
             return result.ToString();
         }
     }

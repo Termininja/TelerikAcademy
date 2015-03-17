@@ -1,35 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Point
+﻿namespace Point
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Path
     {
-        // Hold a sequence of points in the 3D space
+        // Holds a sequence of points in the 3D space
         public List<Point3D> Points = new List<Point3D>();
 
         // Adds a new point in the path
         public void Add(Point3D point)
         {
-            Points.Add(point);
+            this.Points.Add(point);
         }
 
         // Removes some point from the path
         public void RemoveAt(int position)
         {
-            Points.RemoveAt(position);
+            this.Points.RemoveAt(position);
         }
 
-        // Clear the path
+        // Clears the path
         public void Clear()
         {
-            Points.Clear();
+            this.Points.Clear();
         }
 
-        // Count the length of the path
+        // Counts the length of the path
         public int Count()
         {
-            return Points.Count;
+            return this.Points.Count;
         }
     }
 }

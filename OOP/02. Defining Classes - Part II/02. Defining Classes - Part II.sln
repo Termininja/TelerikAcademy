@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-04. Point", "Point\01-04. Point.csproj", "{876DDE1E-6F06-429F-82DB-279BF8F795E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-07. List", "List\05-07. List.csproj", "{7A6B8E24-9BCF-4EF6-9B87-7510A01242F3}"

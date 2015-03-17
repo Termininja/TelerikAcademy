@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace Point
+﻿namespace Point
 {
-    // Creates a structure for 3D-coordinates {X, Y, Z}
+    using System;
+
+    /// <summary>
+    /// Creates a structure for 3D-coordinates {X, Y, Z}.
+    /// </summary>
     public struct Point3D
     {
-        // The start of the coordinate system
-        private static readonly Point3D o;
-
-        // Constructors
         public Point3D(int x, int y, int z)
             : this()
         {
@@ -17,15 +15,13 @@ namespace Point
             this.Z = z;
         }
 
-        // Properties
         public int X { get; set; }
+
         public int Y { get; set; }
+
         public int Z { get; set; }
 
-        public static Point3D O
-        {
-            get { return o; }
-        }
+        public static Point3D O { get; private set; }
 
         // Prints a 3D point
         public override string ToString()

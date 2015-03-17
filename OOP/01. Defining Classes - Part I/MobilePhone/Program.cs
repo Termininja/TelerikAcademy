@@ -34,7 +34,7 @@
      * 
      * Problem 8. Calls:
      *      Create a class Call to hold a call performed through a GSM.
-     *      It should contain date time, dialled phone number and duration (in seconds).
+     *      It should contain date, time, dialled phone number and duration (in seconds).
      * 
      * Problem 9. Call history:
      *      Add a property CallHistory in the GSM class to hold a list of the performed calls.
