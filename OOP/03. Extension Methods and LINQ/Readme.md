@@ -1,4 +1,4 @@
-## Extension Methods and LINQ
+## [Extension Methods and LINQ](https://github.com/TelerikAcademy/Object-Oriented-Programming/tree/master/03.%20Extension-Methods-Delegates-Lambda-LINQ)
 
 **Task 01.** Implement an extension method `Substring(int index, int length)` for the class `StringBuilder` that returns new `StringBuilder` and has the same functionality as `Substring` in the class `String`.
 
