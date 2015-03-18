@@ -1,4 +1,4 @@
-## Defining Classes - Part II
+## [Defining Classes - Part II](https://github.com/TelerikAcademy/Object-Oriented-Programming/tree/master/02.%20Defining%20Classes%20-%20Part%202)
 
 **Task 01.** Create a structure `Point3D` to hold a 3D-coordinate `{X, Y, Z}` in the Euclidian 3D space. Implement the `ToString()` to enable printing a 3D point.
 
