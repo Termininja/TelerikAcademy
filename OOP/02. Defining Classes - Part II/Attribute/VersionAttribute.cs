@@ -20,7 +20,7 @@
 
         public override string ToString()
         {
-            return this.Version.ToString();
+            return string.Format("Version: {0:F2}", this.Version);
         }
     }
 }

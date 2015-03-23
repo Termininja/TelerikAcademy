@@ -114,9 +114,7 @@
             {
                 for (int c = 0; c < m.columns; c++)
                 {
-                    m[r, c] = addition ?
-                        (dynamic)m1[r, c] + m2[r, c] :
-                        (dynamic)m1[r, c] - m2[r, c];
+                    m[r, c] = m1[r, c] + (addition ? (dynamic)m2[r, c] : -(dynamic)m2[r, c]);
                 }
             }
 

@@ -14,9 +14,7 @@ namespace Attribute
     {
         public static void Main()
         {
-            var attributes = typeof(Program).GetCustomAttributes(false);
-
-            Console.WriteLine("Version: {0}", attributes[0]);
+            Console.WriteLine(typeof(Program).GetCustomAttributes(false)[0]);
         }
     }
 }
