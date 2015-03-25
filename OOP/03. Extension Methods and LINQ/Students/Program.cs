@@ -1,87 +1,123 @@
 ﻿/* 
- * Task 03. Write a method that from a given array of students finds all students whose first name
- *          is before its last name alphabetically. Use LINQ query operators.
- *          
- * Task 04. Write a LINQ query that finds the first name and last name of all students with age between 18 and 24.
+ * Problem 3. First before last:
+ *      Write a method that from a given array of students finds all students whose
+ *      first name is before its last name alphabetically. Use LINQ query operators.
  * 
- * Task 05. Using the extension methods OrderBy() and ThenBy() with lambda expressions sort the students
- *          by first name and last name in descending order. Rewrite the same with LINQ.
+ * Problem 4. Age range:
+ *      Write a LINQ query that finds the first name and last name of all students with age between 18 and 24.
+ * 
+ * Problem 5. Order students:
+ *      Using the extension methods OrderBy() and ThenBy() with lambda expressions sort
+ *      the students by first name and last name in descending order. Rewrite the same with LINQ.
  */
-
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Collections;
 
 namespace Students
 {
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+    using System.Collections;
+
     public class Program
     {
         public static void Main()
         {
             // Given array of students
-            Students[] students = { 
-                        new Students("Hristo", "Stoichkov", 47), 
-                        new Students("Desi", "Slava", 34),
-                        new Students("Kubrat", "Pulev", 32), 
-                        new Students("Ejko", "Bejko", 23), 
-                        new Students("Ivet", "Lalova", 29), 
-                        new Students("Boyko", "Borisov", 54), 
-                        new Students("Ejko", "Taralejko", 78), 
-                        new Students("Lubo", "Ganev", 48),
-                        new Students("Radka", "Piratka", 19)
-                                  };
+            var students = new List<Student>() { 
+                new Student("Hristo", "Stoichkov", 47), 
+                new Student("Desi", "Slava", 34),
+                new Student("Kubrat", "Pulev", 32), 
+                new Student("Ejko", "Bejko", 23), 
+                new Student("Ivet", "Lalova", 29), 
+                new Student("Boyko", "Borisov", 54), 
+                new Student("Ejko", "Taralejko", 78), 
+                new Student("Lubo", "Ganev", 48),
+                new Student("Radka", "Piratka", 19)
+            };
 
             // Prints all students
-            Print(Students.AllStudents(students), "All students:");
+            Print(students, "All students:");
 
-            // Extract and print only the students whose first name is before its last name alphabetically
-            Print(Students.FilterByName(students), "\nStudents with first name before its last name: ");
+            // Extracts and prints only the students whose first name is before its last name alphabetically
+            Print(FilterByName(students), "\nStudents with first name before its last name: ");
 
-            // Extract and print only the students with age between 18 and 24
-            Print(Students.FilterByAge(students), "\nStudents with age between 18 and 24: ");
+            // Extracts and prints only the students with age between 18 and 24
+            Print(FilterByAge(students), "\nStudents with age between 18 and 24: ");
 
             // Sorting the students by first name and last name by using Lambda and LINQ
             LambdaAndLINQ(students, "Lambda");
             LambdaAndLINQ(students, "LINQ");
         }
 
-        private static void LambdaAndLINQ(Students[] students, string method)
+        /// <summary>
+        /// Finds all students whose first name is before its last name alphabetically.
+        /// </summary>
+        /// <param name="list">The list of students.</param>
+        /// <returns>Returns all students whose first name is before its last name alphabetically.</returns>
+        public static List<Student> FilterByName(List<Student> list)
         {
-            string order = (method == "Lambda") ? "descending" : "ascending";
+            var result = new List<Student>();
+            var filtered = from n in list where n.FirstName[0] < n.LastName[0] select n;
+            filtered.ToList().ForEach(m => result.Add(m));
+
+            return result;
+        }
+
+        /// <summary>
+        /// Finds the names of all students with age between 18 and 24.
+        /// </summary>
+        /// <param name="list">The list of students.</param>
+        /// <returns>Returns the names of all students with age between 18 and 24.</returns>
+        public static List<Student> FilterByAge(List<Student> list)
+        {
+            var result = new List<Student>();
+            var filtered = from n in list where n.Age >= 18 && n.Age <= 24 select n;
+            filtered.ToList().ForEach(m => result.Add(m));
+
+            return result;
+        }
+
+        private static void LambdaAndLINQ(List<Student> students, string method)
+        {
+            var order = (method == "Lambda") ? "descending" : "ascending";
             Console.Write("\nPress any key to sort all lists in {0} order by {1}...", order, method);
             Console.ReadKey();
             Console.Clear();
-            PrintSorted(method, Students.AllStudents(students), "All students:");
-            PrintSorted(method, Students.FilterByName(students), "\nStudents with first name before its last name: ");
-            PrintSorted(method, Students.FilterByAge(students), "\nStudents with age between 18 and 24: ");
+            PrintSorted(method, students, "All students:");
+            PrintSorted(method, FilterByName(students), "\nStudents with first name before its last name: ");
+            PrintSorted(method, FilterByAge(students), "\nStudents with age between 18 and 24: ");
         }
 
         // Print without sorting
-        private static void Print(List<Students> list, string str)
+        private static void Print(List<Student> students, string str)
         {
             Console.WriteLine(str);
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var item in list) Console.WriteLine(item);
+            students.ForEach(student => Console.WriteLine(student));
             Console.ResetColor();
         }
 
         // Print with sorting by first and last name
-        private static void PrintSorted(string method, List<Students> list, string str)
+        private static void PrintSorted(string method, List<Student> list, string str)
         {
             Console.WriteLine(str);
             Console.ForegroundColor = ConsoleColor.White;
-            IEnumerable result = list;
+            var students = new List<Student>();
             switch (method)
             {
                 // Sorting by using lambda expressions and extension methods OrderBy() and ThenBy()
-                case "Lambda": result = list.OrderByDescending(m => m.First).ThenByDescending(m => m.Last); break;
-
+                case "Lambda":
+                    students = list.OrderByDescending(m => m.FirstName).ThenByDescending(m => m.LastName).ToList();
+                    break;
                 // Sorting by using LINQ
-                case "LINQ": result = from m in list orderby m.First ascending, m.Last ascending select m; break;
-                default: break;
+                case "LINQ":
+                    students = (from m in list orderby m.FirstName ascending, m.LastName ascending select m).ToList();
+                    break;
+                default:
+                    break;
             }
-            foreach (var item in result) Console.WriteLine(item);
+
+            students.ForEach(student => Console.WriteLine(student));
             Console.ResetColor();
         }
     }

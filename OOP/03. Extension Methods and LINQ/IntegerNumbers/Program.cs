@@ -1,23 +1,27 @@
-﻿// Task 06. Write a program that prints from given array of integers all numbers that are divisible by 7 and 3.
-//          Use the built-in extension methods and lambda expressions. Rewrite the same with LINQ.
-
-using System;
-using System.Threading;
+﻿/* 
+ * Problem 6. Divisible by 7 and 3:
+ *      Write a program that prints from given array of integers all numbers that are divisible
+ *      by 7 and 3. Use the built-in extension methods and lambda expressions. Rewrite the same with LINQ.
+ */
 
 namespace IntegerNumbers
 {
+    using System;
+    using System.Linq;
+    using System.Threading;
+
     public class Program
     {
         public static void Main()
         {
             while (true)
             {
-                // Create and print some array of integers
+                // Creates and prints some array of integers
                 Console.CursorVisible = false;
                 Console.WriteLine("Array of random integers:");
-                IntegerNumbers[] numbers = new IntegerNumbers[25];
+                var numbers = new IntegerNumbers[25];
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Random generator = new Random();
+                var generator = new Random();
                 for (int i = 0; i < numbers.Length; i++)
                 {
                     numbers[i] = new IntegerNumbers(generator.Next(10, 100));
@@ -32,13 +36,14 @@ namespace IntegerNumbers
                 Console.WriteLine("\n\n\nPress any key to stop the test...");
                 Thread.Sleep(500);
 
-                // Stop the loop
+                // Stops the loop
                 if (Console.KeyAvailable)
                 {
                     Console.ReadKey(false);
                     Console.Write("\b \b");
                     break;
                 }
+
                 Console.Clear();
             }
         }
@@ -47,7 +52,11 @@ namespace IntegerNumbers
         {
             Console.Write("\n\nNumbers that are divisible by 7 and 3 (using {0})\t══►    ", str);
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var item in arr) Console.Write(item.N + " ");
+            foreach (var item in arr)
+            {
+                Console.Write(item.N + " ");
+            }
+
             Console.ResetColor();
         }
     }

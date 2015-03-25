@@ -1,11 +1,14 @@
-﻿// Task 07. Using delegates write a class Timer that has can execute certain method at each t seconds.
-
-using System;
-using System.Numerics;
-using System.Threading;
+﻿/*
+ * Problem 7. Timer:
+ *      Using delegates write a class Timer that can execute certain method at each t seconds.
+ */
 
 namespace Timer
 {
+    using System;
+    using System.Numerics;
+    using System.Threading;
+
     public class Program
     {
         // Define a delegate
@@ -19,14 +22,12 @@ namespace Timer
             while (t <= 0)
             {
                 Console.Clear();
-                Console.Write("Please, enter the sleep time: t = ");
+                Console.Write("Please, enter the sleep time [in seconds]: t = ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-
-                // The time (in seconds)
                 t = BigInteger.Parse(Console.ReadLine());
-
                 Console.ResetColor();
             }
+
             Console.WriteLine("The task will be executed at each {0} seconds\n", t);
 
             // Create a delegate
@@ -67,6 +68,7 @@ namespace Timer
                     Console.Write("\b \b");
                     break;
                 }
+
                 left--;
             }
         }

@@ -1,18 +1,19 @@
-﻿// Task 08*. Read in MSDN about the keyword event in C# and how to publish events.
-//           Re-implement the above using .NET events and following the best practices.
-
-using System;
+﻿/* 
+ * Problem 8.* Events:
+ *      Read in MSDN about the keyword event in C# and how to publish events.
+ *      Re-implement the above using .NET events and following the best practices.
+ */
 
 namespace Events
 {
+    using System;
+
     public class Program
     {
         public static void Main()
         {
-            bool end = false;
             while (true)
             {
-                // Input data
                 Console.CursorVisible = false;
                 Console.SetCursorPosition(0, 0);
                 Cow cow1 = InputCow("Betsy", 'B');
@@ -24,25 +25,35 @@ namespace Events
                 Console.ResetColor();
                 Console.WriteLine("]: Quit\n");
 
-                if (end) break;
                 Console.SetCursorPosition(10, 3);
                 ConsoleKeyInfo key = Console.ReadKey();
                 Console.Clear();
                 Console.SetCursorPosition(0, 5);
 
-                // Choose what to do
-                if (key.Key == ConsoleKey.B) cow1.BeTippedOver();
-                else if (key.Key == ConsoleKey.G) cow2.BeTippedOver();
-                else if (key.Key == ConsoleKey.M) cow3.BeTippedOver();
-                else if (key.Key == ConsoleKey.Q) end = true;
-                else Console.WriteLine(" ↑");
+                switch (key.Key)
+                {
+                    case ConsoleKey.B:
+                        cow1.BeTippedOver();
+                        break;
+                    case ConsoleKey.G:
+                        cow2.BeTippedOver();
+                        break;
+                    case ConsoleKey.M:
+                        cow3.BeTippedOver();
+                        break;
+                    case ConsoleKey.Q:
+                        return;
+                    default:
+                        Console.WriteLine(" ↑");
+                        break;
+                }
             }
         }
 
         // Input some cow in the cowshed
         private static Cow InputCow(string name, char key)
         {
-            Cow cow = new Cow { Name = name };
+            var cow = new Cow { Name = name };
             cow.Moo += Giggle;
             Console.Write("[");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -53,6 +64,7 @@ namespace Events
             Console.Write(name);
             Console.ResetColor();
             Console.WriteLine(" cow");
+
             return cow;
         }
 
@@ -86,6 +98,7 @@ namespace Events
                 default:
                     break;
             }
+
             Console.ResetColor();
         }
     }

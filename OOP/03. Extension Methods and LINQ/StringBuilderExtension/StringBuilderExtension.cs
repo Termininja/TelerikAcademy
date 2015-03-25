@@ -1,13 +1,15 @@
-﻿using System;
-using System.Text;
-
-public static class StringBuilderExtension
+﻿namespace StringBuilderExtension
 {
-    // Extension method
-    public static StringBuilder Substring(this StringBuilder str, int index, int length)
+    using System.Text;
+
+    public static class StringBuilderExtension
     {
-        StringBuilder result = new StringBuilder();
-        result.Append(str.ToString(index, length));
-        return result;
+        public static StringBuilder Substring(this StringBuilder str, int index, int length)
+        {
+            StringBuilder result = new StringBuilder();
+            result.Append(str.ToString(index, length));
+
+            return result;
+        }
     }
 }

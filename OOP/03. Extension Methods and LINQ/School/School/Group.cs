@@ -1,29 +1,24 @@
-﻿using System;
-
-namespace School
+﻿namespace School
 {
-    class Group
-    {
-        #region Properties
-        public int GroupNumber { get; set; }
-        public string DepartmentName { get; set; }
-        #endregion
+    using System;
 
-        #region Constructor
+    public class Group
+    {
         public Group(int groupNumber, string departmentName)
         {
             this.GroupNumber = groupNumber;
             this.DepartmentName = departmentName;
         }
-        #endregion
 
-        #region Method
+        public int GroupNumber { get; set; }
+
+        public string DepartmentName { get; set; }
+
         public override string ToString()
         {
-            string result = "\n" + "GroupNumber: " + this.GroupNumber;
-            result += "\n" + "Department: " + this.DepartmentName;
+            string result = string.Format("\nGroupNumber: {0}\nDepartment: {1}", this.GroupNumber, this.DepartmentName);
+
             return result;
         }
-        #endregion
     }
 }

@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GroupedStudents
+﻿namespace GroupedStudents
 {
-    class Student
+    public class Student
     {
-        // Properties
-        public string Name { get; set; }
-        public string GroupName { get; set; }
-
-        // Constructor
         public Student(string name, string groupName)
         {
             this.Name = name;
             this.GroupName = groupName;
         }
 
-        // Method
+        public string Name { get; set; }
+
+        public string GroupName { get; set; }
+
         public override string ToString()
         {
-            return "Name: " + this.Name + " (" + this.GroupName + ")";
+            var result = string.Format("  Name: {0} ({1})", this.Name, this.GroupName);
+
+            return result;
         }
     }
 }
