@@ -1,4 +1,4 @@
-## Common Type System
+## [Common Type System](https://github.com/TelerikAcademy/Object-Oriented-Programming/tree/master/06.%20Common%20Type%20System)
 
 **Task 01.** Define a class `Student`, which contains data about a student – first, middle and last name, SSN, permanent address, mobile phone, e-mail, course, specialty, university, faculty. Use an enumeration for the specialties, universities and faculties. Override the standard methods, inherited by  `System.Object`: `Equals()`, `ToString()`, `GetHashCode()` and operators `==` and `!=`.
 

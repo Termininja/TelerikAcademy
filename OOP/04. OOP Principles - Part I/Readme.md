@@ -1,4 +1,4 @@
-## OOP Principles - Part I
+## [OOP Principles - Part I](https://github.com/TelerikAcademy/Object-Oriented-Programming/tree/master/04.%20OOP%20Principles%20-%20Part%201)
 
 **Task 01.** We are given a `school`. In the school there are classes of students. Each class has a set of teachers. Each teacher teaches a set of disciplines. Students have name and unique class number. Classes have unique text identifier. Teachers have name. Disciplines have name, number of lectures and number of exercises. Both teachers and students are people. Students, classes, teachers and disciplines could have optional comments (free text block).
 
