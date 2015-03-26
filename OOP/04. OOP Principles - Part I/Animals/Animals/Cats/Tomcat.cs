@@ -1,8 +1,10 @@
 ﻿namespace Animals
 {
-    class Tomcat : Cat
+    public class Tomcat : Cat
     {
-        // Constructor
-        public Tomcat(string name, byte age) : base(name, age, Sex.Male) { }
+        private const string MusicPath = @"..\..\..\Animals\Sounds\tomcat.wav";
+
+        public Tomcat(string name, byte age)
+            : base(name, age, Sex.Male, MusicPath) { }
     }
 }

@@ -1,38 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Animals
+﻿namespace Animals
 {
-    // The sex of the animal
-    enum Sex { Male, Female }
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Media;
 
-    class Animal
+    public abstract class Animal : ISound
     {
-        #region Properties
-        public string Name { get; set; }
-        public byte Age { get; set; }
-        public Sex Sex { get; set; }
-        #endregion
+        protected string musicPath;
 
-        #region Constructor
-        public Animal(string name, byte age, Sex sex)
+        public Animal(string name, byte age, Sex sex, string musicPath)
         {
             this.Name = name;
             this.Age = age;
             this.Sex = sex;
+            this.musicPath = musicPath;
         }
-        #endregion
 
-        // Average age of each kind of animal
-        public static double? AverageAge(Animal[] animals)
+        public string Name { get; set; }
+
+        public byte Age { get; set; }
+
+        public Sex Sex { get; set; }
+
+        public static double? AverageAge<T>(List<T> animals) where T : Animal
         {
-            List<Animal> result = new List<Animal>();
-            foreach (Animal animal in animals)
+            return animals.Average(animal => animal.Age);
+        }
+
+        public void Sound()
+        {
+            using (var sound = new MemoryStream(File.ReadAllBytes(this.musicPath)))
             {
-                if (animal == null) break;
-                result.Add(animal);
+                new SoundPlayer(sound).Play();
             }
-            return result.Average(m => m.Age);
         }
     }
 }

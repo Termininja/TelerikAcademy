@@ -1,16 +1,22 @@
 ﻿namespace School
 {
-    class Person
-    {
-        #region Property
-        public string Name { get; private set; }
-        #endregion
+    using System.Collections.Generic;
 
-        #region Constructor
+    public class Person
+    {
         public Person(string name)
         {
             this.Name = name;
+            this.Comments = new List<string>();
         }
-        #endregion
+
+        public string Name { get; private set; }
+
+        public List<string> Comments { get; set; }
+
+        public void AddComment(string comment)
+        {
+            this.Comments.Add(comment);
+        }
     }
 }

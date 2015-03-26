@@ -1,59 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace School
+﻿namespace School
 {
-    class Student : Person, ICommentable
+    using System;
+
+    public class Student : Person, ICommentable
     {
-        #region Field
-        private List<string> comments = new List<string>();
-        #endregion
+        private uint classNumber;
 
-        #region Properties
-        public uint ClassNumber { get; private set; }
-
-        public List<string> Comments
-        {
-            get { return comments; }
-            set { comments = value; }
-        }
-        #endregion
-
-        #region Constructor
         public Student(string name, uint classNumber)
             : base(name)
         {
-            if (classNumber.ToString().Length <= 5 && classNumber > 0)
-            {
-                this.ClassNumber = classNumber;
-            }
-            else
-            {
-                throw new ArgumentException("The number is not correct!");
-            }
+            this.ClassNumber = classNumber;
         }
-        #endregion
 
-        #region Methods
-        public void AddComment(string comment)
+        public uint ClassNumber
         {
-            Comments.Add(comment);
+            get
+            {
+                return this.classNumber;
+            }
+            private set
+            {
+                if (value.ToString().Length > 5 && value <= 0)
+                {
+                    throw new ArgumentException("The number is not correct!");
+                }
+
+                this.classNumber = value;
+            }
         }
 
         public override string ToString()
         {
-            string result = Name + " (number: " + ClassNumber + ")";
-            if (comments.Count > 0)
-            {
-                result += ": ";
-                for (int i = 0; i < comments.Count; i++)
-                {
-                    result += comments[i];
-                    if (i != comments.Count - 1) result += "; ";
-                }
-            }
+            string result = string.Format("{0} (number: {1}){2}", base.Name, this.ClassNumber,
+                base.Comments.Count > 0 ? ": " + string.Join("; ", base.Comments) : null);
+
             return result;
         }
-        #endregion
     }
 }

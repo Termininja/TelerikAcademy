@@ -1,40 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace School
+﻿namespace School
 {
-    class School
-    {
-        #region Properties
-        public string SchoolName { get; private set; }
-        public List<SchoolClass> Classes { get; private set; }
-        #endregion
+    using System.Collections.Generic;
 
-        #region Constructor
-        public School(string schoolName, List<SchoolClass> classes)
+    public class School
+    {
+        public School(string name, List<SchoolClass> classes)
         {
-            this.SchoolName = schoolName;
+            this.Name = name;
             this.Classes = classes;
         }
-        #endregion
 
-        #region Methods
-        public void AddClass(SchoolClass theClass)
+        public string Name { get; private set; }
+
+        public List<SchoolClass> Classes { get; private set; }
+
+        public void AddClass(SchoolClass schoolClass)
         {
-            Classes.Add(theClass);
+            this.Classes.Add(schoolClass);
         }
 
-        public void RemoveClass(SchoolClass theClass)
+        public void RemoveClass(SchoolClass schoolClass)
         {
-            Classes.Remove(theClass);
+            this.Classes.Remove(schoolClass);
         }
 
         public override string ToString()
         {
-            string result = "School Name: " + SchoolName + "\n";
-            foreach (SchoolClass schoolClass in Classes) result += schoolClass + "\n";
+            string result = string.Format("School Name: {0}\n{1}\n", this.Name, string.Join("\n", this.Classes));
+
             return result;
         }
-        #endregion
     }
 }

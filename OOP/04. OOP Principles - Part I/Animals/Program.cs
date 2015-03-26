@@ -1,71 +1,70 @@
-﻿/* Task 03.
- * Create a hierarchy Dog, Frog, Cat, Kitten, Tomcat and define useful constructors and methods.
- * Dogs, frogs and cats are Animals. All animals can produce sound (specified by the ISound interface).
- * Kittens and tomcats are cats. All animals are described by age, name and sex. Kittens can be only female
- * and tomcats can be only male. Each animal produces a specific sound. Create arrays of different kinds
- * of animals and calculate the average age of each kind of animal using a static method (you may use LINQ).
+﻿/* 
+ * Problem 3. Animal hierarchy:
+ *      Create a hierarchy Dog, Frog, Cat, Kitten, Tomcat and define useful constructors and methods.
+ *      Dogs, frogs and cats are Animals. All animals can produce sound (specified by the ISound interface).
+ *      Kittens and tomcats are cats. All animals are described by age, name and sex.
+ *      Kittens can be only female and tomcats can be only male. Each animal produces a specific sound.
+ *      
+ *      Create arrays of different kinds of animals and calculate the average age of each kind
+ *      of animal using a static method (you may use LINQ).
  */
-
-using System;
 
 namespace Animals
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Program
     {
+        private static List<Frog> frogs = new List<Frog>();
+        private static List<Dog> dogs = new List<Dog>();
+        private static List<Cat> cats = new List<Cat>();
+
         public static void Main()
         {
-            // Create arrays of different kinds of animals
-            Frog[] frogs = new Frog[100];
-            Dog[] dogs = new Dog[100];
-            Cat[] cats = new Cat[100];
-
-            byte frogCount = 0;
-            byte dogCount = 0;
-            byte catCount = 0;
-
-            bool exit = false;
-            while (!exit)
+            while (true)
             {
                 Console.CursorVisible = false;
                 Console.CursorTop = 0;
                 {
-                    // The menu
-                    Menu('F', "Add some Frog");
-                    Menu('D', "Add some Dog");
-                    Menu('T', "Add some Tomcat");
-                    Menu('K', "Add some Kitten\n");
+                    PrintMenu('F', "Add some Frog");
+                    PrintMenu('D', "Add some Dog");
+                    PrintMenu('T', "Add some Tomcat");
+                    PrintMenu('K', "Add some Kitten\n");
+                    PrintMenu('P', "Print the list of animals");
+                    PrintMenu('Q', "Quit\n");
 
-                    Menu('P', "Print the list of animals");
-                    Menu('Q', "Quit\n");
                     Console.Write(" ");
-
-                    // Our choice
                     switch (Console.ReadKey().Key)
                     {
-                        case ConsoleKey.F: frogCount = AddAnimal("Frog", frogs, frogCount); break;
-                        case ConsoleKey.D: dogCount = AddAnimal("Dog", dogs, dogCount); break;
-                        case ConsoleKey.T: catCount = AddAnimal("Tomcat", cats, catCount); break;
-                        case ConsoleKey.K: catCount = AddAnimal("Kitten", cats, catCount); break;
-                        case ConsoleKey.P: PrintTable(frogs, dogs, cats); break;
-                        case ConsoleKey.Q: exit = true; Console.Write("\b \b"); continue;
-                        default: Console.WriteLine("\b \b↑"); continue;
+                        case ConsoleKey.F:
+                            AddAnimal<Frog>();
+                            break;
+                        case ConsoleKey.D:
+                            AddAnimal<Dog>();
+                            break;
+                        case ConsoleKey.T:
+                            AddAnimal<Tomcat>();
+                            break;
+                        case ConsoleKey.K:
+                            AddAnimal<Kitten>();
+                            break;
+                        case ConsoleKey.P:
+                            PrintTable();
+                            break;
+                        case ConsoleKey.Q:
+                            Console.Write("\b \b");
+                            return;
+                        default: Console.WriteLine("\b \b↑");
+                            continue;
                     }
+
                     Console.Clear();
                 }
             }
         }
 
-        // Print some line from the menu
-        private static void Menu(char key, string text)
-        {
-            Console.Write("[");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(key);
-            Console.ResetColor();
-            Console.WriteLine("]: {0}", text);
-        }
-
-        // Ask for something and read the information about it
         private static string Read(string text)
         {
             Console.Write(text);
@@ -75,38 +74,34 @@ namespace Animals
             return input;
         }
 
-        // Read information about some animal
-        private static byte AddAnimal<T>(string kind, T[] animals, byte count) where T : ISound
+        private static void AddAnimal<T>()
         {
             Console.Write("\r");
-            string name = String.Empty;
-            bool isName = false;
+            var name = String.Empty;
             while (true)
             {
                 try
                 {
                     // Read the animal's name
-                    if (!isName)
+                    if (name == String.Empty)
                     {
-                        name = Read(String.Format("{0}'s name: ", kind));
-                        if (name.Length < 2) throw new ArgumentException("The name is too short!");
-                        if (name.Length > 10) throw new ArgumentException("The name is too long!");
-                        isName = true;
+                        name = Read(String.Format("{0}'s name: ", typeof(T).Name));
+                        if (name.Length < 2 || name.Length > 10)
+                        {
+                            name = String.Empty;
+                            throw new ArgumentException("The name has to be from 2 to 10 characters in length!");
+                        }
                     }
 
                     // Read the animal's age
-                    byte age = byte.Parse(Read(String.Format("{0}'s age: ", name)));
+                    var age = byte.Parse(Read(String.Format("{0}'s age: ", name)));
 
                     // Read the sex of the animal
-                    if (kind == "Tomcat")
+                    dynamic animal = null;
+                    if (typeof(T) == typeof(Tomcat) || typeof(T) == typeof(Kitten))
                     {
-                        animals[count] = (T)Activator.CreateInstance(typeof(T), name, (byte)age, Sex.Male);
-                        animals[count].Sound(Sex.Male);
-                    }
-                    else if (kind == "Kitten")
-                    {
-                        animals[count] = (T)Activator.CreateInstance(typeof(T), name, (byte)age, Sex.Female);
-                        animals[count].Sound(Sex.Female);
+                        animal = (T)Activator.CreateInstance(typeof(T), name, age);
+                        cats.Add(animal);
                     }
                     else
                     {
@@ -114,44 +109,69 @@ namespace Animals
                         while (true)
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
+                            var sex = Sex.Female;
                             switch (Console.ReadKey().Key)
                             {
                                 case ConsoleKey.M:
-                                    animals[count] = (T)Activator.CreateInstance(typeof(T), name, (byte)age, Sex.Male);
-                                    Console.Write("ale");
-                                    animals[count].Sound(Sex.Male);
+                                    Console.WriteLine("ale");
+                                    sex = Sex.Male;
                                     break;
                                 case ConsoleKey.F:
-                                    animals[count] = (T)Activator.CreateInstance(typeof(T), name, (byte)age, Sex.Female);
-                                    Console.Write("emale");
-                                    animals[count].Sound(Sex.Female);
+                                    Console.WriteLine("emale");
+                                    sex = Sex.Female;
                                     break;
-                                default: Console.Write("\b \b"); continue;
+                                default: Console.Write("\b \b");
+                                    continue;
                             }
+
+                            animal = (T)Activator.CreateInstance(typeof(T), name, age, sex);
+                            if (typeof(T) == typeof(Frog)) frogs.Add(animal);
+                            else dogs.Add(animal);
+
                             Console.ResetColor();
                             break;
                         }
                     }
 
+                    animal.Sound();
+
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("\n\nA new {0} is added to the list of animals", char.ToLower(kind[0]) + kind.Substring(1));
+                    Console.WriteLine("\nA new {0} was added to the list of animals", char.ToLower(typeof(T).Name[0]) + typeof(T).Name.Substring(1));
                     Console.ResetColor();
                     Console.CursorVisible = true;
                     Console.Write("Press any key to continue...");
                     Console.ReadKey();
-                    count++;
-                    return count;
+
+                    return;
                 }
-                catch (Exception e) { Error(e); }
+                catch (Exception e)
+                {
+                    PrintErrorMessage(e);
+                }
             }
         }
 
-        // Print the whole list of animals in one table
-        private static void PrintTable(Frog[] frogs, Dog[] dogs, Cat[] cats)
+        private static void PrintMenu(char key, string text)
         {
-            if (frogs[0] == null && dogs[0] == null && cats[0] == null)
+            Console.Write("[");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(key);
+            Console.ResetColor();
+            Console.WriteLine("]: {0}", text);
+        }
+
+        private static void PrintErrorMessage(Exception e, string error = null)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(e == null ? error : e.Message);
+            Console.ResetColor();
+        }
+
+        private static void PrintTable()
+        {
+            if (frogs.Count == 0 && dogs.Count == 0 && cats.Count == 0)
             {
-                Error(new Exception("\rThe list of animals is empty!"));
+                PrintErrorMessage(null, "\rThe list of animals is empty!");
             }
             else
             {
@@ -159,17 +179,18 @@ namespace Animals
                 Console.WriteLine();
                 LineOfTable("  ╔", new string('═', 27), "╗", ConsoleColor.Cyan);
                 LineOfTable("  ║          ", "ANIMALS", "║", ConsoleColor.White);
-                PrintAnimal(frogs, "Frogs:");
-                PrintAnimal(dogs, "Dogs:");
+                PrintAnimal<Frog>(frogs);
+                PrintAnimal<Dog>(dogs);
 
-                if (cats[0] != null)
+                if (cats.Count > 0)
                 {
                     LineOfTable("  ╟", new string('─', 27), "╢", ConsoleColor.Cyan);
                     LineOfTable("  ║ ", "Cats:", "║", ConsoleColor.White);
-                    PrintCat(cats, "Tomcats:", Sex.Male);
-                    PrintCat(cats, "Kittens:", Sex.Female);
-                    PrintAverageAge(cats);
+                    PrintCat<Tomcat>();
+                    PrintCat<Kitten>();
+                    PrintAverageAge<Cat>(cats);
                 }
+
                 LineOfTable("  ╚", new string('═', 27), "╝", ConsoleColor.Cyan);
             }
             Console.CursorVisible = true;
@@ -177,7 +198,43 @@ namespace Animals
             Console.ReadKey();
         }
 
-        // Print one row from the table
+        private static void PrintAnimal<T>(List<T> animals) where T : Animal
+        {
+            if (animals.Count > 0)
+            {
+                LineOfTable("  ╟", new string('─', 27), "╢", ConsoleColor.Cyan);
+                LineOfTable("  ║ ", typeof(T).Name + "s:", "║", ConsoleColor.White);
+
+                foreach (var animal in animals)
+                {
+                    LineOfTable("  ║    ", animal.Name + " (" + animal.Age + ":" + ((animal.Sex == Sex.Male) ? "m)" : "f)"), "║", ConsoleColor.Gray);
+                }
+
+                PrintAverageAge<T>(animals);
+            }
+        }
+
+        private static void PrintCat<T>() where T : Cat
+        {
+            if (cats.Any(cat => cat is T))
+            {
+                LineOfTable("  ║    ", typeof(T).Name + "s:", "║", ConsoleColor.White);
+                foreach (var cat in cats)
+                {
+                    if (cat is T)
+                    {
+                        LineOfTable("  ║       ", cat.Name + " (" + cat.Age + ")", "║", ConsoleColor.Gray);
+                    }
+                }
+            }
+        }
+
+        private static void PrintAverageAge<T>(List<T> animals) where T : Animal
+        {
+            LineOfTable("  ║ ", new string('─', 25), "║", ConsoleColor.DarkCyan);
+            LineOfTable("  ║ ", String.Format("Average age: {0:F1}", Animal.AverageAge<T>(animals)), "║", ConsoleColor.DarkCyan);
+        }
+
         private static void LineOfTable(string left, string text, string right, ConsoleColor color)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -187,58 +244,6 @@ namespace Animals
             Console.ForegroundColor = ConsoleColor.Cyan;
             if (right.Length == 1) Console.CursorLeft = 30;
             Console.WriteLine(right);
-            Console.ResetColor();
-        }
-
-        // Print some animal from the list
-        private static void PrintAnimal(Animal[] animals, string name)
-        {
-            if (animals[0] != null)
-            {
-                LineOfTable("  ╟", new string('─', 27), "╢", ConsoleColor.Cyan);
-                LineOfTable("  ║ ", name, "║", ConsoleColor.White);
-
-                foreach (Animal a in animals)
-                {
-                    if (a != null)
-                    {
-                        LineOfTable("  ║    ", a.Name + " (" + a.Age + ":" + ((a.Sex == Sex.Male) ? "m)" : "f)"), "║", ConsoleColor.Gray);
-                    }
-                }
-                PrintAverageAge(animals);
-            }
-        }
-
-        // Print some cat from the list
-        private static void PrintCat(Cat[] cats, string kind, Sex sex)
-        {
-            bool isSex = false;
-            foreach (Cat cat in cats) if (cat != null && cat.Sex == sex) isSex = true;
-            if (isSex)
-            {
-                LineOfTable("  ║    ", kind, "║", ConsoleColor.White);
-                foreach (var cat in cats)
-                {
-                    if (cat != null && cat.Sex == sex)
-                    {
-                        LineOfTable("  ║       ", cat.Name + " (" + cat.Age + ")", "║", ConsoleColor.Gray);
-                    }
-                }
-            }
-        }
-
-        // Print the average age of each kind of animal 
-        private static void PrintAverageAge(Animal[] animal)
-        {
-            LineOfTable("  ║ ", new string('─', 25), "║", ConsoleColor.DarkCyan);
-            LineOfTable("  ║ ", String.Format("Average age: {0:F1}", Animal.AverageAge(animal)), "║", ConsoleColor.DarkCyan);
-        }
-
-        // Print some error message
-        private static void Error(Exception e)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(e.Message);
             Console.ResetColor();
         }
     }

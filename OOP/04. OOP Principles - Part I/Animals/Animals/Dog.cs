@@ -1,25 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Media;
-
-namespace Animals
+﻿namespace Animals
 {
-    class Dog : Animal, ISound
+    public class Dog : Animal
     {
-        // Constructor
-        public Dog(string name, byte age, Sex sex) : base(name, age, sex) { }
+        private const string MusicPathMale = @"..\..\..\Animals\Sounds\dog-m.wav";
+        private const string MusicPathFemale = @"..\..\..\Animals\Sounds\dog-f.wav";
 
-        // Produce sound
-        public void Sound(Sex sex)
-        {
-            MemoryStream sound = new MemoryStream();
-            if (sex == Sex.Male) sound = new MemoryStream(File.ReadAllBytes(@"..\..\..\Animals\Sounds\dog-m.wav"));
-            if (sex == Sex.Female) sound = new MemoryStream(File.ReadAllBytes(@"..\..\..\Animals\Sounds\dog-f.wav"));
-            using (sound)
-            {
-                SoundPlayer play = new SoundPlayer(sound);
-                play.Play();
-            }
-        }
+        public Dog(string name, byte age, Sex sex)
+            : base(name, age, sex, sex == Sex.Male ? MusicPathMale : MusicPathFemale) { }
     }
 }

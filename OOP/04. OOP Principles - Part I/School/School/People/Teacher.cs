@@ -1,76 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace School
+﻿namespace School
 {
-    class Teacher : Person, ICommentable
+    using System.Collections.Generic;
+
+    public class Teacher : Person, ICommentable
     {
-        #region Field
-        private List<string> comments = new List<string>();
-        #endregion
-
-        #region Properties
-        public List<Discipline> Disciplines { get; set; }
-
-        public List<string> Comments
-        {
-            get { return comments; }
-            set { comments = value; }
-        }
-        #endregion
-
-        #region Constructor
         public Teacher(string name, List<Discipline> discipline)
             : base(name)
         {
             this.Disciplines = discipline;
         }
-        #endregion
 
-        #region Methods
-        public void AddComment(string comment)
-        {
-            Comments.Add(comment);
-        }
+        public List<Discipline> Disciplines { get; set; }
 
         public void AddDiscipline(Discipline discipline)
         {
-            Disciplines.Add(discipline);
+            this.Disciplines.Add(discipline);
         }
 
         public void RemoveDiscipline(Discipline discipline)
         {
-            Disciplines.Remove(discipline);
+            this.Disciplines.Remove(discipline);
         }
 
         public override string ToString()
         {
-            string result = "   Name: " + Name;
-            foreach (Discipline discipline in Disciplines)
+            string result = string.Format("   Name: {0}", base.Name);
+            foreach (var discipline in Disciplines)
             {
-                result +=
-                    "\n   Discipline: " + discipline.Name +
-                    " (lectures: " + discipline.NumberOfLectures +
-                    ", exercises: " + discipline.NumberOfExercises + ")";
+                result += string.Format("\n   Discipline: {0} (lectures: {1}, exercises: {2}){3}{4}",
+                    discipline.Name, discipline.NumberOfLectures, discipline.NumberOfExercises,
+                    discipline.Comments.Count > 0 ? " - " + string.Join("; ", discipline.Comments) : null,
+                    base.Comments.Count > 0 ? "\n   Comments: " + string.Join("; ", base.Comments) : null);
+            }
 
-                for (int i = 0; i < discipline.Comments.Count; i++)
-                {
-                    if (i == 0) result += " - ";
-                    result += discipline.Comments[i];
-                    if (i != discipline.Comments.Count - 1) result += "; ";
-                }
-            }
-            if (comments.Count > 0)
-            {
-                result += "\n   Comments: ";
-                for (int i = 0; i < comments.Count; i++)
-                {
-                    result += comments[i];
-                    if (i != comments.Count - 1) result += "; ";
-                }
-            }
             return result;
         }
-        #endregion
     }
 }

@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace School
+﻿namespace School
 {
-    interface ICommentable
+    using System.Collections.Generic;
+
+    public interface ICommentable
     {
-        // Property
         List<string> Comments { get; set; }
 
-        // Method
         void AddComment(string comment);
     }
 }

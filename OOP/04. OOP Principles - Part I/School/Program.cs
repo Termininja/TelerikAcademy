@@ -1,93 +1,83 @@
-﻿/* Task 01.
- * We are given a school. In the school there are classes of students. Each class has a set of teachers.
- * Each teacher teaches a set of disciplines. Students have name and unique class number.
- * Classes have unique text identifier. Teachers have name. Disciplines have name, number of lectures
- * and number of exercises. Both teachers and students are people. Students, classes, teachers
- * and disciplines could have optional comments (free text block).
- * 
- * Your task is to identify the classes (in terms of OOP) and their attributes and operations,
- * encapsulate their fields, define the class hierarchy and create a class diagram with Visual Studio. 
+﻿/* 
+ * Problem 1. School classes:
+ *      We are given a school. In the school there are classes of students. Each class has a set of teachers.
+ *      Each teacher teaches, a set of disciplines. Students have a name and unique class number.
+ *      Classes have unique text identifier. Teachers have a name. Disciplines have a name, number of lectures
+ *      and number of exercises. Both teachers and students are people. Students, classes, teachers
+ *      and disciplines could have optional comments (free text block).
+ *      
+ *      Your task is to identify the classes (in terms of OOP) and their attributes and operations, encapsulate
+ *      their fields, define the class hierarchy and create a class diagram with Visual Studio.
  */
-
-using System;
-using System.Collections.Generic;
 
 namespace School
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Program
     {
         public static void Main()
         {
-            // Creates some school
-            string schoolName = Read("Please, enter the name of your school: ");
-            School school = new School(schoolName, new List<SchoolClass>());
-
-            // Creates some disciplines
-            List<Discipline> disciplines = new List<Discipline>();
-
-            // Creates some list of teachers
-            List<Teacher> teachers = new List<Teacher>();
-
-            // Creates some list of students
-            List<Student> students = new List<Student>();
-            List<uint> studentNs = new List<uint>();
-
-            bool exit = false;
+            var school = new School(ReadText("Please, enter the name of your school: "), new List<SchoolClass>());
+            var disciplines = new List<Discipline>();
+            var teachers = new List<Teacher>();
+            var students = new List<Student>();
+            var studentsTemp = new List<uint>();
+            var exit = false;
             while (!exit)
             {
                 Console.CursorVisible = false;
                 Console.Clear();
                 try
                 {
-                    // The menu
-                    Menu('C', "Create some Class");
-                    Menu('D', "Create some Discipline");
-                    Menu('T', "Enter some Teacher");
-                    Menu('S', "Enter some Student\n");
+                    PrintMenu('C', "Create some Class");
+                    PrintMenu('D', "Create some Discipline");
+                    PrintMenu('T', "Enter some Teacher");
+                    PrintMenu('S', "Enter some Student\n");
 
-                    Menu('I', "Remove some Discipline");
-                    Menu('H', "Remove some Teacher");
-                    Menu('L', "Remove some Class");
-                    Menu('Z', "Remove some Student\n");
+                    PrintMenu('I', "Remove some Discipline");
+                    PrintMenu('H', "Remove some Teacher");
+                    PrintMenu('L', "Remove some Class");
+                    PrintMenu('Z', "Remove some Student\n");
 
-                    Menu('N', "Add comment to some Discipline");
-                    Menu('R', "Add comment to some Teacher");
-                    Menu('A', "Add comment to some Class");
-                    Menu('E', "Add comment to some Student\n");
+                    PrintMenu('N', "Add comment to some Discipline");
+                    PrintMenu('R', "Add comment to some Teacher");
+                    PrintMenu('A', "Add comment to some Class");
+                    PrintMenu('E', "Add comment to some Student\n");
 
-                    Menu('P', "Print all information");
-                    Menu('Q', "Quit\n");
+                    PrintMenu('P', "Print all information");
+                    PrintMenu('Q', "Quit\n");
 
-                    // Our choice
-                    ConsoleKeyInfo key = Console.ReadKey();
+                    var key = Console.ReadKey();
                     Console.Write("\b \b");
                     Console.CursorVisible = true;
                     switch (key.Key)
                     {
-                        // Create some new discipline in the school
+                        // Creates some new discipline in the school
                         case ConsoleKey.D:
-                            string disciplineName = Read("Please, enter the name of discipline: ");
-                            uint lectures = uint.Parse(Read("The number of lectures for this discipline: "));
-                            uint exercises = uint.Parse(Read("The number of exercises for this discipline: "));
+                            var disciplineName = ReadText("Please, enter the name of discipline: ");
+                            var lectures = uint.Parse(ReadText("The number of lectures for this discipline: "));
+                            var exercises = uint.Parse(ReadText("The number of exercises for this discipline: "));
                             disciplines.Add(new Discipline(disciplineName, lectures, exercises));
                             break;
 
-                        // Create some new teacher in some class from the school
+                        // Creates some new teacher in some class from the school
                         case ConsoleKey.T:
                             if (school.Classes.Count > 0 && disciplines.Count > 0)
                             {
-                                string teacherName = Read("Please, enter the name of the teacher: ");
+                                var teacherName = ReadText("Please, enter the name of the teacher: ");
                                 teachers.Add(new Teacher(teacherName, new List<Discipline>()));
-                                uint numDisciplines = uint.Parse(Read("The number of disciplines for this teacher (max " + disciplines.Count + "): "));
+                                var numDisciplines = uint.Parse(ReadText("The number of disciplines for this teacher (max " + disciplines.Count + "): "));
                                 if (numDisciplines > disciplines.Count)
                                 {
                                     throw new ArgumentOutOfRangeException("The number has to be maximum " + disciplines.Count + "!");
                                 }
 
-                                PrintForeach(disciplines);
+                                PrintObject(disciplines);
                                 for (int i = 0; i < numDisciplines; i++)
                                 {
-                                    string discName = Read("The name of discipline " + (i + 1) + ": ");
+                                    var discName = ReadText("The name of discipline " + (i + 1) + ": ");
                                     for (int j = 0; j < disciplines.Count; j++)
                                     {
                                         if (discName == disciplines[j].Name)
@@ -98,12 +88,12 @@ namespace School
                                     }
                                 }
 
-                                PrintForeach(school.Classes);
-                                string clNameT = Read("Enter the name of the class for this teacher: ");
+                                PrintObject(school.Classes);
+                                var clNameT = ReadText("Enter the name of the class for this teacher: ");
 
                                 for (int j = 0; j < school.Classes.Count; j++)
                                 {
-                                    if (clNameT == school.Classes[j].TextID)
+                                    if (clNameT == school.Classes[j].Name)
                                     {
                                         school.Classes[j].AddTeacher(teachers[teachers.Count - 1]);
                                         break;
@@ -113,28 +103,34 @@ namespace School
                             else throw new MissingMemberException("First you have to create some class and some discipline!");
                             break;
 
-                        // Create some new class in the school
+                        // Creates some new class in the school
                         case ConsoleKey.C:
-                            string className = Read("Please, enter the name of the class: ");
+                            var className = ReadText("Please, enter the name of the class: ");
                             school.AddClass(new SchoolClass(className, new List<Student>(), new List<Teacher>()));
                             break;
 
-                        // Create some new student in some class from the school
+                        // Creates some new student in some class from the school
                         case ConsoleKey.S:
                             if (school.Classes.Count > 0)
                             {
-                                string studentName = Read("Please, enter the name of the student: ");
-                                uint studentNumber = uint.Parse(Read("The class number for this student (max 5 digits): "));
-                                foreach (uint n in studentNs)
-                                    if (studentNumber == n) throw new ArgumentException("The number already exist!");
-                                studentNs.Add(studentNumber);
+                                var studentName = ReadText("Please, enter the name of the student: ");
+                                var studentNumber = uint.Parse(ReadText("The class number for this student (max 5 digits): "));
+                                foreach (uint n in studentsTemp)
+                                {
+                                    if (studentNumber == n)
+                                    {
+                                        throw new ArgumentException("The number already exist!");
+                                    }
+                                }
+
+                                studentsTemp.Add(studentNumber);
                                 students.Add(new Student(studentName, studentNumber));
 
-                                PrintForeach(school.Classes);
-                                string clNameS = Read("Enter the name of the class for this student: ");
+                                PrintObject(school.Classes);
+                                var clNameS = ReadText("Enter the name of the class for this student: ");
                                 for (int j = 0; j < school.Classes.Count; j++)
                                 {
-                                    if (clNameS == school.Classes[j].TextID)
+                                    if (clNameS == school.Classes[j].Name)
                                     {
                                         school.Classes[j].AddStudent(students[students.Count - 1]);
                                         break;
@@ -144,14 +140,14 @@ namespace School
                             else throw new MissingMemberException("First you have to create some class!");
                             break;
 
-                        // Remove some discipline for some teacher
+                        // Removes some discipline for some teacher
                         case ConsoleKey.I:
                             if (teachers.Count > 0 && disciplines.Count > 0)
                             {
-                                PrintForeach(teachers);
-                                string delT = Read("Choose some teacher: ");
-                                PrintForeach(teachers[teachers.FindIndex(m => m.Name == delT)].Disciplines);
-                                string delD = Read("The name of discipline you want to be deleted: ");
+                                PrintObject(teachers);
+                                var delT = ReadText("Choose some teacher: ");
+                                PrintObject(teachers[teachers.FindIndex(m => m.Name == delT)].Disciplines);
+                                var delD = ReadText("The name of discipline you want to be deleted: ");
 
                                 for (int t = 0; t < teachers.Count; t++)
                                 {
@@ -178,18 +174,18 @@ namespace School
                             else throw new MissingMemberException("First you have to create some discipline and some teacher!");
                             break;
 
-                        // Remove some teacher from some class
+                        // Removes some teacher from some class
                         case ConsoleKey.H:
                             if (school.Classes.Count > 0 && teachers.Count > 0)
                             {
-                                PrintForeach(school.Classes);
-                                string delC = Read("Choose some class: ");
-                                PrintForeach(school.Classes[school.Classes.FindIndex(m => m.TextID == delC)].Teachers);
-                                string delCT = Read("The name of teacher you want to be deleted: ");
+                                PrintObject(school.Classes);
+                                var delC = ReadText("Choose some class: ");
+                                PrintObject(school.Classes[school.Classes.FindIndex(m => m.Name == delC)].Teachers);
+                                var delCT = ReadText("The name of teacher you want to be deleted: ");
 
                                 for (int c = 0; c < school.Classes.Count; c++)
                                 {
-                                    if (delC == school.Classes[c].TextID)
+                                    if (delC == school.Classes[c].Name)
                                     {
                                         for (int t = 0; t < teachers.Count; t++)
                                         {
@@ -213,16 +209,16 @@ namespace School
                             else throw new MissingMemberException("First you have to create some class and some teacher!");
                             break;
 
-                        // Remove some class from the school
+                        // Removes some class from the school
                         case ConsoleKey.L:
                             if (school.Classes.Count > 0)
                             {
-                                PrintForeach(school.Classes);
-                                string delClass = Read("Choose some class: ");
+                                PrintObject(school.Classes);
+                                var delClass = ReadText("Choose some class: ");
 
                                 for (int c = 0; c < school.Classes.Count; c++)
                                 {
-                                    if (delClass == school.Classes[c].TextID)
+                                    if (delClass == school.Classes[c].Name)
                                     {
                                         Console.ForegroundColor = ConsoleColor.Magenta;
                                         Console.Write("Are you sure? The information will be lost! (y/n): ");
@@ -241,18 +237,18 @@ namespace School
                             else throw new MissingMemberException("First you have to create some class!");
                             break;
 
-                        // Remove some student from some class
+                        // Removes some student from some class
                         case ConsoleKey.Z:
                             if (school.Classes.Count > 0 && students.Count > 0)
                             {
-                                PrintForeach(school.Classes);
-                                string delC2 = Read("Choose some class: ");
-                                PrintForeach(school.Classes[school.Classes.FindIndex(m => m.TextID == delC2)].Students);
-                                string delCS = Read("The name of student you want to be deleted: ");
+                                PrintObject(school.Classes);
+                                var delC2 = ReadText("Choose some class: ");
+                                PrintObject(school.Classes[school.Classes.FindIndex(m => m.Name == delC2)].Students);
+                                var delCS = ReadText("The name of student you want to be deleted: ");
 
                                 for (int c = 0; c < school.Classes.Count; c++)
                                 {
-                                    if (delC2 == school.Classes[c].TextID)
+                                    if (delC2 == school.Classes[c].Name)
                                     {
                                         for (int s = 0; s < students.Count; s++)
                                         {
@@ -277,81 +273,25 @@ namespace School
 
                         // Adds comment for some discipline
                         case ConsoleKey.N:
-                            if (disciplines.Count > 0)
-                            {
-                                PrintForeach(disciplines);
-                                string discCom = Read("Choose some discipline: ");
-                                for (int d = 0; d < disciplines.Count; d++)
-                                {
-                                    if (discCom == disciplines[d].Name)
-                                    {
-                                        string dComment = Read("Please, enter the comment for this discipline: ");
-                                        disciplines[d].AddComment(dComment);
-                                        break;
-                                    }
-                                }
-                            }
-                            else throw new MissingMemberException("First you have to create some discipline!");
+                            AddComment<Discipline>(disciplines);
                             break;
 
                         // Adds comment for some teacher
                         case ConsoleKey.R:
-                            if (teachers.Count > 0)
-                            {
-                                PrintForeach(teachers);
-                                string teachCom = Read("Choose some teacher: ");
-                                for (int t = 0; t < teachers.Count; t++)
-                                {
-                                    if (teachCom == teachers[t].Name)
-                                    {
-                                        string tComment = Read("Please, enter the comment for this teacher: ");
-                                        teachers[t].AddComment(tComment);
-                                        break;
-                                    }
-                                }
-                            }
-                            else throw new MissingMemberException("First you have to create some teacher!");
+                            AddComment<Teacher>(teachers);
                             break;
 
                         // Adds comment for some school class
                         case ConsoleKey.A:
-                            if (school.Classes.Count > 0)
-                            {
-                                PrintForeach(school.Classes);
-                                string classCom = Read("Choose some class: ");
-                                for (int c = 0; c < school.Classes.Count; c++)
-                                {
-                                    if (classCom == school.Classes[c].TextID)
-                                    {
-                                        string cComment = Read("Please, enter the comment for this class: ");
-                                        school.Classes[c].AddComment(cComment);
-                                        break;
-                                    }
-                                }
-                            }
-                            else throw new MissingMemberException("First you have to create some class!");
+                            AddComment<SchoolClass>(school.Classes);
                             break;
 
                         // Adds comment for some student
                         case ConsoleKey.E:
-                            if (students.Count > 0)
-                            {
-                                PrintForeach(students);
-                                string studCom = Read("Choose some student: ");
-                                for (int s = 0; s < students.Count; s++)
-                                {
-                                    if (studCom == students[s].Name)
-                                    {
-                                        string sComment = Read("Please, enter the comment for this student: ");
-                                        students[s].AddComment(sComment);
-                                        break;
-                                    }
-                                }
-                            }
-                            else throw new MissingMemberException("First you have to create some student!");
+                            AddComment<Student>(students);
                             break;
 
-                        // Print the whole information about the school
+                        // Prints the whole information about the school
                         case ConsoleKey.P:
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.WriteLine(school);
@@ -360,7 +300,7 @@ namespace School
                             Console.ReadKey();
                             break;
 
-                        // Exit from the program
+                        // Exit
                         case ConsoleKey.Q:
                             exit = true;
                             break;
@@ -369,7 +309,7 @@ namespace School
                 }
                 catch (Exception e)
                 {
-                    Error(e);
+                    PrintError(e);
                     Console.Write("\nPress any key to continue...");
                     Console.ReadKey();
                     continue;
@@ -377,27 +317,37 @@ namespace School
             }
         }
 
-        // Print some class of objects
-        private static void PrintForeach<T>(List<T> list)
+        private static void AddComment<T>(List<T> list)
         {
-            if (list is List<Teacher>) Console.Write("\nTeachers:\n");
-            if (list is List<Discipline>) Console.Write("\nDisciplines: ");
+            if (list.Count <= 0)
+            {
+                throw new MissingMemberException("First you have to create some " + typeof(T).Name + "!");
+            }
+
+            PrintObject(list);
+            var command = ReadText("Choose some " + typeof(T).Name + ": ");
+            foreach (dynamic element in list)
+            {
+                if (command == element.Name)
+                {
+                    element.AddComment(ReadText("Please, enter the comment for this " + typeof(T).Name + ": "));
+                    break;
+                }
+            }
+        }
+
+        private static void PrintObject<T>(List<T> list)
+        {
+            Console.Write(list is List<Teacher> ? "\nTeachers:\n" : (list is List<Discipline> ? "\nDisciplines: " : null));
             for (int i = 0; i < list.Count; i++)
             {
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                if (list is List<Discipline>)
-                {
-                    Console.Write(list[i]);
-                    if (i != list.Count - 1) Console.Write(", ");
-                    else Console.WriteLine();
-                }
-                else Console.Write(list[i] + "\n");
+                Console.Write(list is List<Discipline> ? string.Format("{0}{1}", list[i], i != list.Count - 1 ? ", " : "\n") : (list[i] + "\n"));
                 Console.ResetColor();
             }
         }
 
-        // Print some line from the menu
-        private static void Menu(char key, string text)
+        private static void PrintMenu(char key, string text)
         {
             Console.Write("[");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -406,18 +356,17 @@ namespace School
             Console.WriteLine("]: {0}", text);
         }
 
-        // Read some information about the 'text'
-        private static string Read(string text)
+        private static string ReadText(string text)
         {
             Console.Write(text);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            string input = Console.ReadLine();
+            var input = Console.ReadLine();
             Console.ResetColor();
+
             return input;
         }
 
-        // Print some error message
-        private static void Error(Exception e)
+        private static void PrintError(Exception e)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(e.Message);
