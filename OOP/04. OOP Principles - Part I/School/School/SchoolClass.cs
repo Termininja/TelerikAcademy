@@ -1,6 +1,8 @@
 ﻿namespace School
 {
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class SchoolClass : ICommentable
     {
@@ -27,6 +29,11 @@
 
         public void AddStudent(Student student)
         {
+            if (this.Students.Any(s => s.ClassNumber == student.ClassNumber))
+            {
+                throw new Exception("The ClassNumber for this student is not unique!");
+            }
+
             this.Students.Add(student);
         }
 

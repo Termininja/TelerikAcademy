@@ -1,22 +1,22 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
-    class Circle : Shape
-    {
-        // Constructor
-        public Circle(double radius) : base(radius, radius) { }
+    using System;
 
-        // Return the surface of the circle
-        public override double CalculateSurface()
+    public class Circle : Shape
+    {
+        public Circle(double radius)
+            : base(radius, radius) { }
+
+        public override double GetSurface()
         {
-            return Math.PI * Math.Pow(Width, 2);
+            return Math.PI * Math.Pow(base.Width, 2);
         }
 
-        // Override to string method
         public override string ToString()
         {
-            return String.Format("  radius: {0:F}", Width);
+            var result = String.Format("  radius: {0:F}", base.Width);
+
+            return result;
         }
     }
 }

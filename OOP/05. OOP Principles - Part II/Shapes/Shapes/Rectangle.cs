@@ -1,22 +1,22 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
-    class Rectangle : Shape
-    {
-        // Constructor
-        public Rectangle(double width, double height) : base(width, height) { }
+    using System;
 
-        // Return the surface of the rectangle
-        public override double CalculateSurface()
+    public class Rectangle : Shape
+    {
+        public Rectangle(double width, double height)
+            : base(width, height) { }
+
+        public override double GetSurface()
         {
-            return Width * Height;
+            return base.Width * base.Height;
         }
 
-        // Override to string method
         public override string ToString()
         {
-            return String.Format("  width: {0:F}\n  height: {1:F}", Width, Height);
+            var result = String.Format("  width: {0:F}\n  height: {1:F}", base.Width, base.Height);
+
+            return result;
         }
     }
 }

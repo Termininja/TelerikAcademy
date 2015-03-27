@@ -23,7 +23,6 @@ namespace School
             var disciplines = new List<Discipline>();
             var teachers = new List<Teacher>();
             var students = new List<Student>();
-            var studentsTemp = new List<uint>();
             var exit = false;
             while (!exit)
             {
@@ -31,15 +30,15 @@ namespace School
                 Console.Clear();
                 try
                 {
-                    PrintMenu('C', "Create some Class");
-                    PrintMenu('D', "Create some Discipline");
-                    PrintMenu('T', "Enter some Teacher");
-                    PrintMenu('S', "Enter some Student\n");
+                    PrintMenu('C', "Create Class");
+                    PrintMenu('D', "Create Discipline");
+                    PrintMenu('T', "Enter Teacher");
+                    PrintMenu('S', "Enter Student\n");
 
-                    PrintMenu('I', "Remove some Discipline");
-                    PrintMenu('H', "Remove some Teacher");
-                    PrintMenu('L', "Remove some Class");
-                    PrintMenu('Z', "Remove some Student\n");
+                    PrintMenu('I', "Remove Discipline");
+                    PrintMenu('H', "Remove Teacher");
+                    PrintMenu('L', "Remove Class");
+                    PrintMenu('Z', "Remove Student\n");
 
                     PrintMenu('N', "Add comment to some Discipline");
                     PrintMenu('R', "Add comment to some Teacher");
@@ -115,15 +114,6 @@ namespace School
                             {
                                 var studentName = ReadText("Please, enter the name of the student: ");
                                 var studentNumber = uint.Parse(ReadText("The class number for this student (max 5 digits): "));
-                                foreach (uint n in studentsTemp)
-                                {
-                                    if (studentNumber == n)
-                                    {
-                                        throw new ArgumentException("The number already exist!");
-                                    }
-                                }
-
-                                studentsTemp.Add(studentNumber);
                                 students.Add(new Student(studentName, studentNumber));
 
                                 PrintObject(school.Classes);

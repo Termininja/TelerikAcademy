@@ -1,22 +1,22 @@
-﻿using System;
-
-namespace Shapes
+﻿namespace Shapes
 {
-    class Triangle : Shape
-    {
-        // Constructor
-        public Triangle(double side, double height) : base(side, height) { }
+    using System;
 
-        // Return the surface of the triangle
-        public override double CalculateSurface()
+    public class Triangle : Shape
+    {
+        public Triangle(double side, double height)
+            : base(side, height) { }
+
+        public override double GetSurface()
         {
-            return (Width * Height) / 2;
+            return (base.Width * base.Height) / 2;
         }
 
-        // Override to string method
         public override string ToString()
         {
-            return String.Format("  side: {0:F}\n  height: {1:F}", Width, Height);
+            var result = String.Format("  side: {0:F}\n  height: {1:F}", base.Width, base.Height);
+
+            return result;
         }
     }
 }

@@ -1,38 +1,40 @@
-﻿/* Task 02.
- * A bank holds different types of accounts for its customers: deposit accounts,
- * loan accounts and mortgage accounts. Customers could be individuals or companies.
- * 
- * All accounts have customer, balance and interest rate (monthly based).
- * Deposit accounts are allowed to deposit and with draw money.
- * Loan and mortgage accounts can only deposit money.
- * 
- * All accounts can calculate their interest amount for a given period (in months).
- * In the common case its is calculated as follows: number_of_months * interest_rate.
- * 
- * Loan accounts have no interest for the first 3 months if are held by individuals
- * and for the first 2 months if are held by a company.
- * 
- * Deposit accounts have no interest if their balance is positive and less than 1000.
- * 
- * Mortgage accounts have ½ interest for the first 12 months for companies and no
- * interest for the first 6 months for individuals.
- * 
- * Your task is to write a program to model the bank system by classes and interfaces.
- * You should identify the classes, interfaces, base classes and abstract actions and
- * implement the calculation of the interest functionality through overridden methods.
+﻿/* 
+ * Problem 2. Bank accounts:
+ *      A bank holds different types of accounts for its customers: deposit accounts,
+ *      loan accounts and mortgage accounts. Customers could be individuals or companies.
+ *      
+ *      All accounts have customer, balance and interest rate (monthly based).
+ *      Deposit accounts are allowed to deposit and with draw money.
+ *      Loan and mortgage accounts can only deposit money.
+ *      
+ *      All accounts can calculate their interest amount for a given period (in months).
+ *      In the common case its is calculated as follows: number_of_months * interest_rate.
+ *      
+ *      Loan accounts have no interest for the first 3 months if are held by individuals
+ *      and for the first 2 months if are held by a company.
+ *      
+ *      Deposit accounts have no interest if their balance is positive and less than 1000.
+ *      
+ *      Mortgage accounts have ½ interest for the first 12 months for companies
+ *      and no interest for the first 6 months for individuals.
+ *      
+ *      Your task is to write a program to model the bank system by classes and interfaces.
+ *      
+ *      You should identify the classes, interfaces, base classes and abstract actions and
+ *      implement the calculation of the interest functionality through overridden methods.
  */
-
-using System;
-using System.Collections.Generic;
 
 namespace Bank
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Program
     {
         public static void Main()
         {
-            // Create a list of accounts
-            List<Account> accounts = new List<Account>();
+            // Creates a list of accounts
+            var accounts = new List<Account>();
             accounts.Add(new Deposit(new Individual("Leo EOOD"), 500, 0.05m));
             accounts.Add(new Loan(new Company("Telerik"), 200, 0.07m));
             accounts.Add(new Mortgage(new Individual("Sisi & Pisi"), 500, 0.02m));
@@ -45,12 +47,12 @@ namespace Bank
             // Testing withdraw
             ((Deposit)accounts[0]).Withdraw(50);
 
-            // Print the result
+            // Prints the result
             PrintAccount("Account 1", accounts[0], 10);
             PrintAccount("Account 2", accounts[1], 6);
             PrintAccount("Account 3", accounts[2], 20);
 
-            // Create some account
+            // Creates and tests some account
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Press Enter to create some new account . . .");
             Console.ResetColor();
@@ -60,7 +62,6 @@ namespace Bank
             TestAccount(accounts);
         }
 
-        // Print account information
         private static void PrintAccount(string text, Account account, int months)
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -73,7 +74,7 @@ namespace Bank
 
         private static void TestAccount(List<Account> accounts)
         {
-            bool exit = false;
+            var exit = false;
             while (!exit)
             {
                 try
@@ -118,18 +119,23 @@ namespace Bank
                             break;
                         case ConsoleKey.I:
                             Console.Write("Months: ");
-                            int months = int.Parse(Console.ReadLine());
+                            var months = int.Parse(Console.ReadLine());
                             Console.WriteLine("Interest amount: " + accounts[3].InterestAmount(months));
                             break;
-                        case ConsoleKey.P: Console.WriteLine(accounts[3]); break;
-                        case ConsoleKey.Q: exit = true; break;
-                        default: break;
+                        case ConsoleKey.P:
+                            Console.WriteLine(accounts[3]);
+                            break;
+                        case ConsoleKey.Q:
+                            exit = true;
+                            break;
+                        default:
+                            break;
                     }
+
                     Console.WriteLine();
                 }
                 catch (Exception)
                 {
-                    // Unexpected error
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Something's wrong!");
                     Console.ResetColor();
@@ -139,7 +145,7 @@ namespace Bank
 
         private static void CreateAccount(List<Account> acc)
         {
-            // What is the type of account
+            // The type of the account
             ConsoleKeyInfo key1;
             while (true)
             {
@@ -158,7 +164,7 @@ namespace Bank
 
             string name = String.Empty;
 
-            // What type is the customer
+            // The type of the customer
             ConsoleKeyInfo key2;
             while (true)
             {
@@ -180,9 +186,9 @@ namespace Bank
                 break;
             }
 
-            // What is the interest rate
+            // The interest rate
             Console.Write("Interest rate (from 0.01 to 0.07): ");
-            decimal interetRate = decimal.Parse(Console.ReadLine());
+            var interetRate = decimal.Parse(Console.ReadLine());
 
             switch (key1.Key)
             {
@@ -200,12 +206,12 @@ namespace Bank
                     break;
                 default: break;
             }
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nYour account is created successfully.");
             Console.ResetColor();
         }
 
-        // Colorize some string
         private static void StringColor(string str, string[] position)
         {
             for (int letter = 0; letter < str.Length; letter++)
