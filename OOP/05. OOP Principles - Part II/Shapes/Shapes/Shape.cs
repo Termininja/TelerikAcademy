@@ -12,6 +12,6 @@
 
         public double Height { get; set; }
 
-        abstract public double GetSurface();
+        abstract public double CalculateSurface();
     }
 }
