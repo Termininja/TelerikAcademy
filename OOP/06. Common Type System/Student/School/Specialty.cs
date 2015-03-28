@@ -1,5 +1,10 @@
 ﻿namespace Student
 {
-    // Types of specialties
-    enum Specialty { Marketing, Menagement, Informatics, ComputerSystems }
+    public enum Specialty
+    {
+        ComputerSystems,
+        Informatics,
+        Marketing,
+        Menagement
+    }
 }

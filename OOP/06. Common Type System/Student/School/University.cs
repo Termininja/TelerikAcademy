@@ -1,5 +1,10 @@
 ﻿namespace Student
 {
-    // Types of universities
-    enum University { TU, SU, UNSS, MU }
+    public enum University
+    {
+        MU,
+        SU,
+        TU,
+        UNSS
+    }
 }

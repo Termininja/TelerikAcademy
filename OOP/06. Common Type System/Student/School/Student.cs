@@ -1,24 +1,9 @@
-﻿using System;
-
-namespace Student
+﻿namespace Student
 {
-    class Student : ICloneable, IComparable<Student>
-    {
-        #region Properties
-        public string FirstName { get; private set; }
-        public string MiddleName { get; private set; }
-        public string LastName { get; private set; }
-        public int SSN { get; private set; }
-        public string PermanentAddress { get; private set; }
-        public string MobilePhone { get; private set; }
-        public string Email { get; private set; }
-        public string Course { get; private set; }
-        public University University { get; private set; }
-        public Faculty Faculty { get; private set; }
-        public Specialty Specialty { get; private set; }
-        #endregion
+    using System;
 
-        #region Constructor
+    public class Student : ICloneable, IComparable<Student>
+    {
         public Student(
             string firstName, string middleName, string lastName,
             int ssn, string permanentAddress, string mobilePhone, string email, string course,
@@ -36,42 +21,64 @@ namespace Student
             this.Faculty = faculty;
             this.Specialty = specialty;
         }
-        #endregion
 
-        #region Methods
-        // Override the standard Equals()
+        public string FirstName { get; private set; }
+
+        public string MiddleName { get; private set; }
+
+        public string LastName { get; private set; }
+
+        public int SSN { get; private set; }
+
+        public string PermanentAddress { get; private set; }
+
+        public string MobilePhone { get; private set; }
+
+        public string Email { get; private set; }
+
+        public string Course { get; private set; }
+
+        public University University { get; private set; }
+
+        public Faculty Faculty { get; private set; }
+
+        public Specialty Specialty { get; private set; }
+
+        // Overrides the standard Equals()
         public override bool Equals(object obj)
         {
-            if (this.FirstName != (obj as Student).FirstName) return false;
-            if (this.MiddleName != (obj as Student).MiddleName) return false;
-            if (this.LastName != (obj as Student).LastName) return false;
-            if (this.SSN != (obj as Student).SSN) return false;
-            return true;
+            var student = obj as Student;
+            var result =
+                this.FirstName == student.FirstName &&
+                this.MiddleName == student.MiddleName &&
+                this.LastName == student.LastName &&
+                this.SSN == student.SSN;
+
+            return result;
         }
 
-        //Override the standard operator ==
+        // Overrides the standard operator ==
         public static bool operator ==(Student student1, Student student2)
         {
             return student1.Equals(student2);
         }
 
-        //Override the standard operator !=
+        // Overrides the standard operator !=
         public static bool operator !=(Student student1, Student student2)
         {
             return !student1.Equals(student2);
         }
 
-        // Override the standard GetHashCode()
+        // Overrides the standard GetHashCode()
         public override int GetHashCode()
         {
             return this.FirstName.GetHashCode() ^ this.SSN.GetHashCode();
         }
 
-        // Override the standard ToString()
+        // Overrides the standard ToString()
         public override string ToString()
         {
-            return
-                String.Format("Name: {0} {1} {2}\n", this.FirstName, this.MiddleName, this.LastName) +
+            var result = String.Format("Name: {0} {1} {2}\n", this.FirstName, this.MiddleName, this.LastName) +
                 String.Format("SSN: {0}\n", this.SSN) +
                 String.Format("Permanent Address: {0}\n", this.PermanentAddress) +
                 String.Format("Mobile Phone: {0}\n", this.MobilePhone) +
@@ -80,18 +87,22 @@ namespace Student
                 String.Format("University: {0}\n", this.University) +
                 String.Format("Faculty: {0}\n", this.Faculty) +
                 String.Format("Specialty: {0}\n", this.Specialty);
+
+            return result;
         }
 
-        //  Deeply copy of all object's fields into a new object of type Student
+        // Deeply copy of all object's fields into a new object of type Student
         public object Clone()
         {
-            return new Student(
+            var student = new Student(
                 this.FirstName, this.MiddleName, this.LastName,
                 this.SSN, this.PermanentAddress, this.MobilePhone, this.Email, this.Course,
                 this.University, this.Faculty, this.Specialty);
+
+            return student;
         }
 
-        // Compare students by names and after that by SSN
+        // Compares two students by names and after that by SSN
         public int CompareTo(Student student)
         {
             if (this.FirstName != student.FirstName)
@@ -110,8 +121,8 @@ namespace Student
             {
                 return this.SSN.CompareTo(student.SSN);
             }
+
             return 0;
         }
-        #endregion
     }
 }

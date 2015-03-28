@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace BinarySearchTree
+﻿namespace BinarySearchTree
 {
-    // The tree
-    class BinarySearchTree<T> : ICloneable, IEnumerable<T> where T : IComparable
-    {
-        #region Properties
-        public List<TreeNode<T>> Nodes { get; set; }
-        #endregion
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
 
-        #region Constructors
+    public class BinarySearchTree<T> : ICloneable, IEnumerable<T> where T : IComparable
+    {
         public BinarySearchTree()
         {
             this.Nodes = new List<TreeNode<T>>();
@@ -21,9 +15,9 @@ namespace BinarySearchTree
         {
             this.Nodes = nodes;
         }
-        #endregion
 
-        #region Methods
+        public List<TreeNode<T>> Nodes { get; set; }
+
         // Adding new element in the tree
         public void Add(T element)
         {
@@ -41,31 +35,24 @@ namespace BinarySearchTree
                     }
 
                     if (element.CompareTo(node.Value) == 0 ||
-                    (node.LeftNode != null && element.CompareTo(node.LeftNode.Value) == 0) ||
-                    (node.RightNode != null && element.CompareTo(node.RightNode.Value) == 0))
+                        (node.LeftNode != null && element.CompareTo(node.LeftNode.Value) == 0) ||
+                        (node.RightNode != null && element.CompareTo(node.RightNode.Value) == 0))
                     {
-                        throw new ArgumentException(String.Format(
-                           "The element with value={0} is already in the tree!", element));
+                        throw new ArgumentException(String.Format("The element with value={0} is already in the tree!", element));
                     }
-                    else if (element.CompareTo(node.Value) < 0)
+                    else if (element.CompareTo(node.Value) < 0 && node.LeftNode == null)
                     {
-                        if (node.LeftNode == null)
-                        {
-                            node.LeftNode = new TreeNode<T>(element);
-                            node.LeftNode.ParentNode = node;
-                            Nodes.Add(node.LeftNode);
-                            break;
-                        }
+                        node.LeftNode = new TreeNode<T>(element);
+                        node.LeftNode.ParentNode = node;
+                        Nodes.Add(node.LeftNode);
+                        break;
                     }
-                    else
+                    else if (node.RightNode == null)
                     {
-                        if (node.RightNode == null)
-                        {
-                            node.RightNode = new TreeNode<T>(element);
-                            node.RightNode.ParentNode = node;
-                            Nodes.Add(node.RightNode);
-                            break;
-                        }
+                        node.RightNode = new TreeNode<T>(element);
+                        node.RightNode.ParentNode = node;
+                        Nodes.Add(node.RightNode);
+                        break;
                     }
                 }
             }
@@ -81,19 +68,22 @@ namespace BinarySearchTree
         {
             foreach (var node in this.Nodes)
             {
-                if (node != null && element.CompareTo(node.Value) == 0) return node;
+                if (node != null && element.CompareTo(node.Value) == 0)
+                {
+                    return node;
+                }
             }
+
             return null;
         }
 
         // Deleting some element in the tree
         public void Delete(T element)
         {
-            TreeNode<T> node = this.Search(element);
+            var node = this.Search(element);
             if (node == null)
             {
-                throw new ArgumentNullException(String.Format(
-                    "The element with value={0} is not in the tree!", element));
+                throw new ArgumentNullException(String.Format("The element with value={0} is not in the tree!", element));
             }
             else
             {
@@ -108,8 +98,14 @@ namespace BinarySearchTree
                         node.ParentNode.RightNode.Value = default(T);
                     }
                 }
-                if (node.LeftNode != null) node.LeftNode.ParentNode.Value = default(T);
-                if (node.RightNode != null) node.RightNode.ParentNode.Value = default(T);
+                if (node.LeftNode != null)
+                {
+                    node.LeftNode.ParentNode.Value = default(T);
+                }
+                if (node.RightNode != null)
+                {
+                    node.RightNode.ParentNode.Value = default(T);
+                }
 
                 this.Nodes[this.Nodes.IndexOf(node)].Value = default(T);
             }
@@ -131,24 +127,26 @@ namespace BinarySearchTree
                     return false;
                 }
             }
+
             return true;
         }
 
         // Operator for not equal comparison on two trees
         public static bool operator !=(BinarySearchTree<T> tree1, BinarySearchTree<T> tree2)
         {
-            if (tree1 == tree2) return false;
-            return true;
+            var result = tree1 == tree2 ? false : true;
+
+            return result;
         }
 
-        // Override the standard method ToString
+        // Overrides the standard method ToString
         public override string ToString()
         {
-            string result = String.Empty;
+            var result = String.Empty;
             if (this.Nodes.Count > 0)
             {
                 result += "{";
-                List<T> list = new List<T>();
+                var list = new List<T>();
                 foreach (var node in this.Nodes)
                 {
                     if (node.Value.CompareTo(default(T)) != 0)
@@ -156,54 +154,53 @@ namespace BinarySearchTree
                         list.Add(node.Value);
                     }
                 }
+
                 list.Sort();
-                for (int i = 0; i < list.Count; i++)
-                {
-                    if (i > 0) result += ", ";
-                    result += list[i];
-                }
-                return result + "}";
+                result += string.Join(", ", list) + "}";
+
+                return result;
             }
+
             return null;
         }
 
-        // Override the standard method Equals
+        // Overrides the standard method Equals
         public override bool Equals(object obj)
         {
             try
             {
-                if (this == (BinarySearchTree<T>)obj) return true;
+                if (this == (BinarySearchTree<T>)obj)
+                {
+                    return true;
+                }
             }
             catch (Exception)
             {
                 return false;
             }
+
             return false;
         }
 
-        // Override the standard method GetHashCode
+        // Overrides the standard method GetHashCode
         public override int GetHashCode()
         {
-            int result = this.Nodes.GetHashCode();
-            foreach (var node in this.Nodes)
-            {
-                result ^= node.GetHashCode();
-            }
+            var result = this.Nodes.GetHashCode();
+            this.Nodes.ForEach(m => result ^= m.GetHashCode());
+
             return result;
         }
 
-        // Implement ICloneable for deep copy of the tree
+        // Implements ICloneable for deep copy of the tree
         public object Clone()
         {
-            BinarySearchTree<T> copy = new BinarySearchTree<T>();
-            for (int i = 0; i < this.Nodes.Count; i++)
-            {
-                copy.Add(this.Nodes[i].Value);
-            }
+            var copy = new BinarySearchTree<T>();
+            this.Nodes.ForEach(m => copy.Add(m.Value));
+
             return copy;
         }
 
-        // Implement IEnumerable<T> to traverse the tree
+        // Implements IEnumerable<T> to traverse the tree
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();
@@ -213,6 +210,5 @@ namespace BinarySearchTree
         {
             return GetEnumerator();
         }
-        #endregion
     }
 }

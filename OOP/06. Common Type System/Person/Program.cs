@@ -1,34 +1,29 @@
-﻿// Task 04. Create a class Person with two fields – name and age. Age can be left unspecified
-//          (may contain null value. Override ToString() to display the information of a person
-//          and if age is not specified – to say so. Write a program to test this functionality.
-
-using System;
-using System.Collections.Generic;
+﻿/*
+ * Problem 4. Person class:
+ *      Create a class Person with two fields – name and age. Age can be left
+ *      unspecified (may contain null value. Override ToString() to display
+ *      the information of a person and if age is not specified – to say so.
+ *      
+ *      Write a program to test this functionality. 
+ */
 
 namespace Person
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+
+    public class Program
     {
         static void Main()
         {
-            // Create a list of people
-            List<Person> people = new List<Person>();
+            var people = new List<Person>() { 
+                new Person("Ivan Petrov", null),
+                new Person("Maria Ilieva", 32),
+                new Person("Stefan Kirov", 27),
+                new Person("Nadia Ivanova", null)
+            };
 
-            // Add some people in the list
-            people.Add(new Person("Ivan Petrov", null));
-            people.Add(new Person("Maria Ilieva", 32));
-            people.Add(new Person("Stefan Kirov", 27));
-            people.Add(new Person("Nadia Ivanova", null));
-
-            // Print the result
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("{0,-20} Age", "Name");
-            Console.ResetColor();
-            Console.WriteLine(new string('-', 35));
-            foreach (Person person in people)
-            {
-                Console.WriteLine(person);
-            }
+            Console.WriteLine("{0,-16} Age\n{1}\n{2}", "Name", new string('-', 20), string.Join("\n", people));
         }
     }
 }

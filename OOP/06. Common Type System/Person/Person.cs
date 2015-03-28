@@ -1,24 +1,24 @@
-﻿using System;
-
-namespace Person
+﻿namespace Person
 {
-    class Person
-    {
-        // Properties
-        public string Name { get; private set; }
-        public byte? Age { get; private set; }
+    using System;
 
-        // Constructor
+    public class Person
+    {
         public Person(string name, byte? age)
         {
             this.Name = name;
             this.Age = age;
         }
 
-        // Override to string method
+        public string Name { get; private set; }
+
+        public byte? Age { get; private set; }
+
         public override string ToString()
         {
-            return String.Format("{0,-20} {1}", this.Name, this.Age.ToString() ?? "not specified");
+            var result = String.Format("{0,-16} {1}", this.Name, this.Age == null ? "not specified" : this.Age.ToString());
+
+            return result;
         }
     }
 }

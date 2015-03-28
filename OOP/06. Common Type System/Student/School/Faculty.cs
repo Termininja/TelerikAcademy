@@ -1,5 +1,13 @@
 ﻿namespace Student
 {
-    // Types of faculties
-    enum Faculty { Philosophy, Mathematics, Phisics, Biology, Chemistry, IT, Telecommunications }
+    public enum Faculty
+    {
+        Biology,
+        Chemistry,
+        IT,
+        Mathematics,
+        Philosophy,
+        Phisics,
+        Telecommunications
+    }
 }
