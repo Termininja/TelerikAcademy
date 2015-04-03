@@ -88,6 +88,7 @@ function Num(number) {
 // Functionality for the basic math operations
 function Function(operator) {
     flag = true;
+    priority = 1;
 
     if (operator == '+' || operator == '-') priority = 1;
     else if (operator == '*' || operator == '/' || operator == 'mod') priority = 2;

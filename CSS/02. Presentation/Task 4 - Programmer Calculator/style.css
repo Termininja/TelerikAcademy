@@ -16,15 +16,71 @@ body {
             height: 25px;
         }
 
-            /* Icon & Title */
+            /* Calculator Icon */
+            body > section header #icon {
+                background: #ccdfec; /* Old browsers */
+                background: -moz-linear-gradient(left, #ccdfec 0%, #76bbe6 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ccdfec), color-stop(100%,#76bbe6)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(left, #ccdfec 0%,#76bbe6 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(left, #ccdfec 0%,#76bbe6 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(left, #ccdfec 0%,#76bbe6 100%); /* IE10+ */
+                background: linear-gradient(to right, #ccdfec 0%,#76bbe6 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdfec', endColorstr='#76bbe6',GradientType=1 ); /* IE6-9 */
+                width: 0.77em;
+                height: 0.98em;
+                display: inline-block;
+                border-radius: 0.05em;
+                margin-top: 0.32em;
+                margin-left: 0.34em;
+                border: 0.02em solid rgb(120,167,194);
+                position: absolute;
+                box-shadow: 0 0 0.05em white inset;
+            }
+
+                /* Icon display */
+                body > section header #icon span:first-of-type {
+                    border: 0.03em solid rgb(120,167,194);
+                    background: rgb(182, 217, 245);
+                    display: inline-block;
+                    margin-top: 0.08em;
+                    margin-left: 0.05em;
+                    width: 0.64em;
+                    height: 0.35em;
+                    position: absolute;
+                    box-shadow: 0 0.08em 0 rgb(253, 175,64) inset;
+                }
+
+                /* Icon buttons */
+                body > section header #icon span:nth-of-type(2) {
+                    background: rgb(129, 179, 209);
+                    display: inline-block;
+                    margin-top: 0.52em;
+                    margin-left: 0.05em;
+                    width: 0.08em;
+                    height: 0.07em;
+                    position: absolute;
+                    box-shadow: 0.12em 0 0 rgb(113, 159, 187), 0.24em 0 0 rgb(113, 159, 187), 0.36em 0 0 rgb(113, 159, 187), 0.48em 0 0 rgb(113, 159, 187), 0.60em 0 0 rgb(113, 159, 187), 0 0.11em 0 rgb(237, 235, 235), 0.12em 0.11em 0 rgb(237, 235, 235), 0.24em 0.11em 0 rgb(237, 235, 235), 0.36em 0.11em 0 rgb(113, 159, 187), 0.48em 0.11em 0 rgb(113, 159, 187), 0.60em 0.11em 0 rgb(113, 159, 187), 0 0.22em 0 rgb(237, 235, 235), 0.12em 0.22em 0 rgb(237, 235, 235), 0.24em 0.22em 0 rgb(237, 235, 235), 0.36em 0.22em 0 rgb(113, 159, 187), 0.48em 0.22em 0 rgb(113, 159, 187), 0.60em 0.22em 0 rgb(246, 169, 48), 0.60em 0.28em 0 rgb(246, 169, 48), 0 0.33em 0 rgb(237, 235, 235), 0.12em 0.33em 0 rgb(237, 235, 235), 0.24em 0.33em 0 rgb(237, 235, 235), 0.36em 0.33em 0 rgb(113, 159, 187), 0.48em 0.33em 0 rgb(113, 159, 187), 0.60em 0.33em 0 rgb(246, 169, 48);
+                }
+
+                /*Icon zero number*/
+                body > section header #icon span:last-of-type {
+                    font-family: Consolas;
+                    font-size: 0.3em;
+                    color: rgb(75, 108, 127);
+                    position: absolute;
+                    margin-top: 0.48em;
+                    cursor: default;
+                    margin-left: 1.7em;
+                }
+
+            /* Title */
             body > section header h1 {
+                z-index: 100;
                 margin: 0 0 0 0.3em;
                 display: inline-block;
                 font-size: 13px;
                 font-weight: normal;
                 vertical-align: middle;
-                background: url('icon.png') no-repeat left;
-                background-size: 19px 18px;
                 padding-left: 1.7em;
             }
 
