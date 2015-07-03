@@ -2,6 +2,7 @@
 
 **Task 1.** Formatting C:
   * Format correctly the C# code given in the file `events.cs`.
+
 **Task 2.** Formatting JavaScript:
   * Format correctly the JavaScript code given in the file `code.js`.
 
