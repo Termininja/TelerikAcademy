@@ -1,8 +1,9 @@
 ## Code Formatting
 
-**Task 01.** Format correctly:
-  * The *C#* source code given in the file `events.cs`.
-  * The *JavaScript* code given in the file `code.js`.
+**Task 1.** Formatting C:
+  * Format correctly the C# code given in the file `events.cs`.
+**Task 2.** Formatting JavaScript:
+  * Format correctly the JavaScript code given in the file `code.js`.
 
 Use the official code conventions for *C#* / *JavaScript* / *Java* / *PHP*:
   * <a href="http://msdn.microsoft.com/en-us/library/ff926074.aspx">Official C# Coding Conventions (MSDN)</a>
