@@ -4,15 +4,15 @@ namespace Person
 {
     using System;
 
-    public enum Sex { Male, Female };
-
     /// <summary>
     /// Class for person.
     /// </summary>
     public class Person
     {
         public string Name { get; set; }
+
         public int Age { get; set; }
+
         public Sex Sex { get; set; }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace Person
         /// <returns>Returns an new person.</returns>
         public static Person CreatePerson(int age)
         {
-            Person person = new Person();
+            var person = new Person();
             person.Age = age;
             if (age % 2 == 0)
             {
@@ -39,12 +39,13 @@ namespace Person
         }
 
         /// <summary>
-        /// Returns all informationa about the person like string.
+        /// Returns all informationa about the person as string.
         /// </summary>
-        /// <returns>Returns the name, the age and the sex of the person like string.</returns>
+        /// <returns>Returns the name, the age and the sex of the person as string.</returns>
         public override string ToString()
         {
-            string result = String.Format("Name:{0}; Age: {1}; Sex: {2}",
+            var result =
+                String.Format("Name:{0}; Age: {1}; Sex: {2}",
                 this.Name, this.Age, this.Sex);
 
             return result;

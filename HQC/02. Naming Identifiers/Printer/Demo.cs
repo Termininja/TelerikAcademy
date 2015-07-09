@@ -1,15 +1,13 @@
 ﻿namespace Printer
 {
-    using System;
-
     /// <summary>
-    /// Demostration of class Printer
+    /// Demostration of class Printer.
     /// </summary>
-    class Demo
+    public class Demo
     {
-        static void Main()
+        public static void Main()
         {
-            Printer printer = new Printer();
+            var printer = new Printer();
             printer.ToString(true);
         }
     }

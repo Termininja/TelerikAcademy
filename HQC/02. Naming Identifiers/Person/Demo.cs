@@ -9,11 +9,11 @@
     {
         static void Main()
         {
-            Person person1 = Person.CreatePerson(22);
-            Console.WriteLine(person1);
+            Person firstPerson = Person.CreatePerson(22);
+            Console.WriteLine(firstPerson);
 
-            Person person2 = Person.CreatePerson(25);
-            Console.WriteLine(person2);
+            Person secondPerson = Person.CreatePerson(25);
+            Console.WriteLine(secondPerson);
         }
     }
 }

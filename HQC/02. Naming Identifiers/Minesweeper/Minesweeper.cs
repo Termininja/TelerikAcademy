@@ -4,45 +4,32 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace MinesweeperGame
 {
     public class Minesweeper
     {
-        public class Player
+        public static void Main()
         {
-            public Player(string name, int points)
-            {
-                this.Name = name;
-                this.Points = points;
-            }
-
-            public string Name { get; set; }
-            public int Points { get; set; }
-        }
-
-        static void Main()
-        {
-            List<Player> winners = new List<Player>(6);
-            string command = string.Empty;
-            char[,] board = LoadBoard();
-            char[,] bombs = LoadBombs();
-            bool isGameOver = false;
-            bool isStart = true;
-            bool areAllCellsOpen = false;
-            int openCellCounter = 0;
-            int row = 0;
-            int col = 0;
             const int AllCells = 35;
+
+            var winners = new List<Player>(6);
+            var command = string.Empty;
+            var board = LoadBoard();
+            var bombs = LoadBombs();
+            var isGameOver = false;
+            var isStart = true;
+            var areAllCellsOpen = false;
+            var openCellCounter = 0;
+            var row = 0;
+            var col = 0;
 
             do
             {
                 if (isStart)
                 {
                     Console.WriteLine("Hajde da igraem na “Mini4KI”. Probvaj si kasmeta da otkriesh poleteta bez mini4ki." +
-                  " Komanda 'top' pokazva klasiraneto, 'restart' po4va nova igra, 'exit' izliza i hajde 4ao!");
+                        " Komanda 'top' pokazva klasiraneto, 'restart' po4va nova igra, 'exit' izliza i hajde 4ao!");
                     PrintBoard(board);
                     isStart = false;
                 }
@@ -58,6 +45,7 @@ namespace MinesweeperGame
                         command = "turn";
                     }
                 }
+
                 switch (command)
                 {
                     case "top":
@@ -81,6 +69,7 @@ namespace MinesweeperGame
                                 YourTurn(board, bombs, row, col);
                                 openCellCounter++;
                             }
+
                             if (AllCells == openCellCounter)
                             {
                                 areAllCellsOpen = true;
@@ -94,6 +83,7 @@ namespace MinesweeperGame
                         {
                             isGameOver = true;
                         }
+
                         break;
                     default:
                         Console.WriteLine("\nInvalid command!\n");
@@ -102,28 +92,28 @@ namespace MinesweeperGame
                 if (isGameOver)
                 {
                     PrintBoard(bombs);
-                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. " +
-                        "Daj si niknejm: ", openCellCounter);
-                    string nickname = Console.ReadLine();
-                    Player t = new Player(nickname, openCellCounter);
+                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. Daj si niknejm: ", openCellCounter);
+                    var nickname = Console.ReadLine();
+                    var player = new Player(nickname, openCellCounter);
                     if (winners.Count < 5)
                     {
-                        winners.Add(t);
+                        winners.Add(player);
                     }
                     else
                     {
                         for (int i = 0; i < winners.Count; i++)
                         {
-                            if (winners[i].Points < t.Points)
+                            if (winners[i].Points < player.Points)
                             {
-                                winners.Insert(i, t);
+                                winners.Insert(i, player);
                                 winners.RemoveAt(winners.Count - 1);
                                 break;
                             }
                         }
                     }
-                    winners.Sort((Player r1, Player r2) => r2.Name.CompareTo(r1.Name));
-                    winners.Sort((Player r1, Player r2) => r2.Points.CompareTo(r1.Points));
+
+                    winners.Sort((Player firstPlayer, Player secondPlayer) => secondPlayer.Name.CompareTo(firstPlayer.Name));
+                    winners.Sort((Player firstPlayer, Player secondPlayer) => secondPlayer.Points.CompareTo(firstPlayer.Points));
                     Ranking(winners);
 
                     board = LoadBoard();
@@ -137,8 +127,8 @@ namespace MinesweeperGame
                     Console.WriteLine("\nBRAVOOOS! Otvri 35 kletki bez kapka kryv.");
                     PrintBoard(bombs);
                     Console.WriteLine("Daj si imeto, batka: ");
-                    string name = Console.ReadLine();
-                    Player player = new Player(name, openCellCounter);
+                    var name = Console.ReadLine();
+                    var player = new Player(name, openCellCounter);
                     winners.Add(player);
                     Ranking(winners);
                     board = LoadBoard();
@@ -149,9 +139,23 @@ namespace MinesweeperGame
                 }
             }
             while (command != "exit");
+
             Console.WriteLine("Made in Bulgaria - Uauahahahahaha!");
             Console.WriteLine("AREEEEEEeeeeeee.");
             Console.Read();
+        }
+
+        public class Player
+        {
+            public Player(string name, int points)
+            {
+                this.Name = name;
+                this.Points = points;
+            }
+
+            public string Name { get; set; }
+
+            public int Points { get; set; }
         }
 
         private static void Ranking(List<Player> points)
@@ -164,25 +168,26 @@ namespace MinesweeperGame
                     Console.WriteLine("{0}. {1} --> {2} kutii",
                         i + 1, points[i].Name, points[i].Points);
                 }
-                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("prazna klasaciq!\n");
+                Console.WriteLine("prazna klasaciq!");
             }
+
+            Console.WriteLine();
         }
 
         private static void YourTurn(char[,] board, char[,] bombs, int row, int col)
         {
-            char bombCount = CountBombs(bombs, row, col);
+            var bombCount = CountBombs(bombs, row, col);
             bombs[row, col] = bombCount;
             board[row, col] = bombCount;
         }
 
         private static void PrintBoard(char[,] board)
         {
-            int rows = board.GetLength(0);
-            int cols = board.GetLength(1);
+            var rows = board.GetLength(0);
+            var cols = board.GetLength(1);
             Console.WriteLine("\n    0 1 2 3 4 5 6 7 8 9");
             Console.WriteLine("   ---------------------");
             for (int i = 0; i < rows; i++)
@@ -190,19 +195,20 @@ namespace MinesweeperGame
                 Console.Write("{0} | ", i);
                 for (int j = 0; j < cols; j++)
                 {
-                    Console.Write(string.Format("{0} ", board[i, j]));
+                    Console.Write("{0} ", board[i, j]);
                 }
-                Console.Write("|");
-                Console.WriteLine();
+
+                Console.WriteLine("|");
             }
+
             Console.WriteLine("   ---------------------\n");
         }
 
         private static char[,] LoadBoard()
         {
-            int boardRows = 5;
-            int boardColumns = 10;
-            char[,] board = new char[boardRows, boardColumns];
+            var boardRows = 5;
+            var boardColumns = 10;
+            var board = new char[boardRows, boardColumns];
             for (int i = 0; i < boardRows; i++)
             {
                 for (int j = 0; j < boardColumns; j++)
@@ -216,9 +222,9 @@ namespace MinesweeperGame
 
         private static char[,] LoadBombs()
         {
-            int rows = 5;
-            int cols = 10;
-            char[,] board = new char[rows, cols];
+            var rows = 5;
+            var cols = 10;
+            var board = new char[rows, cols];
 
             for (int i = 0; i < rows; i++)
             {
@@ -228,11 +234,11 @@ namespace MinesweeperGame
                 }
             }
 
-            List<int> randomListNumbers = new List<int>();
+            var randomListNumbers = new List<int>();
             while (randomListNumbers.Count < 15)
             {
-                Random randomGenerator = new Random();
-                int number = randomGenerator.Next(50);
+                var randomGenerator = new Random();
+                var number = randomGenerator.Next(50);
                 if (!randomListNumbers.Contains(number))
                 {
                     randomListNumbers.Add(number);
@@ -241,8 +247,8 @@ namespace MinesweeperGame
 
             foreach (int number in randomListNumbers)
             {
-                int col = (number / cols);
-                int row = (number % cols);
+                var col = (number / cols);
+                var row = (number % cols);
                 if (row == 0 && number != 0)
                 {
                     col--;
@@ -252,6 +258,7 @@ namespace MinesweeperGame
                 {
                     row++;
                 }
+
                 board[col, row - 1] = '*';
             }
 
@@ -260,8 +267,8 @@ namespace MinesweeperGame
 
         private static void GetBombsCount(char[,] board)
         {
-            int cols = board.GetLength(0);
-            int rows = board.GetLength(1);
+            var cols = board.GetLength(0);
+            var rows = board.GetLength(1);
 
             for (int i = 0; i < cols; i++)
             {
@@ -277,66 +284,50 @@ namespace MinesweeperGame
 
         private static char CountBombs(char[,] bombs, int row, int col)
         {
-            int count = 0;
-            int rows = bombs.GetLength(0);
-            int cols = bombs.GetLength(1);
+            var count = 0;
+            var rows = bombs.GetLength(0);
+            var cols = bombs.GetLength(1);
 
-            if (row - 1 >= 0)
+            if (row - 1 >= 0 && bombs[row - 1, col] == '*')
             {
-                if (bombs[row - 1, col] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if (row + 1 < rows)
+
+            if (row + 1 < rows && bombs[row + 1, col] == '*')
             {
-                if (bombs[row + 1, col] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if (col - 1 >= 0)
+
+            if (col - 1 >= 0 && bombs[row, col - 1] == '*')
             {
-                if (bombs[row, col - 1] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if (col + 1 < cols)
+
+            if (col + 1 < cols && bombs[row, col + 1] == '*')
             {
-                if (bombs[row, col + 1] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if ((row - 1 >= 0) && (col - 1 >= 0))
+
+            if ((row - 1 >= 0) && (col - 1 >= 0) && bombs[row - 1, col - 1] == '*')
             {
-                if (bombs[row - 1, col - 1] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if ((row - 1 >= 0) && (col + 1 < cols))
+
+            if ((row - 1 >= 0) && (col + 1 < cols) && bombs[row - 1, col + 1] == '*')
             {
-                if (bombs[row - 1, col + 1] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if ((row + 1 < rows) && (col - 1 >= 0))
+
+            if ((row + 1 < rows) && (col - 1 >= 0) && bombs[row + 1, col - 1] == '*')
             {
-                if (bombs[row + 1, col - 1] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
-            if ((row + 1 < rows) && (col + 1 < cols))
+
+            if ((row + 1 < rows) && (col + 1 < cols) && bombs[row + 1, col + 1] == '*')
             {
-                if (bombs[row + 1, col + 1] == '*')
-                {
-                    count++;
-                }
+                count++;
             }
+
             return char.Parse(count.ToString());
         }
     }
