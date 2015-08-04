@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-04. Point", "Point\01-04. Point.csproj", "{876DDE1E-6F06-429F-82DB-279BF8F795E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-12. MobilePhone", "MobilePhone\01-12. MobilePhone.csproj", "{FFC811CE-DCFD-4ED8-A177-176408E38297}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-07. List", "List\05-07. List.csproj", "{7A6B8E24-9BCF-4EF6-9B87-7510A01242F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-16. Point", "Point\13-16. Point.csproj", "{876DDE1E-6F06-429F-82DB-279BF8F795E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-10. Matrix", "Matrix\08-10. Matrix.csproj", "{CD6231CF-3DF3-4585-B782-F354077947CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-19. List", "List\17-19. List.csproj", "{7A6B8E24-9BCF-4EF6-9B87-7510A01242F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Attribute", "Attribute\11. Attribute.csproj", "{5C6DAF11-19D5-40E9-A241-3159BF0A23C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-22. Matrix", "Matrix\20-22. Matrix.csproj", "{CD6231CF-3DF3-4585-B782-F354077947CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23. Attribute", "Attribute\23. Attribute.csproj", "{5C6DAF11-19D5-40E9-A241-3159BF0A23C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFC811CE-DCFD-4ED8-A177-176408E38297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC811CE-DCFD-4ED8-A177-176408E38297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC811CE-DCFD-4ED8-A177-176408E38297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC811CE-DCFD-4ED8-A177-176408E38297}.Release|Any CPU.Build.0 = Release|Any CPU
 		{876DDE1E-6F06-429F-82DB-279BF8F795E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{876DDE1E-6F06-429F-82DB-279BF8F795E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{876DDE1E-6F06-429F-82DB-279BF8F795E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
