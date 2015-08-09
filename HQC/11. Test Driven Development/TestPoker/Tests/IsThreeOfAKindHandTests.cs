@@ -11,7 +11,7 @@
         [TestMethod]
         public void ThreeOfAKindHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Queen, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -19,14 +19,14 @@
                 new Card(CardFace.Seven, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsTrue(checker.IsThreeOfAKind(hand));
         }
 
         [TestMethod]
         public void NotThreeOfAKindHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -34,7 +34,7 @@
                 new Card(CardFace.Seven, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsFalse(checker.IsThreeOfAKind(hand));
         }
     }

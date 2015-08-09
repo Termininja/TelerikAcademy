@@ -11,7 +11,7 @@
         [TestMethod]
         public void ValidHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Clubs),
                 new Card(CardFace.Jack, CardSuit.Diamonds),
                 new Card(CardFace.Four, CardSuit.Spades),
@@ -19,14 +19,14 @@
                 new Card(CardFace.Three, CardSuit.Spades)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsTrue(checker.IsValidHand(hand));
         }
 
         [TestMethod]
         public void InvalidHandWithFiveEqualCards()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Clubs),
                 new Card(CardFace.Seven, CardSuit.Clubs),
                 new Card(CardFace.Seven, CardSuit.Clubs),
@@ -34,7 +34,7 @@
                 new Card(CardFace.Seven, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsFalse(checker.IsValidHand(hand));
         }
 
@@ -42,13 +42,13 @@
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void InvalidHandWithThreeDifferentCards()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Clubs),
                 new Card(CardFace.King, CardSuit.Hearts),
                 new Card(CardFace.Three, CardSuit.Spades)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsFalse(checker.IsValidHand(hand));
         }
 
@@ -56,9 +56,8 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void InvalidHandWithNoCards()
         {
-            Hand hand = null;
-            PokerHandsChecker checker = new PokerHandsChecker();
-            Assert.IsFalse(checker.IsValidHand(hand));
+            var checker = new PokerHandsChecker();
+            Assert.IsFalse(checker.IsValidHand(null));
         }
     }
 }

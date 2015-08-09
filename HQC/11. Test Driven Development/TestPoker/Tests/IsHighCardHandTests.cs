@@ -11,7 +11,7 @@
         [TestMethod]
         public void HighCardHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Clubs),
                 new Card(CardFace.Jack, CardSuit.Diamonds),
                 new Card(CardFace.Four, CardSuit.Spades),
@@ -19,14 +19,14 @@
                 new Card(CardFace.Six, CardSuit.Spades)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsTrue(checker.IsHighCard(hand));
         }
 
         [TestMethod]
         public void NotHighCardHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Four, CardSuit.Clubs),
                 new Card(CardFace.Jack, CardSuit.Diamonds),
                 new Card(CardFace.Four, CardSuit.Spades),
@@ -34,7 +34,7 @@
                 new Card(CardFace.Six, CardSuit.Spades)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsFalse(checker.IsHighCard(hand));
         }
     }

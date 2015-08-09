@@ -15,7 +15,7 @@
         {
             if (hand != null)
             {
-                List<ICard> cards = (List<ICard>)hand.Cards;
+                var cards = (List<ICard>)hand.Cards;
 
                 if (cards.Count == 5)
                 {
@@ -49,7 +49,7 @@
         /// <returns>Returns true if the hand is a straight flush.</returns>
         public bool IsStraightFlush(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
             cards = cards.OrderBy(m => m.Face).ToList();
 
             for (int i = 1; i < cards.Count; i++)
@@ -70,9 +70,9 @@
         /// <returns>Returns true if the hand is four of a kind.</returns>
         public bool IsFourOfAKind(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
             var grouped = cards.GroupBy(m => m.Face).Where(k => k.Count() == 4);
-            bool result = (grouped.Count() == 1) ? true : false;
+            var result = grouped.Count() == 1 ? true : false;
 
             return result;
         }
@@ -84,9 +84,7 @@
         /// <returns>Returns true if the hand is a full house.</returns>
         public bool IsFullHouse(IHand hand)
         {
-            bool result =
-                (this.IsOnePair(hand) && this.IsThreeOfAKind(hand)) ?
-                true : false;
+            var result = (this.IsOnePair(hand) && this.IsThreeOfAKind(hand)) ? true : false;
 
             return result;
         }
@@ -98,7 +96,7 @@
         /// <returns>Returns true if the hand is a flush.</returns>
         public bool IsFlush(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
 
             for (int i = 1; i < cards.Count; i++)
             {
@@ -118,7 +116,7 @@
         /// <returns>Returns true if the hand is a straight.</returns>
         public bool IsStraight(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
             cards = cards.OrderBy(m => m.Face).ToList();
 
             for (int i = 1; i < cards.Count; i++)
@@ -139,9 +137,9 @@
         /// <returns>Returns true if the hand is three of a kind.</returns>
         public bool IsThreeOfAKind(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
             var grouped = cards.GroupBy(m => m.Face).Where(k => k.Count() == 3);
-            bool result = (grouped.Count() == 1) ? true : false;
+            var result = grouped.Count() == 1 ? true : false;
 
             return result;
         }
@@ -153,9 +151,9 @@
         /// <returns>Returns true if the hand is two pair.</returns>
         public bool IsTwoPair(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
             var grouped = cards.GroupBy(m => m.Face).Where(k => k.Count() == 2);
-            bool result = (grouped.Count() == 2) ? true : false;
+            var result = grouped.Count() == 2 ? true : false;
 
             return result;
         }
@@ -167,9 +165,9 @@
         /// <returns>Returns true if the hand is one pair.</returns>
         public bool IsOnePair(IHand hand)
         {
-            List<ICard> cards = (List<ICard>)hand.Cards;
+            var cards = (List<ICard>)hand.Cards;
             var grouped = cards.GroupBy(m => m.Face).Where(k => k.Count() == 2);
-            bool result = (grouped.Count() == 1) ? true : false;
+            var result = grouped.Count() == 1 ? true : false;
 
             return result;
         }
@@ -205,8 +203,8 @@
         /// is more powerful than the first one.</returns>
         public int CompareHands(IHand firstHand, IHand secondHand)
         {
-            int firstHandPower = TakeHandPower(firstHand);
-            int secondHandPower = TakeHandPower(secondHand);
+            var firstHandPower = TakeHandPower(firstHand);
+            var secondHandPower = TakeHandPower(secondHand);
 
             if (firstHandPower > secondHandPower)
             {

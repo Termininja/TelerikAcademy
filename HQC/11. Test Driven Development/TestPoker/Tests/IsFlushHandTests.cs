@@ -12,7 +12,7 @@ namespace TestPoker
         [TestMethod]
         public void FlushHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Clubs),
                 new Card(CardFace.Jack, CardSuit.Clubs),
                 new Card(CardFace.Four, CardSuit.Clubs),
@@ -20,14 +20,14 @@ namespace TestPoker
                 new Card(CardFace.Three, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsTrue(checker.IsFlush(hand));
         }
 
         [TestMethod]
         public void NotFlushHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Hearts),
                 new Card(CardFace.Jack, CardSuit.Clubs),
                 new Card(CardFace.Four, CardSuit.Clubs),
@@ -35,7 +35,7 @@ namespace TestPoker
                 new Card(CardFace.Three, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsFalse(checker.IsFlush(hand));
         }
     }

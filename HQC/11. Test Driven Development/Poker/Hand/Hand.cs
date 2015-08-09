@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Poker
+﻿namespace Poker
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>
     /// Hand with cards.
     /// </summary>
@@ -25,7 +25,7 @@ namespace Poker
         /// <summary>
         /// Information about all cards in this hand.
         /// </summary>
-        /// <returns>Returns all cards in the hand like string.</returns>
+        /// <returns>Returns all cards in the hand as a string.</returns>
         public override string ToString()
         {
             string result = (this.Cards.Count > 0) ? String.Join(" ", this.Cards) : String.Empty;

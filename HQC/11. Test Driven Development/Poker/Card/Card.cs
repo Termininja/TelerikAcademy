@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Poker
+﻿namespace Poker
 {
+    using System;
+
     /// <summary>
     /// Card with face and suit.
     /// </summary>
@@ -31,10 +31,10 @@ namespace Poker
         /// <summary>
         /// Take the card face and suit.
         /// </summary>
-        /// <returns>Returns the card like string.</returns>
+        /// <returns>Returns the card as a string.</returns>
         public override string ToString()
         {
-            string result = String.Empty;
+            var result = String.Empty;
 
             switch (this.Face)
             {

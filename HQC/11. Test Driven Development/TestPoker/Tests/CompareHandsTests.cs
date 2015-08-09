@@ -11,7 +11,7 @@
         [TestMethod]
         public void TwoEaqualHands()
         {
-            Hand firstHand = new Hand(new List<ICard>() {
+            var firstHand = new Hand(new List<ICard>() {
                 new Card(CardFace.Queen, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -19,7 +19,7 @@
                 new Card(CardFace.Nine, CardSuit.Clubs)
             });
 
-            Hand secondHand = new Hand(new List<ICard>() {
+            var secondHand = new Hand(new List<ICard>() {
                 new Card(CardFace.Queen, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -27,14 +27,14 @@
                 new Card(CardFace.Nine, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.AreEqual(0, checker.CompareHands(firstHand, secondHand));
         }
 
         [TestMethod]
         public void FirstHandIsPowerful()
         {
-            Hand firstHand = new Hand(new List<ICard>() {
+            var firstHand = new Hand(new List<ICard>() {
                 new Card(CardFace.Three, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Hearts),
                 new Card(CardFace.Five, CardSuit.Hearts),
@@ -42,7 +42,7 @@
                 new Card(CardFace.Six, CardSuit.Hearts)
             });
 
-            Hand secondHand = new Hand(new List<ICard>() {
+            var secondHand = new Hand(new List<ICard>() {
                 new Card(CardFace.Queen, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -57,7 +57,7 @@
         [TestMethod]
         public void SecondHandIsPowerful()
         {
-            Hand firstHand = new Hand(new List<ICard>() {
+            var firstHand = new Hand(new List<ICard>() {
                 new Card(CardFace.Ace, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -65,7 +65,7 @@
                 new Card(CardFace.Nine, CardSuit.Clubs)
             });
 
-            Hand secondHand = new Hand(new List<ICard>() {
+            var secondHand = new Hand(new List<ICard>() {
                 new Card(CardFace.Jack, CardSuit.Hearts),
                 new Card(CardFace.Ten, CardSuit.Spades),
                 new Card(CardFace.Jack, CardSuit.Diamonds),
@@ -73,7 +73,7 @@
                 new Card(CardFace.Jack, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.AreEqual(-1, checker.CompareHands(firstHand, secondHand));
         }
     }

@@ -11,7 +11,7 @@
         [TestMethod]
         public void TwoPairHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Queen, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -19,14 +19,14 @@
                 new Card(CardFace.Queen, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsTrue(checker.IsTwoPair(hand));
         }
 
         [TestMethod]
         public void NotTwoPairHand()
         {
-            Hand hand = new Hand(new List<ICard>() {
+            var hand = new Hand(new List<ICard>() {
                 new Card(CardFace.Seven, CardSuit.Hearts),
                 new Card(CardFace.Seven, CardSuit.Spades),
                 new Card(CardFace.Seven, CardSuit.Diamonds),
@@ -34,7 +34,7 @@
                 new Card(CardFace.Seven, CardSuit.Clubs)
             });
 
-            PokerHandsChecker checker = new PokerHandsChecker();
+            var checker = new PokerHandsChecker();
             Assert.IsFalse(checker.IsTwoPair(hand));
         }
     }
