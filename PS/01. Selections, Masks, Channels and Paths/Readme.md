@@ -9,6 +9,6 @@
 
 <p align="center"><img width=500px src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/01.%20Selections%2C%20Masks%2C%20Channels%20and%20Paths/images/collage%202.jpg" /></p>
 
-**Task 02.** Да се нарисува Path, и с негова помощ , да се направи *“clip mask”* върху един от предходните  колажи.
+**Task 02.** Да се нарисува Path, и с негова помощ да се направи *“clip mask”* върху един от предходните колажи.
 
 <p align="center"><img width=500px src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/01.%20Selections%2C%20Masks%2C%20Channels%20and%20Paths/images/iPhone.jpg" /></p>
