@@ -1,6 +1,6 @@
 # Quality Assurance<br/>Team Project – Sep/Nov, 2014 
 
-###Contributors:
+### Contributors:
 * Kiril Todorov ([@ kirilt7](https://github.com/kirilt7))
 * Mladen Mladenov ([@ MlaDANCe](https://github.com/MlaDANCe))
 * Stanislav Iliev ([@ Termininja](https://github.com/Termininja))
@@ -8,7 +8,7 @@
 * Valerya Dimitrova ([@ VDimitrova](https://github.com/VDimitrova))
 * Vanina Nenova ([@ ms-nenova](https://github.com/ms-nenova))
 
-###Test Plan Version History
+### Test Plan Version History
 <table>
     <tr><th>Date</th><th>Revised By</th><th>Reason for Change</th><th>Version</th></tr>
     <tr><td>26/9/2014</td><td>Team&nbsp;Apple</td><td>Initial Test Plan</td><td>1.0</td></tr>
@@ -20,7 +20,7 @@
     <tr><td>25/11/2014</td><td>Team&nbsp;Apple</td><td>Final adjustments</td><td>5.0</td></tr>
 </table>
 
-###Performance Test Plan Version History
+### Performance Test Plan Version History
 <table>
     <tr><th>Date</th><th>Revised By</th><th>Reason for Change</th><th>Version</th></tr>
     <tr><td>21/11/2014</td><td>Team&nbsp;Apple</td><td>Initial Performance Test Plan</td><td>1.0</td></tr>
