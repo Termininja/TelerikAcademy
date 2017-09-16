@@ -43,10 +43,7 @@ body {
 }
 
     body header {
-        padding-top: 25px;
-        padding-bottom: 5px;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding: 25px 15px 5px 15px;
     }
 
         body header div#header-container div#logo-container {
@@ -103,7 +100,7 @@ body {
         body header nav {
             display: inline-block;
             width: 75%;
-            margin: 20px 20px 20px 20px;
+            margin: 20px;
             padding: 12px;
             border: 2px solid #000;
             border-radius: 15px;
@@ -232,43 +229,34 @@ body {
                 }
 
                 body aside > ul > li p {
-                    margin-top: 10px;
-                    margin-right: 5px;
-                    margin-bottom: 10px;
-                    margin-left: 5px;
+                    margin: 10px 5px;
                     font-size: 14px;
                 }
 
                     body aside > ul > li p a {
-                        color: #aaaaaa;
+                        color: #aaa;
                         text-decoration: none;
                     }
 
                     body aside > ul > li p strong {
-                        color: #cccccc;
+                        color: #ccc;
                         font-weight: bold;
                         font-style: normal;
                     }
 
                     body aside > ul > li p em {
-                        color: #cccccc;
+                        color: #ccc;
                         font-weight: normal;
                         font-style: italic;
                     }
 
                 body aside > ul > li ul {
                     list-style-type: none;
-                    margin-top: 10px;
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                    margin-left: 0px;
+                    margin: 10px 0 10px 0;
                 }
 
                     body aside > ul > li ul li {
-                        margin-top: 5px;
-                        margin-left: 10px;
-                        margin-bottom: 0px;
-                        margin-right: 0px;
+                        margin: 5px 0 0 10px;
                         background: url(images/li-dot.png) no-repeat;
                         background-position: 0 50%;
                         padding-left: 25px;
@@ -276,10 +264,7 @@ body {
 
     body footer {
         clear: both;
-        padding-top: 15px;
-        padding-bottom: 25px;
-        padding-right: 0px;
-        padding-left: 0px;
+        padding: 15px 0 25px 0;
     }
 
         body footer p {
