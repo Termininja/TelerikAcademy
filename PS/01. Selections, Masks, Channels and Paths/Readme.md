@@ -1,4 +1,4 @@
-## Selections, masks, channels and tracks
+## Selections, masks, channels and paths
 
 **Task 1.** Extract from a high quality photo to:
    * a complex object (hair, flower, tree, etc.) + background image
