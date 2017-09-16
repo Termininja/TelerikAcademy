@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E440BB16-85FD-41EE-8B5A-9F2095B0C163}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TelerikAcademyPerformanceTests</RootNamespace>
+    <AssemblyName>TelerikAcademyPerformanceTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TestProjectType>WebTest</TestProjectType>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.LoadTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Admin\EvaluationModules\AddStudentsForPracticalExam\AddStudentsForPracticalExam20Users.loadtest" />
+    <None Include="Admin\EvaluationModules\AddStudentsForPracticalExam\AddStudentsForPracticalExam60Users.loadtest" />
+    <None Include="Admin\EvaluationModules\AddStudentsForTestExam\AddStudentForTestExam20Users.loadtest" />
+    <None Include="Admin\EvaluationModules\AddStudentsForTestExam\AddStudentForTestExam60Users.loadtest" />
+    <None Include="Admin\EvaluationModules\AddStudentsForTestExam\AddStudentsForTestExam.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\Bonuses\Bonuses20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\Bonuses\Bonuses60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\ExportResults\ExportResults.webtest" />
+    <None Include="Admin\EvaluationModules\ExportResults\ExportResults20Users.loadtest" />
+    <None Include="Admin\EvaluationModules\ExportResults\ExportResults60Users.loadtest" />
+    <None Include="Admin\EvaluationModules\Helpers\Helpers20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\Helpers\Helpers60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkEvaluationReactions\HomeworkEvaluationReactions20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkEvaluationReactions\HomeworkEvaluationReactions60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkEvaluation\HomeworkEvaluationAdmin20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkEvaluation\HomeworkEvaluationAdmin60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkStatistics\HomeworkStatistics60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkStatistics\HomeworkStatistics20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExamEvaluations\PracticalExamEvaluations20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExamEvaluations\PracticalExamEvaluations60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExamFiles\PracticalExamFiles20Users.loadtest" />
+    <None Include="Admin\EvaluationModules\PracticalExamFiles\PracticalExamFiles60Users.loadtest" />
+    <None Include="Admin\EvaluationModules\PracticalExams\PracticalExams60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExams\PracticalExams20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\StudentsRecords\StudentsRecordsImport20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\StudentsRecords\StudentsRecordsImport60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\StudentsRecords\StudentsRecordsImport.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\TestExams\TestExams.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExams\PracticalExams.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExamFiles\PracticalExamFiles.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkEvaluation\HomeworkEvaluationAdmin.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkEvaluationReactions\HomeworkEvaluationReactions.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\HomeworkStatistics\HomeworkStatistics.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\PracticalExamEvaluations\PracticalExamEvaluations.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\Helpers\Helpers.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\Bonuses\Bonuses.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\AddStudentsForPracticalExam\AddStudentsForPracticalExam.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\EvaluationModules\TestExams\TestExams20Users.loadtest" />
+    <None Include="Admin\EvaluationModules\TestExams\TestExams60Users.loadtest" />
+    <None Include="Admin\TeamworkModules\ImportTeamNames\ImportTeamNames60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\ImportTeamNames\ImportTeamNames20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\ImportTeams\ImportTeams60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\ImportTeams\ImportTeams20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberAllEvaluations\TeamMemberAllEvaluations20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberAllEvaluations\TeamMemberAllEvaluations60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberEvaluations\TeamMemberEvaluations60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberEvaluations\TeamMemberEvaluations20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberSuggestions\TeamMemberSuggestions.webtest" />
+    <None Include="Admin\TeamworkModules\TeamMemberSuggestions\TeamMemberSuggestions20Users.loadtest" />
+    <None Include="Admin\TeamworkModules\TeamMemberSuggestions\TeamMemberSuggestions60Users.loadtest" />
+    <None Include="Admin\TeamworkModules\TeamNameSuggestions\TeamNameSuggestions20Users.loadtest" />
+    <None Include="Admin\TeamworkModules\TeamNameSuggestions\TeamNameSuggestions60Users.loadtest" />
+    <None Include="Admin\TeamworkModules\Teamworks\Teamworks.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamNameSuggestions\TeamNameSuggestions.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberEvaluations\TeamMemberEvaluations.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\ImportTeams\ImportTeams.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\TeamMemberAllEvaluations\TeamMemberAllEvaluations.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\ImportTeamNames\ImportTeamNames.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Admin\TeamworkModules\Teamworks\Teamworks20Users.loadtest" />
+    <None Include="Admin\TeamworkModules\Teamworks\Teamworks60Users.loadtest" />
+    <None Include="Front\ExamResults\ExamResults.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\ExamResults\ExamResults60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\ExamResults\ExamResults20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\ExamUpload\ExamUpload20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\ExamUpload\ExamUpload60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\HomeworkAndTeamworkUpload\HomeworkAndTeamworkUpload20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\HomeworkAndTeamworkUpload\HomeworkAndTeamworkUpload60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\HomeworkEvaluation\HomeworkEvaluation.webtest" />
+    <None Include="Front\HomeworkEvaluation\HomeworkEvaluation20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\HomeworkEvaluation\HomeworkEvaluation60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\TeammateGrading\TeammateGrading20Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\TeammateGrading\TeammateGrading60Users.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\TeamworkSignup\TeamworkSignup20Users.loadtest" />
+    <None Include="Front\TeamworkSignup\TeamworkSignup60Users.loadtest" />
+    <None Include="Users.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\TeamworkSignup\TeamworkSignup.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\HomeworkAndTeamworkUpload\HomeworkAndTeamworkUpload.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\TeammateGrading\TeammateGrading.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Front\ExamUpload\ExamUpload.webtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

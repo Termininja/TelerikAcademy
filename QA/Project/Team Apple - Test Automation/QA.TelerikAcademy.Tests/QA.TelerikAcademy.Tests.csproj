@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7039770B-C22C-434E-A065-634C0FC152F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QA.TelerikAcademy.Tests</RootNamespace>
+    <AssemblyName>QA.TelerikAcademy.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArtOfTest.WebAii, Version=2014.3.903.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Libs\ArtOfTest.WebAii.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise />
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Admin\EvaluationModules\AddStudentsForPracticalExamTests.cs" />
+    <Compile Include="Admin\EvaluationModules\AddStudentsForTestExamTests.cs" />
+    <Compile Include="Admin\EvaluationModules\BonusesTests.cs" />
+    <Compile Include="Admin\EvaluationModules\ExportResultsTests.cs" />
+    <Compile Include="Admin\EvaluationModules\HelpersTests.cs" />
+    <Compile Include="Admin\EvaluationModules\HomeworkEvaluationReactionsTests.cs" />
+    <Compile Include="Admin\EvaluationModules\HomeworkEvaluationTests.cs" />
+    <Compile Include="Admin\EvaluationModules\HomeworkStatisticsTests.cs" />
+    <Compile Include="Admin\EvaluationModules\PracticalExamFilesTests.cs" />
+    <Compile Include="Admin\EvaluationModules\PracticalExamEvaluationsTests.cs" />
+    <Compile Include="Admin\EvaluationModules\PracticalExamsTests.cs" />
+    <Compile Include="Admin\EvaluationModules\StudentsRecordsTests.cs" />
+    <Compile Include="Admin\EvaluationModules\TestExamsTests.cs" />
+    <Compile Include="Admin\TeamworkModules\TeamMemberAllEvaluationsTests.cs" />
+    <Compile Include="Admin\TeamworkModules\TeamMemberEvaluationsTests.cs" />
+    <Compile Include="Admin\TeamworkModules\TeamMemberSuggestionsTests.cs" />
+    <Compile Include="Admin\TeamworkModules\TeamNameSuggestionsTests.cs" />
+    <Compile Include="Admin\TeamworkModules\TeamworksTests.cs" />
+    <Compile Include="Admin\HomeworkModule\_HomeworkAdminExtraTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Front\ExamResultsTests.cs" />
+    <Compile Include="Front\ExamSignupTests.cs" />
+    <Compile Include="Front\ExamUploadTests.cs" />
+    <Compile Include="Front\HomeworkCommentsAndGradingTests.cs" />
+    <Compile Include="Front\HomeworkEvaluationTests.cs" />
+    <Compile Include="Front\HomeworkAndTeamworkUploadTests.cs" />
+    <Compile Include="Front\TeammateGradingTests.cs" />
+    <Compile Include="Front\TeamworkSignupTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QA.TelerikAcademy.Core\QA.TelerikAcademy.Core.csproj">
+      <Project>{e6b6115c-6a79-4cb2-91e7-189a963b11ca}</Project>
+      <Name>QA.TelerikAcademy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QA.UI.TestingFramework.Core\QA.UI.TestingFramework.Core.csproj">
+      <Project>{d3683c33-851d-4c3f-8883-d90a24e68d2b}</Project>
+      <Name>QA.UI.TestingFramework.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\TestFiles\Data.xlsx" />
+    <None Include="Resources\TestFiles\ExamFileBig.rar" />
+    <None Include="Resources\TestFiles\TestFile.zip" />
+    <None Include="Resources\TestFiles\TestFileBig.zip" />
+    <None Include="Resources\TestFiles\TestFileUnsupported.pdf" />
+    <None Include="Resources\TestFiles\TestStudents.xls" />
+    <None Include="Resources\TestFiles\TestStudentsEmail.xls" />
+    <None Include="Resources\TestFiles\TestStudentsEmpty.xls" />
+    <None Include="Resources\TestFiles\TestStudentsInvalidUsers.xls" />
+    <None Include="Resources\TestFiles\TestStudentsNotInCourse.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Libs\ArtOfTest.WebAii.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
