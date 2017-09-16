@@ -1,4 +1,4 @@
-## Strings
+## Strings ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/08.%20Strings/index.html))
 
 **Task 01.** Write a JavaScript function reverses string and returns it.
 >Example: "sample" → **"elpmas"**

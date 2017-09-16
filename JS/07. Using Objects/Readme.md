@@ -1,4 +1,4 @@
-## Using Objects
+## Using Objects ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/07.%20Using%20Objects/index.html))
 
 **Task 01.** Write functions for working with shapes in standard Planar coordinate system.
 * Points are represented by coordinates `P(X,Y)`.

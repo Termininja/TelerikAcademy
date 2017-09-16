@@ -20,8 +20,8 @@ Stores represent the store objects in the application. Stores keep a list of the
  * `storeInstance.getComputers()` – returns a collection of only the items in stock that have **type either `'pc'` or `'notebook'`, sorted lexicographically** by the name of the items
  * `storeInstance.filterItemsByType(filterType)` – returns a collection of only the items in stock that have **type equal to the given filterType** (item.type === filterType), **sorted lexicographically** by the name of the items
  * `storeInstance.filterItemsByPrice(options)` – returns a collection of only the items that **have a price from the price range** in the options parameter, **sorted ascending** by the price of the items. **The options object is optional and have optional properties min and max**. 
-  * If min is missing, it should be considered as 0
-  * If max is missing, it should be considered + Infinity
+   * If min is missing, it should be considered as 0
+   * If max is missing, it should be considered + Infinity
  * `storeInstance.countItemsByType()` – returns an associative array that have **as keys the types**, that are of items in stock in the store, and **values that are equal to the number of items** with this type
  * `storeInstance.filterItemsByName(partOfName)` – returns a collection of only the items in stock that have a **name containing partOfName, sorted lexicographically** by the name of the items. The search should be performed case insensitive
  
