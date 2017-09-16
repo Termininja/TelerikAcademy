@@ -1,0 +1,80 @@
+html, body, div, form, fieldset, legend, label, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+    body > div {
+        font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+        font-size: 16px;
+    }
+
+form {
+    border: 1px solid #000;
+    border-radius: 15px;
+    margin: 25px auto auto 25px;
+    width: 380px;
+    text-align: right;
+    background: linear-gradient(to bottom, #68D1FF, #8CFFFB);
+    padding: 15px;
+    color: #333;
+}
+
+    /* Fieldsets */
+    form > fieldset {
+        margin: auto;
+        padding: 5px 15px;
+        border: 3px solid #333;
+        border-radius: 5px;
+    }
+
+        form > fieldset > legend {
+            font-style: italic;
+            font-size: 130%;
+            padding: 0px 15px;
+        }
+
+        form > fieldset > input {
+            padding-left: 15px;
+            color: #333;
+            height: 26px;
+            width: 164px;
+            margin-top: 1px;
+            border-radius: 5px;
+            border: 1px solid #0F9AD3;
+            background: linear-gradient(to bottom, #6BD5FF, #8BFEFB);
+        }
+
+            form > fieldset > input[type=number] {
+                width: 40px;
+                padding-left: 5px;
+            }
+
+    form > input:first-of-type {
+        margin-top: 7px;
+    }
+
+    /* Buttons */
+    form > button, form > input:last-of-type {
+        border: none;
+        border-bottom: 1px solid black;
+        border-radius: 5px;
+        font-size: 120%;
+        color: #333;
+        height: 34px;
+        margin-top: 15px;
+        background: linear-gradient(to bottom, #3BC6FF, #88FCFB);
+    }
+
+    /* register */
+    form > button {
+        width: 141px;
+    }
+
+    /* clear */
+    form > input:last-of-type {
+        width: 119px;
+    }
+
+        form > button:hover, form > input:last-of-type:hover {
+            background: #9BE1FF;
+        }
