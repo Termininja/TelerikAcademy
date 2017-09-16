@@ -22,3 +22,10 @@ It is good to use all types of selection during work, geometrical + quick select
 **All tasks** must be in **a PSD file** sent as zip. Inside, each task is in a separate group (ie 3 layer groups), and all layers have appropriate names. **File size does not exceed 1280x800**!
 
 Additional points will be given for **precision**, **strictly observing the assignment** and **creativity**.
+
+### Background collages
+
+<p align="center">
+<img width="250" src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/images/background%201.jpg" />
+<img width="250" src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/images/background%202.jpg" />
+</p>
