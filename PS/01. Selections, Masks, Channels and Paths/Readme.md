@@ -1,21 +1,21 @@
-## Селекции, маски, канали и пътечки
+## Selections, masks, channels and tracks
 
-**Задача 01.** Екстракция от снимка с високо качество на:
-   * един сложен обект (коса, цвете, разлистено дърво и тн..) + background image 
-   * един по-прост обект (например предмет от бита, автомобил или др.) + background image
+**Task 1.** Extract from a high quality photo to:
+   * a complex object (hair, flower, tree, etc.) + background image
+   * a simpler object (for example, household, car, etc.) + background image
 
-Целта е да се направят два хубави колажа, но също така селекциите трябва да бъдат запазени (като маски в alpha канала). Ако има използван векторен path - също да бъде запазен в paths.
+The goal is to make two nice collages, but also the selections must be preserved (like masks in the alpha channel). If there is a vector path used - also be saved in paths.
 
-Добре е да се ползват всички видове селекция по време на работа, geometrical + quick selection + quick mask, както и работа с channels + image calculation + levels. Маските да се запазят с цел последваща редкация ако се налага!
+It is good to use all types of selection during work, geometrical + quick selection + quick mask, and work with channels + image calculation + levels. Keep the masks for subsequent reversal if necessary!
 
 <p align="center"><img width=500px src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/01.%20Selections%2C%20Masks%2C%20Channels%20and%20Paths/images/collage%201.jpg" /></p>
 
 <p align="center"><img width=500px src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/01.%20Selections%2C%20Masks%2C%20Channels%20and%20Paths/images/collage%202.jpg" /></p>
 
-**Задача 02.** Да се нарисува с векторен path някакъв прост обект (например иконка), и с негова помощ да се направи *“clip mask”* върху един от предходните колажи.
+**Task 2.** Draw a simple object (for example, an icon) by using vector path. Then use it to make a clip mask on one of the previous collages.
 
 <p align="center"><img width=500px src="https://github.com/Termininja/TelerikAcademy/blob/master/PS/01.%20Selections%2C%20Masks%2C%20Channels%20and%20Paths/images/iPhone.jpg" /></p>
 
-**Всички задачи** трябва да са в **един PSD файл**, изпратен като zip. Вътре всяка задача да е в отделна група (т.е. 3 layer groups), и всички слоеве да са с подходящи имена. **Размерът на файла да не надвишава 1280х800**! 
+**All tasks** must be in **a PSD file** sent as zip. Inside, each task is in a separate group (ie 3 layer groups), and all layers have appropriate names. **File size does not exceed 1280x800**!
 
-Ще се дават допълнителни точки за **прецизност**, **точно спазване на заданието**, както и **креативност**.
+Additional points will be given for **precision**, **exact job adherence** and **creativity**.
