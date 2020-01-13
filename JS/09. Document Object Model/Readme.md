@@ -1,4 +1,4 @@
-## Document Object Model ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/09.%20Document%20Object%20Model/index.html))
+## Document Object Model ([Demo](https://rawcdn.githack.com/Termininja/TelerikAcademy/8ce035c8/JS/09.%20Document%20Object%20Model/index.html))
 
 **Task 01.** Write a script that selects all the div nodes that are directly inside other div elements
  * Create a function using `querySelectorAll()`
