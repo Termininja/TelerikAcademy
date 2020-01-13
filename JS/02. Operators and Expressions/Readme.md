@@ -1,4 +1,4 @@
-## Operators and Expressions ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/02.%20Operators%20and%20Expressions/index.html))
+## Operators and Expressions ([Demo](https://rawcdn.githack.com/Termininja/TelerikAcademy/8ce035c8/JS/02.%20Operators%20and%20Expressions/index.html))
 
 **Task 01.** Write an expression that checks if given integer is odd or even.
 
