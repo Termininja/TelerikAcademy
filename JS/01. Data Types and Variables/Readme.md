@@ -1,4 +1,4 @@
-## Data Types and Variables ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/01.%20Data%20Types%20and%20Variables/index.html))
+## Data Types and Variables ([Demo](https://rawcdn.githack.com/Termininja/TelerikAcademy/8ce035c8/JS/01.%20Data%20Types%20and%20Variables/index.html))
 
 **Task 01.** Assign all the possible JavaScript literals to different variables.
 
