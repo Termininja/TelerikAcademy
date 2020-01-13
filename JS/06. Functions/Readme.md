@@ -1,4 +1,4 @@
-## Functions ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/06.%20Functions/index.html))
+## Functions ([Demo](https://rawcdn.githack.com/Termininja/TelerikAcademy/8ce035c8/JS/06.%20Functions/index.html))
 
 **Task 01.** Write a function that returns the last digit of given integer as an English word.
 >Examples:
