@@ -1,4 +1,4 @@
-## Loops ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/04.%20Loops/index.html))
+## Loops ([Demo](https://rawcdn.githack.com/Termininja/TelerikAcademy/8ce035c8/JS/04.%20Loops/index.html))
 
 **Task 01.** Write a script that prints all the numbers from 1 to N.
 
