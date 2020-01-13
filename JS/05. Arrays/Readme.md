@@ -1,4 +1,4 @@
-## Arrays ([Demo](https://cdn.rawgit.com/Termininja/TelerikAcademy/8ce035c8/JS/05.%20Arrays/index.html))
+## Arrays ([Demo](https://rawcdn.githack.com/Termininja/TelerikAcademy/8ce035c8/JS/05.%20Arrays/index.html))
 
 **Task 01.** Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.
 
